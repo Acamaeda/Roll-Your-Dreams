@@ -1,0 +1,62 @@
+[gd_scene load_steps=12 format=3 uid="uid://ddvlg8t52ji41"]
+
+[ext_resource type="Script" uid="uid://bt6nakmxinsvh" path="res://Gameplay/Player/player.gd" id="1_1rerk"]
+[ext_resource type="Script" uid="uid://drq8xkxw2ds7h" path="res://Gameplay/Player/pushing.gd" id="2_wonpf"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_wonpf"]
+friction = 4.0
+rough = true
+bounce = 0.5
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_0jfm5"]
+
+[sub_resource type="Curve" id="Curve_wonpf"]
+_data = [Vector2(0.114864886, 0.43820232), 0.0, 0.0, 0, 0, Vector2(0.6013514, 0.44943827), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_ur2u5"]
+_data = [Vector2(0.16216218, 0.06741583), 0.0, 0.0, 0, 0, Vector2(0.89189196, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_ofpx2"]
+_data = [Vector2(0.114864886, 0.056179762), 0.0, 0.0, 0, 0, Vector2(0.5540541, 1), 0.0, 0.0, 0, 0, Vector2(0.81081086, 0.3595506), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_4s7gy"]
+curve_x = SubResource("Curve_wonpf")
+curve_y = SubResource("Curve_ur2u5")
+curve_z = SubResource("Curve_ofpx2")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0jfm5"]
+albedo_color = Color(1, 0.21568628, 1, 1)
+albedo_texture = SubResource("CurveXYZTexture_4s7gy")
+
+[sub_resource type="SphereMesh" id="SphereMesh_1rerk"]
+material = SubResource("StandardMaterial3D_0jfm5")
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_wonpf"]
+
+[node name="Player" type="Node3D"]
+script = ExtResource("1_1rerk")
+
+[node name="Pushing" type="Node3D" parent="."]
+script = ExtResource("2_wonpf")
+
+[node name="Camera3D" type="Camera3D" parent="Pushing"]
+transform = Transform3D(0.97591674, -0.10907162, 0.18891758, 0, 0.8660254, 0.5, -0.21814324, -0.48795837, 0.84516865, 0, 2.85, 3.5)
+current = true
+
+[node name="Ball" type="RigidBody3D" parent="."]
+mass = 100.0
+physics_material_override = SubResource("PhysicsMaterial_wonpf")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ball"]
+shape = SubResource("SphereShape3D_0jfm5")
+debug_color = Color(3.946722e-06, 0.58577627, 0.7770228, 0.41960785)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ball"]
+mesh = SubResource("SphereMesh_1rerk")
+skeleton = NodePath("../..")
+
+[node name="Groundcast" type="ShapeCast3D" parent="Ball"]
+shape = SubResource("SphereShape3D_wonpf")
