@@ -1,7 +1,6 @@
 extends RigidBody3D
 
-var player
-var nonrolling
+var nonrolling : Node3D
 var rolling_force = 30
 var horizontal_mult = 0.5
 var turn_speed = 0.8
@@ -15,10 +14,15 @@ var vertical = 0.0
 var turn = 0.0
 var last_vel = Vector3.ZERO
 var stored_delta = 0.0167
+var camera_angle = 0
+
+var emergency_pos
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	player = get_parent();
-	nonrolling = get_node("../Nonrolling")
+	nonrolling = get_node("Nonrolling")
+	nonrolling.top_level = true
+	emergency_pos = position
 	pass # Replace with function body.
 
 
@@ -27,6 +31,7 @@ func _process(delta: float) -> void:
 	stored_delta = delta
 	
 func _integrate_forces(state: PhysicsDirectBodyState3D):
+	
 	inputs_advanced();
 	var inputs = Vector2(vertical, horizontal * horizontal_mult)
 	inputs = inputs.rotated(-1 * nonrolling.rotation.y)
@@ -36,9 +41,11 @@ func _integrate_forces(state: PhysicsDirectBodyState3D):
 		total_force *= 2
 	state.angular_velocity.x += total_force*inputs.x*stored_delta
 	state.angular_velocity.z += total_force*inputs.y*stored_delta
-	nonrolling.rotation.y += turn*turn_speed*stored_delta;
+	camera_angle += turn*turn_speed*stored_delta;
+	nonrolling.position = position
+	nonrolling.rotation.y = camera_angle
 	
-	if position.y < (warp_height * player.size):
+	if position.y < (-10):
 		emergency_warp(state)
 	nonrolling.position = position
 	slow_down(stored_delta, state)
@@ -62,7 +69,7 @@ func inputs_advanced():
 	vertical = (leftSide.y + rightSide.y)/2;
 	
 func emergency_warp(state: PhysicsDirectBodyState3D):
-	position = Vector3.ZERO
+	position = emergency_pos
 	state.linear_velocity = Vector3.ZERO
 	state.angular_velocity = Vector3.ZERO
 	last_vel = Vector3.ZERO

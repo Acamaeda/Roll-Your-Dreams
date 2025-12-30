@@ -1,6 +1,5 @@
-extends Node3D
+extends Node
 
-@export var size: float = 1.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

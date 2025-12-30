@@ -1,7 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://ddvlg8t52ji41"]
+[gd_scene load_steps=11 format=3 uid="uid://d37a1hkqxg1aw"]
 
-[ext_resource type="Script" uid="uid://bt6nakmxinsvh" path="res://Gameplay/Player/player.gd" id="1_1rerk"]
-[ext_resource type="Script" uid="uid://drq8xkxw2ds7h" path="res://Gameplay/Player/ball.gd" id="2_wonpf"]
+[ext_resource type="Script" uid="uid://drq8xkxw2ds7h" path="res://Engine/Gameplay/Player/ball.gd" id="1_gvvae"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_wonpf"]
 bounce = 0.5
@@ -34,27 +33,24 @@ material = SubResource("StandardMaterial3D_0jfm5")
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_wonpf"]
 
-[node name="Player" type="Node3D"]
-script = ExtResource("1_1rerk")
+[node name="Ball" type="RigidBody3D"]
+mass = 100.0
+physics_material_override = SubResource("PhysicsMaterial_wonpf")
+script = ExtResource("1_gvvae")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_0jfm5")
+debug_color = Color(3.946722e-06, 0.58577627, 0.7770228, 0.41960785)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_1rerk")
+skeleton = NodePath("../..")
+
+[node name="Groundcast" type="ShapeCast3D" parent="."]
+shape = SubResource("SphereShape3D_wonpf")
 
 [node name="Nonrolling" type="Node3D" parent="."]
 
 [node name="Camera3D" type="Camera3D" parent="Nonrolling"]
 transform = Transform3D(1, 0, 0, 0, 0.8660254, 0.49999997, 0, -0.5, 0.8660253, 0, 1.8, 2)
 current = true
-
-[node name="Ball" type="RigidBody3D" parent="."]
-mass = 100.0
-physics_material_override = SubResource("PhysicsMaterial_wonpf")
-script = ExtResource("2_wonpf")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Ball"]
-shape = SubResource("SphereShape3D_0jfm5")
-debug_color = Color(3.946722e-06, 0.58577627, 0.7770228, 0.41960785)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Ball"]
-mesh = SubResource("SphereMesh_1rerk")
-skeleton = NodePath("../..")
-
-[node name="Groundcast" type="ShapeCast3D" parent="Ball"]
-shape = SubResource("SphereShape3D_wonpf")

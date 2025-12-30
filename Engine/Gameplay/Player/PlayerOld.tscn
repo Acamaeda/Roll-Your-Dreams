@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://ddvlg8t52ji41"]
+
+[ext_resource type="Script" uid="uid://bt6nakmxinsvh" path="res://Engine/Gameplay/Player/player.gd" id="1_1rerk"]
+[ext_resource type="PackedScene" uid="uid://d37a1hkqxg1aw" path="res://Engine/Gameplay/Player/PlayerBall.tscn" id="2_5324u"]
+
+[node name="Player" type="Node3D" node_paths=PackedStringArray("player_body")]
+script = ExtResource("1_1rerk")
+player_body = NodePath("")
+
+[node name="Ball" parent="." instance=ExtResource("2_5324u")]
