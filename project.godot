@@ -15,6 +15,10 @@ run/main_scene="uid://d4caxcliyyuir"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[global_group]
+
+Player=""
+
 [input]
 
 Up1={
@@ -65,6 +69,20 @@ Down2={
 , Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":-1,"axis":3,"axis_value":1.0,"script":null)
 ]
 }
+
+[layer_names]
+
+3d_physics/layer_1="Default"
+3d_physics/layer_2="Player"
+3d_physics/layer_3="Unrollable"
+3d_physics/layer_4="Rollable"
+3d_physics/layer_5="Collector"
+
+[physics]
+
+3d/physics_engine="Jolt Physics"
+jolt_physics_3d/limits/max_linear_velocity=5.0000000000000016e+73
+jolt_physics_3d/limits/max_bodies=20240
 
 [rendering]
 
