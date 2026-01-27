@@ -30,6 +30,5 @@ func _on_player_size_change(player_size, rollup_size):
 		body.set_collision_mask_value(2, true)
 		body.set_collision_layer_value(5, false)
 
-
-
+func rolled_up():
 	pass

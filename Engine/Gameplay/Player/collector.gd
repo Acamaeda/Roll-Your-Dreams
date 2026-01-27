@@ -36,4 +36,16 @@ func _on_body_entered(other):
 	if (!rollup):
 		return
 	add_size(rollup.size)
+	absorb(other)	
 	other.queue_free()
+
+func absorb(other):
+	var absorbed = load("res://Engine/Gameplay/Rollable/RolledObject.tscn").instantiate()
+	absorbed.transform = other.transform
+	absorbed.player = player_body
+	absorbed.size = size
+	
+	player_body.get_parent().add_child(absorbed)
+	for child in other.get_children():
+		if (child is VisualInstance3D):
+			child.reparent(absorbed, true)

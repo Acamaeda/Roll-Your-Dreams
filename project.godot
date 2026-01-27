@@ -81,7 +81,7 @@ Down2={
 [physics]
 
 3d/physics_engine="Jolt Physics"
-jolt_physics_3d/limits/max_linear_velocity=5.0000000000000016e+73
+jolt_physics_3d/limits/max_linear_velocity=5.000000000000003e+73
 jolt_physics_3d/limits/max_bodies=20240
 
 [rendering]

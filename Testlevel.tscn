@@ -1,7 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://d4caxcliyyuir"]
+[gd_scene load_steps=11 format=3 uid="uid://d4caxcliyyuir"]
 
 [ext_resource type="PackedScene" uid="uid://d37a1hkqxg1aw" path="res://Engine/Gameplay/Player/PlayerBall.tscn" id="2_7vbj4"]
 [ext_resource type="PackedScene" uid="uid://b7rsw0wfluk7m" path="res://Engine/Gameplay/Rollable/Rollable.tscn" id="2_vgkgg"]
+[ext_resource type="Script" uid="uid://1h1gtoxmgp6" path="res://Engine/Events/Triggers/Immediately.gd" id="3_rilvn"]
+[ext_resource type="Script" uid="uid://26diodtw1i6e" path="res://Engine/Events/Actions/DebugAction.gd" id="4_btw46"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_noarx"]
 size = Vector3(100, 1, 100)
@@ -98,7 +100,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7577868, 2.3723147, 4.97435
 [node name="Nonrolling" parent="Player" index="2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7577868, 2.3723147, 4.9743576)
 
-[node name="Collector" parent="Player" index="3" node_paths=PackedStringArray("player_body")]
-player_body = NodePath("..")
+[node name="Node" type="Node" parent="."]
+script = ExtResource("3_rilvn")
+
+[node name="Node" type="Node" parent="Node"]
+script = ExtResource("4_btw46")
+print_message = "Yee"
+
+[node name="Node2" type="Node" parent="Node"]
+script = ExtResource("4_btw46")
+print_message = "Yeeay"
 
 [editable path="Player"]
