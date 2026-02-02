@@ -11,10 +11,6 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
 func trigger():
 	active = true
 	for child in get_children():
@@ -32,6 +28,5 @@ func check_done():
 			if child.active:
 				return
 		active = false
-		print("yay")
 		if !repeatable:
 			queue_free()

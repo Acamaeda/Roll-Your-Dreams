@@ -2,6 +2,11 @@ extends Node
 var size = 1.0
 var body : PhysicsBody3D
 var player : Node
+@export var object_name: String = "Thing"
+@export var description: String = "Some kind of funny detail."
+@export var creator: String = "Somebody"
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	

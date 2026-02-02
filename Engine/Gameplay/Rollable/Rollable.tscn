@@ -24,3 +24,6 @@ surface_material_override/0 = SubResource("StandardMaterial3D_i1jod")
 
 [node name="Rollup" type="Node" parent="."]
 script = ExtResource("1_fl164")
+object_name = "Green Cube"
+description = "The only way it could be more generic is if the corners were rounded."
+creator = "Acamaeda"
