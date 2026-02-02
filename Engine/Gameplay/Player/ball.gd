@@ -23,7 +23,6 @@ var emergency_pos
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	set_editable_instance(self, true)
 	nonrolling = get_node("Nonrolling")
 	collector = get_node("Collector")
 
@@ -115,6 +114,7 @@ func slow_down(delta: float, state: PhysicsDirectBodyState3D, change, inputs):
 	
 	next = next.limit_length(state.angular_velocity.length())
 	next = next.limit_length(max(curr_max, last_vel.length() - delta * rolling_force * (1+inputs.length())/2))
+
 	state.angular_velocity = next
 	
 	

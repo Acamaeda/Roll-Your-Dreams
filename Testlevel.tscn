@@ -1,9 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://d4caxcliyyuir"]
+[gd_scene load_steps=14 format=3 uid="uid://d4caxcliyyuir"]
 
 [ext_resource type="PackedScene" uid="uid://d37a1hkqxg1aw" path="res://Engine/Gameplay/Player/PlayerBall.tscn" id="2_7vbj4"]
+[ext_resource type="Script" uid="uid://drceo5tcl63oe" path="res://Engine/Gameplay/UI/SizeDisplay.gd" id="2_jl21i"]
 [ext_resource type="PackedScene" uid="uid://b7rsw0wfluk7m" path="res://Engine/Gameplay/Rollable/Rollable.tscn" id="2_vgkgg"]
 [ext_resource type="Script" uid="uid://1h1gtoxmgp6" path="res://Engine/Events/Triggers/Immediately.gd" id="3_rilvn"]
 [ext_resource type="Script" uid="uid://26diodtw1i6e" path="res://Engine/Events/Actions/DebugAction.gd" id="4_btw46"]
+[ext_resource type="PackedScene" uid="uid://ctcv6q11r7du3" path="res://Engine/Gameplay/Level/Zone.tscn" id="4_k1lkf"]
+[ext_resource type="PackedScene" uid="uid://remwdgq0ymi2" path="res://Engine/Gameplay/Level/level_control.tscn" id="6_jl21i"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_noarx"]
 size = Vector3(100, 1, 100)
@@ -49,66 +52,73 @@ mesh = SubResource("BoxMesh_a0tk4")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.99997354, 0, -0.0072779586, 0.0060000415, -0.5659891, 0.8243909, -0.004119245, -0.8244127, -0.5659741, -12.963337, 14.23407, 3.0084782)
 
-[node name="Rollable" parent="." instance=ExtResource("2_vgkgg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.177, 0, 3.586)
-
-[node name="Rollable2" parent="." instance=ExtResource("2_vgkgg")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1.177, 0, 5.611884)
-
-[node name="Rollable5" parent="." instance=ExtResource("2_vgkgg")]
-transform = Transform3D(0.33, 0, 0, 0, 0.33, 0, 0, 0, 0.33, -2.386917, 0, 6.7868667)
-
-[node name="Rollable6" parent="." instance=ExtResource("2_vgkgg")]
-transform = Transform3D(0.33, 0, 0, 0, 0.33, 0, 0, 0, 0.33, -2.386917, 0, 8.514002)
-
-[node name="Rollable7" parent="." instance=ExtResource("2_vgkgg")]
-transform = Transform3D(0.33, 0, 0, 0, 0.33, 0, 0, 0, 0.33, -0.9537773, 0, 8.514002)
-
-[node name="Rollable8" parent="." instance=ExtResource("2_vgkgg")]
-transform = Transform3D(0.33, 0, 0, 0, 0.33, 0, 0, 0, 0.33, -0.9537773, 0, 7.1323347)
-
-[node name="Rollable9" parent="." instance=ExtResource("2_vgkgg")]
-transform = Transform3D(0.33, 0, 0, 0, 0.33, 0, 0, 0, 0.33, -3.6463385, 0, 7.1323347)
-
-[node name="Rollable10" parent="." instance=ExtResource("2_vgkgg")]
-transform = Transform3D(0.33, 0, 0, 0, 0.33, 0, 0, 0, 0.33, -3.6463385, 0, 8.218033)
-
-[node name="Rollable11" parent="." instance=ExtResource("2_vgkgg")]
-transform = Transform3D(0.33, 0, 0, 0, 0.33, 0, 0, 0, 0.33, -3.6463385, 0, 9.290543)
-
-[node name="Rollable12" parent="." instance=ExtResource("2_vgkgg")]
-transform = Transform3D(0.33, 0, 0, 0, 0.33, 0, 0, 0, 0.33, -1.5942144, 0, 9.290543)
-
-[node name="Rollable13" parent="." instance=ExtResource("2_vgkgg")]
-transform = Transform3D(0.33, 0, 0, 0, 0.33, 0, 0, 0, 0.33, -1.5942144, 0, 10.539627)
-
-[node name="Rollable14" parent="." instance=ExtResource("2_vgkgg")]
-transform = Transform3D(0.33, 0, 0, 0, 0.33, 0, 0, 0, 0.33, -3.5948248, 0, 10.539627)
-
-[node name="Rollable15" parent="." instance=ExtResource("2_vgkgg")]
-transform = Transform3D(0.33, 0, 0, 0, 0.33, 0, 0, 0, 0.33, -3.5948248, 0, 11.684982)
-
-[node name="Rollable16" parent="." instance=ExtResource("2_vgkgg")]
-transform = Transform3D(0.33, 0, 0, 0, 0.33, 0, 0, 0, 0.33, -0.95444393, 0, 11.684982)
-
-[node name="Rollable17" parent="." instance=ExtResource("2_vgkgg")]
-transform = Transform3D(0.33, 0, 0, 0, 0.33, 0, 0, 0, 0.33, -0.95444393, 0, 11.684982)
-
 [node name="Player" parent="." instance=ExtResource("2_7vbj4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7577868, 2.3723147, 4.9743576)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7577868, 0.8107629, 4.9743576)
 
 [node name="Nonrolling" parent="Player" index="2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7577868, 2.3723147, 4.9743576)
 
-[node name="Node" type="Node" parent="."]
+[node name="Test" type="Node" parent="."]
+script = ExtResource("2_jl21i")
+
+[node name="Event" type="Node" parent="."]
 script = ExtResource("3_rilvn")
 
-[node name="Node" type="Node" parent="Node"]
+[node name="Node" type="Node" parent="Event"]
 script = ExtResource("4_btw46")
 print_message = "Yee"
 
-[node name="Node2" type="Node" parent="Node"]
+[node name="Node2" type="Node" parent="Event"]
 script = ExtResource("4_btw46")
 print_message = "Yeeay"
+
+[node name="Zone" parent="." instance=ExtResource("4_k1lkf")]
+
+[node name="Rollable" parent="Zone" instance=ExtResource("2_vgkgg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.177, 0, 3.586)
+
+[node name="Rollable2" parent="Zone" instance=ExtResource("2_vgkgg")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1.177, 0, 5.611884)
+
+[node name="Rollable5" parent="Zone" instance=ExtResource("2_vgkgg")]
+transform = Transform3D(0.33, 0, 0, 0, 0.33, 0, 0, 0, 0.33, -2.386917, 0, 6.7868667)
+
+[node name="Rollable6" parent="Zone" instance=ExtResource("2_vgkgg")]
+transform = Transform3D(0.33, 0, 0, 0, 0.33, 0, 0, 0, 0.33, -2.386917, 0, 8.514002)
+
+[node name="Rollable7" parent="Zone" instance=ExtResource("2_vgkgg")]
+transform = Transform3D(0.33, 0, 0, 0, 0.33, 0, 0, 0, 0.33, -0.9537773, 0, 8.514002)
+
+[node name="Rollable8" parent="Zone" instance=ExtResource("2_vgkgg")]
+transform = Transform3D(0.33, 0, 0, 0, 0.33, 0, 0, 0, 0.33, -0.9537773, 0, 7.1323347)
+
+[node name="Rollable9" parent="Zone" instance=ExtResource("2_vgkgg")]
+transform = Transform3D(0.33, 0, 0, 0, 0.33, 0, 0, 0, 0.33, -3.6463385, 0, 7.1323347)
+
+[node name="Rollable10" parent="Zone" instance=ExtResource("2_vgkgg")]
+transform = Transform3D(0.33, 0, 0, 0, 0.33, 0, 0, 0, 0.33, -3.6463385, 0, 8.218033)
+
+[node name="Rollable11" parent="Zone" instance=ExtResource("2_vgkgg")]
+transform = Transform3D(0.33, 0, 0, 0, 0.33, 0, 0, 0, 0.33, -3.6463385, 0, 9.290543)
+
+[node name="Rollable12" parent="Zone" instance=ExtResource("2_vgkgg")]
+transform = Transform3D(0.33, 0, 0, 0, 0.33, 0, 0, 0, 0.33, -1.5942144, 0, 9.290543)
+
+[node name="Rollable13" parent="Zone" instance=ExtResource("2_vgkgg")]
+transform = Transform3D(0.33, 0, 0, 0, 0.33, 0, 0, 0, 0.33, -1.5942144, 0, 10.539627)
+
+[node name="Rollable14" parent="Zone" instance=ExtResource("2_vgkgg")]
+transform = Transform3D(0.33, 0, 0, 0, 0.33, 0, 0, 0, 0.33, -3.5948248, 0, 10.539627)
+
+[node name="Rollable15" parent="Zone" instance=ExtResource("2_vgkgg")]
+transform = Transform3D(0.33, 0, 0, 0, 0.33, 0, 0, 0, 0.33, -3.5948248, 0, 11.684982)
+
+[node name="Rollable16" parent="Zone" instance=ExtResource("2_vgkgg")]
+transform = Transform3D(0.33, 0, 0, 0, 0.33, 0, 0, 0, 0.33, -0.95444393, 0, 11.684982)
+
+[node name="Rollable17" parent="Zone" instance=ExtResource("2_vgkgg")]
+transform = Transform3D(0.33, 0, 0, 0, 0.33, 0, 0, 0, 0.33, -0.95444393, 0, 11.684982)
+
+[node name="LevelControl" parent="." instance=ExtResource("6_jl21i")]
 
 [editable path="Player"]

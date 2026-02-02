@@ -15,6 +15,10 @@ run/main_scene="uid://d4caxcliyyuir"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+UI="*res://addons/PackedUi/UI/UI.tscn"
+
 [global_group]
 
 Player=""
@@ -81,7 +85,7 @@ Down2={
 [physics]
 
 3d/physics_engine="Jolt Physics"
-jolt_physics_3d/limits/max_linear_velocity=5.000000000000003e+73
+jolt_physics_3d/limits/max_linear_velocity=5.000000000000004e+73
 jolt_physics_3d/limits/max_bodies=20240
 
 [rendering]
