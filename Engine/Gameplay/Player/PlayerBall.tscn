@@ -1,12 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://d37a1hkqxg1aw"]
+[gd_scene load_steps=11 format=3 uid="uid://d37a1hkqxg1aw"]
 
 [ext_resource type="Script" uid="uid://drq8xkxw2ds7h" path="res://Engine/Gameplay/Player/ball.gd" id="1_gvvae"]
 [ext_resource type="Script" uid="uid://bt6nakmxinsvh" path="res://Engine/Gameplay/Player/collector.gd" id="2_ok2uk"]
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_wonpf"]
-friction = 100.0
-rough = true
-bounce = 0.5
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_0jfm5"]
 
@@ -39,8 +34,6 @@ material = SubResource("StandardMaterial3D_0jfm5")
 [node name="Player" type="RigidBody3D" groups=["Player"]]
 collision_layer = 2
 collision_mask = 5
-mass = 100.0
-physics_material_override = SubResource("PhysicsMaterial_wonpf")
 script = ExtResource("1_gvvae")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -62,7 +55,7 @@ current = true
 collision_layer = 16
 collision_mask = 8
 script = ExtResource("2_ok2uk")
-player_body = NodePath("..")
+player_body = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Collector"]
 transform = Transform3D(1.05, 0, 0, 0, 1.05, 0, 0, 0, 1.05, 0, 0, 0)

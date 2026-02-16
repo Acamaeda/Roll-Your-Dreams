@@ -1,2 +1,10 @@
 # Roll-Your-Dream
-Very WIP Katamari fangame engine
+Very WIP roll-and-grow game engine.
+
+No coding is required to create levels, but a lot will be possible with a variety of flexible tools!
+
+TODO: Something on playing levels
+
+To get started on learning to use RYD, [go here](res://Documentation/Introduction.md)
+
+Note: Things in the assets folder may be under different licenses.

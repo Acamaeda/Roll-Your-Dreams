@@ -1,6 +1,6 @@
+class_name Trigger
 extends "res://Engine/Events/Triggers/EventBase.gd"
 @export var repeatable: bool = false
-const Action = preload ("res://Engine/Events/Actions/Action.gd")
 
 var waiting_for_done = false
 
@@ -12,6 +12,8 @@ func _ready() -> void:
 
 
 func trigger():
+	if (active):
+		return
 	active = true
 	for child in get_children():
 		if child is Action:
@@ -19,6 +21,12 @@ func trigger():
 				await child.act()
 			else: 
 				child.act()
+		if child is ConditionTrigger:
+			if (await child.check_condition()):
+				if(child.wait_for_complete):
+					await child.act()
+				else: 
+					child.act()
 	waiting_for_done = true
 	check_done()
 

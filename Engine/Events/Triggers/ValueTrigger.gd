@@ -1,8 +1,8 @@
+class_name ValueTrigger
 extends "res://Engine/Events/Conditions/ConditionTrigger.gd"
 @export_enum("Greater than", "Less than", "Equal to", "GTE", "LTE")var mode: int
 @export var target: float = 1.0
 
-const ConditionTrigger = preload ("res://Engine/Events/Conditions/ConditionTrigger.gd")
 
 var value = 0
 var resetting = false

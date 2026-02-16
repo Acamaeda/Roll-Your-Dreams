@@ -1,5 +1,3 @@
-@tool
-
 extends RigidBody3D
 var nonrolling : Node3D
 var collector : Node3D

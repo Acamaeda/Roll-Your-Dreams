@@ -1,6 +1,6 @@
+class_name ConditionTrigger
 extends "res://Engine/Events/Triggers/Trigger.gd"
 var is_conditional = false
-const Trigger = preload ("res://Engine/Events/Triggers/Trigger.gd")
 
 
 
