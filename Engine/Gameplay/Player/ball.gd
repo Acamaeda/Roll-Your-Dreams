@@ -130,9 +130,5 @@ func slow_down(delta: float, state: PhysicsDirectBodyState3D, change, inputs):
 		next = Vector3.ZERO
 		set_collision_mask_value(6, true)
 
-
 	state.angular_velocity = next
-	
-
-	
 	last_vel = next

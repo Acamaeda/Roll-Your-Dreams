@@ -1,3 +1,9 @@
-[gd_scene format=3 uid="uid://remwdgq0ymi2"]
+[gd_scene load_steps=2 format=3 uid="uid://remwdgq0ymi2"]
+
+[ext_resource type="Script" uid="uid://bqiqdb8qjkgs2" path="res://Engine/Gameplay/Level/freeze_control.gd" id="1_ykx7o"]
 
 [node name="LevelControl" type="Node"]
+
+[node name="FreezeControl" type="Node" parent="."]
+process_mode = 3
+script = ExtResource("1_ykx7o")

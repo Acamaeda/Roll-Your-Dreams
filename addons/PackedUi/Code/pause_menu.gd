@@ -64,7 +64,3 @@ func _back_btn_pressed() -> void:
 func _main_menu_btn_pressed() -> void:
 	UI.ReturnToMainMenu.emit()
 	UI.ToggleUi.emit("main_menu", true, id)
-
-func _process(_delta):
-	if (Input.is_action_just_pressed("Pause")):
-		UI.TogglePauseGame.emit(true)
