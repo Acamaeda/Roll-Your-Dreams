@@ -42,5 +42,5 @@ func value_changed(val):
 	if (check_condition()):
 		trigger()
 
-func value_changed2(val, throwaway):
+func value_changed2(val, _throwaway):
 	value_changed(val)

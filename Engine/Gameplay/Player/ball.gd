@@ -1,6 +1,8 @@
 extends RigidBody3D
 var nonrolling : Node3D
 var collector : Node3D
+var ghost_floor : Node3D
+
 var rolling_force = 60
 var horizontal_mult = 0.5
 var back_mult = 0.3
@@ -9,6 +11,7 @@ var slow_force = 40
 var warp_height = -10
 var max_speed = 20
 var too_slow = 5
+var floor_angle = 0.5
 
 var horizontal = 0.0
 var vertical = 0.0
@@ -16,9 +19,9 @@ var turn = 0.0
 var last_vel = Vector3.ZERO
 var stored_delta = 0.0167
 var camera_angle = 0
+var grounded = false
 
 var emergency_pos
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	nonrolling = get_node("Nonrolling")
@@ -34,9 +37,10 @@ func _process(delta: float) -> void:
 	stored_delta = delta
 
 func _integrate_forces(state: PhysicsDirectBodyState3D):
+	set_collision_mask_value(6, false)
 	update_size();
-	if Engine.is_editor_hint():
-		return
+	check_collisions(state)
+
 	inputs_advanced();
 	var inputs = Vector2(vertical, horizontal * horizontal_mult)
 	if vertical > 0:
@@ -57,7 +61,14 @@ func _integrate_forces(state: PhysicsDirectBodyState3D):
 		emergency_warp(state)
 	nonrolling.position = position
 	slow_down(stored_delta, state, change, inputs)
-	
+
+func check_collisions(state : PhysicsDirectBodyState3D):
+	grounded=false
+	for i in range(0, state.get_contact_count()):
+		var c = state.get_contact_local_normal(i)
+		if (c.dot(Vector3.UP) > floor_angle):
+			grounded = true
+
 func update_size():
 	var size = collector.size
 	var big = Vector3(size, size, size)
@@ -98,6 +109,8 @@ func slow_down(delta: float, state: PhysicsDirectBodyState3D, change, inputs):
 	# Get an "intended" speed based on the change in velocity
 	var diff = change
 	var curr_max = max_speed * max(inputs.length(), back_mult)
+	if !grounded:
+		curr_max = curr_max / 2
 	var intended = diff.normalized() * curr_max 
 	intended = intended.limit_length(state.angular_velocity.length())
 	
@@ -113,8 +126,13 @@ func slow_down(delta: float, state: PhysicsDirectBodyState3D, change, inputs):
 	next = next.limit_length(state.angular_velocity.length())
 	next = next.limit_length(max(curr_max, last_vel.length() - delta * rolling_force * (1+inputs.length())/2))
 
+	if (inputs.length() == 0 && grounded && state.angular_velocity.length() < delta * rolling_force * 0.3):
+		next = Vector3.ZERO
+		set_collision_mask_value(6, true)
+
+
 	state.angular_velocity = next
 	
-	
+
 	
 	last_vel = next

@@ -1,7 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://d37a1hkqxg1aw"]
+[gd_scene load_steps=13 format=3 uid="uid://d37a1hkqxg1aw"]
 
 [ext_resource type="Script" uid="uid://drq8xkxw2ds7h" path="res://Engine/Gameplay/Player/ball.gd" id="1_gvvae"]
 [ext_resource type="Script" uid="uid://bt6nakmxinsvh" path="res://Engine/Gameplay/Player/collector.gd" id="2_ok2uk"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ok2uk"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_0jfm5"]
 
@@ -29,11 +31,17 @@ albedo_texture = SubResource("CurveXYZTexture_4s7gy")
 [sub_resource type="SphereMesh" id="SphereMesh_1rerk"]
 material = SubResource("StandardMaterial3D_0jfm5")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_ok2uk"]
+size = Vector3(1, 0.02, 1)
+
 [sub_resource type="SphereShape3D" id="SphereShape3D_3s7gs"]
 
 [node name="Player" type="RigidBody3D" groups=["Player"]]
 collision_layer = 2
 collision_mask = 5
+physics_material_override = SubResource("PhysicsMaterial_ok2uk")
+contact_monitor = true
+max_contacts_reported = 10
 script = ExtResource("1_gvvae")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -51,11 +59,19 @@ top_level = true
 transform = Transform3D(1, 0, 0, 0, 0.8660254, 0.49999997, 0, -0.5, 0.8660253, 0, 1.8, 2)
 current = true
 
+[node name="Ghost floor" type="StaticBody3D" parent="Nonrolling"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.51, 0)
+collision_layer = 32
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Nonrolling/Ghost floor"]
+shape = SubResource("BoxShape3D_ok2uk")
+
 [node name="Collector" type="Area3D" parent="." node_paths=PackedStringArray("player_body")]
 collision_layer = 16
 collision_mask = 8
 script = ExtResource("2_ok2uk")
-player_body = NodePath("")
+player_body = NodePath("..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Collector"]
 transform = Transform3D(1.05, 0, 0, 0, 1.05, 0, 0, 0, 1.05, 0, 0, 0)

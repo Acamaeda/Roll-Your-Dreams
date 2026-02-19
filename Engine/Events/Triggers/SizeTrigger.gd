@@ -8,8 +8,3 @@ func _ready() -> void:
 	player.get_node("Collector").size_changed.connect(value_changed2)
 
 	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass

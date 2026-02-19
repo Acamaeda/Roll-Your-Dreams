@@ -20,10 +20,10 @@ func update_scale():
 	body.scale = Vector3(size, size, size)
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
-func _on_player_size_change(player_size, rollup_size):
+func _on_player_size_change(_player_size, rollup_size):
 	if (rollup_size > size):
 		body.set_collision_layer_value(3, false)
 		body.set_collision_layer_value(4, true)
