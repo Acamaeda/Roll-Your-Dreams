@@ -19,6 +19,11 @@ config/icon="res://icon.svg"
 
 UI="*res://addons/PackedUi/UI/UI.tscn"
 
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+
 [global_group]
 
 Player=""

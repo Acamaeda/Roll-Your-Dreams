@@ -86,6 +86,7 @@ func _process(delta: float) -> void:
 
 # Small popups only receive a text to display and an icon/image. The image is automatically resized to fit the popup. If no icon is received, it is not displayed.
 func _display_small_popup(_text:String = "", _icon:CompressedTexture2D = null) -> void:
+	print ("momo")
 	if _icon:
 		icon_sprite.texture = _icon
 		icon_control.show()

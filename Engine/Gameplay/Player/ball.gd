@@ -83,7 +83,7 @@ func inputs_advanced():
 	var v2 = Input.get_axis("Up2", "Down2")
 	var leftSide = Vector2(h1, v1).limit_length(1);
 	var rightSide = Vector2(h2, v2).limit_length(1)
-	
+
 	if (leftSide.length() == 0 || rightSide.length() == 0): #Only move if both are active
 		horizontal = 0
 		vertical = 0

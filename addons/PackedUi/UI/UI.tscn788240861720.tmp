@@ -38,8 +38,8 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("2_dhl62")
-game_title = "Roll Your Dreams"
-menu_options = Array[String](["Play", "Settings"])
+game_title = "game_title"
+menu_options = Array[String](["Play", "Settings", "Credits"])
 background_color = Color(0.242052, 0.18342, 0.265668, 1)
 background = NodePath("background")
 id = "main_menu"
@@ -248,15 +248,14 @@ layout_mode = 2
 unique_name_in_owner = true
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 0
-offset_left = 931.0
-offset_top = 573.0
-offset_right = 1131.0
-offset_bottom = 619.0
+offset_left = 1002.0
+offset_top = 624.0
+offset_right = 1202.0
+offset_bottom = 670.0
 theme = ExtResource("3_ohvov")
 text = "Back"
 
 [node name="PauseMenu" type="Control" parent="." node_paths=PackedStringArray("background") groups=["PauseMenu"]]
-visible = false
 custom_minimum_size = Vector2(1280, 720)
 layout_mode = 3
 anchors_preset = 0
@@ -350,7 +349,6 @@ offset_left = 3.0
 offset_right = 1283.0
 offset_bottom = 720.0
 script = ExtResource("9_y8v47")
-popup_timer = 5.0
 
 [node name="small_popup" type="PanelContainer" parent="Popups"]
 unique_name_in_owner = true

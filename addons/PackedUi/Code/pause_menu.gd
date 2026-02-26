@@ -33,19 +33,19 @@ func _ready() -> void:
 	main_menu_btn.pressed.connect(_main_menu_btn_pressed)
 	
 	if set_position_of_buttons:
-		var offset_count:int = 0
-		var offset = pause_back_btn.size.x + 20
-		pause_back_btn.position = (Vector2(UI.width, UI.height) * 0.95) - pause_back_btn.size
+		var offset_count = 2
+		var offset = pause_back_btn.size.x + 20.0
+		pause_back_btn.position = (Vector2(UI.width, UI.height/2)) - pause_back_btn.size/2 - Vector2(offset * offset_count, 0)
 
 		if options_menu_button:
 			offset_count += 1
 
-		settings_btn.position = (Vector2(UI.width, UI.height) * 0.95) - settings_btn.size - Vector2(offset * offset_count, 0)
+		settings_btn.position = (Vector2(UI.width, UI.height/2)) - settings_btn.size/2 - Vector2(offset * offset_count, 0)
 
 		if main_menu_button:
 			offset_count += 1
 
-		main_menu_btn.position = (Vector2(UI.width, UI.height) * 0.95) - main_menu_btn.size - Vector2(offset * offset_count, 0)
+		main_menu_btn.position = (Vector2(UI.width, UI.height/2)) - main_menu_btn.size/2 - Vector2(offset * offset_count, 0)
 	
 	if not options_menu_button:
 		settings_btn.hide()
