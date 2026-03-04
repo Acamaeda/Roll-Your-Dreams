@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://mkdj7ltop5nx"]
+
+[ext_resource type="Script" uid="uid://dx6eyklyhmrga" path="res://Engine/Gameplay/Rollable/rollable.gd" id="1_53gsg"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_53gsg"]
+size = Vector3(4, 3, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_fl164"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i1jod"]
+albedo_color = Color(0.003921569, 1, 0, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jqcvx"]
+size = Vector3(1, 3, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kff8m"]
+size = Vector3(4, 1, 1)
+
+[node name="Rollable" type="StaticBody3D" unique_id=1036713240]
+collision_layer = 4
+collision_mask = 15
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=871267849]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+shape = SubResource("BoxShape3D_53gsg")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2044823450]
+transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
+mesh = SubResource("BoxMesh_fl164")
+surface_material_override/0 = SubResource("StandardMaterial3D_i1jod")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1819045120]
+transform = Transform3D(1, 0, 0, 0, 3, 0, 0, 0, 1, 1.5, 1.5, 0)
+mesh = SubResource("BoxMesh_fl164")
+surface_material_override/0 = SubResource("StandardMaterial3D_i1jod")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=954326285]
+transform = Transform3D(1, 0, 0, 0, 3, 0, 0, 0, 1, -1.5, 1.5, 0)
+mesh = SubResource("BoxMesh_fl164")
+surface_material_override/0 = SubResource("StandardMaterial3D_i1jod")
+
+[node name="Rollable" type="Node" parent="." unique_id=2084382761]
+script = ExtResource("1_53gsg")
+object_name = "Blocky Arch"
+description = "It could be straight out of Block Game."
+creator = "Acamaeda"
+base_size = 2.5
+
+[node name="DetailedCollision" type="StaticBody3D" parent="." unique_id=1343532519]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DetailedCollision" unique_id=406270739]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 1.5, 0)
+shape = SubResource("BoxShape3D_jqcvx")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="DetailedCollision" unique_id=1879055249]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 1.5, 0)
+shape = SubResource("BoxShape3D_jqcvx")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="DetailedCollision" unique_id=176776810]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
+shape = SubResource("BoxShape3D_kff8m")

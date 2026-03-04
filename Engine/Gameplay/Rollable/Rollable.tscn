@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://b7rsw0wfluk7m"]
+[gd_scene format=3 uid="uid://b7rsw0wfluk7m"]
 
-[ext_resource type="Script" uid="uid://dx6eyklyhmrga" path="res://Engine/Gameplay/Rollable/Rollup.gd" id="1_fl164"]
+[ext_resource type="Script" uid="uid://dx6eyklyhmrga" path="res://Engine/Gameplay/Rollable/rollable.gd" id="1_fl164"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jqcvx"]
 
@@ -9,21 +9,27 @@
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i1jod"]
 albedo_color = Color(0.003921569, 1, 0, 1)
 
-[node name="Rollable" type="StaticBody3D"]
+[node name="Rollable" type="StaticBody3D" unique_id=1036713240]
 collision_layer = 4
 collision_mask = 15
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=871267849]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 shape = SubResource("BoxShape3D_jqcvx")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2044823450]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 mesh = SubResource("BoxMesh_fl164")
 surface_material_override/0 = SubResource("StandardMaterial3D_i1jod")
 
-[node name="Rollup" type="Node" parent="."]
+[node name="Rollable" type="Node" parent="." unique_id=2084382761]
 script = ExtResource("1_fl164")
 object_name = "Green Cube"
 description = "The only way it could be more generic is if the corners were rounded."
 creator = "Acamaeda"
+
+[node name="DetailedCollision" type="StaticBody3D" parent="." unique_id=1343532519]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DetailedCollision" unique_id=406270739]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_jqcvx")

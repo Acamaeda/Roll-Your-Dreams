@@ -20,7 +20,7 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if (size != old_size):
 		size_changed.emit(size, size / rollup_ratio)
 		old_size = size
@@ -32,7 +32,8 @@ func add_size(amount):
 	size = pow(volume, 1/exponent)
 	
 func _on_body_entered(other):
-	var rollup = other.get_node("Rollup")
+	print("momo")
+	var rollup = other.get_node("Rollable")
 	if (!rollup):
 		return
 	add_size(rollup.size)

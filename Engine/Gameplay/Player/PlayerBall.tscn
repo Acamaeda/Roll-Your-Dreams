@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://d37a1hkqxg1aw"]
+[gd_scene format=3 uid="uid://d37a1hkqxg1aw"]
 
 [ext_resource type="Script" uid="uid://drq8xkxw2ds7h" path="res://Engine/Gameplay/Player/ball.gd" id="1_gvvae"]
 [ext_resource type="Script" uid="uid://bt6nakmxinsvh" path="res://Engine/Gameplay/Player/collector.gd" id="2_ok2uk"]
@@ -36,7 +36,7 @@ size = Vector3(1, 0.02, 1)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_3s7gs"]
 
-[node name="Player" type="RigidBody3D" groups=["Player"]]
+[node name="Player" type="RigidBody3D" unique_id=1155221902 groups=["Player"]]
 collision_layer = 2
 collision_mask = 5
 physics_material_override = SubResource("PhysicsMaterial_ok2uk")
@@ -44,36 +44,36 @@ contact_monitor = true
 max_contacts_reported = 10
 script = ExtResource("1_gvvae")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1740465458]
 shape = SubResource("SphereShape3D_0jfm5")
 debug_color = Color(3.946722e-06, 0.58577627, 0.7770228, 0.41960785)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1938959127]
 mesh = SubResource("SphereMesh_1rerk")
 skeleton = NodePath("../..")
 
-[node name="Nonrolling" type="Node3D" parent="."]
+[node name="Nonrolling" type="Node3D" parent="." unique_id=677675216]
 top_level = true
 
-[node name="Camera3D" type="Camera3D" parent="Nonrolling"]
+[node name="Camera3D" type="Camera3D" parent="Nonrolling" unique_id=1851755613]
 transform = Transform3D(1, 0, 0, 0, 0.8660254, 0.49999997, 0, -0.5, 0.8660253, 0, 1.8, 2)
 current = true
 
-[node name="Ghost floor" type="StaticBody3D" parent="Nonrolling"]
+[node name="Ghost floor" type="StaticBody3D" parent="Nonrolling" unique_id=1750965162]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.51, 0)
 collision_layer = 32
 collision_mask = 0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Nonrolling/Ghost floor"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Nonrolling/Ghost floor" unique_id=828342974]
 shape = SubResource("BoxShape3D_ok2uk")
 
-[node name="Collector" type="Area3D" parent="." node_paths=PackedStringArray("player_body")]
+[node name="Collector" type="Area3D" parent="." unique_id=1608999626 node_paths=PackedStringArray("player_body")]
 collision_layer = 16
 collision_mask = 8
 script = ExtResource("2_ok2uk")
 player_body = NodePath("..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Collector"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Collector" unique_id=430733126]
 transform = Transform3D(1.05, 0, 0, 0, 1.05, 0, 0, 0, 1.05, 0, 0, 0)
 shape = SubResource("SphereShape3D_3s7gs")
 
