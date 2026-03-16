@@ -32,13 +32,13 @@ func add_size(amount):
 	size = pow(volume, 1/exponent)
 	
 func _on_body_entered(other):
-	print("momo")
 	var rollup = other.get_node("Rollable")
 	if (!rollup):
 		return
 	add_size(rollup.size)
+	rollup.rolled_up()
 	absorb(other)	
-	other.queue_free()
+	Utils.delete_node(other)
 
 func absorb(other):
 	var absorbed = load("res://Engine/Gameplay/Rollable/RolledObject.tscn").instantiate()

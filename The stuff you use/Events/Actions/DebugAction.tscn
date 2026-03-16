@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://bbkqf52g12u7g"]
+
+[ext_resource type="Script" uid="uid://26diodtw1i6e" path="res://Engine/Events/Actions/DebugAction.gd" id="1_jben0"]
+
+[node name="DebugAction" type="Node" unique_id=1720123724]
+script = ExtResource("1_jben0")
+print_message = "Beep boop"

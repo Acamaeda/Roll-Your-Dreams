@@ -9,7 +9,6 @@ var condition_failed = false
 func _ready() -> void:
 	for child in get_children():
 		child.finished.connect(check_done)
-	pass # Replace with function body.
 
 
 func trigger():
@@ -43,5 +42,11 @@ func check_done():
 			if child.active:
 				return
 		active = false
+		if get_parent() is Trigger:
+			finished.emit()
+			return
 		if !repeatable:
 			queue_free()
+
+
+	

@@ -9,6 +9,7 @@ signal PopupSmall(text:String, icon:Texture2D)
 signal PopupLarge(severity, title:String, text:String, popup_id:String, icon:CompressedTexture2D, timer:float)
 signal PopupResult(id:String, result:bool)
 signal ButtonPressed(id:String, from:String)
+signal dialogue_done(text)
 
 ## Setting your own theme here will make the menu more personalized. Please note that a lot of Type Variations are being used. Have a look at the default_theme.tres in the Packed Ui addon folder. A lot of Style Boxes are used and can be found in the StyleBoxes folder.
 @export var default_theme:Theme

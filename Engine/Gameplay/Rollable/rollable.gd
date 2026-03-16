@@ -3,6 +3,8 @@ var size = 1.0
 var scale = 1.0
 var body : PhysicsBody3D
 var player : Node
+signal onRollup
+
 @export var object_name: String = "Thing"
 @export var description: String = "Some kind of funny detail."
 @export var creator: String = "Somebody"
@@ -76,4 +78,4 @@ func _on_player_size_change(_player_size, rollup_size):
 		body.set_collision_mask_value(5, false)
 
 func rolled_up():
-	pass
+	onRollup.emit()

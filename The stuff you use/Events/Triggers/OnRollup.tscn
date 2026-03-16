@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://c8416hr3tx1qo"]
+
+[ext_resource type="Script" uid="uid://cqqrkl0y8lkxj" path="res://Engine/Events/Triggers/OnRollup.gd" id="1_0spa2"]
+
+[node name="OnRollup" type="Node" unique_id=1378333904]
+script = ExtResource("1_0spa2")

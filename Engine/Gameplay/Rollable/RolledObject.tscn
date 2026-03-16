@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://bhdwjc1mvovnw"]
+[gd_scene format=3 uid="uid://bhdwjc1mvovnw"]
 
-[ext_resource type="Script" uid="uid://csyjnl37e4dn5" path="res://Engine/Gameplay/Rollable/rolled_object.gd" id="1_c8ip2"]
+[ext_resource type="Script" uid="uid://csyjnl37e4dn5" path="res://Engine/Gameplay/Rollable/RolledObject.gd" id="1_c8ip2"]
 
-[node name="RolledObject" type="Node3D"]
+[node name="RolledObject" type="Node3D" unique_id=1572493058]
 script = ExtResource("1_c8ip2")

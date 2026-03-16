@@ -277,7 +277,6 @@ func _update_window_borderless(_value := false):
 
 func _build_language_options(_name:String, _languages:PackedStringArray) -> DropDownOption:
 	if _languages.is_empty():
-		push_warning("No localization detected. Language section was not added to the settings.")
 		return null
 		
 	var title:Label = _add_section_title(_name)

@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://ft4mym0al1i3"]
+
+[ext_resource type="Script" uid="uid://vsb5whcluqc6" path="res://Engine/Events/Actions/Wait.gd" id="1_rvgri"]
+
+[node name="Wait" type="Node" unique_id=1622087298]
+script = ExtResource("1_rvgri")
+wait_time = 2.0
