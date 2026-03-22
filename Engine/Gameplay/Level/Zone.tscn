@@ -1,3 +1,10 @@
 [gd_scene format=3 uid="uid://ctcv6q11r7du3"]
 
-[node name="Zone" type="Node3D"]
+[ext_resource type="Script" uid="uid://b0hhiyc1662v3" path="res://Engine/Gameplay/Level/Zone.gd" id="1_11uu3"]
+
+[node name="Zone" type="Node3D" unique_id=282007909]
+script = ExtResource("1_11uu3")
+
+[node name="Objects" type="Node3D" parent="." unique_id=1164383247]
+
+[node name="Barrier" type="Node3D" parent="." unique_id=916170300]

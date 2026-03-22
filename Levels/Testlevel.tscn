@@ -70,58 +70,59 @@ script = ExtResource("4_tf5vw")
 
 [node name="Zone" parent="." unique_id=1418971655 instance=ExtResource("5_6ta50")]
 
-[node name="Rollable" parent="Zone" unique_id=1710681641 instance=ExtResource("6_d3d4c")]
+[node name="Big" parent="Zone/Content" parent_id_path=PackedInt32Array(1418971655, 1164383247) index="0" unique_id=1710681641 instance=ExtResource("6_d3d4c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.177, 0, 3.586)
 
-[node name="Rollable2" parent="Zone" unique_id=449659224 instance=ExtResource("6_d3d4c")]
+[node name="Medium" parent="Zone/Content" parent_id_path=PackedInt32Array(1418971655, 1164383247) index="1" unique_id=449659224 instance=ExtResource("6_d3d4c")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1.177, 0, 5.611884)
 
-[node name="Rollable5" parent="Zone" unique_id=1337437544 instance=ExtResource("6_d3d4c")]
+[node name="Rollable5" parent="Zone/Content" parent_id_path=PackedInt32Array(1418971655, 1164383247) index="2" unique_id=1337437544 instance=ExtResource("6_d3d4c")]
 transform = Transform3D(0.33, 0, 0, 0, 0.33, 0, 0, 0, 0.33, -2.386917, 0, 6.7868667)
 
-[node name="Rollable6" parent="Zone" unique_id=862622078 instance=ExtResource("6_d3d4c")]
+[node name="Rollable6" parent="Zone/Content" parent_id_path=PackedInt32Array(1418971655, 1164383247) index="3" unique_id=862622078 instance=ExtResource("6_d3d4c")]
 transform = Transform3D(0.33, 0, 0, 0, 0.33, 0, 0, 0, 0.33, -2.386917, 0, 8.514002)
 
-[node name="Rollable7" parent="Zone" unique_id=1386323077 instance=ExtResource("6_d3d4c")]
+[node name="Rollable7" parent="Zone/Content" parent_id_path=PackedInt32Array(1418971655, 1164383247) index="4" unique_id=1386323077 instance=ExtResource("6_d3d4c")]
 transform = Transform3D(0.33, 0, 0, 0, 0.33, 0, 0, 0, 0.33, -0.9537773, 0, 8.514002)
 
-[node name="Rollable8" parent="Zone" unique_id=1501588667 instance=ExtResource("6_d3d4c")]
+[node name="Rollable8" parent="Zone/Content" parent_id_path=PackedInt32Array(1418971655, 1164383247) index="5" unique_id=1501588667 instance=ExtResource("6_d3d4c")]
 transform = Transform3D(0.33, 0, 0, 0, 0.33, 0, 0, 0, 0.33, -0.9537773, 0, 7.1323347)
 
-[node name="Rollable9" parent="Zone" unique_id=1757647982 instance=ExtResource("6_d3d4c")]
+[node name="Rollable9" parent="Zone/Content" parent_id_path=PackedInt32Array(1418971655, 1164383247) index="6" unique_id=1757647982 instance=ExtResource("6_d3d4c")]
 transform = Transform3D(0.33, 0, 0, 0, 0.33, 0, 0, 0, 0.33, -3.6463385, 0, 7.1323347)
 
-[node name="Rollable10" parent="Zone" unique_id=336553857 instance=ExtResource("6_d3d4c")]
+[node name="Rollable10" parent="Zone/Content" parent_id_path=PackedInt32Array(1418971655, 1164383247) index="7" unique_id=336553857 instance=ExtResource("6_d3d4c")]
 transform = Transform3D(0.33, 0, 0, 0, 0.33, 0, 0, 0, 0.33, -3.6463385, 0, 8.218033)
 
-[node name="Rollable11" parent="Zone" unique_id=441260631 instance=ExtResource("6_d3d4c")]
+[node name="Rollable11" parent="Zone/Content" parent_id_path=PackedInt32Array(1418971655, 1164383247) index="8" unique_id=441260631 instance=ExtResource("6_d3d4c")]
 transform = Transform3D(0.33, 0, 0, 0, 0.33, 0, 0, 0, 0.33, -3.6463385, 0, 9.290543)
 
-[node name="Rollable12" parent="Zone" unique_id=1587533700 instance=ExtResource("6_d3d4c")]
+[node name="Rollable12" parent="Zone/Content" parent_id_path=PackedInt32Array(1418971655, 1164383247) index="9" unique_id=1587533700 instance=ExtResource("6_d3d4c")]
 transform = Transform3D(0.33, 0, 0, 0, 0.33, 0, 0, 0, 0.33, -1.5942144, 0, 9.290543)
 
-[node name="Rollable13" parent="Zone" unique_id=1744016815 instance=ExtResource("6_d3d4c")]
+[node name="Rollable13" parent="Zone/Content" parent_id_path=PackedInt32Array(1418971655, 1164383247) index="10" unique_id=1744016815 instance=ExtResource("6_d3d4c")]
 transform = Transform3D(0.33, 0, 0, 0, 0.33, 0, 0, 0, 0.33, -1.5942144, 0, 10.539627)
 
-[node name="Rollable14" parent="Zone" unique_id=473544144 instance=ExtResource("6_d3d4c")]
+[node name="Rollable14" parent="Zone/Content" parent_id_path=PackedInt32Array(1418971655, 1164383247) index="11" unique_id=473544144 instance=ExtResource("6_d3d4c")]
 transform = Transform3D(0.33, 0, 0, 0, 0.33, 0, 0, 0, 0.33, -3.5948248, 0, 10.539627)
 
-[node name="Rollable15" parent="Zone" unique_id=1521486013 instance=ExtResource("6_d3d4c")]
+[node name="Rollable15" parent="Zone/Content" parent_id_path=PackedInt32Array(1418971655, 1164383247) index="12" unique_id=1521486013 instance=ExtResource("6_d3d4c")]
 transform = Transform3D(0.33, 0, 0, 0, 0.33, 0, 0, 0, 0.33, -3.5948248, 0, 11.684982)
 
-[node name="Rollable16" parent="Zone" unique_id=1449975862 instance=ExtResource("6_d3d4c")]
+[node name="Rollable16" parent="Zone/Content" parent_id_path=PackedInt32Array(1418971655, 1164383247) index="13" unique_id=1449975862 instance=ExtResource("6_d3d4c")]
 transform = Transform3D(0.33, 0, 0, 0, 0.33, 0, 0, 0, 0.33, -0.95444393, 0, 11.684982)
 
-[node name="Rollable17" parent="Zone" unique_id=125181358 instance=ExtResource("6_d3d4c")]
+[node name="Rollable17" parent="Zone/Content" parent_id_path=PackedInt32Array(1418971655, 1164383247) index="14" unique_id=125181358 instance=ExtResource("6_d3d4c")]
 transform = Transform3D(0.33, 0, 0, 0, 0.33, 0, 0, 0, 0.33, -0.95444393, 0, 11.684982)
 
-[node name="Rollable3" parent="Zone" unique_id=1036713240 instance=ExtResource("7_qvtr3")]
+[node name="Arch" parent="Zone/Content" parent_id_path=PackedInt32Array(1418971655, 1164383247) index="15" unique_id=1036713240 instance=ExtResource("7_qvtr3")]
 transform = Transform3D(-0.015707366, 0, -0.99987656, 0, 1, 0, 0.99987656, 0, -0.015707366, 7.348049, 2.3841858e-07, 5.1145253)
 
-[node name="Rollable" parent="Zone/Rollable3" index="4" unique_id=2084382761]
+[node name="Rollable" parent="Zone/Content/Arch" index="4" unique_id=2084382761]
 use_detailed_collision = true
 
 [node name="LevelControl" parent="." unique_id=1715152313 instance=ExtResource("8_ds3qh")]
 
 [editable path="Player"]
-[editable path="Zone/Rollable3"]
+[editable path="Zone"]
+[editable path="Zone/Content/Arch"]
