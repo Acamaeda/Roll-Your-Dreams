@@ -7,4 +7,7 @@ script = ExtResource("1_11uu3")
 
 [node name="Objects" type="Node3D" parent="." unique_id=1164383247]
 
-[node name="Barrier" type="Node3D" parent="." unique_id=916170300]
+[node name="Barrier" type="StaticBody3D" parent="." unique_id=1333073436]
+
+[node name="Spawnpoint" type="Node3D" parent="." unique_id=430355448]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)

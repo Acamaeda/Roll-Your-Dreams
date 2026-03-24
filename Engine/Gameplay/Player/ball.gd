@@ -21,6 +21,8 @@ var stored_delta = 0.0167
 var camera_angle = 0
 var grounded = false
 
+var min_height = 0
+
 var emergency_pos
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -28,8 +30,7 @@ func _ready() -> void:
 	collector = get_node("Collector")
 
 	nonrolling.top_level = true
-	emergency_pos = position
-	pass # Replace with function body.
+
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -57,7 +58,7 @@ func _integrate_forces(state: PhysicsDirectBodyState3D):
 	nonrolling.position = position
 	nonrolling.rotation.y = camera_angle
 	
-	if position.y < (-10):
+	if position.y < (min_height - collector.size * 5):
 		emergency_warp(state)
 	nonrolling.position = position
 	slow_down(stored_delta, state, change, inputs)
