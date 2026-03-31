@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://clfdt71f23b45"]
+
+[ext_resource type="Script" uid="uid://criw7ivo55w4q" path="res://Engine/Events/Conditions/Otherwise.gd" id="1_651b5"]
+
+[node name="Otherwise" type="Node" unique_id=1378333904]
+script = ExtResource("1_651b5")

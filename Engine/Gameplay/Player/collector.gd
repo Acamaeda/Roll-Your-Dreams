@@ -30,7 +30,12 @@ func _process(_delta: float) -> void:
 func add_size(amount): 
 	volume += pow(amount, exponent)
 	size = pow(volume, 1/exponent)
-	
+
+func set_size(amount):
+	volume = pow(amount, exponent)
+	size = amount
+
+
 func _on_body_entered(other):
 	var rollup = other.get_node("Rollable")
 	if (!rollup):

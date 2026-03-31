@@ -30,7 +30,8 @@ func _ready() -> void:
 	collector = get_node("Collector")
 
 	nonrolling.top_level = true
-
+	if !emergency_pos:
+		emergency_pos = position
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

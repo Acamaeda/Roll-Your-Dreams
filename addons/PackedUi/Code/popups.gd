@@ -11,13 +11,13 @@ const ERROR = preload("res://addons/PackedUi/popup_icon_error.png")
 
 @export_group("Small Popup")
 ## Time the small popup remains displayed; not including fade in and out.
-@export var popup_timer: float = 3
+@export var popup_timer: float = 6
 ## Time the tweens of the SMALL popup takes to fade in and out when appearing and disappearing. If set to 0.0, fade is ignored.
-@export var small_popup_fade_time: float = 0.5
+@export var small_popup_fade_time: float = 0.2
 
 @export_group("Large Popup")
 ## Time the tweens of the LARGE popup takes to fade in and out when appearing and disappearing. If set to 0.0, fade is ignored.
-@export var large_popup_fade_time: float = 0.3
+@export var large_popup_fade_time: float = 0.2
 
 # Small popup onready
 @onready var small_popup: PanelContainer = %small_popup
@@ -82,10 +82,15 @@ func _process(delta: float) -> void:
 	
 	if large_popup_timed:
 		large_timer += delta
-
-
+	if (Input.is_action_just_pressed("Okay")):
+		if (small_displayed):
+			_hide_small_popup()
+		
+		
 # Small popups only receive a text to display and an icon/image. The image is automatically resized to fit the popup. If no icon is received, it is not displayed.
 func _display_small_popup(_text:String = "", _icon:CompressedTexture2D = null) -> void:
+	small_timer = 0.0
+
 	if _icon:
 		icon_sprite.texture = _icon
 		icon_control.show()
@@ -130,24 +135,12 @@ func _hide_small_popup():
 # If no _icon is provided, default images are displayed for Warning and Error popups._add_constant_central_force
 # if _timer is greater than 0.0, the popup has a cooldown timer that displays on screen. 
 # 		Reaching 0 closes and considers the popup canceled for the UI.PopupResult signal.
-func _display_big_popup(_severity:Severity, _title:String, _text:String, _id:String, _icon:Texture2D = null, _timer:int = 0) -> void:
+func _display_big_popup(_text:String, _id:String, _icon:Texture2D = null, _timer:int = 0) -> void:
 	large_popup_id = _id
-	
-	match _severity:
-		Severity.WARNING:
-			icon_container_large.show()
-			icon_sprite.show()
-			if _icon == null:
-				_icon = WARNING
-		Severity.ERROR:
-			icon_container_large.show()
-			icon_sprite.show()
-			if _icon == null:
-				_icon = ERROR
-		_:
-			icon_container_large.hide()
-			icon_sprite.hide()
-	
+	icon_container_large.hide()
+	icon_sprite.hide()
+	small_timer = -10000.0
+
 	if _icon:
 		print("icon_container_large.size.x / _icon.get_width(): ", icon_container_large.size.x, " / ", _icon.get_width())
 		var ratio:float = icon_container_large.size.x / _icon.get_width()
@@ -155,8 +148,7 @@ func _display_big_popup(_severity:Severity, _title:String, _text:String, _id:Str
 		large_icon.texture = _icon
 		large_icon.set_deferred("scale", Vector2(ratio, ratio))
 		print("ratio: ", ratio)
-	
-	large_title.text = _title
+	large_title.text = ""
 	large_text.text = _text
 
 	if _timer > 0:
@@ -192,6 +184,7 @@ func _close_large_popup() -> void:
 		tween.tween_property(large_popup, "modulate", Color.TRANSPARENT, large_popup_fade_time)
 		await tween.finished
 	large_popup.hide()
+	UI.dialogue_done.emit()
 	hide()
 
 

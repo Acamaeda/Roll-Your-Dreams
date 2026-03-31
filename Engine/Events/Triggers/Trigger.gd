@@ -27,10 +27,7 @@ func trigger():
 		if child is ConditionTrigger:
 			if (await child.check_condition()):
 				condition_failed = false
-				if(child.wait_for_complete):
-					await child.act()
-				else: 
-					child.act()
+				await child.trigger()
 			else:
 				condition_failed = true
 	waiting_for_done = true

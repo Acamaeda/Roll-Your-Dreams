@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://trs8hjim0g4m"]
+
+[ext_resource type="Script" uid="uid://ipvilm3cwgig" path="res://Engine/Events/Conditions/Confirmation.gd" id="1_yxnuc"]
+
+[node name="Confirmation" type="Node" unique_id=1378333904]
+script = ExtResource("1_yxnuc")
