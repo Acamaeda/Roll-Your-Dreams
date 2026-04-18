@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bd3dj73fu4rt6"]
+[gd_scene format=3 uid="uid://bd3dj73fu4rt6"]
 
 [ext_resource type="Script" uid="uid://6ssdurl8bocq" path="res://addons/PackedUi/Code/ui.gd" id="1_j1lf8"]
 [ext_resource type="Script" uid="uid://dyi6io2ghq2yd" path="res://addons/PackedUi/Code/main_menu.gd" id="2_dhl62"]
@@ -15,12 +15,12 @@
 [ext_resource type="Texture2D" uid="uid://ciphdoorlai41" path="res://addons/PackedUi/icon.svg" id="13_vydkj"]
 [ext_resource type="Texture2D" uid="uid://4fmfjwd7xr7l" path="res://addons/PackedUi/popup_icon_warning.png" id="14_8eegs"]
 
-[node name="Ui" type="CanvasLayer"]
+[node name="Ui" type="CanvasLayer" unique_id=933330827]
 process_mode = 3
 script = ExtResource("1_j1lf8")
 default_theme = ExtResource("3_ohvov")
 
-[node name="PlayerUI" type="Control" parent="." groups=["PlayerUI"]]
+[node name="PlayerUI" type="Control" parent="." unique_id=945085559 groups=["PlayerUI"]]
 visible = false
 custom_minimum_size = Vector2(1280, 720)
 layout_mode = 3
@@ -30,7 +30,7 @@ offset_bottom = 720.0
 script = ExtResource("6_im37q")
 id = "player_ui"
 
-[node name="MainMenu" type="Control" parent="." node_paths=PackedStringArray("background") groups=["MainMenu"]]
+[node name="MainMenu" type="Control" parent="." unique_id=1518673326 node_paths=PackedStringArray("background") groups=["MainMenu"]]
 visible = false
 custom_minimum_size = Vector2(1280, 720)
 layout_mode = 3
@@ -44,24 +44,24 @@ background_color = Color(0.242052, 0.18342, 0.265668, 1)
 background = NodePath("background")
 id = "main_menu"
 
-[node name="background" type="ColorRect" parent="MainMenu"]
+[node name="background" type="ColorRect" parent="MainMenu" unique_id=158232956]
 layout_mode = 0
 offset_right = 1280.0
 offset_bottom = 720.0
 color = Color(0.242052, 0.18342, 0.265668, 1)
 
-[node name="vbox1" type="VBoxContainer" parent="MainMenu"]
+[node name="vbox1" type="VBoxContainer" parent="MainMenu" unique_id=1926941450]
 custom_minimum_size = Vector2(1280, 720)
 layout_mode = 0
 offset_right = 1280.0
 offset_bottom = 720.0
 theme_override_constants/separation = 0
 
-[node name="spacer" type="Control" parent="MainMenu/vbox1"]
+[node name="spacer" type="Control" parent="MainMenu/vbox1" unique_id=1078036632]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 
-[node name="game_title_label" type="RichTextLabel" parent="MainMenu/vbox1"]
+[node name="game_title_label" type="RichTextLabel" parent="MainMenu/vbox1" unique_id=71026212]
 unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("3_ohvov")
@@ -69,33 +69,33 @@ bbcode_enabled = true
 text = "[center]Game Title Here[/center]"
 scroll_active = false
 
-[node name="buttons_hbox" type="HBoxContainer" parent="MainMenu/vbox1"]
+[node name="buttons_hbox" type="HBoxContainer" parent="MainMenu/vbox1" unique_id=652052088]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="hbox_seperator_01" type="Control" parent="MainMenu/vbox1/buttons_hbox"]
+[node name="hbox_seperator_01" type="Control" parent="MainMenu/vbox1/buttons_hbox" unique_id=1866868763]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(10, 50)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 
-[node name="menu_button_vbox" type="VBoxContainer" parent="MainMenu/vbox1/buttons_hbox"]
+[node name="menu_button_vbox" type="VBoxContainer" parent="MainMenu/vbox1/buttons_hbox" unique_id=1492397503]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 theme_override_constants/separation = 45
 
-[node name="hbox_seperator_02" type="Control" parent="MainMenu/vbox1/buttons_hbox"]
+[node name="hbox_seperator_02" type="Control" parent="MainMenu/vbox1/buttons_hbox" unique_id=1578913087]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(10, 50)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 
-[node name="OptionsMenu" type="Control" parent="." node_paths=PackedStringArray("background") groups=["OptionsMenu"]]
+[node name="OptionsMenu" type="Control" parent="." unique_id=597067615 node_paths=PackedStringArray("background") groups=["OptionsMenu"]]
 visible = false
 custom_minimum_size = Vector2(1280, 720)
 layout_mode = 3
@@ -110,25 +110,25 @@ background_color = Color(0.390689, 0.491481, 0.64164, 1)
 background = NodePath("options_background")
 id = "settings"
 
-[node name="options_background" type="ColorRect" parent="OptionsMenu"]
+[node name="options_background" type="ColorRect" parent="OptionsMenu" unique_id=959439]
 custom_minimum_size = Vector2(1280, 720)
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 color = Color(0.392157, 0.490196, 0.643137, 1)
 
-[node name="vbox" type="VBoxContainer" parent="OptionsMenu"]
+[node name="vbox" type="VBoxContainer" parent="OptionsMenu" unique_id=1881087461]
 custom_minimum_size = Vector2(1280, 720)
 layout_mode = 0
 offset_right = 1280.0
 offset_bottom = 720.0
 theme_override_constants/separation = 0
 
-[node name="spacer" type="Control" parent="OptionsMenu/vbox"]
+[node name="spacer" type="Control" parent="OptionsMenu/vbox" unique_id=845360037]
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 
-[node name="options_page_title" type="RichTextLabel" parent="OptionsMenu/vbox"]
+[node name="options_page_title" type="RichTextLabel" parent="OptionsMenu/vbox" unique_id=1453337038]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
@@ -137,52 +137,52 @@ theme_type_variation = &"MenuTitle"
 bbcode_enabled = true
 text = "[center]title[/center]"
 
-[node name="hbox" type="HBoxContainer" parent="OptionsMenu/vbox"]
+[node name="hbox" type="HBoxContainer" parent="OptionsMenu/vbox" unique_id=294209904]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="spacer" type="Control" parent="OptionsMenu/vbox/hbox"]
+[node name="spacer" type="Control" parent="OptionsMenu/vbox/hbox" unique_id=1192501232]
 custom_minimum_size = Vector2(270, 30)
 layout_mode = 2
 
-[node name="TabContainer" type="TabContainer" parent="OptionsMenu/vbox/hbox"]
+[node name="TabContainer" type="TabContainer" parent="OptionsMenu/vbox/hbox" unique_id=599988846]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 tab_alignment = 1
 current_tab = 0
 
-[node name="basic_settings" type="VBoxContainer" parent="OptionsMenu/vbox/hbox/TabContainer"]
+[node name="basic_settings" type="VBoxContainer" parent="OptionsMenu/vbox/hbox/TabContainer" unique_id=633641643]
 layout_mode = 2
 metadata/_tab_index = 0
 
-[node name="spacer" type="Control" parent="OptionsMenu/vbox/hbox/TabContainer/basic_settings"]
+[node name="spacer" type="Control" parent="OptionsMenu/vbox/hbox/TabContainer/basic_settings" unique_id=1128148352]
 custom_minimum_size = Vector2(0, 5)
 layout_mode = 2
 
-[node name="settings_scrollcontainer" type="ScrollContainer" parent="OptionsMenu/vbox/hbox/TabContainer/basic_settings"]
+[node name="settings_scrollcontainer" type="ScrollContainer" parent="OptionsMenu/vbox/hbox/TabContainer/basic_settings" unique_id=1154111379]
 layout_mode = 2
 size_flags_vertical = 3
 follow_focus = true
 horizontal_scroll_mode = 0
 
-[node name="basics_vbox" type="VBoxContainer" parent="OptionsMenu/vbox/hbox/TabContainer/basic_settings/settings_scrollcontainer"]
+[node name="basics_vbox" type="VBoxContainer" parent="OptionsMenu/vbox/hbox/TabContainer/basic_settings/settings_scrollcontainer" unique_id=119367718]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="spacer2" type="Control" parent="OptionsMenu/vbox/hbox/TabContainer/basic_settings"]
+[node name="spacer2" type="Control" parent="OptionsMenu/vbox/hbox/TabContainer/basic_settings" unique_id=73977371]
 custom_minimum_size = Vector2(0, 5)
 layout_mode = 2
 
-[node name="spacer3" type="Control" parent="OptionsMenu/vbox/hbox"]
+[node name="spacer3" type="Control" parent="OptionsMenu/vbox/hbox" unique_id=123499180]
 custom_minimum_size = Vector2(270, 30)
 layout_mode = 2
 
-[node name="spacer2" type="Control" parent="OptionsMenu/vbox"]
+[node name="spacer2" type="Control" parent="OptionsMenu/vbox" unique_id=1032931288]
 custom_minimum_size = Vector2(0, 36)
 layout_mode = 2
 
-[node name="option_back_btn" type="Button" parent="OptionsMenu"]
+[node name="option_back_btn" type="Button" parent="OptionsMenu" unique_id=602172708]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 0
@@ -193,7 +193,7 @@ offset_bottom = 683.0
 theme = ExtResource("3_ohvov")
 text = "Back"
 
-[node name="Credits" type="Control" parent="." node_paths=PackedStringArray("background") groups=["Credits"]]
+[node name="Credits" type="Control" parent="." unique_id=1620089767 node_paths=PackedStringArray("background") groups=["Credits"]]
 visible = false
 custom_minimum_size = Vector2(1280, 720)
 layout_mode = 3
@@ -206,14 +206,14 @@ background_color = Color(0.131654, 0.250022, 0.218582, 1)
 background = NodePath("background")
 id = "credits"
 
-[node name="background" type="ColorRect" parent="Credits"]
+[node name="background" type="ColorRect" parent="Credits" unique_id=1941222121]
 custom_minimum_size = Vector2(1280, 720)
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 color = Color(0.133333, 0.25098, 0.219608, 1)
 
-[node name="credits_scroll" type="ScrollContainer" parent="Credits"]
+[node name="credits_scroll" type="ScrollContainer" parent="Credits" unique_id=1835006173]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(1280, 720)
 layout_mode = 0
@@ -222,29 +222,29 @@ offset_bottom = 40.0
 theme = ExtResource("3_ohvov")
 horizontal_scroll_mode = 0
 
-[node name="credits_vbox" type="VBoxContainer" parent="Credits/credits_scroll"]
+[node name="credits_vbox" type="VBoxContainer" parent="Credits/credits_scroll" unique_id=372265123]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/separation = 0
 
-[node name="spacer" type="Control" parent="Credits/credits_scroll/credits_vbox"]
+[node name="spacer" type="Control" parent="Credits/credits_scroll/credits_vbox" unique_id=2145273309]
 custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
 
-[node name="game_name_in_credits" type="RichTextLabel" parent="Credits/credits_scroll/credits_vbox"]
+[node name="game_name_in_credits" type="RichTextLabel" parent="Credits/credits_scroll/credits_vbox" unique_id=985546634]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 theme = ExtResource("3_ohvov")
 bbcode_enabled = true
 
-[node name="spacer2" type="Control" parent="Credits/credits_scroll/credits_vbox"]
+[node name="spacer2" type="Control" parent="Credits/credits_scroll/credits_vbox" unique_id=1039923984]
 custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
 
-[node name="back_btn" type="Button" parent="Credits"]
+[node name="back_btn" type="Button" parent="Credits" unique_id=821136810]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 0
@@ -255,7 +255,7 @@ offset_bottom = 619.0
 theme = ExtResource("3_ohvov")
 text = "Back"
 
-[node name="PauseMenu" type="Control" parent="." node_paths=PackedStringArray("background") groups=["PauseMenu"]]
+[node name="PauseMenu" type="Control" parent="." unique_id=1438705901 node_paths=PackedStringArray("background") groups=["PauseMenu"]]
 visible = false
 custom_minimum_size = Vector2(1280, 720)
 layout_mode = 3
@@ -268,7 +268,7 @@ background_color = Color(0.054902, 0.054902, 0.054902, 0.858824)
 background = NodePath("background")
 id = "pause_menu"
 
-[node name="background" type="ColorRect" parent="PauseMenu"]
+[node name="background" type="ColorRect" parent="PauseMenu" unique_id=1206111208]
 custom_minimum_size = Vector2(1280, 720)
 layout_mode = 0
 offset_right = 40.0
@@ -276,18 +276,18 @@ offset_bottom = 40.0
 scale = Vector2(1, 0.998564)
 color = Color(0.0627451, 0.0627451, 0.0627451, 0.682353)
 
-[node name="vbox" type="VBoxContainer" parent="PauseMenu"]
+[node name="vbox" type="VBoxContainer" parent="PauseMenu" unique_id=33066196]
 custom_minimum_size = Vector2(1280, 720)
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="spacer" type="Control" parent="PauseMenu/vbox"]
+[node name="spacer" type="Control" parent="PauseMenu/vbox" unique_id=917864533]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 
-[node name="pause_page_title" type="RichTextLabel" parent="PauseMenu/vbox"]
+[node name="pause_page_title" type="RichTextLabel" parent="PauseMenu/vbox" unique_id=1659886032]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
@@ -296,7 +296,7 @@ theme_type_variation = &"MenuTitle"
 bbcode_enabled = true
 text = "[center]title goes here[/center]"
 
-[node name="pause_back_btn" type="Button" parent="PauseMenu"]
+[node name="pause_back_btn" type="Button" parent="PauseMenu" unique_id=1809924307]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 0
@@ -307,20 +307,20 @@ offset_bottom = 454.0
 theme = ExtResource("3_ohvov")
 text = "Return"
 
-[node name="settings_btn" type="Button" parent="PauseMenu"]
+[node name="settings_btn" type="Button" parent="PauseMenu" unique_id=975175789]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 0
-offset_left = 536.0
-offset_top = 323.0
-offset_right = 736.0
-offset_bottom = 369.0
+offset_left = 555.0
+offset_top = 336.0
+offset_right = 755.0
+offset_bottom = 382.0
 theme = ExtResource("3_ohvov")
 text = "Settings"
 script = ExtResource("9_xcvtp")
 target_ui_id = "settings"
 
-[node name="main_menu_btn" type="Button" parent="PauseMenu"]
+[node name="restart_btn" type="Button" parent="PauseMenu" unique_id=1548038610]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 0
@@ -329,9 +329,20 @@ offset_top = 243.0
 offset_right = 737.0
 offset_bottom = 289.0
 theme = ExtResource("3_ohvov")
+text = "Restart"
+
+[node name="main_menu_btn" type="Button" parent="PauseMenu" unique_id=1175501853]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 0
+offset_left = 705.0
+offset_top = 296.0
+offset_right = 905.0
+offset_bottom = 342.0
+theme = ExtResource("3_ohvov")
 text = "Main Menu"
 
-[node name="ResultScreen" type="Control" parent="." groups=["ResultScreen"]]
+[node name="ResultScreen" type="Control" parent="." unique_id=1978775245 groups=["ResultScreen"]]
 visible = false
 custom_minimum_size = Vector2(1280, 720)
 layout_mode = 3
@@ -341,7 +352,7 @@ offset_bottom = 40.0
 script = ExtResource("8_p1pvi")
 id = "result_screen"
 
-[node name="Popups" type="Control" parent="."]
+[node name="Popups" type="Control" parent="." unique_id=1108387340]
 visible = false
 custom_minimum_size = Vector2(1280, 720)
 layout_mode = 3
@@ -352,7 +363,7 @@ offset_bottom = 720.0
 script = ExtResource("9_y8v47")
 popup_timer = 5.0
 
-[node name="small_popup" type="PanelContainer" parent="Popups"]
+[node name="small_popup" type="PanelContainer" parent="Popups" unique_id=1721366427]
 unique_name_in_owner = true
 visible = false
 clip_contents = true
@@ -365,36 +376,36 @@ offset_bottom = 190.0
 theme = ExtResource("3_ohvov")
 theme_type_variation = &"SmallPopupPanel"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Popups/small_popup"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Popups/small_popup" unique_id=149685248]
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="icon_control" type="Control" parent="Popups/small_popup/HBoxContainer"]
+[node name="icon_control" type="Control" parent="Popups/small_popup/HBoxContainer" unique_id=1153450281]
 unique_name_in_owner = true
 clip_contents = true
 custom_minimum_size = Vector2(130, 130)
 layout_mode = 2
 size_flags_horizontal = 0
 
-[node name="icon_sprite" type="Sprite2D" parent="Popups/small_popup/HBoxContainer/icon_control"]
+[node name="icon_sprite" type="Sprite2D" parent="Popups/small_popup/HBoxContainer/icon_control" unique_id=684964015]
 unique_name_in_owner = true
 texture = ExtResource("13_vydkj")
 centered = false
 
-[node name="spacer" type="Control" parent="Popups/small_popup/HBoxContainer"]
+[node name="spacer" type="Control" parent="Popups/small_popup/HBoxContainer" unique_id=1814011642]
 custom_minimum_size = Vector2(10, 0)
 layout_mode = 2
 
-[node name="vbox" type="VBoxContainer" parent="Popups/small_popup/HBoxContainer"]
+[node name="vbox" type="VBoxContainer" parent="Popups/small_popup/HBoxContainer" unique_id=745882876]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 0
 
-[node name="spacer" type="Control" parent="Popups/small_popup/HBoxContainer/vbox"]
+[node name="spacer" type="Control" parent="Popups/small_popup/HBoxContainer/vbox" unique_id=604743825]
 custom_minimum_size = Vector2(10, 10)
 layout_mode = 2
 
-[node name="small_popup_text" type="RichTextLabel" parent="Popups/small_popup/HBoxContainer/vbox"]
+[node name="small_popup_text" type="RichTextLabel" parent="Popups/small_popup/HBoxContainer/vbox" unique_id=1546860098]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
@@ -404,11 +415,11 @@ bbcode_enabled = true
 text = "Text goes here"
 scroll_active = false
 
-[node name="spacer2" type="Control" parent="Popups/small_popup/HBoxContainer"]
+[node name="spacer2" type="Control" parent="Popups/small_popup/HBoxContainer" unique_id=868892345]
 custom_minimum_size = Vector2(10, 0)
 layout_mode = 2
 
-[node name="large_popup" type="Control" parent="Popups"]
+[node name="large_popup" type="Control" parent="Popups" unique_id=479693407]
 unique_name_in_owner = true
 visible = false
 custom_minimum_size = Vector2(1280, 720)
@@ -416,7 +427,7 @@ anchors_preset = 0
 offset_right = 1280.0
 offset_bottom = 720.0
 
-[node name="large_popup_panel" type="PanelContainer" parent="Popups/large_popup"]
+[node name="large_popup_panel" type="PanelContainer" parent="Popups/large_popup" unique_id=1053389204]
 custom_minimum_size = Vector2(480, 300)
 layout_mode = 0
 offset_left = 400.0
@@ -426,32 +437,32 @@ offset_bottom = 450.0
 theme = ExtResource("3_ohvov")
 theme_type_variation = &"LargePopupPanel"
 
-[node name="vbox" type="VBoxContainer" parent="Popups/large_popup/large_popup_panel"]
+[node name="vbox" type="VBoxContainer" parent="Popups/large_popup/large_popup_panel" unique_id=2029208628]
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="top_hbox" type="HBoxContainer" parent="Popups/large_popup/large_popup_panel/vbox"]
+[node name="top_hbox" type="HBoxContainer" parent="Popups/large_popup/large_popup_panel/vbox" unique_id=1031882149]
 custom_minimum_size = Vector2(0, 75)
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="icon_container_large" type="Control" parent="Popups/large_popup/large_popup_panel/vbox/top_hbox"]
+[node name="icon_container_large" type="Control" parent="Popups/large_popup/large_popup_panel/vbox/top_hbox" unique_id=1277524564]
 unique_name_in_owner = true
 clip_contents = true
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 2
 
-[node name="large_icon" type="Sprite2D" parent="Popups/large_popup/large_popup_panel/vbox/top_hbox/icon_container_large"]
+[node name="large_icon" type="Sprite2D" parent="Popups/large_popup/large_popup_panel/vbox/top_hbox/icon_container_large" unique_id=204051272]
 unique_name_in_owner = true
 texture = ExtResource("14_8eegs")
 centered = false
 
-[node name="spacer_l_popup" type="Control" parent="Popups/large_popup/large_popup_panel/vbox/top_hbox"]
+[node name="spacer_l_popup" type="Control" parent="Popups/large_popup/large_popup_panel/vbox/top_hbox" unique_id=654777207]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(5, 0)
 layout_mode = 2
 
-[node name="large_title" type="RichTextLabel" parent="Popups/large_popup/large_popup_panel/vbox/top_hbox"]
+[node name="large_title" type="RichTextLabel" parent="Popups/large_popup/large_popup_panel/vbox/top_hbox" unique_id=973286234]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
@@ -461,7 +472,7 @@ bbcode_enabled = true
 text = "title goes here"
 scroll_active = false
 
-[node name="large_text" type="RichTextLabel" parent="Popups/large_popup/large_popup_panel/vbox"]
+[node name="large_text" type="RichTextLabel" parent="Popups/large_popup/large_popup_panel/vbox" unique_id=1606093565]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
@@ -471,12 +482,12 @@ bbcode_enabled = true
 text = "a lot of text goes here"
 scroll_active = false
 
-[node name="buttons" type="HBoxContainer" parent="Popups/large_popup/large_popup_panel/vbox"]
+[node name="buttons" type="HBoxContainer" parent="Popups/large_popup/large_popup_panel/vbox" unique_id=537647076]
 custom_minimum_size = Vector2(0, 35)
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="timer_label" type="Label" parent="Popups/large_popup/large_popup_panel/vbox/buttons"]
+[node name="timer_label" type="Label" parent="Popups/large_popup/large_popup_panel/vbox/buttons" unique_id=2067957324]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
@@ -487,12 +498,12 @@ horizontal_alignment = 1
 vertical_alignment = 1
 clip_text = true
 
-[node name="timer_spacer" type="Control" parent="Popups/large_popup/large_popup_panel/vbox/buttons"]
+[node name="timer_spacer" type="Control" parent="Popups/large_popup/large_popup_panel/vbox/buttons" unique_id=1805806928]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(10, 35)
 layout_mode = 2
 
-[node name="cancel_btn" type="Button" parent="Popups/large_popup/large_popup_panel/vbox/buttons"]
+[node name="cancel_btn" type="Button" parent="Popups/large_popup/large_popup_panel/vbox/buttons" unique_id=841292480]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 35)
 layout_mode = 2
@@ -501,11 +512,11 @@ theme = ExtResource("3_ohvov")
 theme_type_variation = &"LargePopupButton"
 text = "Cancel"
 
-[node name="spacer3" type="Control" parent="Popups/large_popup/large_popup_panel/vbox/buttons"]
+[node name="spacer3" type="Control" parent="Popups/large_popup/large_popup_panel/vbox/buttons" unique_id=1276356399]
 custom_minimum_size = Vector2(10, 35)
 layout_mode = 2
 
-[node name="confirm_btn" type="Button" parent="Popups/large_popup/large_popup_panel/vbox/buttons"]
+[node name="confirm_btn" type="Button" parent="Popups/large_popup/large_popup_panel/vbox/buttons" unique_id=1784560254]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 35)
 layout_mode = 2

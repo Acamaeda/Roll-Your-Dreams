@@ -10,7 +10,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	if (Input.is_action_just_pressed("Pause")):
+	if (Input.is_action_just_pressed("Pause") && get_tree().get_first_node_in_group("Player")): # Only pause if in a level
 		toggle_pause()
 			
 func toggle_pause():

@@ -18,6 +18,7 @@ class_name PauseMenu extends "res://addons/PackedUi/Code/wrappers/s_menu_control
 @onready var pause_back_btn: Button = %pause_back_btn
 @onready var settings_btn: Button = %settings_btn
 @onready var main_menu_btn: Button = %main_menu_btn
+@onready var restart_btn: Button = %restart_btn
 
 
 func _ready() -> void:
@@ -28,12 +29,13 @@ func _ready() -> void:
 		spacer.hide()
 	else:
 		pause_page_title.text = page_title
-		
+	
+	restart_btn.pressed.connect(_restart_btn_pressed)
 	pause_back_btn.pressed.connect(_back_btn_pressed)
 	main_menu_btn.pressed.connect(_main_menu_btn_pressed)
 	
 	if set_position_of_buttons:
-		var offset_count = 2
+		var offset_count = 1.5
 		var offset = pause_back_btn.size.x + 20.0
 		pause_back_btn.position = (Vector2(UI.width, UI.height/2)) - pause_back_btn.size/2 - Vector2(offset * offset_count, 0)
 
@@ -41,7 +43,10 @@ func _ready() -> void:
 			offset_count += 1
 
 		settings_btn.position = (Vector2(UI.width, UI.height/2)) - settings_btn.size/2 - Vector2(offset * offset_count, 0)
+		
+		offset_count += 1
 
+		restart_btn.position = (Vector2(UI.width, UI.height/2)) - main_menu_btn.size/2 - Vector2(offset * offset_count, 0)
 		if main_menu_button:
 			offset_count += 1
 
@@ -60,6 +65,9 @@ func _back_btn_pressed() -> void:
 	if use_pause_game_signal:
 		UI.TogglePauseGame.emit(false)
 
+func _restart_btn_pressed():
+	_back_btn_pressed()
+	LevelControl.get_node("Restart").trigger()
 
 func _main_menu_btn_pressed() -> void:
 	UI.ReturnToMainMenu.emit()

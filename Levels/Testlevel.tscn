@@ -9,7 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://clfdt71f23b45" path="res://The stuff you use/Events/Conditions/Otherwise.tscn" id="6_6ta50"]
 [ext_resource type="PackedScene" uid="uid://b7rsw0wfluk7m" path="res://Engine/Gameplay/Rollable/Rollable.tscn" id="6_d3d4c"]
 [ext_resource type="PackedScene" uid="uid://mkdj7ltop5nx" path="res://Engine/Gameplay/Rollable/Arch.tscn" id="7_qvtr3"]
-[ext_resource type="PackedScene" uid="uid://remwdgq0ymi2" path="res://Engine/Gameplay/Level/LevelControl.tscn" id="8_ds3qh"]
 [ext_resource type="Script" uid="uid://cy0sr8g6lnvgq" path="res://Engine/Events/Actions/ChangePlayerSize.gd" id="8_tf5vw"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_noarx"]
@@ -134,8 +133,6 @@ use_detailed_collision = true
 
 [node name="Spawnpoint" parent="Zone" index="2" unique_id=430355448]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7577868, 0.8107629, 4.9743576)
-
-[node name="LevelControl" parent="." unique_id=1715152313 instance=ExtResource("8_ds3qh")]
 
 [editable path="Player"]
 [editable path="Zone"]

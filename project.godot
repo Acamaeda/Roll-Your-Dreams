@@ -23,6 +23,7 @@ config/icon="res://icon.svg"
 
 UI="*res://addons/PackedUi/UI/UI.tscn"
 Utils="*uid://cv63hstec5ile"
+LevelControl="*uid://remwdgq0ymi2"
 
 [display]
 
