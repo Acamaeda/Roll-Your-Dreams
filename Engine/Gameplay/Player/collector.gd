@@ -55,3 +55,7 @@ func absorb(other):
 	for child in other.get_children():
 		if (child is VisualInstance3D):
 			child.reparent(absorbed, true)
+		else:
+			for grandchild in child.get_children():
+				if (grandchild is VisualInstance3D):
+					grandchild.reparent(absorbed, true)
