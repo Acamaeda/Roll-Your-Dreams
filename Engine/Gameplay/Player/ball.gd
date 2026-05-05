@@ -2,6 +2,7 @@ extends RigidBody3D
 var nonrolling : Node3D
 var collector : Node3D
 var ghost_floor : Node3D
+var ghost_hat : Node3D
 
 var rolling_force = 60
 var horizontal_mult = 0.5
@@ -17,17 +18,22 @@ var horizontal = 0.0
 var vertical = 0.0
 var turn = 0.0
 var last_vel = Vector3.ZERO
+@onready var last_pos= position
+@onready var last_rot = rotation
 var stored_delta = 0.0167
 var camera_angle = 0
 var grounded = false
 
+var stuck_timer = 0
+var stuck_limit = 1.5
 var min_height = 0
-
 var emergency_pos
-# Called when the node enters the scene tree for the first time.
+
+
 func _ready() -> void:
 	nonrolling = get_node("Nonrolling")
 	collector = get_node("Collector")
+	ghost_hat = get_node("Ghost Hat")
 
 	nonrolling.top_level = true
 	if !emergency_pos:
@@ -56,20 +62,42 @@ func _integrate_forces(state: PhysicsDirectBodyState3D):
 	state.angular_velocity.x += change.x
 	state.angular_velocity.z += change.z
 	camera_angle += turn*turn_speed*stored_delta;
-	nonrolling.position = position
-	nonrolling.rotation.y = camera_angle
-	
-	if position.y < (min_height - collector.size * 5):
-		emergency_warp(state)
-	nonrolling.position = position
 	slow_down(stored_delta, state, change, inputs)
+
+	if (position - last_pos).length()/collector.size > 0.01:
+		stuck_timer = 0
+	elif (inputs.length() != 0):
+		print(stuck_timer)
+		stuck_timer += stored_delta
+
+	if (position.y < (min_height - collector.size * 5)) || stuck_timer > stuck_limit:
+		emergency_warp(state)
+	
+	nonrolling.rotation.y = camera_angle
+	nonrolling.position = position
+	
+	ghost_hat.position = to_local(position+Vector3(0, 0.25, 0))
+	ghost_hat.set_global_rotation(Vector3.ZERO)
+
+	last_pos = position
+	last_rot = rotation
 
 func check_collisions(state : PhysicsDirectBodyState3D):
 	grounded=false
+	var ceilinged = false
 	for i in range(0, state.get_contact_count()):
 		var c = state.get_contact_local_normal(i)
 		if (c.dot(Vector3.UP) > floor_angle):
 			grounded = true
+		elif (c.dot(Vector3.DOWN) > floor_angle):
+			ceilinged = true
+			
+			
+	if grounded && ceilinged:
+		pass
+		#position = last_pos
+		#rotation = last_rot
+		#print ("Unsquish")
 
 func update_size():
 	var size = collector.size
@@ -105,6 +133,7 @@ func emergency_warp(state: PhysicsDirectBodyState3D):
 	state.linear_velocity = Vector3.ZERO
 	state.angular_velocity = Vector3.ZERO
 	last_vel = Vector3.ZERO
+	stuck_timer = 0
 	print("Warp!")
 	
 func slow_down(delta: float, state: PhysicsDirectBodyState3D, change, inputs):
