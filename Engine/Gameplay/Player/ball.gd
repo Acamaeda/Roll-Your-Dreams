@@ -2,7 +2,6 @@ extends RigidBody3D
 var nonrolling : Node3D
 var collector : Node3D
 var ghost_floor : Node3D
-var ghost_hat : Node3D
 
 var rolling_force = 60
 var horizontal_mult = 0.5
@@ -13,6 +12,7 @@ var warp_height = -10
 var max_speed = 20
 var too_slow = 5
 var floor_angle = 0.5
+var friction = 1.0
 
 var horizontal = 0.0
 var vertical = 0.0
@@ -25,7 +25,10 @@ var camera_angle = 0
 var grounded = false
 
 var stuck_timer = 0
-var stuck_limit = 1.5
+var stuck_timer2 = 0
+
+var stuck_limit = 0.75
+var initial_stuck_direction = null
 var min_height = 0
 var emergency_pos
 
@@ -33,7 +36,6 @@ var emergency_pos
 func _ready() -> void:
 	nonrolling = get_node("Nonrolling")
 	collector = get_node("Collector")
-	ghost_hat = get_node("Ghost Hat")
 
 	nonrolling.top_level = true
 	if !emergency_pos:
@@ -64,20 +66,11 @@ func _integrate_forces(state: PhysicsDirectBodyState3D):
 	camera_angle += turn*turn_speed*stored_delta;
 	slow_down(stored_delta, state, change, inputs)
 
-	if (position - last_pos).length()/collector.size > 0.01:
-		stuck_timer = 0
-	elif (inputs.length() != 0):
-		print(stuck_timer)
-		stuck_timer += stored_delta
-
-	if (position.y < (min_height - collector.size * 5)) || stuck_timer > stuck_limit:
-		emergency_warp(state)
+	check_stuck(state, inputs)
 	
 	nonrolling.rotation.y = camera_angle
 	nonrolling.position = position
 	
-	ghost_hat.position = to_local(position+Vector3(0, 0.25, 0))
-	ghost_hat.set_global_rotation(Vector3.ZERO)
 
 	last_pos = position
 	last_rot = rotation
@@ -94,10 +87,29 @@ func check_collisions(state : PhysicsDirectBodyState3D):
 			
 			
 	if grounded && ceilinged:
-		pass
+		physics_material_override.friction = friction/10
+	else:
+		physics_material_override.friction = friction
 		#position = last_pos
 		#rotation = last_rot
 		#print ("Unsquish")
+
+func check_stuck(state, inputs :Vector2):
+	if (position - last_pos).length()/collector.size > 0.002:
+		stuck_timer = 0
+		stuck_timer2 = 0
+		initial_stuck_direction = null
+	elif (inputs.length() != 0):
+		if (initial_stuck_direction == null):
+			initial_stuck_direction = inputs
+		
+		if (abs(inputs.angle_to(initial_stuck_direction)) < PI/3):
+			stuck_timer += stored_delta
+		else:
+			stuck_timer2 += stored_delta
+
+	if (position.y < (min_height - collector.size * 5)) || (stuck_timer > stuck_limit && stuck_timer2 > stuck_limit):
+		emergency_warp(state)
 
 func update_size():
 	var size = collector.size
