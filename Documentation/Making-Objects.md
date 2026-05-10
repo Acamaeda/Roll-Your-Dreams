@@ -33,14 +33,16 @@ The DetailedCollision system is a way to make an object usable at large and smal
 Which is at the center of a level that goes up on its porch and in its garage, but then later use a dozen houses in a city.
 You set the first house to use the DetailedCollision, and the other houses to use the normal, low-detail collison with the "Detailed collision" checkbox in Rollable.
 Setting up the DetailedCollision is the same as the regular collision, except you put it inside the DetailedCollision object.
+You can also use more complex CollisionShapes like HeightMap or PolygonShapes.
 
-## Collection and Other Details
+## Final Steps
 
 Click on the "Rollable" object in the scene tree to edit it. It has the following relevant properties (leave the others be):
 	- Object Name: Name of the object
 	- Description: Description in the Collection
 	- Creator: The creator of the model for the object
-	- Base size: The size of the object (not size to roll up) without scaling
+	- Base size: The size of the object without scaling. This is 1/2.16 the standard "size to roll up", and it's up to you to figure out what feels right.
+		The average of the length, width, and height is a good starting point. (Or cube root of l*w*h)
 	- Solid: Determines if the object can collide with other objects and the player (it can still be rolled up)
 
 ## License stuff
