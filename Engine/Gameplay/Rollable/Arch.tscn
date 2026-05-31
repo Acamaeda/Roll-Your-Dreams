@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://mkdj7ltop5nx"]
 
 [ext_resource type="Script" uid="uid://dx6eyklyhmrga" path="res://Engine/Gameplay/Rollable/rollable.gd" id="1_53gsg"]
+[ext_resource type="PackedScene" uid="uid://dm12e03d7nkxa" path="res://The stuff you use/Features/Recolor.tscn" id="2_kff8m"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_53gsg"]
 size = Vector3(4, 3, 1)
@@ -59,3 +60,5 @@ shape = SubResource("BoxShape3D_jqcvx")
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="DetailedCollision" unique_id=176776810]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
 shape = SubResource("BoxShape3D_kff8m")
+
+[node name="Recolor" parent="." unique_id=1266132782 instance=ExtResource("2_kff8m")]

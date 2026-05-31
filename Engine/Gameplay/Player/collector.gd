@@ -9,6 +9,7 @@ var size: float = 1.0
 
 @export var rollup_ratio = 2.15
 @export var exponent = 3.0
+@export var growth_mult = 1.0
 var volume = 1.0
 
 var old_size: float = 0.0
@@ -25,8 +26,12 @@ func _process(_delta: float) -> void:
 		size_changed.emit(size, size / rollup_ratio)
 		old_size = size
 		
-
-
+func give_size_with_mults(amount):
+	var mults = 1
+	mults *= growth_mult
+	amount *= pow(mults, 1/exponent)
+	add_size(amount)
+	
 func add_size(amount): 
 	volume += pow(amount, exponent)
 	size = pow(volume, 1/exponent)
@@ -40,7 +45,7 @@ func _on_body_entered(other):
 	var rollup = other.get_node("Rollable")
 	if (!rollup):
 		return
-	add_size(rollup.size)
+	give_size_with_mults(rollup.size)
 	rollup.rolled_up()
 	absorb(other)	
 	Utils.delete_node(other)

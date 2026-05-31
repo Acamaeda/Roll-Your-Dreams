@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dm12e03d7nkxa"]
+
+[ext_resource type="Script" uid="uid://bgwit0jjuoq8u" path="res://Engine/Gameplay/Features/Recolor.gd" id="1_gi284"]
+
+[node name="Recolor" type="Node" unique_id=1266132782]
+script = ExtResource("1_gi284")

@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://mkdj7ltop5nx" path="res://Engine/Gameplay/Rollable/Arch.tscn" id="7_qvtr3"]
 [ext_resource type="Script" uid="uid://cy0sr8g6lnvgq" path="res://Engine/Events/Actions/ChangePlayerSize.gd" id="8_tf5vw"]
 [ext_resource type="PackedScene" uid="uid://bm7mvt3hfv7g2" path="res://Engine/Gameplay/Rollable/RubberDuck.tscn" id="11_tf5vw"]
+[ext_resource type="PackedScene" uid="uid://dm12e03d7nkxa" path="res://The stuff you use/Features/Recolor.tscn" id="12_pgxtt"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_noarx"]
 size = Vector3(100, 1, 100)
@@ -59,7 +60,7 @@ transform = Transform3D(0.99997354, 0, -0.0072779586, 0.0060000415, -0.5659891, 
 [node name="Player" parent="." unique_id=542211025 instance=ExtResource("1_ms6hv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7577868, 0.8107629, 4.9743576)
 
-[node name="Nonrolling" parent="Player" index="2" unique_id=677675216]
+[node name="Nonrolling" parent="Player" index="3" unique_id=677675216]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7577868, 2.3723147, 4.9743576)
 
 [node name="Test" type="Node" parent="." unique_id=401469567]
@@ -69,6 +70,9 @@ script = ExtResource("2_7rvv0")
 
 [node name="Big" parent="Zone/Objects" parent_id_path=PackedInt32Array(1418971655, 1164383247) index="0" unique_id=1710681641 instance=ExtResource("6_d3d4c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.177, 0, 3.586)
+
+[node name="Recolor2" parent="Zone/Objects/Big" unique_id=1266132782 instance=ExtResource("12_pgxtt")]
+shift_amount = -115.0
 
 [node name="Medium" parent="Zone/Objects" parent_id_path=PackedInt32Array(1418971655, 1164383247) index="1" unique_id=449659224 instance=ExtResource("6_d3d4c")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1.177, 0, 5.611884)
@@ -129,8 +133,11 @@ transform = Transform3D(-0.015707366, 0, -0.99987656, 0, 1, 0, 0.99987656, 0, -0
 [node name="Rollable" parent="Zone/Objects/Arch" index="4" unique_id=2084382761]
 use_detailed_collision = true
 
-[node name="Rollable" parent="Zone/Objects" parent_id_path=PackedInt32Array(1418971655, 1164383247) index="12" unique_id=1964013516 instance=ExtResource("11_tf5vw")]
+[node name="Duck" parent="Zone/Objects" parent_id_path=PackedInt32Array(1418971655, 1164383247) index="12" unique_id=1964013516 instance=ExtResource("11_tf5vw")]
 transform = Transform3D(0.67784846, 0, 3.6882274, 0, 3.75, 0, -3.6882274, 0, 0.67784846, -1.6939204, 0, 10.817979)
+
+[node name="Recolor" parent="Zone/Objects/Duck" unique_id=1969787760 instance=ExtResource("12_pgxtt")]
+shift_amount = -116.0
 
 [node name="Spawnpoint" parent="Zone" index="2" unique_id=430355448]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7577868, 0.8107629, 4.9743576)
