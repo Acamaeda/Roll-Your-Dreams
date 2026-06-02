@@ -1,7 +1,7 @@
-shader_type canvas_item;
+shader_type spatial;
+uniform float shift_amount: hint_range(-180., 180., 1.) = 0.;
 
-uniform float shift_amount: hint_range(-180.0, 180.0, 1.0) = 0.0;
-
+uniform sampler2D screen_texture : hint_screen_texture, repeat_disable, filter_nearest;
 // Convert RGB color to HSV color space
 // Input: vec3 with components in range [0, 1]
 // Output: vec3 with h in [0, 360], s and v in [0, 1]
@@ -58,7 +58,10 @@ vec3 hsv2rgb(vec3 hsv) {
 }
 
 void fragment() {
-	vec3 hsv_color = rgb2hsv(COLOR.rgb);
-	hsv_color.x = mod(hsv_color.x + shift_amount, 360.0);
-	COLOR.rgb = hsv2rgb(hsv_color);
+	vec4 currentColor = textureLod(screen_texture, SCREEN_UV, 0.0);
+	
+	vec3 color = vec3(currentColor.r, currentColor.g, currentColor.b);
+	vec3 hsv = rgb2hsv(color);
+	hsv.x = mod(hsv.x + shift_amount, 360.0);
+	ALBEDO = hsv2rgb(hsv);
 }
