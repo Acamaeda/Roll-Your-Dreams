@@ -8,7 +8,7 @@ signal onRollup
 @export var object_name: String = "Thing"
 @export var description: String = "Some kind of funny detail."
 @export var creator: String = "Somebody"
-
+@export var link: String = ""
 @export var base_size: float = 1.0
 
 @export var use_detailed_collision: bool = false

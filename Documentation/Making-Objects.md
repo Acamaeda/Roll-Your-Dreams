@@ -41,6 +41,7 @@ Click on the "Rollable" object in the scene tree to edit it. It has the followin
 	- Object Name: Name of the object
 	- Description: Description in the Collection
 	- Creator: The creator of the model for the object
+	- Link: Link to the creator's page/source for the model (optional unless the creator requires it)
 	- Base size: The size of the object without scaling. This is 1/2.16 the standard "size to roll up", and it's up to you to figure out what feels right.
 		The average of the length, width, and height is a good starting point. (Or cube root of l*w*h)
 	- Solid: Determines if the object can collide with other objects and the player (it can still be rolled up)
@@ -48,5 +49,5 @@ Click on the "Rollable" object in the scene tree to edit it. It has the followin
 ## License stuff
 
 This only matters for officially adding the object to the RYD collection. If you don't have the rights to the model, it can't be added.
-If someone else made it and it has a license, include that lisence in the folder alongside the assets. If you made it, you can use your own license.
+If someone else made it and it has a downloadable license, include that lisence in the folder alongside the assets. If you made it, you can use your own license.
 I suggest making a copy of [point to noncommercial license template in repo]
