@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cb1vn5kk4jxyi"]
+
+[ext_resource type="Script" uid="uid://mce8xjdlyqdu" path="res://Engine/Gameplay/Features/RollableProperties.gd" id="1_t2ldt"]
+
+[node name="RollableProperties" type="Node" unique_id=1266132782]
+script = ExtResource("1_t2ldt")

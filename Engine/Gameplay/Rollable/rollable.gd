@@ -1,4 +1,5 @@
 extends Node
+class_name Rollable
 var size = 1.0
 var scale = 1.0
 var body : PhysicsBody3D
@@ -11,10 +12,10 @@ signal onRollup
 @export var link: String = ""
 @export var base_size: float = 1.0
 
-@export_enum("Normal", "Super Detailed", "Super Simple")var collision: int
+var collision: int
 @export var solid: bool = true
-@export var rollable: bool = true
-@export var include_in_collection: bool = true
+var rollable: bool = true
+var include_in_collection: bool = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
