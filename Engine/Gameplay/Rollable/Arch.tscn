@@ -1,15 +1,25 @@
 [gd_scene format=3 uid="uid://mkdj7ltop5nx"]
 
 [ext_resource type="Script" uid="uid://dx6eyklyhmrga" path="res://Engine/Gameplay/Rollable/rollable.gd" id="1_53gsg"]
+[ext_resource type="Shader" uid="uid://x2mf6n4rgfgr" path="res://Engine/Gameplay/Features/Recolor.gdshader" id="1_jayw2"]
 [ext_resource type="PackedScene" uid="uid://dm12e03d7nkxa" path="res://The stuff you use/Features/Recolor.tscn" id="2_kff8m"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_53gsg"]
-size = Vector3(4, 3, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_fl164"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i1jod"]
 albedo_color = Color(0.003921569, 1, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p1qpa"]
+render_priority = 0
+shader = ExtResource("1_jayw2")
+shader_parameter/shift_amount = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bc76k"]
+next_pass = SubResource("ShaderMaterial_p1qpa")
+albedo_color = Color(0.003921569, 1, 0, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_53gsg"]
+size = Vector3(4, 3, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jqcvx"]
 size = Vector3(1, 3, 1)
@@ -20,10 +30,6 @@ size = Vector3(4, 1, 1)
 [node name="Arch" type="StaticBody3D" unique_id=1036713240]
 collision_layer = 4
 collision_mask = 15
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=871267849]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
-shape = SubResource("BoxShape3D_53gsg")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2044823450]
 transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
@@ -38,7 +44,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_i1jod")
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=954326285]
 transform = Transform3D(1, 0, 0, 0, 3, 0, 0, 0, 1, -1.5, 1.5, 0)
 mesh = SubResource("BoxMesh_fl164")
-surface_material_override/0 = SubResource("StandardMaterial3D_i1jod")
+surface_material_override/0 = SubResource("StandardMaterial3D_bc76k")
 
 [node name="Rollable" type="Node" parent="." unique_id=2084382761]
 script = ExtResource("1_53gsg")
@@ -49,16 +55,22 @@ base_size = 2.5
 
 [node name="DetailedCollision" type="StaticBody3D" parent="." unique_id=1343532519]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="DetailedCollision" unique_id=406270739]
+[node name="SimpleCollision" type="StaticBody3D" parent="." unique_id=4538228]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SimpleCollision" unique_id=871267849]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+shape = SubResource("BoxShape3D_53gsg")
+
+[node name="Recolor" parent="." unique_id=1266132782 instance=ExtResource("2_kff8m")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=641573832]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 1.5, 0)
 shape = SubResource("BoxShape3D_jqcvx")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="DetailedCollision" unique_id=1879055249]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=50467428]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 1.5, 0)
 shape = SubResource("BoxShape3D_jqcvx")
 
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="DetailedCollision" unique_id=176776810]
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="." unique_id=1744250629]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
 shape = SubResource("BoxShape3D_kff8m")
-
-[node name="Recolor" parent="." unique_id=1266132782 instance=ExtResource("2_kff8m")]

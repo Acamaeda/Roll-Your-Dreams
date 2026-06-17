@@ -17,23 +17,18 @@ Select the model in the scene tree, and adjust its transform (position/rotation/
 of the object to make placing things easier. Adjust the position so 0,0,0 is where you want the object to rotate around if it would rotate.
 The rotation should be set so it is facing in the positive Z direction (the blue arrow).
 
-## Collision
+## Standard Collision
 
-Collision determines where your object will collidie with other things. It is made up of CollisionShape/Polygon3Ds.
-They're usually much less detailed than the model, since they affect performance more. Objects can have two sets of collisions:
-A simple default collision which should be 1-2 shapes, and an optional DetailedCollision. We'll start with the simple one.
+Collision determines where your object will collide with other things. It is made up of CollisionShape/Polygon3Ds.
+They're usually much less detailed than the model, since they affect performance more. An object can have several diffent collision sets.
+The standard collision which is all most objects need should usually not have more than 4 shapes (and usually less).
+We'll focus on the standard collision for now, the others are described later.
 
-Click the CollisionShape3D that isn't in the DetailedCollision. On the right side, you'll see the CollisionShape3D settings.
+Click the CollisionShape3D that isn't in the DetailedCollision/SimpleCollision (and delete any others). On the right side, you'll see the CollisionShape3D settings.
 Go to the "shape" field and click the drop-down and select the shape type you want (do this even if it's already the correct shape).
 You'll usually want box or cylinder, possibly sphere or capsule.
 After you've selected the shape, if you click on it, you'll be able to adjust its size. This is the best way to change the dimensions of the shape.
 Once you've done that and adjusted the position with transform, if you need another shape, you can duplicate the object and repeat the process.
-
-The DetailedCollision system is a way to make an object usable at large and small scales. You can make a house object,
-Which is at the center of a level that goes up on its porch and in its garage, but then later use a dozen houses in a city.
-You set the first house to use the DetailedCollision, and the other houses to use the normal, low-detail collison with the "Detailed collision" checkbox in Rollable.
-Setting up the DetailedCollision is the same as the regular collision, except you put it inside the DetailedCollision object.
-You can also use more complex CollisionShapes like HeightMap or PolygonShapes.
 
 ## Final Steps
 
@@ -51,3 +46,14 @@ Click on the "Rollable" object in the scene tree to edit it. It has the followin
 This only matters for officially adding the object to the RYD collection. If you don't have the rights to the model, it can't be added.
 If someone else made it and it has a downloadable license, include that lisence in the folder alongside the assets. If you made it, you can use your own license.
 I suggest making a copy of [point to noncommercial license template in repo]
+
+## Other collisions
+
+The DetailedCollision system is a way to make an object usable at large and small scales. You can make a house object,
+Which is at the center of a level that goes up on its porch and in its garage, but then later use a dozen houses in a city.
+You set the first house to use the DetailedCollision, and the other houses to use the normal, low-detail collison with the "collision" selector in RollableProperties.
+Setting up the DetailedCollision is the same as the regular collision, except you put it inside the DetailedCollision object.
+You can also use more complex CollisionShapes like HeightMap or PolygonShapes.
+
+There's also the SimpleCollision which would be used for small objects that have several shapes in their standard collision, in cases where it would hurt performance.
+(Like lots of small, moving things)

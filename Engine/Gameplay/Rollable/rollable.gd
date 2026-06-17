@@ -11,7 +11,7 @@ signal onRollup
 @export var link: String = ""
 @export var base_size: float = 1.0
 
-@export var use_detailed_collision: bool = false
+@export_enum("Normal", "Super Detailed", "Super Simple")var collision: int
 @export var solid: bool = true
 @export var rollable: bool = true
 @export var include_in_collection: bool = true
@@ -32,19 +32,37 @@ func _ready() -> void:
 	
 	choose_collision.call_deferred()	
 
+func cleanup_collision():
+	var node = get_node_or_null("../DetailedCollision")
+	if (node): node.queue_free()
+	node = get_node_or_null("../SimpleCollision")
+	if (node): node.queue_free()
 
 func choose_collision():
-	var detailed_collision = get_node("../DetailedCollision")
-	if !detailed_collision:
-		return
-	if use_detailed_collision:
-		for child in body.get_children():
-			if (child is CollisionShape3D):
-				child.queue_free()
-		for child in detailed_collision.get_children():
-			child.reparent(body, true)
+	var newcoll
+	var wname = ""
+	match collision:
+		0:
+			cleanup_collision()
+			return
+		1:
+			newcoll = get_node_or_null("../DetailedCollision")
+			wname = "detailed"
+		2:
+			newcoll = get_node_or_null("../SimpleCollision")
+			wname = "simple"
+
+	if (!newcoll || newcoll.get_child_count() == 0):
+		push_warning(name + " has no " + wname + " collision set up! You'll have to implement it yourself.")
+	for child in body.get_children():
+		if (child is CollisionShape3D):
+			child.queue_free()
+	for child in newcoll.get_children():
+		child.reparent(body, true)
+		print("Baby")
+	cleanup_collision()
+
 	
-	detailed_collision.queue_free()
 func update_scale():
 	body.scale = Vector3(scale, scale, scale)
 	size = scale * base_size

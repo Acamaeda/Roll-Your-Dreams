@@ -1,39 +1,56 @@
-[gd_scene format=3 uid="uid://d4caxcliyyuir"]
+[gd_scene format=3 uid="uid://de6b5yreeeh3d"]
 
-[ext_resource type="PackedScene" uid="uid://d37a1hkqxg1aw" path="res://Engine/Gameplay/Player/PlayerBall.tscn" id="1_ms6hv"]
-[ext_resource type="Script" uid="uid://drceo5tcl63oe" path="res://Engine/Gameplay/UI/SizeDisplay.gd" id="2_7rvv0"]
-[ext_resource type="PackedScene" uid="uid://trs8hjim0g4m" path="res://The stuff you use/Events/Conditions/Confirmation.tscn" id="4_4hod4"]
-[ext_resource type="PackedScene" uid="uid://c8416hr3tx1qo" path="res://The stuff you use/Events/Triggers/OnRollup.tscn" id="5_4hod4"]
-[ext_resource type="PackedScene" uid="uid://ctcv6q11r7du3" path="res://Engine/Gameplay/Level/Zone.tscn" id="5_6ta50"]
-[ext_resource type="PackedScene" uid="uid://cc161gdtqu1n3" path="res://The stuff you use/Events/Actions/ShowDialogue.tscn" id="5_tf5vw"]
-[ext_resource type="PackedScene" uid="uid://clfdt71f23b45" path="res://The stuff you use/Events/Conditions/Otherwise.tscn" id="6_6ta50"]
-[ext_resource type="PackedScene" uid="uid://b7rsw0wfluk7m" path="res://Engine/Gameplay/Rollable/Rollable.tscn" id="6_d3d4c"]
-[ext_resource type="PackedScene" uid="uid://mkdj7ltop5nx" path="res://Engine/Gameplay/Rollable/Arch.tscn" id="7_qvtr3"]
-[ext_resource type="Script" uid="uid://cy0sr8g6lnvgq" path="res://Engine/Events/Actions/ChangePlayerSize.gd" id="8_tf5vw"]
-[ext_resource type="PackedScene" uid="uid://bm7mvt3hfv7g2" path="res://The stuff you use/Objects/RubberDuck.tscn" id="11_tf5vw"]
-[ext_resource type="Shader" uid="uid://x2mf6n4rgfgr" path="res://Engine/Gameplay/Features/Recolor.gdshader" id="12_02h4r"]
-[ext_resource type="PackedScene" uid="uid://dm12e03d7nkxa" path="res://The stuff you use/Features/Recolor.tscn" id="12_pgxtt"]
-[ext_resource type="PackedScene" uid="uid://b4av1chmw2uy" path="res://The stuff you use/Objects/Wood Floor.tscn" id="14_rbkqs"]
+[ext_resource type="PackedScene" uid="uid://d37a1hkqxg1aw" path="res://Engine/Gameplay/Player/PlayerBall.tscn" id="1_f2f62"]
+[ext_resource type="Script" uid="uid://drceo5tcl63oe" path="res://Engine/Gameplay/UI/SizeDisplay.gd" id="2_47em6"]
+[ext_resource type="PackedScene" uid="uid://ctcv6q11r7du3" path="res://Engine/Gameplay/Level/Zone.tscn" id="3_frm8h"]
+[ext_resource type="PackedScene" uid="uid://b7rsw0wfluk7m" path="res://Engine/Gameplay/Rollable/Rollable.tscn" id="4_qjkpg"]
+[ext_resource type="PackedScene" uid="uid://dm12e03d7nkxa" path="res://The stuff you use/Features/Recolor.tscn" id="5_hjh71"]
+[ext_resource type="PackedScene" uid="uid://c8416hr3tx1qo" path="res://The stuff you use/Events/Triggers/OnRollup.tscn" id="6_wooc5"]
+[ext_resource type="PackedScene" uid="uid://cc161gdtqu1n3" path="res://The stuff you use/Events/Actions/ShowDialogue.tscn" id="7_88hky"]
+[ext_resource type="PackedScene" uid="uid://trs8hjim0g4m" path="res://The stuff you use/Events/Conditions/Confirmation.tscn" id="8_0wgwu"]
+[ext_resource type="Script" uid="uid://cy0sr8g6lnvgq" path="res://Engine/Events/Actions/ChangePlayerSize.gd" id="9_nuswr"]
+[ext_resource type="PackedScene" uid="uid://clfdt71f23b45" path="res://The stuff you use/Events/Conditions/Otherwise.tscn" id="10_e0qg7"]
+[ext_resource type="PackedScene" uid="uid://mkdj7ltop5nx" path="res://Engine/Gameplay/Rollable/Arch.tscn" id="11_fw1sq"]
+[ext_resource type="Shader" uid="uid://x2mf6n4rgfgr" path="res://Engine/Gameplay/Features/Recolor.gdshader" id="12_fp1vc"]
+[ext_resource type="PackedScene" uid="uid://bm7mvt3hfv7g2" path="res://The stuff you use/Objects/RubberDuck.tscn" id="13_mjkqm"]
+[ext_resource type="PackedScene" uid="uid://b4av1chmw2uy" path="res://The stuff you use/Objects/Wood Floor.tscn" id="14_rckqu"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_noarx"]
+size = Vector3(100, 1, 100)
+
+[sub_resource type="Gradient" id="Gradient_a202f"]
+offsets = PackedFloat32Array(0, 0.3114754, 0.5163934, 0.9836066)
+colors = PackedColorArray(0, 0, 0, 1, 0.27124587, 0.20017657, 0.014387533, 1, 0.33062398, 0.36156678, 0.33062398, 1, 0.07392908, 0.42327672, 0.16349694, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_noarx"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_a0tk4"]
+noise = SubResource("FastNoiseLite_noarx")
+color_ramp = SubResource("Gradient_a202f")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r3fl7"]
+albedo_texture = SubResource("NoiseTexture2D_a0tk4")
+
+[sub_resource type="BoxMesh" id="BoxMesh_a0tk4"]
+material = SubResource("StandardMaterial3D_r3fl7")
 size = Vector3(100, 1, 100)
 
 [sub_resource type="BoxMesh" id="BoxMesh_rbkqs"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3xbmh"]
 render_priority = 0
-shader = ExtResource("12_02h4r")
+shader = ExtResource("12_fp1vc")
 shader_parameter/shift_amount = 0.0
 
 [sub_resource type="BoxMesh" id="BoxMesh_374qi"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_rbkqs"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_f2f62"]
 render_priority = 0
-shader = ExtResource("12_02h4r")
+shader = ExtResource("12_fp1vc")
 shader_parameter/shift_amount = 0.0
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_374qi"]
-next_pass = SubResource("ShaderMaterial_rbkqs")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_47em6"]
+next_pass = SubResource("ShaderMaterial_f2f62")
 albedo_color = Color(0.003921569, 1, 0, 1)
 
 [sub_resource type="Environment" id="Environment_02h4r"]
@@ -50,11 +67,24 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Terrain" unique_id=660827116]
 shape = SubResource("BoxShape3D_noarx")
 
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Terrain" unique_id=1785306715]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.050985575, 0.017989635, -0.024181366)
+mesh = SubResource("BoxMesh_a0tk4")
+
+[node name="Slope" type="StaticBody3D" parent="." unique_id=659723133]
+transform = Transform3D(0.2, 0, 0, 0, 0.1802154, -0.08673182, 0, 0.08673182, 0.1802154, 0, 0, -8.116636)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Slope" unique_id=225846033]
+shape = SubResource("BoxShape3D_noarx")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Slope" unique_id=1405701959]
+mesh = SubResource("BoxMesh_a0tk4")
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1231630966]
 transform = Transform3D(0.99997354, 0, -0.0072779586, 0.0060000415, -0.5659891, 0.8243909, -0.004119245, -0.8244127, -0.5659741, -12.963337, 14.23407, 3.0084782)
 
-[node name="Player" parent="." unique_id=542211025 instance=ExtResource("1_ms6hv")]
-transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, 0.1, 0)
+[node name="Player" parent="." unique_id=542211025 instance=ExtResource("1_f2f62")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7577868, 0.8107629, 4.9743576)
 
 [node name="Nonrolling" parent="Player" index="3" unique_id=677675216]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7577868, 2.3723147, 4.9743576)
@@ -63,94 +93,97 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7577868, 2.3723147, 4.97435
 growth_mult = 1.0
 
 [node name="Test" type="Node" parent="." unique_id=401469567]
-script = ExtResource("2_7rvv0")
+script = ExtResource("2_47em6")
 
-[node name="Zone" parent="." unique_id=1418971655 instance=ExtResource("5_6ta50")]
+[node name="Zone" parent="." unique_id=1418971655 instance=ExtResource("3_frm8h")]
 
-[node name="Big" parent="Zone/Objects" parent_id_path=PackedInt32Array(1418971655, 1164383247) index="0" unique_id=1710681641 instance=ExtResource("6_d3d4c")]
+[node name="Big" parent="Zone/Objects" parent_id_path=PackedInt32Array(1418971655, 1164383247) index="0" unique_id=1710681641 instance=ExtResource("4_qjkpg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.177, 0, 3.586)
 
-[node name="Recolor2" parent="Zone/Objects/Big" unique_id=1266132782 instance=ExtResource("12_pgxtt")]
+[node name="Medium" parent="Zone/Objects" parent_id_path=PackedInt32Array(1418971655, 1164383247) index="1" unique_id=449659224 instance=ExtResource("4_qjkpg")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1.177, 0, 5.611884)
+
+[node name="Recolor2" parent="Zone/Objects/Medium" unique_id=1266132782 instance=ExtResource("5_hjh71")]
 process_priority = 1
 shift_amount = -85.0
 
-[node name="Medium" parent="Zone/Objects" parent_id_path=PackedInt32Array(1418971655, 1164383247) index="1" unique_id=449659224 instance=ExtResource("6_d3d4c")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1.177, 0, 5.611884)
+[node name="OnRollup" parent="Zone/Objects/Medium" unique_id=1378333904 instance=ExtResource("6_wooc5")]
 
-[node name="OnRollup" parent="Zone/Objects/Medium" unique_id=1378333904 instance=ExtResource("5_4hod4")]
-
-[node name="ShowDialogue" parent="Zone/Objects/Medium/OnRollup" unique_id=1622087298 instance=ExtResource("5_tf5vw")]
+[node name="ShowDialogue" parent="Zone/Objects/Medium/OnRollup" unique_id=1622087298 instance=ExtResource("7_88hky")]
 text = "Well, this is embarrassing. (Press space/some controller button to continue)"
 
-[node name="ShowDialogue2" parent="Zone/Objects/Medium/OnRollup" unique_id=482409594 instance=ExtResource("5_tf5vw")]
+[node name="ShowDialogue2" parent="Zone/Objects/Medium/OnRollup" unique_id=482409594 instance=ExtResource("7_88hky")]
 text = "There aren't actually enough objects for you to roll up the big cube. But maybe we can cheat a little?"
 
-[node name="Confirmation" parent="Zone/Objects/Medium/OnRollup" unique_id=1026165958 instance=ExtResource("4_4hod4")]
+[node name="Confirmation" parent="Zone/Objects/Medium/OnRollup" unique_id=1026165958 instance=ExtResource("8_0wgwu")]
 text = "Do you want to be big enough for the big cube?"
 
 [node name="SetSize" type="Node" parent="Zone/Objects/Medium/OnRollup/Confirmation" unique_id=1254924507]
-script = ExtResource("8_tf5vw")
+script = ExtResource("9_nuswr")
 amount = 2.17
 
-[node name="ShowDialogue" parent="Zone/Objects/Medium/OnRollup/Confirmation" unique_id=330458746 instance=ExtResource("5_tf5vw")]
+[node name="ShowDialogue" parent="Zone/Objects/Medium/OnRollup/Confirmation" unique_id=330458746 instance=ExtResource("7_88hky")]
 text = "Have fun! By the way this whole interaction requires zero code to make."
 
-[node name="Otherwise" parent="Zone/Objects/Medium/OnRollup" unique_id=1741044039 instance=ExtResource("6_6ta50")]
+[node name="Otherwise" parent="Zone/Objects/Medium/OnRollup" unique_id=1741044039 instance=ExtResource("10_e0qg7")]
 
-[node name="ShowDialogue" parent="Zone/Objects/Medium/OnRollup/Otherwise" unique_id=179053732 instance=ExtResource("5_tf5vw")]
+[node name="ShowDialogue" parent="Zone/Objects/Medium/OnRollup/Otherwise" unique_id=179053732 instance=ExtResource("7_88hky")]
 text = "If you change your mind, you can restart the level."
 
-[node name="Rollable5" parent="Zone/Objects" parent_id_path=PackedInt32Array(1418971655, 1164383247) index="2" unique_id=1337437544 instance=ExtResource("6_d3d4c")]
+[node name="Rollable5" parent="Zone/Objects" parent_id_path=PackedInt32Array(1418971655, 1164383247) index="2" unique_id=1337437544 instance=ExtResource("4_qjkpg")]
 transform = Transform3D(0.33, 0, 0, 0, 0.33, 0, 0, 0, 0.33, -2.386917, 0, 6.7868667)
 
-[node name="Rollable6" parent="Zone/Objects" parent_id_path=PackedInt32Array(1418971655, 1164383247) index="3" unique_id=862622078 instance=ExtResource("6_d3d4c")]
+[node name="Rollable6" parent="Zone/Objects" parent_id_path=PackedInt32Array(1418971655, 1164383247) index="3" unique_id=862622078 instance=ExtResource("4_qjkpg")]
 transform = Transform3D(0.33, 0, 0, 0, 0.33, 0, 0, 0, 0.33, -2.386917, 0, 8.514002)
 
-[node name="Rollable7" parent="Zone/Objects" parent_id_path=PackedInt32Array(1418971655, 1164383247) index="4" unique_id=1386323077 instance=ExtResource("6_d3d4c")]
+[node name="Rollable7" parent="Zone/Objects" parent_id_path=PackedInt32Array(1418971655, 1164383247) index="4" unique_id=1386323077 instance=ExtResource("4_qjkpg")]
 transform = Transform3D(0.33, 0, 0, 0, 0.33, 0, 0, 0, 0.33, -0.9537773, 0, 8.514002)
 
-[node name="Rollable8" parent="Zone/Objects" parent_id_path=PackedInt32Array(1418971655, 1164383247) index="5" unique_id=1501588667 instance=ExtResource("6_d3d4c")]
+[node name="Rollable8" parent="Zone/Objects" parent_id_path=PackedInt32Array(1418971655, 1164383247) index="5" unique_id=1501588667 instance=ExtResource("4_qjkpg")]
 transform = Transform3D(0.33, 0, 0, 0, 0.33, 0, 0, 0, 0.33, -0.9537773, 0, 7.1323347)
 
-[node name="Rollable9" parent="Zone/Objects" parent_id_path=PackedInt32Array(1418971655, 1164383247) index="6" unique_id=1757647982 instance=ExtResource("6_d3d4c")]
+[node name="Rollable9" parent="Zone/Objects" parent_id_path=PackedInt32Array(1418971655, 1164383247) index="6" unique_id=1757647982 instance=ExtResource("4_qjkpg")]
 transform = Transform3D(0.33, 0, 0, 0, 0.33, 0, 0, 0, 0.33, -3.6463385, 0, 7.1323347)
 
-[node name="Rollable10" parent="Zone/Objects" parent_id_path=PackedInt32Array(1418971655, 1164383247) index="7" unique_id=336553857 instance=ExtResource("6_d3d4c")]
+[node name="Rollable10" parent="Zone/Objects" parent_id_path=PackedInt32Array(1418971655, 1164383247) index="7" unique_id=336553857 instance=ExtResource("4_qjkpg")]
 transform = Transform3D(0.33, 0, 0, 0, 0.33, 0, 0, 0, 0.33, -3.6463385, 0, 8.218033)
 
-[node name="Rollable11" parent="Zone/Objects" parent_id_path=PackedInt32Array(1418971655, 1164383247) index="8" unique_id=441260631 instance=ExtResource("6_d3d4c")]
+[node name="Rollable11" parent="Zone/Objects" parent_id_path=PackedInt32Array(1418971655, 1164383247) index="8" unique_id=441260631 instance=ExtResource("4_qjkpg")]
 transform = Transform3D(0.33, 0, 0, 0, 0.33, 0, 0, 0, 0.33, -3.6463385, 0, 9.290543)
 
-[node name="Rollable12" parent="Zone/Objects" parent_id_path=PackedInt32Array(1418971655, 1164383247) index="9" unique_id=1587533700 instance=ExtResource("6_d3d4c")]
+[node name="Rollable12" parent="Zone/Objects" parent_id_path=PackedInt32Array(1418971655, 1164383247) index="9" unique_id=1587533700 instance=ExtResource("4_qjkpg")]
 transform = Transform3D(0.33, 0, 0, 0, 0.33, 0, 0, 0, 0.33, -1.5942144, 0, 9.290543)
 
-[node name="Rollable14" parent="Zone/Objects" parent_id_path=PackedInt32Array(1418971655, 1164383247) index="10" unique_id=473544144 instance=ExtResource("6_d3d4c")]
+[node name="Rollable14" parent="Zone/Objects" parent_id_path=PackedInt32Array(1418971655, 1164383247) index="10" unique_id=473544144 instance=ExtResource("4_qjkpg")]
 transform = Transform3D(0.33, 0, 0, 0, 0.33, 0, 0, 0, 0.33, -3.5948248, 0, 10.539627)
 
-[node name="Arch" parent="Zone/Objects" parent_id_path=PackedInt32Array(1418971655, 1164383247) index="11" unique_id=1036713240 instance=ExtResource("7_qvtr3")]
+[node name="Arch" parent="Zone/Objects" parent_id_path=PackedInt32Array(1418971655, 1164383247) index="11" unique_id=1036713240 instance=ExtResource("11_fw1sq")]
 transform = Transform3D(-0.015707366, 0, -0.99987656, 0, 1, 0, 0.99987656, 0, -0.015707366, 7.348049, 2.3841858e-07, 5.1145253)
 
-[node name="CollisionShape3D" parent="Zone/Objects/Arch" index="0" unique_id=871267849]
-transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.004989624, 1.5, 0.013931751)
-
-[node name="MeshInstance3D" parent="Zone/Objects/Arch" index="1" unique_id=2044823450]
+[node name="MeshInstance3D" parent="Zone/Objects/Arch" index="0" unique_id=2044823450]
 transform = Transform3D(3.9999545, -0.004781595, 1.7881393e-07, 0.019126378, 0.99998856, -7.5115524e-05, 7.0780516e-07, 7.511553e-05, 1.0000001, 0, 2.5, 0)
 
-[node name="MeshInstance3D2" parent="Zone/Objects/Arch" index="2" unique_id=1819045120]
+[node name="MeshInstance3D2" parent="Zone/Objects/Arch" index="1" unique_id=1819045120]
 mesh = SubResource("BoxMesh_rbkqs")
 
-[node name="MeshInstance3D3" parent="Zone/Objects/Arch" index="3" unique_id=954326285]
+[node name="MeshInstance3D3" parent="Zone/Objects/Arch" index="2" unique_id=954326285]
 material_overlay = SubResource("ShaderMaterial_3xbmh")
 mesh = SubResource("BoxMesh_374qi")
-surface_material_override/0 = SubResource("StandardMaterial3D_374qi")
+surface_material_override/0 = SubResource("StandardMaterial3D_47em6")
 
-[node name="Rollable" parent="Zone/Objects/Arch" index="4" unique_id=2084382761]
-use_detailed_collision = true
+[node name="Rollable" parent="Zone/Objects/Arch" index="3" unique_id=2084382761]
+collision = 2
 
-[node name="Duck" parent="Zone/Objects" parent_id_path=PackedInt32Array(1418971655, 1164383247) index="12" unique_id=1964013516 instance=ExtResource("11_tf5vw")]
+[node name="CollisionShape3D" parent="Zone/Objects/Arch/SimpleCollision" parent_id_path=PackedInt32Array(1036713240, 4538228) index="0" unique_id=871267849]
+transform = Transform3D(1.0000064, 0, 0, 0, 1, 0, 0, 0, 1.0000064, 0, 1.5, 0)
+
+[node name="CollisionShape3D" parent="Zone/Objects/Arch" index="7" unique_id=641573832]
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -1.5, 1.5, 0.014)
+
+[node name="Duck" parent="Zone/Objects" parent_id_path=PackedInt32Array(1418971655, 1164383247) index="12" unique_id=1964013516 instance=ExtResource("13_mjkqm")]
 transform = Transform3D(0.67784846, 0, 3.6882274, 0, 3.75, 0, -3.6882274, 0, 0.67784846, -1.6939204, 0, 10.817979)
 
-[node name="Recolor" parent="Zone/Objects/Duck" unique_id=1969787760 instance=ExtResource("12_pgxtt")]
+[node name="Recolor" parent="Zone/Objects/Duck" unique_id=1969787760 instance=ExtResource("5_hjh71")]
 shift_amount = -146.0
 
 [node name="Spawnpoint" parent="Zone" index="2" unique_id=430355448]
@@ -159,7 +192,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7577868, 0.8107629, 4.97435
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=365538902]
 environment = SubResource("Environment_02h4r")
 
-[node name="Cube" parent="." unique_id=811800951 instance=ExtResource("14_rbkqs")]
+[node name="Cube" parent="." unique_id=811800951 instance=ExtResource("14_rckqu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.054969, 0, 8.427603)
 
 [editable path="Player"]
 [editable path="Zone"]

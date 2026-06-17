@@ -38,3 +38,9 @@ creator = "Acamaeda"
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DetailedCollision" unique_id=406270739]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 shape = SubResource("BoxShape3D_jqcvx")
+
+[node name="SimpleCollision" type="StaticBody3D" parent="." unique_id=1653633194]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SimpleCollision" unique_id=874211516]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_jqcvx")
