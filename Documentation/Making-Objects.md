@@ -32,11 +32,11 @@ Once you've done that and adjusted the position with transform, if you need anot
 
 ## Final Steps
 
-Click on the "Rollable" object in the scene tree to edit it. It has the following relevant properties (leave the others be):
+Click on the "Rollable" object in the scene tree to edit it. It has the following relevant properties:
 	- Object Name: Name of the object
-	- Description: Description in the Collection
+	- Description: Description in the Collection (You can also get suggestions from other people on this)
 	- Creator: The creator of the model for the object
-	- Link: Link to the creator's page/source for the model (optional unless the creator requires it)
+	- Link: Link to the creator's page/source for the model
 	- Base size: The size of the object without scaling. This is 1/2.16 the standard "size to roll up", and it's up to you to figure out what feels right.
 		The average of the length, width, and height is a good starting point. (Or cube root of l*w*h)
 	- Solid: Determines if the object can collide with other objects and the player (it can still be rolled up)

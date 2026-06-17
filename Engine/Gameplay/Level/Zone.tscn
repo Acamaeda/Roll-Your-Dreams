@@ -5,7 +5,7 @@
 [node name="Zone" type="Node3D" unique_id=282007909]
 script = ExtResource("1_11uu3")
 
-[node name="Objects" type="Node3D" parent="." unique_id=1164383247]
+[node name="Rollables" type="Node3D" parent="." unique_id=1164383247]
 
 [node name="Barrier" type="StaticBody3D" parent="." unique_id=1333073436]
 

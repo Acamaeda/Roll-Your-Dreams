@@ -10,7 +10,7 @@ func _ready() -> void:
 		var collector = get_tree().get_first_node_in_group("Player").get_node("Collector")
 		collector.size_changed.connect(_check_to_open)
 	if size_required != 0:
-		get_node("Objects").set_process(false)
+		get_node("Rollables").set_process(false)
 	else:
 		open()
 
@@ -20,7 +20,7 @@ func _check_to_open(size, _blah):
 		open()
 		
 func open():
-	get_node("Objects").set_process(true)
+	get_node("Rollables").set_process(true)
 	get_node("Barrier").set_process(false)
 	var player = get_tree().get_first_node_in_group("Player")
 	player.min_height = lowest_height
