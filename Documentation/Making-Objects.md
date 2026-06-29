@@ -38,6 +38,7 @@ Click on the "Rollable" object in the scene tree to edit it. It has the followin
 	- Creator: The creator of the model for the object
 	- Link: Link to the creator's page/source for the model
 	- Base size: The size of the object without scaling. This is 1/2.16 the standard "size to roll up", and it's up to you to figure out what feels right.
+		"1" size is a 1-meter sphere, a solid 1-meter cube has 1.2 times more size. 
 		The average of the length, width, and height is a good starting point. (Or cube root of l*w*h)
 	- Solid: Determines if the object can collide with other objects and the player (it can still be rolled up)
 

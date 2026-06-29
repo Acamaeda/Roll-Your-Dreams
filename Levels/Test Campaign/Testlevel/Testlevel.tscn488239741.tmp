@@ -50,7 +50,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 shape = SubResource("BoxShape3D_noarx")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Terrain" unique_id=1785306715]
-transform = Transform3D(0.9999975, -0.0018946608, 0.0011808089, 0.0018958871, 0.9999977, -0.0010342705, -0.0011788389, 0.0010365152, 0.99999875, 0.045965433, 0.070997715, -0.04656124)
+transform = Transform3D(0.9999975, -0.0018946608, 0.0011808089, 0.0018958871, 0.9999977, -0.0010342705, -0.0011788389, 0.0010365152, 0.99999875, 0.050985575, 0.017989635, -0.024181366)
 mesh = SubResource("BoxMesh_a0tk4")
 
 [node name="Slope" type="StaticBody3D" parent="." unique_id=659723133]
@@ -80,10 +80,10 @@ script = ExtResource("2_47em6")
 [node name="Zone" parent="." unique_id=1418971655 instance=ExtResource("3_frm8h")]
 
 [node name="Big" parent="Zone/Rollables" parent_id_path=PackedInt32Array(1418971655, 1164383247) index="0" unique_id=1710681641 instance=ExtResource("4_qjkpg")]
-transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, -1.177, 0, 3.586)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.177, 0, 3.586)
 
 [node name="Medium" parent="Zone/Rollables" parent_id_path=PackedInt32Array(1418971655, 1164383247) index="1" unique_id=449659224 instance=ExtResource("4_qjkpg")]
-transform = Transform3D(0.442, 0, 0, 0, 0.442, 0, 0, 0, 0.442, -1.177, 0, 5.611884)
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -1.177, 0, 5.611884)
 
 [node name="Recolor2" parent="Zone/Rollables/Medium" unique_id=1266132782 instance=ExtResource("5_hjh71")]
 process_priority = 1
@@ -113,6 +113,8 @@ text = "Have fun! By the way this whole interaction requires zero code to make."
 text = "If you change your mind, you can restart the level."
 
 [node name="RollableProperties" parent="Zone/Rollables/Medium" unique_id=595403510 instance=ExtResource("12_f2f62")]
+solid = false
+rollable = false
 
 [node name="Rollable5" parent="Zone/Rollables" parent_id_path=PackedInt32Array(1418971655, 1164383247) index="2" unique_id=1337437544 instance=ExtResource("4_qjkpg")]
 transform = Transform3D(0.33, 0, 0, 0, 0.33, 0, 0, 0, 0.33, -2.386917, 0, 6.7868667)
