@@ -51,7 +51,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 shape = SubResource("BoxShape3D_noarx")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Terrain" unique_id=1785306715]
-transform = Transform3D(0.9999975, -0.0018946608, 0.0011808089, 0.0018958871, 0.9999977, -0.0010342705, -0.0011788389, 0.0010365152, 0.99999875, 0.0459646, 0.07099736, -0.04656148)
+transform = Transform3D(0.9999975, -0.0018946608, 0.0011808089, 0.0018958871, 0.9999977, -0.0010342705, -0.0011788389, 0.0010365152, 0.99999875, 0.045965433, 0.070997715, -0.04656124)
 mesh = SubResource("BoxMesh_a0tk4")
 
 [node name="Slope" type="StaticBody3D" parent="." unique_id=659723133]
@@ -81,10 +81,10 @@ script = ExtResource("2_47em6")
 [node name="Zone" parent="." unique_id=1418971655 instance=ExtResource("3_frm8h")]
 
 [node name="Big" parent="Zone/Rollables" parent_id_path=PackedInt32Array(1418971655, 1164383247) index="0" unique_id=1710681641 instance=ExtResource("4_qjkpg")]
-transform = Transform3D(0.83, 0, 0, 0, 0.83, 0, 0, 0, 0.83, -1.177, 0.15929067, 3.586)
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, -1.177, 0, 3.586)
 
 [node name="Spin" parent="Zone/Rollables/Big" unique_id=2088710499 instance=ExtResource("5_374qi")]
-transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, -0.00044202805, 0.5417429, 0)
+transform = Transform3D(1, 0, 0, 0, 0.6333674, 0.77385134, 0, -0.77385134, 0.6333674, 0, 0, 0)
 
 [node name="Medium" parent="Zone/Rollables" parent_id_path=PackedInt32Array(1418971655, 1164383247) index="1" unique_id=449659224 instance=ExtResource("4_qjkpg")]
 transform = Transform3D(0.442, 0, 0, 0, 0.442, 0, 0, 0, 0.442, -1.177, 0, 5.611884)
