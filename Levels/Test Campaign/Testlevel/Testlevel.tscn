@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://clfdt71f23b45" path="res://The stuff you use/Events/Conditions/Otherwise.tscn" id="10_e0qg7"]
 [ext_resource type="PackedScene" uid="uid://mkdj7ltop5nx" path="res://Engine/Gameplay/Rollable/Arch.tscn" id="11_fw1sq"]
 [ext_resource type="PackedScene" uid="uid://cb1vn5kk4jxyi" path="res://The stuff you use/Features/RollableProperties.tscn" id="12_f2f62"]
+[ext_resource type="PackedScene" uid="uid://bq5p23e7ucadm" path="res://The stuff you use/Features/Orbit.tscn" id="13_3xbmh"]
 [ext_resource type="PackedScene" uid="uid://bm7mvt3hfv7g2" path="res://The stuff you use/Objects/RubberDuck.tscn" id="13_mjkqm"]
 [ext_resource type="PackedScene" uid="uid://b4av1chmw2uy" path="res://The stuff you use/Objects/Wood Floor.tscn" id="14_rckqu"]
 
@@ -136,19 +137,22 @@ transform = Transform3D(0.33, 0, 0, 0, 0.33, 0, 0, 0, 0.33, -3.6463385, 0, 7.132
 [node name="Rollable10" parent="Zone/Rollables" parent_id_path=PackedInt32Array(1418971655, 1164383247) index="7" unique_id=336553857 instance=ExtResource("4_qjkpg")]
 transform = Transform3D(0.33, 0, 0, 0, 0.33, 0, 0, 0, 0.33, -3.6463385, 0, 8.218033)
 
-[node name="Rollable11" parent="Zone/Rollables" parent_id_path=PackedInt32Array(1418971655, 1164383247) index="8" unique_id=441260631 instance=ExtResource("4_qjkpg")]
-transform = Transform3D(0.33, 0, 0, 0, 0.33, 0, 0, 0, 0.33, -3.6463385, 0, 9.290543)
+[node name="Orbit" parent="Zone/Rollables" parent_id_path=PackedInt32Array(1418971655, 1164383247) index="8" unique_id=1259529256 instance=ExtResource("13_3xbmh")]
+transform = Transform3D(0.93622524, -0.3514005, 0, 0.3514005, 0.93622524, 0, 0, 0, 1, -5.4845023, 0.46275622, 9.121478)
 
-[node name="Rollable12" parent="Zone/Rollables" parent_id_path=PackedInt32Array(1418971655, 1164383247) index="9" unique_id=1587533700 instance=ExtResource("4_qjkpg")]
-transform = Transform3D(0.33, 0, 0, 0, 0.33, 0, 0, 0, 0.33, -1.5942144, 0, 9.290543)
+[node name="Rollable11" parent="Zone/Rollables/Orbit" unique_id=441260631 instance=ExtResource("4_qjkpg")]
+transform = Transform3D(0.33, 0, 0, 0, 0.33, 0, 0, 0, 0.33, 1, 1, 1)
 
-[node name="Rollable14" parent="Zone/Rollables" parent_id_path=PackedInt32Array(1418971655, 1164383247) index="10" unique_id=473544144 instance=ExtResource("4_qjkpg")]
-transform = Transform3D(0.27, 0, 0, 0, 0.27, 0, 0, 0, 0.27, -3.5948248, 0, 10.539627)
+[node name="Rollable12" parent="Zone/Rollables/Orbit" unique_id=1587533700 instance=ExtResource("4_qjkpg")]
+transform = Transform3D(0.33, 0, 0, 0, 0.33, 0, 0, 0, 0.33, 1.0000001, 1, 0.9999998)
 
-[node name="Arch" parent="Zone/Rollables" parent_id_path=PackedInt32Array(1418971655, 1164383247) index="11" unique_id=1036713240 instance=ExtResource("11_fw1sq")]
+[node name="Rollable14" parent="Zone/Rollables/Orbit" unique_id=473544144 instance=ExtResource("4_qjkpg")]
+transform = Transform3D(0.27, 0, 0, 0, 0.27, 0, 0, 0, 0.27, 1.0000004, 1, 0.99999964)
+
+[node name="Arch" parent="Zone/Rollables" parent_id_path=PackedInt32Array(1418971655, 1164383247) index="9" unique_id=1036713240 instance=ExtResource("11_fw1sq")]
 transform = Transform3D(-0.015707366, 0, -0.99987656, 0, 1, 0, 0.99987656, 0, -0.015707366, 7.348049, 2.3841858e-07, 5.1145253)
 
-[node name="Duck" parent="Zone/Rollables" parent_id_path=PackedInt32Array(1418971655, 1164383247) index="12" unique_id=1964013516 instance=ExtResource("13_mjkqm")]
+[node name="Duck" parent="Zone/Rollables" parent_id_path=PackedInt32Array(1418971655, 1164383247) index="10" unique_id=1964013516 instance=ExtResource("13_mjkqm")]
 transform = Transform3D(0.67784846, 0, 3.6882274, 0, 3.75, 0, -3.6882274, 0, 0.67784846, -1.6939204, 0, 10.817979)
 
 [node name="Recolor" parent="Zone/Rollables/Duck" unique_id=1969787760 instance=ExtResource("5_hjh71")]

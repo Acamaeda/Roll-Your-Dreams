@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bq5p23e7ucadm"]
+
+[ext_resource type="Script" uid="uid://cdye777k5jnr5" path="res://Engine/Gameplay/Features/Orbit.gd" id="1_vqey7"]
+[ext_resource type="Script" uid="uid://btv8ng58fmx0l" path="res://Engine/Gameplay/Features/EditorOnly.gd" id="2_7gwp4"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_niy75"]
+transparency = 1
+albedo_color = Color(0.023529412, 1, 1, 0.50980395)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_5tmnx"]
+material = SubResource("StandardMaterial3D_niy75")
+top_radius = 0.85
+bottom_radius = 0.85
+height = 0.1
+
+[node name="Orbit" type="Node3D" unique_id=2088710499]
+script = ExtResource("1_vqey7")
+
+[node name="Visualizer" type="MeshInstance3D" parent="." unique_id=279455884]
+mesh = SubResource("CylinderMesh_5tmnx")
+script = ExtResource("2_7gwp4")
