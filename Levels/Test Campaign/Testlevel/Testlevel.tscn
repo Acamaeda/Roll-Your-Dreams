@@ -141,13 +141,13 @@ transform = Transform3D(0.33, 0, 0, 0, 0.33, 0, 0, 0, 0.33, -3.6463385, 0, 8.218
 transform = Transform3D(0.93622524, -0.3514005, 0, 0.3514005, 0.93622524, 0, 0, 0, 1, -5.4845023, 0.46275622, 9.121478)
 
 [node name="Rollable11" parent="Zone/Rollables/Orbit" unique_id=441260631 instance=ExtResource("4_qjkpg")]
-transform = Transform3D(0.33, 0, 0, 0, 0.33, 0, 0, 0, 0.33, 1, 1, 1)
+transform = Transform3D(0.33, 0, 0, 0, 0.33, 0, 0, 0, 0.33, 1, 0, 0)
 
 [node name="Rollable12" parent="Zone/Rollables/Orbit" unique_id=1587533700 instance=ExtResource("4_qjkpg")]
-transform = Transform3D(0.33, 0, 0, 0, 0.33, 0, 0, 0, 0.33, 1.0000001, 1, 0.9999998)
+transform = Transform3D(0.33, 0, 0, 0, 0.33, 0, 0, 0, 0.33, -0.3147766, -0.49348503, -0.81079483)
 
 [node name="Rollable14" parent="Zone/Rollables/Orbit" unique_id=473544144 instance=ExtResource("4_qjkpg")]
-transform = Transform3D(0.27, 0, 0, 0, 0.27, 0, 0, 0, 0.27, 1.0000004, 1, 0.99999964)
+transform = Transform3D(0.27, 0, 0, 0, 0.27, 0, 0, 0, 0.27, -0.31477645, -0.49348497, 0.8107949)
 
 [node name="Arch" parent="Zone/Rollables" parent_id_path=PackedInt32Array(1418971655, 1164383247) index="9" unique_id=1036713240 instance=ExtResource("11_fw1sq")]
 transform = Transform3D(-0.015707366, 0, -0.99987656, 0, 1, 0, 0.99987656, 0, -0.015707366, 7.348049, 2.3841858e-07, 5.1145253)
