@@ -51,8 +51,8 @@ func _on_body_entered(other):
 	Utils.delete_node(other)
 
 func absorb(other):
-	var absorbed = load("res://Engine/Gameplay/Rollable/RolledObject.tscn").instantiate()
-	absorbed.transform = other.transform
+	var absorbed : Node3D = load("res://Engine/Gameplay/Rollable/AbsorbedObject.tscn").instantiate()
+	absorbed.global_transform = other.global_transform
 	absorbed.player = player_body
 	absorbed.size = size
 	

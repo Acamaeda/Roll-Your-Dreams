@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bhdwjc1mvovnw"]
+
+[ext_resource type="Script" uid="uid://csyjnl37e4dn5" path="res://Engine/Gameplay/Rollable/RolledObject.gd" id="1_umtnv"]
+
+[node name="RolledObject" type="Node3D" unique_id=1572493058]
+script = ExtResource("1_umtnv")

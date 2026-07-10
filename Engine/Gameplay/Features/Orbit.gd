@@ -9,7 +9,7 @@ extends Node3D
 @export var speed: float = 1.0
 @export_range(0, 360) var arc_used:float = 360.0
 
-@export_enum("Towards ground", "Towards center", "No rotation") var rotation_style = 0
+@export_enum("Towards ground", "Towards center", "Towards orbital plane", "No rotation") var rotation_style = 0
 
 func _ready() -> void:
 
@@ -27,7 +27,7 @@ func _ready() -> void:
 				var dist = radius
 				if (dist == 0): 
 					dist = child.position.abs()
-				child.position = Vector3(dist, 0, 0).rotated(transform.basis.y, angle)
+				child.position = Vector3(dist, 0, 0).rotated(Vector3.UP, angle)
 			x+=1
 			
 func updateVisualizer():
@@ -38,4 +38,21 @@ func _process(delta: float) -> void:
 	if !Engine.is_editor_hint():
 		for child in get_children():
 			if (child is Node3D):
-				child.position=child.position.rotated(transform.basis.y, 2*PI*delta*speed)
+				child.position=child.position.rotated(Vector3.UP, 2*PI*delta*speed)
+				update_rotation(child)
+			
+func update_rotation(object : Node3D):
+	var forward = global_transform.basis.y.cross(object.position)
+	if (speed > 0): # It's backwards by default
+		forward = forward*-1
+	match rotation_style:
+		0: # Toward Ground
+			forward.y=0
+			object.look_at(object.global_position+forward, to_local(global_position+Vector3.UP))
+		1: # Toward Center
+			object.look_at(object.global_position+forward, object.position)
+		2: # Toward Orbital Plane
+			object.look_at(object.global_position+forward)
+
+			
+	

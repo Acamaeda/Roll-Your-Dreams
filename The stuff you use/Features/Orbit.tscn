@@ -9,8 +9,8 @@ albedo_color = Color(0.023529412, 1, 1, 0.50980395)
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_5tmnx"]
 material = SubResource("StandardMaterial3D_niy75")
-top_radius = 0.85
-bottom_radius = 0.85
+top_radius = 1.0
+bottom_radius = 1.0
 height = 0.1
 
 [node name="Orbit" type="Node3D" unique_id=2088710499]

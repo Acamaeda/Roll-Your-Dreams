@@ -13,8 +13,10 @@ you don't see it), and rotating the feature will change the axis of rotation.
 	- Rotation style: How orbiting objects will change their rotation while orbiting:
 		- Towards ground: Objects will face forwards in the direction of movement, with
 		the "down" direction oriented towards the ground. Like people walking in a circle.
-		- Towards ground: Objects will face forwards in the direction of movement, with
+		- Towards center: Objects will face forwards in the direction of movement, with
 		the "down" direction oriented towards the orbit center.
+		- Towards orbital plane: Objects will face forwards in the direction of movement, with
+		the "down" direction the same as the orbit node's. This could work for things moving on a slope.
 		- No rotation: Objects' rotation is not affected by Orbit.
 
 ## Changing the rotation center of objects
