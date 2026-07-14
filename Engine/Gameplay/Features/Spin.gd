@@ -15,4 +15,5 @@ func _ready() -> void:
 		
 	
 func _process(delta: float) -> void:
-	get_parent().rotate(transform.basis.y, 2*PI*delta*speed)
+	if (!Engine.is_editor_hint()):
+		get_parent().rotate(transform.basis.y, 2*PI*delta*speed)

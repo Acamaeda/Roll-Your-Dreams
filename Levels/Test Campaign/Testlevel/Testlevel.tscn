@@ -52,7 +52,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 shape = SubResource("BoxShape3D_noarx")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Terrain" unique_id=1785306715]
-transform = Transform3D(0.9999975, -0.0018946608, 0.0011808089, 0.0018958871, 0.9999977, -0.0010342705, -0.0011788389, 0.0010365152, 0.99999875, 0.04194939, 0.091927946, -0.04526472)
+transform = Transform3D(0.9999975, -0.0018946608, 0.0011808089, 0.0018958871, 0.9999977, -0.0010342705, -0.0011788389, 0.0010365152, 0.99999875, 0.04826367, 0.091928184, -0.031014442)
 mesh = SubResource("BoxMesh_a0tk4")
 
 [node name="Slope" type="StaticBody3D" parent="." unique_id=659723133]
@@ -82,9 +82,10 @@ script = ExtResource("2_47em6")
 [node name="Zone" parent="." unique_id=1418971655 instance=ExtResource("3_frm8h")]
 
 [node name="Big" type="AnimatableBody3D" parent="Zone/Rollables" parent_id_path=PackedInt32Array(1418971655, 1164383247) index="0" unique_id=48531875 instance=ExtResource("4_qjkpg")]
-transform = Transform3D(0.15421169, 0, -0.815751, 0, 0.83018327, 0, 0.815751, 0, 0.15421169, -1.177, 0.4822719, 3.586)
+transform = Transform3D(-0.20536424, 0, 0.80476034, 0, 0.8301832, 0, -0.80476034, 0, -0.20536424, -1.177, 0.12896919, 3.586)
 collision_layer = 4
 collision_mask = 15
+sync_to_physics = false
 
 [node name="Spin" parent="Zone/Rollables/Big" unique_id=2088710499 instance=ExtResource("5_374qi")]
 

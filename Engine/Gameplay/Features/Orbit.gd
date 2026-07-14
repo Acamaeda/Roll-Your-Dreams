@@ -29,6 +29,8 @@ func _ready() -> void:
 					dist = child.position.abs()
 				child.position = Vector3(dist, 0, 0).rotated(Vector3.UP, angle)
 			x+=1
+	Utils.upgrade_physics(self, 1)		
+	
 			
 func updateVisualizer():
 	var v : Node3D = get_node("Visualizer")

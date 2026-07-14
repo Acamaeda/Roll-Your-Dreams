@@ -40,7 +40,9 @@ func create_physics_node(level):
 		0: 
 			return StaticBody3D.new()
 		1: 
-			return AnimatableBody3D.new()
+			var body = AnimatableBody3D.new()
+			body.sync_to_physics = false
+			return body
 		2: 
 			return CharacterBody3D.new()
 		3: 
