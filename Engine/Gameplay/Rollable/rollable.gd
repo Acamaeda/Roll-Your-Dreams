@@ -1,3 +1,4 @@
+@tool
 extends Node
 class_name Rollable
 var size = 1.0
@@ -60,7 +61,6 @@ func choose_collision():
 			child.queue_free()
 	for child in newcoll.get_children():
 		child.reparent(body, true)
-		print("Baby")
 	cleanup_collision()
 
 	

@@ -9,13 +9,13 @@
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i1jod"]
 albedo_color = Color(0.003921569, 1, 0, 1)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_p1qpa"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jayw2"]
 render_priority = 0
 shader = ExtResource("1_jayw2")
 shader_parameter/shift_amount = 0.0
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bc76k"]
-next_pass = SubResource("ShaderMaterial_p1qpa")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p1qpa"]
+next_pass = SubResource("ShaderMaterial_jayw2")
 albedo_color = Color(0.003921569, 1, 0, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_53gsg"]
@@ -44,7 +44,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_i1jod")
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=954326285]
 transform = Transform3D(1, 0, 0, 0, 3, 0, 0, 0, 1, -1.5, 1.5, 0)
 mesh = SubResource("BoxMesh_fl164")
-surface_material_override/0 = SubResource("StandardMaterial3D_bc76k")
+surface_material_override/0 = SubResource("StandardMaterial3D_p1qpa")
 
 [node name="Rollable" type="Node" parent="." unique_id=2084382761]
 script = ExtResource("1_53gsg")
@@ -53,9 +53,9 @@ description = "It could be straight out of Block Game."
 creator = "Acamaeda"
 base_size = 2.5
 
-[node name="DetailedCollision" type="StaticBody3D" parent="." unique_id=1343532519]
+[node name="DetailedCollision" type="Area3D" parent="." unique_id=776692632]
 
-[node name="SimpleCollision" type="StaticBody3D" parent="." unique_id=4538228]
+[node name="SimpleCollision" type="Area3D" parent="." unique_id=1459309302]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SimpleCollision" unique_id=871267849]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)

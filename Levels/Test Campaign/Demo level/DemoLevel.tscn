@@ -11,30 +11,11 @@
 [ext_resource type="PackedScene" uid="uid://mkdj7ltop5nx" path="res://Engine/Gameplay/Rollable/Arch.tscn" id="7_qvtr3"]
 [ext_resource type="Script" uid="uid://cy0sr8g6lnvgq" path="res://Engine/Events/Actions/ChangePlayerSize.gd" id="8_tf5vw"]
 [ext_resource type="PackedScene" uid="uid://bm7mvt3hfv7g2" path="res://The stuff you use/Objects/RubberDuck.tscn" id="11_tf5vw"]
-[ext_resource type="Shader" uid="uid://x2mf6n4rgfgr" path="res://Engine/Gameplay/Features/Recolor.gdshader" id="12_02h4r"]
 [ext_resource type="PackedScene" uid="uid://dm12e03d7nkxa" path="res://The stuff you use/Features/Recolor.tscn" id="12_pgxtt"]
 [ext_resource type="PackedScene" uid="uid://b4av1chmw2uy" path="res://The stuff you use/Objects/Wood Floor.tscn" id="14_rbkqs"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_noarx"]
 size = Vector3(100, 1, 100)
-
-[sub_resource type="BoxMesh" id="BoxMesh_rbkqs"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_3xbmh"]
-render_priority = 0
-shader = ExtResource("12_02h4r")
-shader_parameter/shift_amount = 0.0
-
-[sub_resource type="BoxMesh" id="BoxMesh_374qi"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_rbkqs"]
-render_priority = 0
-shader = ExtResource("12_02h4r")
-shader_parameter/shift_amount = 0.0
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_374qi"]
-next_pass = SubResource("ShaderMaterial_rbkqs")
-albedo_color = Color(0.003921569, 1, 0, 1)
 
 [sub_resource type="Environment" id="Environment_02h4r"]
 ambient_light_source = 3
@@ -67,94 +48,77 @@ script = ExtResource("2_7rvv0")
 
 [node name="Zone" parent="." unique_id=1418971655 instance=ExtResource("5_6ta50")]
 
-[node name="Big" parent="Zone/Objects" parent_id_path=PackedInt32Array(1418971655, 1164383247) index="0" unique_id=1710681641 instance=ExtResource("6_d3d4c")]
+[node name="Big" parent="Zone/Rollables" parent_id_path=PackedInt32Array(1418971655, 1164383247) index="0" unique_id=1710681641 instance=ExtResource("6_d3d4c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.177, 0, 3.586)
 
-[node name="Recolor2" parent="Zone/Objects/Big" unique_id=1266132782 instance=ExtResource("12_pgxtt")]
-process_priority = 1
-shift_amount = -85.0
-
-[node name="Medium" parent="Zone/Objects" parent_id_path=PackedInt32Array(1418971655, 1164383247) index="1" unique_id=449659224 instance=ExtResource("6_d3d4c")]
+[node name="Medium" parent="Zone/Rollables" parent_id_path=PackedInt32Array(1418971655, 1164383247) index="1" unique_id=449659224 instance=ExtResource("6_d3d4c")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1.177, 0, 5.611884)
 
-[node name="OnRollup" parent="Zone/Objects/Medium" unique_id=1378333904 instance=ExtResource("5_4hod4")]
-
-[node name="ShowDialogue" parent="Zone/Objects/Medium/OnRollup" unique_id=1622087298 instance=ExtResource("5_tf5vw")]
-text = "Well, this is embarrassing. (Press space/some controller button to continue)"
-
-[node name="ShowDialogue2" parent="Zone/Objects/Medium/OnRollup" unique_id=482409594 instance=ExtResource("5_tf5vw")]
-text = "There aren't actually enough objects for you to roll up the big cube. But maybe we can cheat a little?"
-
-[node name="Confirmation" parent="Zone/Objects/Medium/OnRollup" unique_id=1026165958 instance=ExtResource("4_4hod4")]
-text = "Do you want to be big enough for the big cube?"
-
-[node name="SetSize" type="Node" parent="Zone/Objects/Medium/OnRollup/Confirmation" unique_id=1254924507]
-script = ExtResource("8_tf5vw")
-amount = 2.17
-
-[node name="ShowDialogue" parent="Zone/Objects/Medium/OnRollup/Confirmation" unique_id=330458746 instance=ExtResource("5_tf5vw")]
-text = "Have fun! By the way this whole interaction requires zero code to make."
-
-[node name="Otherwise" parent="Zone/Objects/Medium/OnRollup" unique_id=1741044039 instance=ExtResource("6_6ta50")]
-
-[node name="ShowDialogue" parent="Zone/Objects/Medium/OnRollup/Otherwise" unique_id=179053732 instance=ExtResource("5_tf5vw")]
-text = "If you change your mind, you can restart the level."
-
-[node name="Rollable5" parent="Zone/Objects" parent_id_path=PackedInt32Array(1418971655, 1164383247) index="2" unique_id=1337437544 instance=ExtResource("6_d3d4c")]
+[node name="Rollable5" parent="Zone/Rollables" parent_id_path=PackedInt32Array(1418971655, 1164383247) index="2" unique_id=1337437544 instance=ExtResource("6_d3d4c")]
 transform = Transform3D(0.33, 0, 0, 0, 0.33, 0, 0, 0, 0.33, -2.386917, 0, 6.7868667)
 
-[node name="Rollable6" parent="Zone/Objects" parent_id_path=PackedInt32Array(1418971655, 1164383247) index="3" unique_id=862622078 instance=ExtResource("6_d3d4c")]
+[node name="Rollable6" parent="Zone/Rollables" parent_id_path=PackedInt32Array(1418971655, 1164383247) index="3" unique_id=862622078 instance=ExtResource("6_d3d4c")]
 transform = Transform3D(0.33, 0, 0, 0, 0.33, 0, 0, 0, 0.33, -2.386917, 0, 8.514002)
 
-[node name="Rollable7" parent="Zone/Objects" parent_id_path=PackedInt32Array(1418971655, 1164383247) index="4" unique_id=1386323077 instance=ExtResource("6_d3d4c")]
+[node name="Rollable7" parent="Zone/Rollables" parent_id_path=PackedInt32Array(1418971655, 1164383247) index="4" unique_id=1386323077 instance=ExtResource("6_d3d4c")]
 transform = Transform3D(0.33, 0, 0, 0, 0.33, 0, 0, 0, 0.33, -0.9537773, 0, 8.514002)
 
-[node name="Rollable8" parent="Zone/Objects" parent_id_path=PackedInt32Array(1418971655, 1164383247) index="5" unique_id=1501588667 instance=ExtResource("6_d3d4c")]
+[node name="Rollable8" parent="Zone/Rollables" parent_id_path=PackedInt32Array(1418971655, 1164383247) index="5" unique_id=1501588667 instance=ExtResource("6_d3d4c")]
 transform = Transform3D(0.33, 0, 0, 0, 0.33, 0, 0, 0, 0.33, -0.9537773, 0, 7.1323347)
 
-[node name="Rollable9" parent="Zone/Objects" parent_id_path=PackedInt32Array(1418971655, 1164383247) index="6" unique_id=1757647982 instance=ExtResource("6_d3d4c")]
+[node name="Rollable9" parent="Zone/Rollables" parent_id_path=PackedInt32Array(1418971655, 1164383247) index="6" unique_id=1757647982 instance=ExtResource("6_d3d4c")]
 transform = Transform3D(0.33, 0, 0, 0, 0.33, 0, 0, 0, 0.33, -3.6463385, 0, 7.1323347)
 
-[node name="Rollable10" parent="Zone/Objects" parent_id_path=PackedInt32Array(1418971655, 1164383247) index="7" unique_id=336553857 instance=ExtResource("6_d3d4c")]
+[node name="Rollable10" parent="Zone/Rollables" parent_id_path=PackedInt32Array(1418971655, 1164383247) index="7" unique_id=336553857 instance=ExtResource("6_d3d4c")]
 transform = Transform3D(0.33, 0, 0, 0, 0.33, 0, 0, 0, 0.33, -3.6463385, 0, 8.218033)
 
-[node name="Rollable11" parent="Zone/Objects" parent_id_path=PackedInt32Array(1418971655, 1164383247) index="8" unique_id=441260631 instance=ExtResource("6_d3d4c")]
+[node name="Rollable11" parent="Zone/Rollables" parent_id_path=PackedInt32Array(1418971655, 1164383247) index="8" unique_id=441260631 instance=ExtResource("6_d3d4c")]
 transform = Transform3D(0.33, 0, 0, 0, 0.33, 0, 0, 0, 0.33, -3.6463385, 0, 9.290543)
 
-[node name="Rollable12" parent="Zone/Objects" parent_id_path=PackedInt32Array(1418971655, 1164383247) index="9" unique_id=1587533700 instance=ExtResource("6_d3d4c")]
+[node name="Rollable12" parent="Zone/Rollables" parent_id_path=PackedInt32Array(1418971655, 1164383247) index="9" unique_id=1587533700 instance=ExtResource("6_d3d4c")]
 transform = Transform3D(0.33, 0, 0, 0, 0.33, 0, 0, 0, 0.33, -1.5942144, 0, 9.290543)
 
-[node name="Rollable14" parent="Zone/Objects" parent_id_path=PackedInt32Array(1418971655, 1164383247) index="10" unique_id=473544144 instance=ExtResource("6_d3d4c")]
+[node name="Rollable14" parent="Zone/Rollables" parent_id_path=PackedInt32Array(1418971655, 1164383247) index="10" unique_id=473544144 instance=ExtResource("6_d3d4c")]
 transform = Transform3D(0.33, 0, 0, 0, 0.33, 0, 0, 0, 0.33, -3.5948248, 0, 10.539627)
 
-[node name="Arch" parent="Zone/Objects" parent_id_path=PackedInt32Array(1418971655, 1164383247) index="11" unique_id=1036713240 instance=ExtResource("7_qvtr3")]
+[node name="Arch" parent="Zone/Rollables" parent_id_path=PackedInt32Array(1418971655, 1164383247) index="11" unique_id=1036713240 instance=ExtResource("7_qvtr3")]
 transform = Transform3D(-0.015707366, 0, -0.99987656, 0, 1, 0, 0.99987656, 0, -0.015707366, 7.348049, 2.3841858e-07, 5.1145253)
 
-[node name="CollisionShape3D" parent="Zone/Objects/Arch" index="0" unique_id=871267849]
-transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.004989624, 1.5, 0.013931751)
-
-[node name="MeshInstance3D" parent="Zone/Objects/Arch" index="1" unique_id=2044823450]
-transform = Transform3D(3.9999545, -0.004781595, 1.7881393e-07, 0.019126378, 0.99998856, -7.5115524e-05, 7.0780516e-07, 7.511553e-05, 1.0000001, 0, 2.5, 0)
-
-[node name="MeshInstance3D2" parent="Zone/Objects/Arch" index="2" unique_id=1819045120]
-mesh = SubResource("BoxMesh_rbkqs")
-
-[node name="MeshInstance3D3" parent="Zone/Objects/Arch" index="3" unique_id=954326285]
-material_overlay = SubResource("ShaderMaterial_3xbmh")
-mesh = SubResource("BoxMesh_374qi")
-surface_material_override/0 = SubResource("StandardMaterial3D_374qi")
-
-[node name="Rollable" parent="Zone/Objects/Arch" index="4" unique_id=2084382761]
-use_detailed_collision = true
-
-[node name="Duck" parent="Zone/Objects" parent_id_path=PackedInt32Array(1418971655, 1164383247) index="12" unique_id=1964013516 instance=ExtResource("11_tf5vw")]
+[node name="Duck" parent="Zone/Rollables" parent_id_path=PackedInt32Array(1418971655, 1164383247) index="12" unique_id=1964013516 instance=ExtResource("11_tf5vw")]
 transform = Transform3D(0.67784846, 0, 3.6882274, 0, 3.75, 0, -3.6882274, 0, 0.67784846, -1.6939204, 0, 10.817979)
-
-[node name="Recolor" parent="Zone/Objects/Duck" unique_id=1969787760 instance=ExtResource("12_pgxtt")]
-shift_amount = -146.0
 
 [node name="Spawnpoint" parent="Zone" index="2" unique_id=430355448]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7577868, 0.8107629, 4.9743576)
+
+[node name="Zone_Objects_Big#Recolor2" parent="." unique_id=1266132782 instance=ExtResource("12_pgxtt")]
+process_priority = 1
+shift_amount = -85.0
+
+[node name="Zone_Objects_Medium#OnRollup" parent="." unique_id=1378333904 instance=ExtResource("5_4hod4")]
+
+[node name="Zone_Objects_Medium_OnRollup#ShowDialogue" parent="." unique_id=1622087298 instance=ExtResource("5_tf5vw")]
+text = "Well, this is embarrassing. (Press space/some controller button to continue)"
+
+[node name="Zone_Objects_Medium_OnRollup#ShowDialogue2" parent="." unique_id=482409594 instance=ExtResource("5_tf5vw")]
+text = "There aren't actually enough objects for you to roll up the big cube. But maybe we can cheat a little?"
+
+[node name="Zone_Objects_Medium_OnRollup#Confirmation" parent="." unique_id=1026165958 instance=ExtResource("4_4hod4")]
+text = "Do you want to be big enough for the big cube?"
+
+[node name="Zone_Objects_Medium_OnRollup_Confirmation#SetSize" type="Node" parent="." unique_id=1254924507]
+script = ExtResource("8_tf5vw")
+amount = 2.17
+
+[node name="Zone_Objects_Medium_OnRollup_Confirmation#ShowDialogue" parent="." unique_id=330458746 instance=ExtResource("5_tf5vw")]
+text = "Have fun! By the way this whole interaction requires zero code to make."
+
+[node name="Zone_Objects_Medium_OnRollup#Otherwise" parent="." unique_id=1741044039 instance=ExtResource("6_6ta50")]
+
+[node name="Zone_Objects_Medium_OnRollup_Otherwise#ShowDialogue" parent="." unique_id=179053732 instance=ExtResource("5_tf5vw")]
+text = "If you change your mind, you can restart the level."
+
+[node name="Zone_Objects_Duck#Recolor" parent="." unique_id=1969787760 instance=ExtResource("12_pgxtt")]
+shift_amount = -146.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=365538902]
 environment = SubResource("Environment_02h4r")
@@ -163,4 +127,3 @@ environment = SubResource("Environment_02h4r")
 
 [editable path="Player"]
 [editable path="Zone"]
-[editable path="Zone/Objects/Arch"]
