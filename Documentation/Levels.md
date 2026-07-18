@@ -3,12 +3,18 @@
 Levels are the heart of Roll Your Dreams. 
 
 Key elements:
-	- The player: This is the player. Place it where the player starts and set the scale to the starting size (in meters).
+	- Level Control. Has a lot of settings that are important to the level.
+	- The player: This is the player. Place it where the player starts.
 		(You can also replace it with a different player object to change the player character)
 	- Zones: A zone is a portion of the level that unlocks when you reach a certain size. For small levels they don't matter a huge amount,
 		but you should put all of the Rollables into the "Rollables" of a zone.
 	- WorldEnvironment: Lets you change the background, and other visual details.
 	- Light Source: A source of global light.
+
+## Initial stuff in Level Control
+
+The first thing you need to do is set the level's scale, which is the same as the player's starting size, if the player is at least 1 meter.
+Otherwise, set it to 1 divided by the starting size, and set the "scale direction" to "small". (Godot hates small numbers)
 
 ## Building the level:
 	

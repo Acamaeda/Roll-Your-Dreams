@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dntce6s4kl3vn"]
+
+[ext_resource type="Script" uid="uid://d0ujl237acabr" path="res://Engine/Gameplay/Features/Resize.gd" id="1_os1un"]
+
+[node name="Resize" type="Node3D" unique_id=1291097376]
+script = ExtResource("1_os1un")

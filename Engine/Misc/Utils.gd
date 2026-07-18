@@ -25,7 +25,7 @@ func replace_physics_node(old: PhysicsBody3D, new: PhysicsBody3D):
 	new.collision_mask = old.collision_mask
 	new.collision_layer = old.collision_layer
 	new.transform = old.transform
-	var rollable :Rollable = old.get_node("Rollable")
+	var rollable: Rollable = old.get_node("Rollable")
 	if (rollable):
 		rollable.body = new
 	

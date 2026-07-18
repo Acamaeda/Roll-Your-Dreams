@@ -12,8 +12,8 @@ Then, make a new folder in Assets/3d/[owner of the model] and drag the 3d model 
 
 ## Positioning and Scale
 
-Select the model in the scene tree, and adjust its transform (position/rotation/scale). Generally you want 1 Godot unit to be equal to 1 meter
-(although you can re-scale individual objects). If your object is something that usually stays upright, it's best to have y=0 be at the bottom
+Select the model in the scene tree, and adjust its transform (position/rotation/scale). It's good to scale it to at least 10 units.
+If your object is something that usually stays upright, it's best to have y=0 be at the bottom
 of the object to make placing things easier. Adjust the position so 0,0,0 is where you want the object to rotate around if it would rotate.
 The rotation should be set so it is facing in the positive Z direction (the blue arrow).
 
@@ -40,6 +40,8 @@ Click on the "Rollable" object in the scene tree to edit it. It has the followin
 	- Base size: The size of the object without scaling. This is 1/2.16 the standard "size to roll up", and it's up to you to figure out what feels right.
 		"1" size is a 1-meter sphere, a solid 1-meter cube has 1.2 times more size. 
 		The average of the length, width, and height is a good starting point. (Or cube root of l*w*h)
+	- Model scale: The scale your model is at. How many meters one unit is equal to. BUT if it is smaller than 1 unit, instead use 1/scale so it is always more than 1.
+	- Scale direction: Determines which way to apply model scale (since Godot hates small numbers). Big means your object is larger than the model scale, small means it is smaller.
 	- Solid: Determines if the object can collide with other objects and the player (it can still be rolled up)
 
 ## License stuff

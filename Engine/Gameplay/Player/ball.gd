@@ -113,7 +113,7 @@ func check_stuck(state, inputs :Vector2):
 		emergency_warp(state)
 
 func update_size():
-	var size = collector.size
+	var size = collector.size/collector.level_scale
 	var big = Vector3(size, size, size)
 	gravity_scale = size
 	scale = big

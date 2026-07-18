@@ -2,6 +2,7 @@
 extends Node
 class_name Rollable
 var size = 1.0
+var size_mult :float  = 1.0
 var scale = 1.0
 var body : PhysicsBody3D
 var player : Node
@@ -12,6 +13,8 @@ signal onRollup
 @export var creator: String = "Somebody"
 @export var link: String = ""
 @export var base_size: float = 1.0
+@export var model_scale: float = 1.0
+@export_enum("Normal/big", "Inverted/small") var scale_direction = 0
 
 var collision: int
 @export var solid: bool = true
@@ -20,11 +23,14 @@ var include_in_collection: bool = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	
-	body = get_parent()
-	scale = body.scale.x
 	player = get_tree().get_first_node_in_group("Player")
+	if (!player): #this means we aren't in a level scene and shouldn't rescale
+		return
+	body = get_parent()
 	update_scale()
+	if (Engine.is_editor_hint()):
+		return
+
 	var collector = player.get_node("Collector")
 	collector.size_changed.connect(_on_player_size_change)
 	body.set_collision_mask_value(1, solid)
@@ -65,8 +71,21 @@ func choose_collision():
 
 	
 func update_scale():
+
+	size = base_size * size_mult
+	scale = model_scale
+	if (scale_direction == 1): 
+		scale = 1/scale
+	scale *= size_mult
+	var control = get_tree().get_first_node_in_group("Level Control")
+	if (!control): #this means we aren't in a level scene and shouldn't rescale
+		return
+	var level_scale = control.level_scale
+	if (control.scale_direction == 0):
+		level_scale = 1/level_scale
+	scale *= level_scale
 	body.scale = Vector3(scale, scale, scale)
-	size = scale * base_size
+	size = size_mult * base_size
 	
 func _set_solid(val):
 	if (solid == val):
@@ -79,10 +98,6 @@ func _set_solid(val):
 	if !body.get_collision_layer_value(4):
 		body.set_collision_layer_value(3, solid)
 		body.set_collision_mask_value(2, solid)		
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
-	pass
 
 func _on_player_size_change(_player_size, rollup_size):
 	if (rollup_size > size) && rollable:

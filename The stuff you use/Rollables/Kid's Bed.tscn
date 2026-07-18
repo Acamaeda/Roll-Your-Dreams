@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://dln0oijjxdaeg"]
+
+[ext_resource type="Script" uid="uid://dx6eyklyhmrga" path="res://Engine/Gameplay/Rollable/rollable.gd" id="1_kqo75"]
+[ext_resource type="PackedScene" uid="uid://cyodwekptsh44" path="res://Assets/3d/DKDTheGreat1/Kid's Bed/Bedroom.blend" id="2_qf2hj"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_v8qqq"]
+size = Vector3(1, 0.565, 2.04)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yil73"]
+size = Vector3(1, 0.8, 0.04)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qf2hj"]
+size = Vector3(1, 0.018, 2.04)
+
+[node name="Kid\'s Bed" type="StaticBody3D" unique_id=1036713240]
+collision_layer = 4
+collision_mask = 15
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=871267849]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.284, -0.02)
+shape = SubResource("BoxShape3D_v8qqq")
+
+[node name="Headboard" type="CollisionShape3D" parent="." unique_id=1032839431]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5183605, -1.0197392)
+shape = SubResource("BoxShape3D_yil73")
+
+[node name="Rollable" type="Node" parent="." unique_id=2084382761]
+script = ExtResource("1_kqo75")
+object_name = "Hardwood Floor"
+description = "They were restored after someone hit them with a sword."
+creator = "bart"
+link = "https://opengameart.org/node/11950"
+base_size = 1.5
+
+[node name="DetailedCollision" type="Area3D" parent="." unique_id=260936103]
+
+[node name="Headboard" type="CollisionShape3D" parent="DetailedCollision" unique_id=686163709]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5183605, -1.0197392)
+shape = SubResource("BoxShape3D_yil73")
+
+[node name="Bottom" type="CollisionShape3D" parent="DetailedCollision" unique_id=285467753]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.01, -0.02)
+shape = SubResource("BoxShape3D_qf2hj")
+
+[node name="Top" type="CollisionShape3D" parent="DetailedCollision" unique_id=1889473821]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.393, -0.02)
+shape = SubResource("BoxShape3D_qf2hj")
+
+[node name="Bedroom" parent="." unique_id=1228144986 instance=ExtResource("2_qf2hj")]

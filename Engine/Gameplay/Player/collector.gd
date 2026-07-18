@@ -6,6 +6,7 @@ var nonrolling:Node3D
 signal size_changed(size, rollup_size)
 
 var size: float = 1.0
+var level_scale = 1.0
 
 @export var rollup_ratio = 2.15
 @export var exponent = 3.0
@@ -16,7 +17,11 @@ var old_size: float = 0.0
 
 func _ready() -> void:
 	player_body = get_parent()
-	size = player_body.scale.x
+	var control = get_tree().get_first_node_in_group("Level Control")
+	level_scale = control.level_scale
+	if (control.scale_direction == 1):
+		level_scale = 1/level_scale
+	size = level_scale * player_body.scale.x
 	volume = pow(size, exponent)
 
 
@@ -27,7 +32,7 @@ func _process(_delta: float) -> void:
 		old_size = size
 		
 func give_size_with_mults(amount):
-	var mults = 1
+	var mults = 1.0
 	mults *= growth_mult
 	amount *= pow(mults, 1/exponent)
 	add_size(amount)

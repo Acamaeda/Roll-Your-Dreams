@@ -15,7 +15,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="Roll Your Dream"
-run/main_scene="uid://elsk4mbe42ba"
+run/main_scene="uid://d4caxcliyyuir"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -23,7 +23,7 @@ config/icon="res://icon.svg"
 
 UI="*res://addons/PackedUi/UI/UI.tscn"
 Utils="*uid://cv63hstec5ile"
-LevelControl="*uid://remwdgq0ymi2"
+GameControl="*uid://remwdgq0ymi2"
 
 [display]
 
@@ -33,6 +33,7 @@ window/size/viewport_height=720
 [global_group]
 
 Player=""
+"Level Control"=""
 
 [input]
 

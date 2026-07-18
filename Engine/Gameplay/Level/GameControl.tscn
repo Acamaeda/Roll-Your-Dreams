@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://remwdgq0ymi2"]
+
+[ext_resource type="Script" uid="uid://bqiqdb8qjkgs2" path="res://Engine/Gameplay/Level/FreezeControl.gd" id="1_vki5k"]
+[ext_resource type="Script" uid="uid://cwyvxkpplanku" path="res://Engine/Events/Triggers/Trigger.gd" id="2_u65ax"]
+[ext_resource type="PackedScene" uid="uid://trs8hjim0g4m" path="res://The stuff you use/Events/Conditions/Confirmation.tscn" id="3_uon37"]
+[ext_resource type="Script" uid="uid://b7xhs6bgoebyh" path="res://Engine/Events/Actions/ReloadScene.gd" id="4_pched"]
+
+[node name="GameControl" type="Node" unique_id=1537303976]
+
+[node name="FreezeControl" type="Node" parent="." unique_id=1808320393]
+process_mode = 3
+script = ExtResource("1_vki5k")
+
+[node name="Restart" type="Node" parent="." unique_id=289526416]
+script = ExtResource("2_u65ax")
+repeatable = true
+
+[node name="Confirmation" parent="Restart" unique_id=1378333904 instance=ExtResource("3_uon37")]
+text = "Do you want to restart the level?"
+repeatable = true
+
+[node name="Node" type="Node" parent="Restart/Confirmation" unique_id=915600703]
+script = ExtResource("4_pched")

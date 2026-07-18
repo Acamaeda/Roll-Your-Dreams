@@ -14,7 +14,7 @@ collision_mask = 271
 [node name="DetailedCollision" type="Area3D" parent="." unique_id=1220416271]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=871267849]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0)
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0.5, 0)
 shape = SubResource("CylinderShape3D_kcjr0")
 
 [node name="Rollable" type="Node" parent="." unique_id=2084382761]
@@ -22,7 +22,10 @@ script = ExtResource("1_01ous")
 object_name = "Rubber Duck"
 description = "It's probably too HD for this universe."
 creator = "Plat251"
+link = "https://polyhaven.com/a/rubber_duck_toy"
 base_size = 0.08
+model_scale = 10.0
+scale_direction = 1
 
 [node name="blend_export" parent="." unique_id=1866116617 instance=ExtResource("2_53v0e")]
-transform = Transform3D(0.33, 0, 0, 0, 0.33, 0, 0, 0, 0.33, 0, 0, 0)
+transform = Transform3D(3.3, 0, 0, 0, 3.3, 0, 0, 0, 3.3, 0, 0, 0)

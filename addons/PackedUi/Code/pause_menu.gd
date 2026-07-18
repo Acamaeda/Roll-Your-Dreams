@@ -67,7 +67,7 @@ func _back_btn_pressed() -> void:
 
 func _restart_btn_pressed():
 	_back_btn_pressed()
-	LevelControl.get_node("Restart").trigger()
+	GameControl.get_node("Restart").trigger()
 
 func _main_menu_btn_pressed() -> void:
 	UI.ReturnToMainMenu.emit()
