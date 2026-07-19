@@ -2,13 +2,9 @@
 extends Node
 
 
-@export var scale: float = 1.0:
+@export_range(0, 3333, 30, "or_greater", "or_less", "hide_control")  var scale: float = 1.0:
 	set(val):
 		scale = val
-		update_scale()
-@export_enum("Normal/big", "Inverted/small") var scale_direction = 0:
-	set(val):
-		scale_direction = val
 		update_scale()
 @export_enum("Multiply", "Set") var mode = 0:
 	set(val):
@@ -28,9 +24,8 @@ func _ready() -> void:
 	update_scale()
 	
 func update_scale():
+	if (!target): return
 	var scale_factor = scale
-	if (scale_direction == 1):
-		scale_factor = 1/scale_factor
 	if (mode == 1):
 		scale_factor = scale_factor/target.base_size 
 	target.size_mult = scale_factor

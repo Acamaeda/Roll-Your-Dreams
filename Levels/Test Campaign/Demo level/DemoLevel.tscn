@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://drceo5tcl63oe" path="res://Engine/Gameplay/UI/SizeDisplay.gd" id="2_7rvv0"]
 [ext_resource type="PackedScene" uid="uid://ctcv6q11r7du3" path="res://Engine/Gameplay/Level/Zone.tscn" id="5_6ta50"]
 [ext_resource type="PackedScene" uid="uid://bm7mvt3hfv7g2" path="res://The stuff you use/Rollables/RubberDuck.tscn" id="5_fqft0"]
+[ext_resource type="PackedScene" uid="uid://dntce6s4kl3vn" path="res://The stuff you use/Features/Resize.tscn" id="6_h67nn"]
 [ext_resource type="PackedScene" uid="uid://b4av1chmw2uy" path="res://The stuff you use/Rollables/Wood Floor.tscn" id="14_rbkqs"]
 
 [sub_resource type="Environment" id="Environment_02h4r"]
@@ -16,8 +17,7 @@ ambient_light_energy = 0.11
 [node name="Node3D" type="Node3D" unique_id=1992448230]
 
 [node name="Level Control" parent="." unique_id=574180729 instance=ExtResource("1_3eybd")]
-level_scale = 20.0
-scale_direction = 1
+level_scale = 0.05
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1231630966]
 transform = Transform3D(0.99997354, 0, -0.0072779586, 0.0060000415, -0.5659891, 0.8243909, -0.004119245, -0.8244127, -0.5659741, -12.963337, 14.23407, 3.0084782)
@@ -31,7 +31,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.62239623, 0)
 [node name="Zone" parent="." unique_id=1418971655 instance=ExtResource("5_6ta50")]
 
 [node name="Duck" parent="Zone/Rollables" parent_id_path=PackedInt32Array(1418971655, 1164383247) index="0" unique_id=1036713240 instance=ExtResource("5_fqft0")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 7.898037, 0, 0)
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 7.898037, 0, 0)
+
+[node name="Resize" parent="Zone/Rollables/Duck" unique_id=1291097376 instance=ExtResource("6_h67nn")]
+scale = 2.0
 
 [node name="Wood Floor" parent="Zone/Rollables" parent_id_path=PackedInt32Array(1418971655, 1164383247) index="1" unique_id=51362740 instance=ExtResource("14_rbkqs")]
 transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0, 0, 0)

@@ -24,8 +24,7 @@ description = "It's probably too HD for this universe."
 creator = "Plat251"
 link = "https://polyhaven.com/a/rubber_duck_toy"
 base_size = 0.08
-model_scale = 10.0
-scale_direction = 1
+model_scale = 0.1
 
 [node name="blend_export" parent="." unique_id=1866116617 instance=ExtResource("2_53v0e")]
 transform = Transform3D(3.3, 0, 0, 0, 3.3, 0, 0, 0, 3.3, 0, 0, 0)

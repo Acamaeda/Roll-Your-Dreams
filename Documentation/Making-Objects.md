@@ -40,8 +40,7 @@ Click on the "Rollable" object in the scene tree to edit it. It has the followin
 	- Base size: The size of the object without scaling. This is 1/2.16 the standard "size to roll up", and it's up to you to figure out what feels right.
 		"1" size is a 1-meter sphere, a solid 1-meter cube has 1.2 times more size. 
 		The average of the length, width, and height is a good starting point. (Or cube root of l*w*h)
-	- Model scale: The scale your model is at. How many meters one unit is equal to. BUT if it is smaller than 1 unit, instead use 1/scale so it is always more than 1.
-	- Scale direction: Determines which way to apply model scale (since Godot hates small numbers). Big means your object is larger than the model scale, small means it is smaller.
+	- Model scale: The scale your model is at. How many meters one unit is equal to.
 	- Solid: Determines if the object can collide with other objects and the player (it can still be rolled up)
 
 ## License stuff

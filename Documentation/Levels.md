@@ -13,8 +13,7 @@ Key elements:
 
 ## Initial stuff in Level Control
 
-The first thing you need to do is set the level's scale, which is the same as the player's starting size, if the player is at least 1 meter.
-Otherwise, set it to 1 divided by the starting size, and set the "scale direction" to "small". (Godot hates small numbers)
+The first thing you need to do is set the level's scale, which is the same as the player's starting size in meters.
 
 ## Building the level:
 	

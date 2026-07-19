@@ -19,8 +19,6 @@ func _ready() -> void:
 	player_body = get_parent()
 	var control = get_tree().get_first_node_in_group("Level Control")
 	level_scale = control.level_scale
-	if (control.scale_direction == 1):
-		level_scale = 1/level_scale
 	size = level_scale * player_body.scale.x
 	volume = pow(size, exponent)
 

@@ -12,9 +12,8 @@ signal onRollup
 @export var description: String = "Some kind of funny detail."
 @export var creator: String = "Somebody"
 @export var link: String = ""
-@export var base_size: float = 1.0
-@export var model_scale: float = 1.0
-@export_enum("Normal/big", "Inverted/small") var scale_direction = 0
+@export_range(0, 5555, 1e-30, "or_greater", "or_less", "hide_control") var base_size: float = 1.0
+@export_range(0, 4444, 1e-30, "or_greater", "or_less", "hide_control") var model_scale: float = 1.0
 
 var collision: int
 @export var solid: bool = true
@@ -74,15 +73,11 @@ func update_scale():
 
 	size = base_size * size_mult
 	scale = model_scale
-	if (scale_direction == 1): 
-		scale = 1/scale
 	scale *= size_mult
 	var control = get_tree().get_first_node_in_group("Level Control")
 	if (!control): #this means we aren't in a level scene and shouldn't rescale
 		return
-	var level_scale = control.level_scale
-	if (control.scale_direction == 0):
-		level_scale = 1/level_scale
+	var level_scale = 1/control.level_scale
 	scale *= level_scale
 	body.scale = Vector3(scale, scale, scale)
 	size = size_mult * base_size
