@@ -5,12 +5,10 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_7og04"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7og04"]
+albedo_color = Color(0, 1, 0, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_fl164"]
 material = SubResource("StandardMaterial3D_7og04")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i1jod"]
-albedo_color = Color(0.003921569, 1, 0, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jqcvx"]
 
@@ -25,7 +23,6 @@ shape = SubResource("BoxShape3D_7og04")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2044823450]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 mesh = SubResource("BoxMesh_fl164")
-surface_material_override/0 = SubResource("StandardMaterial3D_i1jod")
 
 [node name="Rollable" type="Node" parent="." unique_id=2084382761]
 script = ExtResource("1_fl164")

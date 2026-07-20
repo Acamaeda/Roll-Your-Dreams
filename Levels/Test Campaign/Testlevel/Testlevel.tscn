@@ -15,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://mkdj7ltop5nx" path="res://Engine/Gameplay/Rollable/Arch.tscn" id="11_fw1sq"]
 [ext_resource type="PackedScene" uid="uid://cb1vn5kk4jxyi" path="res://The stuff you use/Features/RollableProperties.tscn" id="12_f2f62"]
 [ext_resource type="PackedScene" uid="uid://bq5p23e7ucadm" path="res://The stuff you use/Features/Orbit.tscn" id="13_3xbmh"]
-[ext_resource type="PackedScene" uid="uid://bm7mvt3hfv7g2" path="res://The stuff you use/Rollables/RubberDuck.tscn" id="13_mjkqm"]
+[ext_resource type="PackedScene" uid="uid://bm7mvt3hfv7g2" path="res://The stuff you use/Rollables/Candy Cane.tscn" id="13_mjkqm"]
 [ext_resource type="PackedScene" uid="uid://b4av1chmw2uy" path="res://The stuff you use/Rollables/Wood Floor.tscn" id="14_rckqu"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_noarx"]

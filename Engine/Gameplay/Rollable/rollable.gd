@@ -12,8 +12,8 @@ signal onRollup
 @export var description: String = "Some kind of funny detail."
 @export var creator: String = "Somebody"
 @export var link: String = ""
-@export_range(0, 5555, 1e-30, "or_greater", "or_less", "hide_control") var base_size: float = 1.0
-@export_range(0, 4444, 1e-30, "or_greater", "or_less", "hide_control") var model_scale: float = 1.0
+@export_range(0, 5555, 1e-14, "or_greater", "or_less", "hide_control") var base_size: float = 1.0
+@export_range(0, 4444, 1e-14, "or_greater", "or_less", "hide_control") var model_scale: float = 1.0
 
 var collision: int
 @export var solid: bool = true

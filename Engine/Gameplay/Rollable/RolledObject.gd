@@ -13,7 +13,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	position+= player.linear_velocity * delta
 	var distance = player.position - position
-	var step_size = speed * delta
+	var step_size = speed * delta *player.scale.x
 	if (step_size > distance.length()):
 		queue_free()
 		return

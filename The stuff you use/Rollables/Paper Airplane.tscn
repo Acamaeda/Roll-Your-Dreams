@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://devav7ydxm5l2"]
+
+[ext_resource type="Script" uid="uid://dx6eyklyhmrga" path="res://Engine/Gameplay/Rollable/rollable.gd" id="1_ww844"]
+[ext_resource type="PackedScene" uid="uid://ddnou0q8uk7st" path="res://Assets/3d/Shikko/Paper Airplane/Paper Airplane.glb" id="2_ww844"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ww844"]
+size = Vector3(10, 20, 133)
+
+[node name="Paper Airplane" type="StaticBody3D" unique_id=1036713240]
+collision_layer = 4
+collision_mask = 271
+
+[node name="DetailedCollision" type="Area3D" parent="." unique_id=1220416271]
+
+[node name="SimpleCollision" type="Area3D" parent="." unique_id=217394888]
+
+[node name="Rollable" type="Node" parent="." unique_id=2084382761]
+script = ExtResource("1_ww844")
+object_name = "Paper Airplane"
+description = "Normally they don't fly this well."
+creator = "Shikko"
+link = "https://www.printables.com/model/424740-paper-plane"
+base_size = 0.08
+model_scale = 0.001
+
+[node name="Paper Airplane" parent="." unique_id=579046207 instance=ExtResource("2_ww844")]
+transform = Transform3D(0.9999999, 0, 0, 0, 0.15298581, -0.9882282, 0, 0.98822826, 0.1529858, 0, -5.66, 0)
+
+[node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="." unique_id=1263976573]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 5.55, 0)
+depth = 0.6
+polygon = PackedVector2Array(-0.013411269, 74.89524, 58.438633, -77.657936, -58.23923, -77.38766)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=752616137]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -7.262142, -10.373425)
+shape = SubResource("BoxShape3D_ww844")

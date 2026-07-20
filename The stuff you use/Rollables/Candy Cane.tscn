@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://bm7mvt3hfv7g2"]
+
+[ext_resource type="Script" uid="uid://dx6eyklyhmrga" path="res://Engine/Gameplay/Rollable/rollable.gd" id="1_01ous"]
+[ext_resource type="PackedScene" uid="uid://c8bfwfivrhhtm" path="res://Assets/3d/Harry Charalambous/Candy/Candy Cane.glb" id="2_n0tjn"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_wedjl"]
+height = 3.68
+radius = 0.15
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_7bftb"]
+height = 0.55
+radius = 0.15
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_l7o6d"]
+height = 0.26
+radius = 0.14
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_xlmgf"]
+height = 0.15
+radius = 0.45
+
+[node name="Candy Cane" type="StaticBody3D" unique_id=1036713240]
+collision_layer = 4
+collision_mask = 271
+
+[node name="DetailedCollision" type="Area3D" parent="." unique_id=1220416271]
+
+[node name="Tall2" type="CollisionShape3D" parent="DetailedCollision" unique_id=1250962669]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.451, 1.84, 0)
+shape = SubResource("CylinderShape3D_wedjl")
+
+[node name="Short2" type="CollisionShape3D" parent="DetailedCollision" unique_id=1713408552]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3102152, 3.3943195, 0)
+shape = SubResource("CylinderShape3D_7bftb")
+
+[node name="Short3" type="CollisionShape3D" parent="DetailedCollision" unique_id=642729903]
+transform = Transform3D(0.92902285, -0.37002245, 0, 0.37002245, 0.92902285, 0, 0, 0, 1, 0.27306414, 3.760144, 0)
+shape = SubResource("CylinderShape3D_l7o6d")
+
+[node name="Short4" type="CollisionShape3D" parent="DetailedCollision" unique_id=426703995]
+transform = Transform3D(0.9291326, 0.36974674, 0, -0.36974674, 0.9291326, 0, 0, 0, 1, -0.4201343, 3.760144, 0)
+shape = SubResource("CylinderShape3D_l7o6d")
+
+[node name="Short5" type="CollisionShape3D" parent="DetailedCollision" unique_id=107468863]
+transform = Transform3D(0.53616565, 0.8441128, 0, -0.8441128, 0.53616565, 0, 0, 0, 1, -0.28962982, 3.9057338, 0)
+shape = SubResource("CylinderShape3D_l7o6d")
+
+[node name="Short6" type="CollisionShape3D" parent="DetailedCollision" unique_id=563416255]
+transform = Transform3D(0.53582674, -0.8443279, 0, 0.8443279, 0.53582674, 0, 0, 0, 1, 0.15887868, 3.9057338, -0.041038156)
+shape = SubResource("CylinderShape3D_l7o6d")
+
+[node name="Short7" type="CollisionShape3D" parent="DetailedCollision" unique_id=2024600219]
+transform = Transform3D(-4.3711385e-08, -0.99999994, 0, 0.99999994, -4.3711385e-08, 0, 0, 0, 1, -0.0726766, 3.9752429, -0.041038156)
+shape = SubResource("CylinderShape3D_l7o6d")
+
+[node name="SimpleCollision" type="Area3D" parent="." unique_id=217394888]
+
+[node name="Tall" type="CollisionShape3D" parent="." unique_id=871267849]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.451, 1.84, 0)
+shape = SubResource("CylinderShape3D_wedjl")
+
+[node name="Short" type="CollisionShape3D" parent="." unique_id=1479925159]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3102152, 3.3943195, 0)
+shape = SubResource("CylinderShape3D_7bftb")
+
+[node name="Top" type="CollisionShape3D" parent="." unique_id=1191535662]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -0.06856808, 3.6485107, 0)
+shape = SubResource("CylinderShape3D_xlmgf")
+
+[node name="Rollable" type="Node" parent="." unique_id=2084382761]
+script = ExtResource("1_01ous")
+object_name = "Candy Cane"
+description = "January is the best time to buy them."
+creator = "Harry Charalambous"
+link = "https://sketchfab.com/3d-models/candy-34bbb16e80dd4b768089b9b31d291aea"
+base_size = 0.035
+model_scale = 0.0375
+
+[node name="Candy Cane" parent="." unique_id=267373176 instance=ExtResource("2_n0tjn")]
+transform = Transform3D(10, 0, 0, 0, -4.371139e-07, -10, 0, 10, -4.371139e-07, 0, 3.25, -0.001)

@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://dx2xuup8tyvar"]
+
+[ext_resource type="Script" uid="uid://dx6eyklyhmrga" path="res://Engine/Gameplay/Rollable/rollable.gd" id="1_o8qpc"]
+[ext_resource type="PackedScene" uid="uid://cc8qui7d0xf44" path="res://Assets/3d/Harry Charalambous/Candy/Peppermint.glb" id="2_ao0om"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_sqig6"]
+height = 0.46
+radius = 0.59
+
+[node name="Peppermint" type="StaticBody3D" unique_id=1036713240]
+collision_layer = 4
+collision_mask = 271
+
+[node name="DetailedCollision" type="Area3D" parent="." unique_id=1220416271]
+
+[node name="SimpleCollision" type="Area3D" parent="." unique_id=217394888]
+
+[node name="Collision" type="CollisionShape3D" parent="." unique_id=871267849]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.23, 0)
+shape = SubResource("CylinderShape3D_sqig6")
+
+[node name="Rollable" type="Node" parent="." unique_id=2084382761]
+script = ExtResource("1_o8qpc")
+object_name = "Peppermint"
+description = "Thankfully, it doesn't taste like pepper."
+creator = "Harry Charalambous"
+link = "https://sketchfab.com/3d-models/candy-34bbb16e80dd4b768089b9b31d291aea"
+base_size = 0.013
+model_scale = 0.0212
+
+[node name="Peppermint" parent="." unique_id=2102636189 instance=ExtResource("2_ao0om")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0.23, 0)

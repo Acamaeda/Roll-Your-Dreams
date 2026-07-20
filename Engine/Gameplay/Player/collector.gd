@@ -38,6 +38,7 @@ func give_size_with_mults(amount):
 func add_size(amount): 
 	volume += pow(amount, exponent)
 	size = pow(volume, 1/exponent)
+	print(size)
 
 func set_size(amount):
 	volume = pow(amount, exponent)
@@ -59,11 +60,14 @@ func absorb(other):
 	absorbed.player = player_body
 	absorbed.size = size
 	
+	
 	player_body.get_parent().add_child(absorbed)
+	rescue_meshes(other, absorbed)
+	Utils.delete_node.call_deferred(other)
+
+func rescue_meshes(other, absorbed):
 	for child in other.get_children():
 		if (child is VisualInstance3D):
 			child.reparent(absorbed, true)
 		else:
-			for grandchild in child.get_children():
-				if (grandchild is VisualInstance3D):
-					grandchild.reparent(absorbed, true)
+			rescue_meshes(child, absorbed)

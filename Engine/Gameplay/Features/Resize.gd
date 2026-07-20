@@ -2,7 +2,7 @@
 extends Node
 
 
-@export_range(0, 3333, 30, "or_greater", "or_less", "hide_control")  var scale: float = 1.0:
+@export_range(0, 3333, 1e-14, "or_greater", "or_less", "hide_control")  var scale: float = 1.0:
 	set(val):
 		scale = val
 		update_scale()

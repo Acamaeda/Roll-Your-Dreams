@@ -11,17 +11,10 @@ var shader : Shader
 var shadermat : ShaderMaterial
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	var parent = get_parent()
-	for child in parent.get_children():
-		if (child is MeshInstance3D):
-			target = child
-		else:
-			for grandchild in child.get_children():
-				if (grandchild is MeshInstance3D):
-					target = grandchild
+
+	find_target(get_parent())
 	if (!target):
 		return
-	
 	shader = load("res://Engine/Gameplay/Features/Recolor.gdshader")
 	shadermat = ShaderMaterial.new()
 	shadermat.shader = shader
@@ -43,3 +36,13 @@ func update_color():
 		return
 	shadermat.set_shader_parameter("shift_amount", shift_amount)
 	#target.set_instance_shader_parameter()
+
+	
+func find_target(parent):
+	for child in parent.get_children():
+		if (child is MeshInstance3D):
+			target = child
+		else:
+			find_target(child)
+
+	

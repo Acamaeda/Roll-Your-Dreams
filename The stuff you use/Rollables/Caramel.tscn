@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://c4l3folog5st7"]
+
+[ext_resource type="Script" uid="uid://dx6eyklyhmrga" path="res://Engine/Gameplay/Rollable/rollable.gd" id="1_bv02v"]
+[ext_resource type="PackedScene" uid="uid://cg3s240prrxd" path="res://Assets/3d/Harry Charalambous/Candy/Caramel.glb" id="2_vxm60"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ibyff"]
+size = Vector3(0.9, 0.6, 0.9)
+
+[node name="Caramel" type="StaticBody3D" unique_id=1036713240]
+collision_layer = 4
+collision_mask = 271
+
+[node name="DetailedCollision" type="Area3D" parent="." unique_id=1220416271]
+
+[node name="SimpleCollision" type="Area3D" parent="." unique_id=217394888]
+
+[node name="Box" type="CollisionShape3D" parent="." unique_id=871267849]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
+shape = SubResource("BoxShape3D_ibyff")
+
+[node name="Rollable" type="Node" parent="." unique_id=2084382761]
+script = ExtResource("1_bv02v")
+object_name = "Caramel"
+description = "Pure sugar turned into a delicious glue."
+creator = "Harry Charalambous"
+link = "https://sketchfab.com/3d-models/candy-34bbb16e80dd4b768089b9b31d291aea"
+base_size = 0.02
+model_scale = 0.0212
+
+[node name="Caramel2" parent="." unique_id=1445392865 instance=ExtResource("2_vxm60")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0.29993242, 0)

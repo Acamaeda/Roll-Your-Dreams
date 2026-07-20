@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://cer2o3gkyq4n7"]
+
+[ext_resource type="Script" uid="uid://dx6eyklyhmrga" path="res://Engine/Gameplay/Rollable/rollable.gd" id="1_c6i05"]
+[ext_resource type="PackedScene" uid="uid://d3bc6o64af62e" path="res://Assets/3d/Public Domain/RubberDuck/rubber_duck_toy_4k.glb" id="2_7otxs"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_kcjr0"]
+height = 0.095
+radius = 0.048
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_c6i05"]
+height = 2.89
+radius = 0.96
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_7otxs"]
+height = 1.5
+radius = 0.96
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_bsjop"]
+height = 1.4
+radius = 1.01
+
+[node name="Duck" type="StaticBody3D" unique_id=1036713240]
+collision_layer = 4
+collision_mask = 271
+
+[node name="DetailedCollision" type="Area3D" parent="." unique_id=1220416271]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+
+[node name="SimpleCollision" type="Area3D" parent="." unique_id=1961709460]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SimpleCollision" unique_id=1806921856]
+transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, 0, 1.425, 0)
+shape = SubResource("CylinderShape3D_kcjr0")
+
+[node name="Front" type="CollisionShape3D" parent="." unique_id=871267849]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.425, 0.566569)
+shape = SubResource("CylinderShape3D_c6i05")
+
+[node name="Back" type="CollisionShape3D" parent="." unique_id=140961730]
+transform = Transform3D(0.99980927, 0, -0.019528992, 0, 1, 0, 0.019528992, 0, 0.99980927, 0, 0.75, -0.501)
+shape = SubResource("CylinderShape3D_7otxs")
+
+[node name="Back2" type="CollisionShape3D" parent="." unique_id=608479268]
+transform = Transform3D(0.99980927, 0, -0.019528992, 0, 1, 0, 0.019528992, 0, 0.99980927, 0, 0.7, 0.08)
+shape = SubResource("CylinderShape3D_bsjop")
+
+[node name="Rollable" type="Node" parent="." unique_id=2084382761]
+script = ExtResource("1_c6i05")
+object_name = "Rubber Duck"
+description = "It's probably too HD for this universe."
+creator = "Plat251"
+link = "https://polyhaven.com/a/rubber_duck_toy"
+base_size = 0.08
+model_scale = 0.0275
+
+[node name="blend_export" parent="." unique_id=1866116617 instance=ExtResource("2_7otxs")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)

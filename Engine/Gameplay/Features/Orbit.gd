@@ -52,7 +52,7 @@ func update_rotation(object : Node3D):
 			forward.y=0
 			object.look_at(object.global_position+forward, to_local(global_position+Vector3.UP))
 		1: # Toward Center
-			object.look_at(object.global_position+forward, object.position)
+			object.look_at(object.global_position+forward, (object.global_position-global_position).normalized())
 		2: # Toward Orbital Plane
 			object.look_at(object.global_position+forward)
 
