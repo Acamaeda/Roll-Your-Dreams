@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://dkaq3ggg780ay"]
+
+[ext_resource type="Script" uid="uid://dx6eyklyhmrga" path="res://Engine/Gameplay/Rollable/rollable.gd" id="1_yfl2u"]
+[ext_resource type="PackedScene" uid="uid://bw6buhk2dpv16" path="res://Assets/3d/IvanPetrov/Toy Car/Toy Car.glb" id="2_yfl2u"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yfl2u"]
+size = Vector3(8.5, 9, 14.4)
+
+[node name="Toy Car" type="StaticBody3D" unique_id=1036713240]
+collision_layer = 4
+collision_mask = 271
+
+[node name="DetailedCollision" type="Area3D" parent="." unique_id=1220416271]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+
+[node name="SimpleCollision" type="Area3D" parent="." unique_id=1961709460]
+
+[node name="Rollable" type="Node" parent="." unique_id=2084382761]
+script = ExtResource("1_yfl2u")
+object_name = "Toy Car"
+description = "Here to arrest you for stealing dozens of small objects."
+creator = "IvanPetrov"
+link = "https://sketchfab.com/3d-models/toy-police-car-7fdc12e47d9547a493e3d1f3f12f7355"
+base_size = 0.124
+model_scale = 0.014
+
+[node name="Toy Car" parent="." unique_id=319313440 instance=ExtResource("2_yfl2u")]
+transform = Transform3D(-4.371139e-07, 0, 10, 0, 10, 0, -10, 0, -4.371139e-07, -6.36, 0, -0.866)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1589486217]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.5, 0.04)
+shape = SubResource("BoxShape3D_yfl2u")

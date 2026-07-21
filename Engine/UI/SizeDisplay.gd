@@ -13,6 +13,7 @@ func _ready() -> void:
 	var collector = player.get_node("Collector")
 	collector.size_changed.connect(_on_player_size_change)
 	text.add_theme_font_size_override("normal_font_size", 64)
+	_on_player_size_change(collector.size, null)
 	
 func _on_player_size_change(size, _ignore):
 	text.text=formatSize(size)
@@ -47,7 +48,3 @@ func metricify(val: float):
 	else:
 		prefix = positive_prefixes[level]
 	return(("%.3f" % amount) + " " + prefix)
-	
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
-	pass

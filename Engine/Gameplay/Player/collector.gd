@@ -38,7 +38,6 @@ func give_size_with_mults(amount):
 func add_size(amount): 
 	volume += pow(amount, exponent)
 	size = pow(volume, 1/exponent)
-	print(size)
 
 func set_size(amount):
 	volume = pow(amount, exponent)

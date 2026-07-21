@@ -3,7 +3,7 @@ extends RigidBody3D
 var nonrolling : Node3D
 var collector : Node3D
 var ghost_floor : Node3D
-
+var base_mass = 1.0
 var rolling_force = 60
 var horizontal_mult = 0.5
 var back_mult = 0.3
@@ -116,6 +116,7 @@ func update_size():
 	var size = collector.size/collector.level_scale
 	var big = Vector3(size, size, size)
 	gravity_scale = size
+	mass = base_mass * pow(size, collector.exponent)
 	scale = big
 	nonrolling.scale = big
 
