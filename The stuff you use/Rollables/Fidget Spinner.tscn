@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://cnhbeplooqgnk"]
+
+[ext_resource type="Script" uid="uid://dx6eyklyhmrga" path="res://Engine/Gameplay/Rollable/rollable.gd" id="1_s3mdl"]
+[ext_resource type="PackedScene" uid="uid://bthwst8q318ob" path="res://Assets/3d/Hennadiy Kyeseliov/Fidget Spinner/Spinner by Hennadiy Kyseliov - f_NVr_pBHWx.glb" id="2_s3mdl"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_s3mdl"]
+height = 0.6
+radius = 2.7
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_nr7vk"]
+height = 0.7
+radius = 0.9
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_vu7de"]
+height = 0.4
+radius = 0.95
+
+[node name="Fidget Spinner" type="StaticBody3D" unique_id=1036713240]
+collision_layer = 4
+collision_mask = 271
+
+[node name="DetailedCollision" type="Area3D" parent="." unique_id=1220416271]
+
+[node name="SimpleCollision" type="Area3D" parent="." unique_id=217394888]
+
+[node name="Middle2" type="CollisionShape3D" parent="SimpleCollision" unique_id=917108724]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.33903188, 0)
+shape = SubResource("CylinderShape3D_s3mdl")
+
+[node name="Middle" type="CollisionShape3D" parent="." unique_id=871267849]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.33903188, 0)
+shape = SubResource("CylinderShape3D_nr7vk")
+
+[node name="Ring" type="CollisionShape3D" parent="." unique_id=103825417]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.595439, 0.30463034, -0.9362459)
+shape = SubResource("CylinderShape3D_vu7de")
+
+[node name="Ring2" type="CollisionShape3D" parent="." unique_id=559413268]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.013628006, 0.30463058, 1.8688653)
+shape = SubResource("CylinderShape3D_vu7de")
+
+[node name="Ring3" type="CollisionShape3D" parent="." unique_id=1449483228]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6349915, 0.30463058, -0.94860333)
+shape = SubResource("CylinderShape3D_vu7de")
+
+[node name="Rollable" type="Node" parent="." unique_id=2084382761]
+script = ExtResource("1_s3mdl")
+object_name = "Fidget Spinner"
+description = "It go speeeeeeeen."
+creator = "Spinner by Hennadiy Kyseliov [CC-BY] via Poly Pizza"
+link = "https://poly.pizza/m/f_NVr_pBHWx"
+base_size = 0.033
+model_scale = 0.0141
+
+[node name="Spinner by Hennadiy Kyseliov - f_NVr_pBHWx" parent="." unique_id=852422759 instance=ExtResource("2_s3mdl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.12, 0)
+
+[editable path="Spinner by Hennadiy Kyseliov - f_NVr_pBHWx"]

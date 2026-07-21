@@ -2,5 +2,5 @@
 
 [ext_resource type="Script" uid="uid://c04u3b2ogrg22" path="res://Engine/Events/Triggers/SizeTrigger.gd" id="1_yxvqq"]
 
-[node name="SizeTrigger" type="Node2D" unique_id=1868744601]
+[node name="SizeTrigger" type="Node" unique_id=1718198340]
 script = ExtResource("1_yxvqq")

@@ -18,7 +18,6 @@ func _ready() -> void:
 	shader = load("res://Engine/Gameplay/Features/Recolor.gdshader")
 	shadermat = ShaderMaterial.new()
 	shadermat.shader = shader
-	
 	for id in target.get_surface_override_material_count():
 		var newmat : StandardMaterial3D
 		if (target.get_active_material(id)):
