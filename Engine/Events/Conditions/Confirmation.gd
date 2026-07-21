@@ -3,9 +3,12 @@ extends "res://Engine/Events/Conditions/ConditionTrigger.gd"
 
 var result = false
 
+func _ready():
+		UI.PopupResult.connect(_get_result)
+
+
 func check_condition():
 	UI.PopupLarge.emit(text, text)
-	UI.PopupResult.connect(_get_result)
 	await UI.dialogue_done
 	await get_tree().create_timer(0.2).timeout
 	return result

@@ -12,8 +12,6 @@ extends Node3D
 @export_enum("Towards ground", "Towards center", "Towards orbital plane", "No rotation") var rotation_style = 0
 
 func _ready() -> void:
-
-		
 	var count = get_child_count()
 	var v : Node3D = get_node("Visualizer")
 	if(v):
@@ -28,6 +26,7 @@ func _ready() -> void:
 				if (dist == 0): 
 					dist = child.position.abs()
 				child.position = Vector3(dist, 0, 0).rotated(Vector3.UP, angle)
+				update_rotation(child)
 			x+=1
 	Utils.upgrade_physics(self, 1)		
 	

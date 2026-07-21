@@ -25,6 +25,7 @@ func _ready() -> void:
 		else:
 			newmat = StandardMaterial3D.new()
 		newmat.next_pass = shadermat
+		shadermat.render_priority=shadermat.RENDER_PRIORITY_MIN
 		target.set_surface_override_material(id, newmat)
 		
 

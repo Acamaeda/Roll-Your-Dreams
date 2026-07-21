@@ -37,11 +37,9 @@ func _ready() -> void:
 	window_size = _get_window_size(window_size)
 	width = ProjectSettings.get_setting("display/window/size/viewport_width")
 	height = ProjectSettings.get_setting("display/window/size/viewport_height")
-	await get_tree().create_timer(0.5).timeout
-	_set_theme_ui(_get_themed_ui(), default_theme)
 	var newscale = get_viewport().size.x/width
 	scale = Vector2(newscale, newscale)
-
+	_set_theme_ui.call_deferred(_get_themed_ui(), default_theme)
 func _physics_process(delta: float) -> void:
 	size_timer += delta
 
