@@ -29,6 +29,8 @@ GameControl="*uid://remwdgq0ymi2"
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
+window/size/mode=3
+window/size/initial_position=Vector2i(0, 434)
 
 [global_group]
 

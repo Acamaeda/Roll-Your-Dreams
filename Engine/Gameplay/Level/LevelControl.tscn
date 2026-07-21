@@ -1,6 +1,10 @@
 [gd_scene format=3 uid="uid://8qtwqcg30ut6"]
 
 [ext_resource type="Script" uid="uid://ceqbq652gkem3" path="res://Engine/Gameplay/Level/LevelControl.gd" id="1_5a3xf"]
+[ext_resource type="PackedScene" uid="uid://cwgayb1vnln5y" path="res://Engine/UI/HUD.tscn" id="2_eswtl"]
 
 [node name="Level Control" type="Node" unique_id=574180729 groups=["Level Control"]]
 script = ExtResource("1_5a3xf")
+
+[node name="Hud" parent="." unique_id=856708716 instance=ExtResource("2_eswtl")]
+position = Vector2(474.41266, 189.7562)

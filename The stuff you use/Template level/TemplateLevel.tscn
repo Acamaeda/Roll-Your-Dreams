@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://i6dljcflr33p"]
 
 [ext_resource type="PackedScene" uid="uid://d37a1hkqxg1aw" path="res://Engine/Gameplay/Player/PlayerBall.tscn" id="1_4rmv0"]
-[ext_resource type="Script" uid="uid://drceo5tcl63oe" path="res://Engine/Gameplay/UI/SizeDisplay.gd" id="2_io820"]
+[ext_resource type="Script" uid="uid://drceo5tcl63oe" path="res://Engine/UI/SizeDisplay.gd" id="2_io820"]
 [ext_resource type="PackedScene" uid="uid://ctcv6q11r7du3" path="res://Engine/Gameplay/Level/Zone.tscn" id="3_ugtgw"]
 [ext_resource type="PackedScene" uid="uid://b7rsw0wfluk7m" path="res://Engine/Gameplay/Rollable/Rollable.tscn" id="4_llv1c"]
 [ext_resource type="PackedScene" uid="uid://c8416hr3tx1qo" path="res://The stuff you use/Events/Triggers/OnRollup.tscn" id="5_whrjx"]
