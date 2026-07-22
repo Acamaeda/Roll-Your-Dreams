@@ -144,6 +144,7 @@ func inputs_advanced():
 	
 func emergency_warp(state: PhysicsDirectBodyState3D):
 	position = emergency_pos
+	position.y+=scale.y
 	state.linear_velocity = Vector3.ZERO
 	state.angular_velocity = Vector3.ZERO
 	last_vel = Vector3.ZERO

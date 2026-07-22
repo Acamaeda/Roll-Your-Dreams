@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://o0yn2y8misdb"]
+
+[ext_resource type="Script" uid="uid://dx6eyklyhmrga" path="res://Engine/Gameplay/Rollable/rollable.gd" id="1_nvlmm"]
+[ext_resource type="Texture2D" uid="uid://y1w40pp0r7dr" path="res://Assets/2d/bart/hardwood.jpg" id="2_q5ov8"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_v8qqq"]
+size = Vector3(1, 0.015, 0.2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v8qqq"]
+albedo_texture = ExtResource("2_q5ov8")
+uv1_scale = Vector3(0.8, 0.8, 0.8)
+uv1_offset = Vector3(0.08, 0, 0.08)
+uv1_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_utinr"]
+material = SubResource("StandardMaterial3D_v8qqq")
+size = Vector3(1, 0.015, 0.2)
+
+[node name="Plank" type="StaticBody3D" unique_id=1036713240]
+collision_layer = 4
+collision_mask = 15
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=871267849]
+shape = SubResource("BoxShape3D_v8qqq")
+
+[node name="Rollable" type="Node" parent="." unique_id=2084382761]
+script = ExtResource("1_nvlmm")
+object_name = "Wood Plank"
+description = "A quarter of a crafting table."
+creator = "bart"
+link = "https://opengameart.org/node/11950"
+base_size = 0.25
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1247970781]
+mesh = SubResource("BoxMesh_utinr")

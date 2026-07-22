@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://dmalkklyfhf40"]
+
+[ext_resource type="Script" uid="uid://dx6eyklyhmrga" path="res://Engine/Gameplay/Rollable/rollable.gd" id="1_f5xid"]
+[ext_resource type="PackedScene" uid="uid://brc7w07a10k3t" path="res://Assets/3d/jiang liu/Teddy Bear/Bear by jiang liu - 3Eb9oLfZYIc.glb" id="2_f5xid"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_oms4x"]
+height = 6.9223633
+radius = 2.635254
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qh2fv"]
+size = Vector3(5.898224, 3.9448242, 1.7185059)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_f5xid"]
+height = 6.9223633
+radius = 1.7026367
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_85lpo"]
+radius = 0.75
+
+[node name="Teddy Bear" type="StaticBody3D" unique_id=1036713240]
+collision_layer = 4
+collision_mask = 271
+
+[node name="DetailedCollision" type="Area3D" parent="." unique_id=1220416271]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+
+[node name="SimpleCollision" type="Area3D" parent="." unique_id=1961709460]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SimpleCollision" unique_id=1319754187]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.4611816, 0.32606554)
+shape = SubResource("CylinderShape3D_oms4x")
+
+[node name="Arms" type="CollisionShape3D" parent="." unique_id=1400528001]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9885879, -0.64)
+shape = SubResource("BoxShape3D_qh2fv")
+
+[node name="Body" type="CollisionShape3D" parent="." unique_id=1009587013]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.4611816, -0.3726449)
+shape = SubResource("CylinderShape3D_f5xid")
+
+[node name="Leg" type="CollisionShape3D" parent="." unique_id=1012216044]
+transform = Transform3D(0.9812221, 0.1928816, -8.431122e-09, 0, -4.371139e-08, -1, -0.1928816, 0.9812221, -4.2890576e-08, 1.341, 0.75, 1.111)
+shape = SubResource("CylinderShape3D_85lpo")
+debug_color = Color(0.87730306, 0.32795823, 0.25438768, 1)
+
+[node name="Leg2" type="CollisionShape3D" parent="." unique_id=502764031]
+transform = Transform3D(0.98129267, -0.19252196, 8.415402e-09, 0, -4.371139e-08, -1, 0.19252196, 0.98129267, -4.2893664e-08, -1.341, 0.75, 1.111)
+shape = SubResource("CylinderShape3D_85lpo")
+debug_color = Color(0.87730306, 0.32795823, 0.25438768, 1)
+
+[node name="Rollable" type="Node" parent="." unique_id=2084382761]
+script = ExtResource("1_f5xid")
+object_name = "Teddy Bear"
+description = "You can hug this one, and it won't eat you."
+creator = "Bear by jiang liu [CC-BY] via Poly Pizza"
+link = "https://poly.pizza/m/3Eb9oLfZYIc"
+base_size = 0.165
+model_scale = 0.0294
+
+[node name="Bear by jiang liu - 3Eb9oLfZYIc" parent="." unique_id=1545180496 instance=ExtResource("2_f5xid")]
+transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 2.9343567, -8.976019, -6.658907)

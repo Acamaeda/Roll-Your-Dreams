@@ -13,7 +13,7 @@ radius = 0.59
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_byv7p"]
 render_priority = -128
 shader = ExtResource("5_6oagu")
-shader_parameter/shift_amount = -107.0
+shader_parameter/shift_amount = 180.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_npned"]
 resource_name = "Peppermint_twist_Red"
