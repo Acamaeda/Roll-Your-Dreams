@@ -28,7 +28,7 @@ func _ready() -> void:
 				child.position = Vector3(dist, 0, 0).rotated(Vector3.UP, angle)
 				update_rotation(child)
 			x+=1
-	Utils.upgrade_physics(self, 1)		
+	Utils.upgrade_physics.call_deferred(self, 1)		
 	
 			
 func updateVisualizer():
@@ -36,6 +36,7 @@ func updateVisualizer():
 	v.scale = Vector3(radius, radius, radius)
 
 func _process(delta: float) -> void:
+	print(get_child_count())
 	if !Engine.is_editor_hint():
 		for child in get_children():
 			if (child is Node3D):
