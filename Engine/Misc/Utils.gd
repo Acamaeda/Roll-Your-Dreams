@@ -24,24 +24,20 @@ func upgrade_physics(node: Node, level):
 		replace_physics_node(node, new_node)
 
 func replace_physics_node(old: PhysicsBody3D, new: PhysicsBody3D):
-	return
 	new.collision_mask = old.collision_mask
 	new.collision_layer = old.collision_layer
 	new.transform = old.transform
-	var rollable: Rollable = old.get_node("Rollable")
+	var rollable: Rollable = old.get_node_or_null("Rollable")
 	if (rollable):
 		rollable.body = new
-	
 	var new_name = old.name
 	old.name = new_name+"old"
 	new.name=new_name
+	
 	if (Engine.is_editor_hint()):
 		var undo_redo := EditorInterface.get_editor_undo_redo()
 		undo_redo.create_action("Replace node")
 		undo_redo.add_do_method(old, "replace_by", new)
-		undo_redo.commit_action()
-		undo_redo.create_action("Delete node")
-		undo_redo.add_do_method(old, "queue_free")
 		undo_redo.commit_action()
 	else:
 		old.replace_by.call_deferred(new, true)
@@ -50,7 +46,6 @@ func replace_physics_node(old: PhysicsBody3D, new: PhysicsBody3D):
 		update_tree.call_deferred(new)
 
 func update_tree(new):
-	print("Fix")
 	new.owner=get_tree().edited_scene_root
 	EditorInterface.get_edited_scene_root().notify_property_list_changed.call_deferred()
 	

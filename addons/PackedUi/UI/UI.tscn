@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://dyi6io2ghq2yd" path="res://addons/PackedUi/Code/main_menu.gd" id="2_dhl62"]
 [ext_resource type="Theme" uid="uid://cpqt1hqsijy37" path="res://addons/PackedUi/default_theme.tres" id="3_ohvov"]
 [ext_resource type="Script" uid="uid://xcjw31tugekq" path="res://addons/PackedUi/Code/options_menu.gd" id="4_wx7w4"]
+[ext_resource type="Texture2D" uid="uid://fuq5uf0htdfb" path="res://logo.png" id="5_5aica"]
 [ext_resource type="Script" uid="uid://t6uatjlkx0r5" path="res://addons/PackedUi/Code/credits.gd" id="5_6nx8t"]
 [ext_resource type="Script" uid="uid://c01npx0xkbd74" path="res://addons/PackedUi/Code/credits_section_data.gd" id="6_86k27"]
 [ext_resource type="Script" uid="uid://b3hloetri6kjq" path="res://addons/PackedUi/Code/player_ui.gd" id="6_im37q"]
@@ -50,6 +51,22 @@ offset_right = 1280.0
 offset_bottom = 720.0
 color = Color(0.242052, 0.18342, 0.265668, 1)
 
+[node name="logo" type="TextureRect" parent="MainMenu" unique_id=2088113455]
+unique_name_in_owner = true
+clip_contents = true
+custom_minimum_size = Vector2(100, 200)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -320.0
+offset_right = 320.0
+offset_bottom = 426.6667
+grow_horizontal = 2
+theme = ExtResource("3_ohvov")
+texture = ExtResource("5_5aica")
+expand_mode = 5
+
 [node name="vbox1" type="VBoxContainer" parent="MainMenu" unique_id=1926941450]
 custom_minimum_size = Vector2(1280, 720)
 layout_mode = 0
@@ -58,16 +75,8 @@ offset_bottom = 720.0
 theme_override_constants/separation = 0
 
 [node name="spacer" type="Control" parent="MainMenu/vbox1" unique_id=1078036632]
-custom_minimum_size = Vector2(0, 100)
+custom_minimum_size = Vector2(0, 450)
 layout_mode = 2
-
-[node name="game_title_label" type="RichTextLabel" parent="MainMenu/vbox1" unique_id=71026212]
-unique_name_in_owner = true
-layout_mode = 2
-theme = ExtResource("3_ohvov")
-bbcode_enabled = true
-text = "[center]Game Title Here[/center]"
-scroll_active = false
 
 [node name="buttons_hbox" type="HBoxContainer" parent="MainMenu/vbox1" unique_id=652052088]
 unique_name_in_owner = true

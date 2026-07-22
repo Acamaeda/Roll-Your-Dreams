@@ -6,7 +6,7 @@ var last_rotation = Vector3.ZERO
 var total = 0
 func _ready() -> void:
 	Utils.upgrade_physics.call_deferred(get_parent(), 1)
-	var roll : Rollable = get_parent().get_node("Rollable")
+	var roll : Rollable = get_parent().get_node_or_null("Rollable")
 	if(roll):
 		var vscale = roll.size
 		if Engine.is_editor_hint():

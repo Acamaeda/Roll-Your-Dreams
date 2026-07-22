@@ -7,7 +7,6 @@ class_name MainMenu extends SMenuControl
 ## Listing the menu buttons here will create buttons on runtime in the Main Menu. Pressing the button emits a signal (ButtonPressed) with the id listed here.
 @export var menu_options:Array[String] = []
 
-@onready var game_title_label: RichTextLabel = %game_title_label
 @onready var menu_button_vbox: VBoxContainer = %menu_button_vbox
 @onready var hbox_seperator_01: Control = %hbox_seperator_01
 @onready var hbox_seperator_02: Control = %hbox_seperator_02
@@ -23,7 +22,6 @@ func _ready() -> void:
 		await UI.ready
 	
 	_set_game_title(game_title)
-	game_title_label.custom_minimum_size.y = UI.height/3
 	menu_button_vbox.custom_minimum_size.x = UI.width/3
 	hbox_seperator_01.custom_minimum_size.x = UI.width/3
 	hbox_seperator_02.custom_minimum_size.x = UI.width/3
@@ -36,9 +34,7 @@ func _ready() -> void:
 func _set_game_title(_value:String = "") -> void:
 	if get_name_from_properties:
 		UI.game_name = ProjectSettings.get_setting("application/config/name")
-		game_title_label.text = UI.game_name
 	else:
-		game_title_label.text = _value
 		UI.game_name = _value
 
 
@@ -89,4 +85,7 @@ func _toggle_control(_id:String, _value:bool, _previous:String = "") -> void:
 
 
 func button_pressed(_id:String) -> void:
+	if (_id == "Play"):
+		get_tree().change_scene_to_file("res://Levels/Test Campaign/Demo level/DemoLevel.tscn")
+		visible = false
 	UI.ButtonPressed.emit(_id.to_lower(), id)

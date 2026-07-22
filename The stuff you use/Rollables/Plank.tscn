@@ -29,7 +29,7 @@ object_name = "Wood Plank"
 description = "A quarter of a crafting table."
 creator = "bart"
 link = "https://opengameart.org/node/11950"
-base_size = 0.25
+base_size = 0.225
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1247970781]
 mesh = SubResource("BoxMesh_utinr")
