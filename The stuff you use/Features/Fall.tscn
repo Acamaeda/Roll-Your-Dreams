@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://b0lc81dkvy88g"]
+
+[ext_resource type="Script" uid="uid://cn4p28c4v0pas" path="res://Engine/Gameplay/Features/Fall.gd" id="1_bsdvc"]
+
+[node name="Fall" type="Node3D" unique_id=2088710499]
+script = ExtResource("1_bsdvc")
+power = null

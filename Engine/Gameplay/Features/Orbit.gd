@@ -36,7 +36,6 @@ func updateVisualizer():
 	v.scale = Vector3(radius, radius, radius)
 
 func _process(delta: float) -> void:
-	print(get_child_count())
 	if !Engine.is_editor_hint():
 		for child in get_children():
 			if (child is Node3D):

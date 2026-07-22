@@ -152,10 +152,7 @@ transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -8.103, 0, 21.12)
 transform = Transform3D(0.7499683, 0.0068983166, 0, -0.0068983166, 0.7499683, 0, 0, 0, 0.75, -0.665, 0, 12.664)
 
 [node name="Candy Jar2" parent="Zone/Rollables/Jail" unique_id=733497946 instance=ExtResource("9_nsjcu")]
-transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 11.570253, 3, -10.937462)
-
-[node name="Fall" parent="Zone/Rollables/Jail/Candy Jar2" unique_id=2088710499 instance=ExtResource("19_4gmba")]
-power = 9.8
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 20.761858, 0, -10.141758)
 
 [node name="Candy Jar3" parent="Zone/Rollables/Jail" unique_id=2033046919 instance=ExtResource("9_nsjcu")]
 transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 6.572, 0, 17.859)
@@ -328,9 +325,9 @@ transform = Transform3D(0.24319398, 0, -0.14276095, 0, 0.282, 0, 0.14276095, 0, 
 transform = Transform3D(1, 0, 1.8626451e-09, 0, 1, 0, -1.8626451e-09, 0, 1, 0, 0, 0)
 
 [node name="Cube4" parent="Zone/Rollables/Front Floor" unique_id=582903720 instance=ExtResource("18_au646")]
-transform = Transform3D(0.6332125, 0, 0.012368348, 0, 0.6333333, 0, -0.012368348, 0, 0.6332125, 11.817838, 2.4, -10.935043)
+transform = Transform3D(0.6332125, 0, 0.012368348, 0, 0.6333333, 0, -0.012368348, 0, 0.6332125, 4.445302, 5.059738, -5.585059)
 
-[node name="Fall" parent="Zone/Rollables/Front Floor/Cube4" unique_id=716713753 instance=ExtResource("19_4gmba")]
+[node name="Fall" parent="Zone/Rollables/Front Floor/Cube4" unique_id=2088710499 instance=ExtResource("19_4gmba")]
 power = 9.8
 
 [node name="Recolor" parent="Zone/Rollables/Front Floor/Cube4" unique_id=664944061 instance=ExtResource("19_3w3u0")]
@@ -355,6 +352,16 @@ transform = Transform3D(0.25661927, 0, 0.116921104, 0, 0.282, 0, -0.116921104, 0
 
 [node name="Spin" parent="Zone/Rollables/Front Floor/Fidget Spinner" unique_id=1989159403 instance=ExtResource("19_up8i4")]
 
+[node name="Cube17" parent="Zone/Rollables/Front Floor" unique_id=631124430 instance=ExtResource("18_au646")]
+transform = Transform3D(0.6332125, 0, 0.012368348, 0, 0.6333333, 0, -0.012368348, 0, 0.6332125, 10.797599, -9.536743e-07, -10.653204)
+
+[node name="Recolor" parent="Zone/Rollables/Front Floor/Cube17" unique_id=534232575 instance=ExtResource("19_3w3u0")]
+shift_amount = -135.0
+
+[node name="Resize" parent="Zone/Rollables/Front Floor/Cube17" unique_id=382664588 instance=ExtResource("15_3w3u0")]
+scale = 0.038
+mode = 1
+
 [node name="Cube9" parent="Zone/Rollables/Front Floor" unique_id=1869910714 instance=ExtResource("18_au646")]
 transform = Transform3D(0.44142693, 0, -0.45415127, 0, 0.6333333, 0, 0.45415127, 0, 0.44142693, -2.170269, -9.536743e-07, -15.94595)
 
@@ -366,7 +373,7 @@ scale = 0.038
 mode = 1
 
 [node name="Cube10" parent="Zone/Rollables/Front Floor" unique_id=1609379634 instance=ExtResource("18_au646")]
-transform = Transform3D(0.503505, 0, 0.3841794, 0, 0.6333333, 0, -0.3841794, 0, 0.503505, 11.857056, 1.2, -10.901136)
+transform = Transform3D(0.503505, 0, 0.3841794, 0, 0.6333333, 0, -0.3841794, 0, 0.503505, 6.8282924, -0.09545803, -4.348315)
 
 [node name="Recolor" parent="Zone/Rollables/Front Floor/Cube10" unique_id=715851688 instance=ExtResource("19_3w3u0")]
 shift_amount = -135.0
@@ -375,24 +382,8 @@ shift_amount = -135.0
 scale = 0.038
 mode = 1
 
-[node name="Fall" parent="Zone/Rollables/Front Floor/Cube10" unique_id=1284878365 instance=ExtResource("19_4gmba")]
-power = 9.8
-
-[node name="Cube13" parent="Zone/Rollables/Front Floor" unique_id=1432054300 instance=ExtResource("18_au646")]
-transform = Transform3D(0.503505, 0, 0.3841794, 0, 0.6333333, 0, -0.3841794, 0, 0.503505, 11.857, 1.8, -10.901)
-
-[node name="Recolor" parent="Zone/Rollables/Front Floor/Cube13" unique_id=1346210773 instance=ExtResource("19_3w3u0")]
-shift_amount = -135.0
-
-[node name="Resize" parent="Zone/Rollables/Front Floor/Cube13" unique_id=481498755 instance=ExtResource("15_3w3u0")]
-scale = 0.038
-mode = 1
-
-[node name="Fall" parent="Zone/Rollables/Front Floor/Cube13" unique_id=2053937464 instance=ExtResource("19_4gmba")]
-power = 9.8
-
 [node name="Cube11" parent="Zone/Rollables/Front Floor" unique_id=893743064 instance=ExtResource("18_au646")]
-transform = Transform3D(0.6332125, 0, 0.012368348, 0, 0.6333333, 0, -0.012368348, 0, 0.6332125, 11.077691, -9.536743e-07, -11.032035)
+transform = Transform3D(0.6332125, 0, 0.012368348, 0, 0.6333333, 0, -0.012368348, 0, 0.6332125, 7.3926964, -9.536743e-07, -10.97227)
 
 [node name="Recolor" parent="Zone/Rollables/Front Floor/Cube11" unique_id=227509160 instance=ExtResource("19_3w3u0")]
 shift_amount = -135.0
@@ -401,17 +392,23 @@ shift_amount = -135.0
 scale = 0.038
 mode = 1
 
-[node name="Fall" parent="Zone/Rollables/Front Floor/Cube11" unique_id=1990088103 instance=ExtResource("19_4gmba")]
-transform = Transform3D(1.5786464, 0, -0.030835222, 0, 1.5789474, 0, 0.030835222, 0, 1.5786464, -17.827932, 1.5058016e-06, 17.074099)
-power = 9.8
-
 [node name="Cube12" parent="Zone/Rollables/Front Floor" unique_id=1264281751 instance=ExtResource("18_au646")]
-transform = Transform3D(0.31847423, 0, -0.54743516, 0, 0.6333333, 0, 0.54743516, 0, 0.31847423, 11.532081, 0.6157303, -11.030105)
+transform = Transform3D(0.31847423, 0, -0.54743516, 0, 0.6333333, 0, 0.54743516, 0, 0.31847423, 6.6020894, 0.92210674, -7.3584604)
 
 [node name="Recolor" parent="Zone/Rollables/Front Floor/Cube12" unique_id=1184972815 instance=ExtResource("19_3w3u0")]
 shift_amount = -135.0
 
 [node name="Resize" parent="Zone/Rollables/Front Floor/Cube12" unique_id=1859495399 instance=ExtResource("15_3w3u0")]
+scale = 0.038
+mode = 1
+
+[node name="Cube13" parent="Zone/Rollables/Front Floor" unique_id=1610974163 instance=ExtResource("18_au646")]
+transform = Transform3D(0.6332125, 0, 0.012368348, 0, 0.6333333, 0, -0.012368348, 0, 0.6332125, 8.596102, -9.536743e-07, -5.601882)
+
+[node name="Recolor" parent="Zone/Rollables/Front Floor/Cube13" unique_id=1903554767 instance=ExtResource("19_3w3u0")]
+shift_amount = -135.0
+
+[node name="Resize" parent="Zone/Rollables/Front Floor/Cube13" unique_id=1869808526 instance=ExtResource("15_3w3u0")]
 scale = 0.038
 mode = 1
 
@@ -426,7 +423,7 @@ scale = 0.038
 mode = 1
 
 [node name="Cube15" parent="Zone/Rollables/Front Floor" unique_id=1955961372 instance=ExtResource("18_au646")]
-transform = Transform3D(0.50494975, 0, 0.38227853, 0, 0.6333333, 0, -0.38227853, 0, 0.50494975, 12.147265, -9.536743e-07, -9.832199)
+transform = Transform3D(0.50494975, 0, 0.38227853, 0, 0.6333333, 0, -0.38227853, 0, 0.50494975, 10.087783, -9.536743e-07, -1.4541068)
 
 [node name="Recolor" parent="Zone/Rollables/Front Floor/Cube15" unique_id=1294521029 instance=ExtResource("19_3w3u0")]
 shift_amount = -135.0
@@ -436,7 +433,7 @@ scale = 0.038
 mode = 1
 
 [node name="Cube16" parent="Zone/Rollables/Front Floor" unique_id=74073252 instance=ExtResource("18_au646")]
-transform = Transform3D(0.45280087, 0, 0.442812, 0, 0.6333333, 0, -0.442812, 0, 0.45280087, 12.077307, 0.6, -10.281064)
+transform = Transform3D(0.45280087, 0, 0.442812, 0, 0.6333333, 0, -0.442812, 0, 0.45280087, 11.932119, 0.73572063, -5.351855)
 
 [node name="Recolor" parent="Zone/Rollables/Front Floor/Cube16" unique_id=1941458466 instance=ExtResource("19_3w3u0")]
 shift_amount = -135.0
@@ -444,9 +441,6 @@ shift_amount = -135.0
 [node name="Resize" parent="Zone/Rollables/Front Floor/Cube16" unique_id=445384614 instance=ExtResource("15_3w3u0")]
 scale = 0.038
 mode = 1
-
-[node name="Fall" parent="Zone/Rollables/Front Floor/Cube16" unique_id=2065726533 instance=ExtResource("19_4gmba")]
-power = 9.8
 
 [node name="Cube7" parent="Zone/Rollables/Front Floor" unique_id=1804588998 instance=ExtResource("18_au646")]
 transform = Transform3D(-0.09044112, 0, -0.6268425, 0, 0.6333333, 0, 0.6268425, 0, -0.09044112, -2.3884478, -9.536743e-07, -13.448488)
@@ -629,13 +623,10 @@ scale = 0.038
 mode = 1
 
 [node name="Teddy Bear" parent="Zone/Rollables/Front Floor" unique_id=1774992127 instance=ExtResource("7_wyq5o")]
-transform = Transform3D(0.47283867, 0, -0.3495248, 0, 0.588, 0, 0.3495248, 0, 0.47283867, 11.596546, 6.622137, -11.143862)
-
-[node name="Fall" parent="Zone/Rollables/Front Floor/Teddy Bear" unique_id=827422468 instance=ExtResource("19_4gmba")]
-power = 9.8
+transform = Transform3D(0.47283867, 0, -0.3495248, 0, 0.588, 0, 0.3495248, 0, 0.47283867, 18.183277, 0, -12.868122)
 
 [node name="Fidget Spinner Boss" parent="Zone/Rollables" parent_id_path=PackedInt32Array(1418971655, 1164383247) index="8" unique_id=1871229727 instance=ExtResource("18_8ymno")]
-transform = Transform3D(1.5980924, -0.0019248631, 0.71760976, 0.0020350078, 1.751817, 0.0001670507, -0.71760947, 0.0006812231, 1.5980936, -7.139, 1.45, -14.831)
+transform = Transform3D(1.5591146, -0.0018779152, 0.7001071, 0.0019853734, 1.7090899, 0.0001629763, -0.7001068, 0.0006646079, 1.5591158, -7.139, 1.45, -14.831)
 
 [node name="OnRollup" parent="Zone/Rollables/Fidget Spinner Boss" unique_id=1378333904 instance=ExtResource("17_xhcfg")]
 
@@ -652,7 +643,7 @@ text = "Much more to come!"
 speed = -0.3
 
 [node name="Resize" parent="Zone/Rollables/Fidget Spinner Boss" unique_id=1011623239 instance=ExtResource("15_3w3u0")]
-scale = 0.205
+scale = 0.2
 mode = 1
 
 [node name="Recolor" parent="Zone/Rollables/Fidget Spinner Boss" unique_id=916220387 instance=ExtResource("19_3w3u0")]

@@ -53,7 +53,7 @@ func create_physics_node(level):
 			body.sync_to_physics = false
 			return body
 		2: 
-			return CharacterBody3D.new()
+			return Mover.new()
 		3: 
 			return RigidBody3D.new()
 	push_error("Unknown physics level!")
@@ -61,7 +61,7 @@ func create_physics_node(level):
 func get_physics_level(node: Node):
 	if (node is AnimatableBody3D):
 		return 1
-	if (node is CharacterBody3D):
+	if (node is Mover):
 		return 2
 	if (node is RigidBody3D):
 		return 3
