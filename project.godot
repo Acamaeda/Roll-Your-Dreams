@@ -15,7 +15,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="Roll Your Dream"
-run/main_scene="uid://d4caxcliyyuir"
+run/main_scene="uid://cp2xqchx20o7e"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -118,3 +118,7 @@ jolt_physics_3d/limits/max_bodies=20240
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+
+[xr]
+
+openxr/load_shell_environment=false

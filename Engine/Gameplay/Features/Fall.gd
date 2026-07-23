@@ -17,5 +17,5 @@ func ready2():
 func _process(delta):
 	var parent : CharacterBody3D = get_parent()
 	var player = get_tree().get_first_node_in_group("Player")
-	var change : Vector3 = global_basis.y * player.scale.x * delta * power *-1
+	var change : Vector3 = global_basis.y * player.scale.x * delta * power *-1/parent.scale.x
 	parent.velocity+= change

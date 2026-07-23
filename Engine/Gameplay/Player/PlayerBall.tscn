@@ -4,6 +4,8 @@
 [ext_resource type="Script" uid="uid://bt6nakmxinsvh" path="res://Engine/Gameplay/Player/collector.gd" id="2_ok2uk"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ok2uk"]
+friction = 1.5
+rough = true
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_0jfm5"]
 
