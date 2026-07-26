@@ -73,7 +73,7 @@ object_name = "Candy Cane"
 description = "January is the best time to buy them."
 creator = "Harry Charalambous"
 link = "https://sketchfab.com/3d-models/candy-34bbb16e80dd4b768089b9b31d291aea"
-base_size = 0.035
+base_size = 0.055
 model_scale = 0.0375
 
 [node name="Candy Cane" parent="." unique_id=267373176 instance=ExtResource("2_n0tjn")]
