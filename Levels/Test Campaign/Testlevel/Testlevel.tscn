@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://d37a1hkqxg1aw" path="res://Engine/Gameplay/Player/PlayerBall.tscn" id="1_f2f62"]
 [ext_resource type="PackedScene" uid="uid://8qtwqcg30ut6" path="res://Engine/Gameplay/Level/LevelControl.tscn" id="1_qjkpg"]
 [ext_resource type="PackedScene" uid="uid://ctcv6q11r7du3" path="res://Engine/Gameplay/Level/Zone.tscn" id="3_frm8h"]
-[ext_resource type="PackedScene" uid="uid://b7rsw0wfluk7m" path="res://Engine/Gameplay/Rollable/Rollable.tscn" id="4_qjkpg"]
+[ext_resource type="PackedScene" uid="uid://b7rsw0wfluk7m" path="res://The stuff you use/Rollables/Cube.tscn" id="4_qjkpg"]
 [ext_resource type="PackedScene" uid="uid://d2nd1mck0unw" path="res://The stuff you use/Features/Spin.tscn" id="5_374qi"]
 [ext_resource type="PackedScene" uid="uid://dm12e03d7nkxa" path="res://The stuff you use/Features/Recolor.tscn" id="5_hjh71"]
 [ext_resource type="PackedScene" uid="uid://c8416hr3tx1qo" path="res://The stuff you use/Events/Triggers/OnRollup.tscn" id="6_wooc5"]

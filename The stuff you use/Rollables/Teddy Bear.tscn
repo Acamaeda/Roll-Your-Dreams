@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dx6eyklyhmrga" path="res://Engine/Gameplay/Rollable/rollable.gd" id="1_f5xid"]
 [ext_resource type="PackedScene" uid="uid://brc7w07a10k3t" path="res://Assets/3d/jiang liu/Teddy Bear/Bear by jiang liu - 3Eb9oLfZYIc.glb" id="2_f5xid"]
+[ext_resource type="PackedScene" uid="uid://c42nqdb3cx7vk" path="res://Engine/Gameplay/Rollable/RollupSound.tscn" id="3_oms4x"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_oms4x"]
 height = 6.9223633
@@ -61,3 +62,5 @@ center_height = 3.5
 
 [node name="Bear by jiang liu - 3Eb9oLfZYIc" parent="." unique_id=1545180496 instance=ExtResource("2_f5xid")]
 transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 2.9343567, -8.976019, -6.658907)
+
+[node name="RollupSound" parent="." unique_id=637469916 instance=ExtResource("3_oms4x")]

@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dx6eyklyhmrga" path="res://Engine/Gameplay/Rollable/rollable.gd" id="1_yfl2u"]
 [ext_resource type="PackedScene" uid="uid://bw6buhk2dpv16" path="res://Assets/3d/IvanPetrov/Toy Car/Toy Car.glb" id="2_yfl2u"]
+[ext_resource type="PackedScene" uid="uid://c42nqdb3cx7vk" path="res://Engine/Gameplay/Rollable/RollupSound.tscn" id="3_o073g"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yfl2u"]
 size = Vector3(8.5, 9, 14.4)
@@ -32,3 +33,5 @@ transform = Transform3D(-4.371139e-07, 0, 10, 0, 10, 0, -10, 0, -4.371139e-07, -
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1589486217]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.5, 0.04)
 shape = SubResource("BoxShape3D_yfl2u")
+
+[node name="RollupSound" parent="." unique_id=637469916 instance=ExtResource("3_o073g")]

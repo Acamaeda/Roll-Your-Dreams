@@ -25,7 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://clfdt71f23b45" path="res://The stuff you use/Events/Conditions/Otherwise.tscn" id="17_vd1b5"]
 [ext_resource type="PackedScene" uid="uid://c8416hr3tx1qo" path="res://The stuff you use/Events/Triggers/OnRollup.tscn" id="17_xhcfg"]
 [ext_resource type="PackedScene" uid="uid://cnhbeplooqgnk" path="res://The stuff you use/Rollables/Fidget Spinner.tscn" id="18_8ymno"]
-[ext_resource type="PackedScene" uid="uid://b7rsw0wfluk7m" path="res://Engine/Gameplay/Rollable/Rollable.tscn" id="18_au646"]
+[ext_resource type="PackedScene" uid="uid://b7rsw0wfluk7m" path="res://The stuff you use/Rollables/Cube.tscn" id="18_au646"]
 [ext_resource type="PackedScene" uid="uid://dm12e03d7nkxa" path="res://The stuff you use/Features/Recolor.tscn" id="19_3w3u0"]
 [ext_resource type="PackedScene" uid="uid://b0lc81dkvy88g" path="res://The stuff you use/Features/Fall.tscn" id="19_4gmba"]
 [ext_resource type="PackedScene" uid="uid://dkaq3ggg780ay" path="res://The stuff you use/Rollables/Toy Car.tscn" id="19_pvnhs"]

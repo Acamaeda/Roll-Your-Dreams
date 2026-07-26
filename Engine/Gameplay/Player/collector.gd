@@ -60,7 +60,10 @@ func absorb(other):
 	absorbed.global_transform = other.global_transform
 	absorbed.player = player_body
 	absorbed.size = size
-	
+	var sound :AudioStreamPlayer = other.get_node_or_null("RollupSound")
+	if (sound):
+		sound.reparent(absorbed, true)
+		sound.play.call_deferred()
 	
 	player_body.get_parent().add_child(absorbed)
 	rescue_meshes(other, absorbed)

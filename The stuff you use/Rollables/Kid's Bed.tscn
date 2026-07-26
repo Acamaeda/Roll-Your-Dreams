@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dx6eyklyhmrga" path="res://Engine/Gameplay/Rollable/rollable.gd" id="1_kqo75"]
 [ext_resource type="PackedScene" uid="uid://cyodwekptsh44" path="res://Assets/3d/DKDTheGreat1/Kid's Bed/Bedroom.blend" id="2_qf2hj"]
+[ext_resource type="PackedScene" uid="uid://c42nqdb3cx7vk" path="res://Engine/Gameplay/Rollable/RollupSound.tscn" id="3_yil73"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_v8qqq"]
 size = Vector3(10, 5.65, 20.4)
@@ -107,3 +108,5 @@ shape = SubResource("BoxShape3D_yil73")
 
 [node name="Bedroom" parent="." unique_id=1228144986 instance=ExtResource("2_qf2hj")]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, -0.01, 0)
+
+[node name="RollupSound" parent="." unique_id=637469916 instance=ExtResource("3_yil73")]

@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dx6eyklyhmrga" path="res://Engine/Gameplay/Rollable/rollable.gd" id="1_ww844"]
 [ext_resource type="PackedScene" uid="uid://ddnou0q8uk7st" path="res://Assets/3d/Shikko/Paper Airplane/Paper Airplane.glb" id="2_ww844"]
+[ext_resource type="PackedScene" uid="uid://c42nqdb3cx7vk" path="res://Engine/Gameplay/Rollable/RollupSound.tscn" id="3_j8pln"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ww844"]
 size = Vector3(10, 20, 133)
@@ -35,3 +36,5 @@ polygon = PackedVector2Array(-0.013411269, 74.89524, 58.438633, -77.657936, -58.
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=752616137]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -7.262142, -10.373425)
 shape = SubResource("BoxShape3D_ww844")
+
+[node name="RollupSound" parent="." unique_id=637469916 instance=ExtResource("3_j8pln")]

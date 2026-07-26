@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dx6eyklyhmrga" path="res://Engine/Gameplay/Rollable/rollable.gd" id="1_nvlmm"]
 [ext_resource type="Texture2D" uid="uid://y1w40pp0r7dr" path="res://Assets/2d/bart/hardwood.jpg" id="2_q5ov8"]
+[ext_resource type="PackedScene" uid="uid://c42nqdb3cx7vk" path="res://Engine/Gameplay/Rollable/RollupSound.tscn" id="3_q5ov8"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_v8qqq"]
 size = Vector3(1, 0.015, 0.2)
@@ -34,3 +35,5 @@ max_dimension = 1.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1247970781]
 mesh = SubResource("BoxMesh_utinr")
+
+[node name="RollupSound" parent="." unique_id=637469916 instance=ExtResource("3_q5ov8")]

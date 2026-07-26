@@ -2,9 +2,18 @@
 
 [ext_resource type="Script" uid="uid://ceqbq652gkem3" path="res://Engine/Gameplay/Level/LevelControl.gd" id="1_5a3xf"]
 [ext_resource type="PackedScene" uid="uid://cwgayb1vnln5y" path="res://Engine/UI/HUD.tscn" id="2_eswtl"]
+[ext_resource type="AudioStream" uid="uid://d1go1hl3a8yt8" path="res://Assets/Music/CAT-FOX_ALEX/858710__cat-fox_alex__full-music-grow-up-in-one-day-i-will-cmin.mp3" id="3_hrn5y"]
 
 [node name="Level Control" type="Node" unique_id=574180729 groups=["Level Control"]]
 script = ExtResource("1_5a3xf")
 
 [node name="Hud" parent="." unique_id=856708716 instance=ExtResource("2_eswtl")]
 position = Vector2(474.41266, 189.7562)
+
+[node name="Music" type="Node" parent="." unique_id=2076520794]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Music" unique_id=203116786]
+stream = ExtResource("3_hrn5y")
+volume_db = -10.492
+autoplay = true
+parameters/looping = true

@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dx6eyklyhmrga" path="res://Engine/Gameplay/Rollable/rollable.gd" id="1_bv02v"]
 [ext_resource type="PackedScene" uid="uid://cg3s240prrxd" path="res://Assets/3d/Harry Charalambous/Candy/Caramel.glb" id="2_vxm60"]
+[ext_resource type="PackedScene" uid="uid://c42nqdb3cx7vk" path="res://Engine/Gameplay/Rollable/RollupSound.tscn" id="3_sqig6"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ibyff"]
 size = Vector3(0.9, 0.6, 0.9)
@@ -31,3 +32,5 @@ center_height = 0.3
 
 [node name="Caramel2" parent="." unique_id=1445392865 instance=ExtResource("2_vxm60")]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0.29993242, 0)
+
+[node name="RollupSound" parent="." unique_id=637469916 instance=ExtResource("3_sqig6")]

@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dx6eyklyhmrga" path="res://Engine/Gameplay/Rollable/rollable.gd" id="1_s3mdl"]
 [ext_resource type="PackedScene" uid="uid://bthwst8q318ob" path="res://Assets/3d/Hennadiy Kyeseliov/Fidget Spinner/Spinner by Hennadiy Kyseliov - f_NVr_pBHWx.glb" id="2_s3mdl"]
+[ext_resource type="PackedScene" uid="uid://c42nqdb3cx7vk" path="res://Engine/Gameplay/Rollable/RollupSound.tscn" id="3_nr7vk"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_s3mdl"]
 height = 0.6
@@ -56,5 +57,7 @@ center_height = 0.3
 
 [node name="Spinner by Hennadiy Kyseliov - f_NVr_pBHWx" parent="." unique_id=852422759 instance=ExtResource("2_s3mdl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.12, 0)
+
+[node name="RollupSound" parent="." unique_id=637469916 instance=ExtResource("3_nr7vk")]
 
 [editable path="Spinner by Hennadiy Kyseliov - f_NVr_pBHWx"]

@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dx6eyklyhmrga" path="res://Engine/Gameplay/Rollable/rollable.gd" id="1_ibyff"]
 [ext_resource type="PackedScene" uid="uid://cc8qui7d0xf44" path="res://Assets/3d/Harry Charalambous/Candy/Peppermint.glb" id="2_ibyff"]
+[ext_resource type="PackedScene" uid="uid://c42nqdb3cx7vk" path="res://Engine/Gameplay/Rollable/RollupSound.tscn" id="3_vxm60"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_sqig6"]
 height = 0.46
@@ -32,3 +33,5 @@ center_height = 0.23
 
 [node name="Peppermint" parent="." unique_id=2102636189 instance=ExtResource("2_ibyff")]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0.23, 0)
+
+[node name="RollupSound" parent="." unique_id=637469916 instance=ExtResource("3_vxm60")]

@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dx6eyklyhmrga" path="res://Engine/Gameplay/Rollable/rollable.gd" id="1_01ous"]
 [ext_resource type="PackedScene" uid="uid://c8bfwfivrhhtm" path="res://Assets/3d/Harry Charalambous/Candy/Candy Cane.glb" id="2_n0tjn"]
+[ext_resource type="PackedScene" uid="uid://c42nqdb3cx7vk" path="res://Engine/Gameplay/Rollable/RollupSound.tscn" id="3_l7o6d"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_wedjl"]
 height = 3.68
@@ -80,3 +81,5 @@ center_height = 2
 
 [node name="Candy Cane" parent="." unique_id=267373176 instance=ExtResource("2_n0tjn")]
 transform = Transform3D(10, 0, 0, 0, -4.371139e-07, -10, 0, 10, -4.371139e-07, 0, 3.25, -0.001)
+
+[node name="RollupSound" parent="." unique_id=637469916 instance=ExtResource("3_l7o6d")]
