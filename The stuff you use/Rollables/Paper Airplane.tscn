@@ -22,6 +22,7 @@ creator = "Shikko"
 link = "https://www.printables.com/model/424740-paper-plane"
 base_size = 0.08
 model_scale = 0.001
+max_dimension = 25.0
 
 [node name="Paper Airplane" parent="." unique_id=579046207 instance=ExtResource("2_ww844")]
 transform = Transform3D(0.9999999, 0, 0, 0, 0.15298581, -0.9882282, 0, 0.98822826, 0.1529858, 0, -5.66, 0)

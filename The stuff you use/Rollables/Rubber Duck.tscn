@@ -52,6 +52,8 @@ creator = "Plat251"
 link = "https://polyhaven.com/a/rubber_duck_toy"
 base_size = 0.08
 model_scale = 0.0275
+max_dimension = 30.0
+center_height = 15.0
 
 [node name="blend_export" parent="." unique_id=1866116617 instance=ExtResource("2_7otxs")]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)

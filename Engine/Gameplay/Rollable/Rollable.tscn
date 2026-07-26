@@ -30,6 +30,8 @@ object_name = "Green Cube"
 description = "The only way it could be more generic is if the corners were rounded."
 creator = "Acamaeda"
 base_size = 1.2
+max_dimension = 1.0
+center_height = 1
 
 [node name="DetailedCollision" type="Area3D" parent="." unique_id=208660517]
 

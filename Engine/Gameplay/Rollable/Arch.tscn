@@ -6,15 +6,20 @@
 
 [sub_resource type="BoxMesh" id="BoxMesh_fl164"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i1jod"]
-albedo_color = Color(0.003921569, 1, 0, 1)
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jayw2"]
-render_priority = 0
+render_priority = -128
 shader = ExtResource("1_jayw2")
 shader_parameter/shift_amount = 0.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p1qpa"]
+next_pass = SubResource("ShaderMaterial_jayw2")
+albedo_color = Color(0.003921569, 1, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bc76k"]
+next_pass = SubResource("ShaderMaterial_jayw2")
+albedo_color = Color(0.003921569, 1, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gb6gb"]
 next_pass = SubResource("ShaderMaterial_jayw2")
 albedo_color = Color(0.003921569, 1, 0, 1)
 
@@ -34,24 +39,26 @@ collision_mask = 15
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2044823450]
 transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
 mesh = SubResource("BoxMesh_fl164")
-surface_material_override/0 = SubResource("StandardMaterial3D_i1jod")
+surface_material_override/0 = SubResource("StandardMaterial3D_p1qpa")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1819045120]
 transform = Transform3D(1, 0, 0, 0, 3, 0, 0, 0, 1, 1.5, 1.5, 0)
 mesh = SubResource("BoxMesh_fl164")
-surface_material_override/0 = SubResource("StandardMaterial3D_i1jod")
+surface_material_override/0 = SubResource("StandardMaterial3D_bc76k")
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=954326285]
 transform = Transform3D(1, 0, 0, 0, 3, 0, 0, 0, 1, -1.5, 1.5, 0)
 mesh = SubResource("BoxMesh_fl164")
-surface_material_override/0 = SubResource("StandardMaterial3D_p1qpa")
+surface_material_override/0 = SubResource("StandardMaterial3D_gb6gb")
 
 [node name="Rollable" type="Node" parent="." unique_id=2084382761]
 script = ExtResource("1_53gsg")
 object_name = "Blocky Arch"
-description = "It could be straight out of Block Game."
+description = "Probably not a gateway to a fiery dimension."
 creator = "Acamaeda"
 base_size = 2.5
+max_dimension = 4.0
+center_height = 2
 
 [node name="DetailedCollision" type="Area3D" parent="." unique_id=776692632]
 

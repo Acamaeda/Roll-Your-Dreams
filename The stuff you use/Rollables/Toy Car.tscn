@@ -23,6 +23,8 @@ creator = "IvanPetrov"
 link = "https://sketchfab.com/3d-models/toy-police-car-7fdc12e47d9547a493e3d1f3f12f7355"
 base_size = 0.124
 model_scale = 0.014
+max_dimension = 14.4
+center_height = 4.5
 
 [node name="Toy Car" parent="." unique_id=319313440 instance=ExtResource("2_yfl2u")]
 transform = Transform3D(-4.371139e-07, 0, 10, 0, 10, 0, -10, 0, -4.371139e-07, -6.36, 0, -0.866)

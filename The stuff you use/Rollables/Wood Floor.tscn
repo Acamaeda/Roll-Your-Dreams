@@ -30,6 +30,7 @@ description = "They were restored after someone hit them with a sword."
 creator = "bart"
 link = "https://opengameart.org/node/11950"
 base_size = 1.5
+max_dimension = 4.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1247970781]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.01, 0)

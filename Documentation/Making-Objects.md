@@ -41,6 +41,9 @@ Click on the "Rollable" object in the scene tree to edit it. It has the followin
 		"1" size is a 1-meter sphere, a solid 1-meter cube has 1.2 times more size. 
 		The average of the length, width, and height is a good starting point. (Or cube root of l*w*h)
 	- Model scale: The scale your model is at. How many meters one unit is equal to.
+	- Max dimension: The largest of your object's length, width, and height, in the current scene's scaling. (Can be approximate)
+	- Center height: The height of the center point of the object, in the current scene's scaling. (Can be approximate)
+		(These two are for displaying the object)
 	- Solid: Determines if the object can collide with other objects and the player (it can still be rolled up)
 
 ## License stuff

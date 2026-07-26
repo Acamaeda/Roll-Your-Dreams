@@ -26,6 +26,8 @@ creator = "Harry Charalambous"
 link = "https://sketchfab.com/3d-models/candy-34bbb16e80dd4b768089b9b31d291aea"
 base_size = 0.02
 model_scale = 0.0212
+max_dimension = 0.9
+center_height = 0.3
 
 [node name="Caramel2" parent="." unique_id=1445392865 instance=ExtResource("2_vxm60")]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0.29993242, 0)

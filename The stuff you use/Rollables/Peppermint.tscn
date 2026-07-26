@@ -27,6 +27,8 @@ creator = "Harry Charalambous"
 link = "https://sketchfab.com/3d-models/candy-34bbb16e80dd4b768089b9b31d291aea"
 base_size = 0.013
 model_scale = 0.0212
+max_dimension = 1.18
+center_height = 0.23
 
 [node name="Peppermint" parent="." unique_id=2102636189 instance=ExtResource("2_ibyff")]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0.23, 0)

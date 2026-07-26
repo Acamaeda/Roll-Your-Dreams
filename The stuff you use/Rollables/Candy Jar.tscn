@@ -68,11 +68,13 @@ creator = "Harry Charalambous"
 link = "https://sketchfab.com/3d-models/candy-34bbb16e80dd4b768089b9b31d291aea"
 base_size = 0.135
 model_scale = 0.0375
+max_dimension = 5.0
+center_height = 0.25
 
 [node name="Candy Jar" parent="." unique_id=621917313 instance=ExtResource("2_hfa7i")]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
 
-[node name="Candy_Jar" parent="Candy Jar/Candy/Atomic_Fireball" parent_id_path=PackedInt32Array(621917313, 261762560) index="0" unique_id=1329891440]
+[node name="Candy_Jar" parent="Candy Jar/Candy/Atomic_Fireball" parent_id_path=PackedInt32Array(621917313, 1288530242) index="0" unique_id=1936322629]
 mesh = SubResource("ArrayMesh_1jbje")
 
 [editable path="Candy Jar"]

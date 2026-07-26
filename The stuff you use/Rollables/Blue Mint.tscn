@@ -89,6 +89,8 @@ creator = "Harry Charalambous"
 link = "https://sketchfab.com/3d-models/candy-34bbb16e80dd4b768089b9b31d291aea"
 base_size = 0.013
 model_scale = 0.0212
+max_dimension = 1.18
+center_height = 0.23
 
 [node name="Recolor" parent="." unique_id=1266132782 instance=ExtResource("2_yk2v4")]
 shift_amount = -140.0

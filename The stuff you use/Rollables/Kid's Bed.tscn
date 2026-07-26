@@ -56,6 +56,8 @@ creator = "DKDTheGreat1"
 link = "https://sketchfab.com/3d-models/kids-bed-b9ac989e61024b2a8959959ac51d149d"
 base_size = 1.25
 model_scale = 0.1
+max_dimension = 20.4
+center_height = 4.0
 
 [node name="DetailedCollision" type="Area3D" parent="." unique_id=260936103]
 

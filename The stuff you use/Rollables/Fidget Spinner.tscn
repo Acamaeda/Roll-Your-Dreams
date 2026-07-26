@@ -51,6 +51,8 @@ creator = "Spinner by Hennadiy Kyseliov [CC-BY] via Poly Pizza"
 link = "https://poly.pizza/m/f_NVr_pBHWx"
 base_size = 0.033
 model_scale = 0.0141
+max_dimension = 5.4
+center_height = 0.3
 
 [node name="Spinner by Hennadiy Kyseliov - f_NVr_pBHWx" parent="." unique_id=852422759 instance=ExtResource("2_s3mdl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.12, 0)

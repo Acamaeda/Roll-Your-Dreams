@@ -56,6 +56,8 @@ creator = "Bear by jiang liu [CC-BY] via Poly Pizza"
 link = "https://poly.pizza/m/3Eb9oLfZYIc"
 base_size = 0.165
 model_scale = 0.0294
+max_dimension = 7.0
+center_height = 3.5
 
 [node name="Bear by jiang liu - 3Eb9oLfZYIc" parent="." unique_id=1545180496 instance=ExtResource("2_f5xid")]
 transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 2.9343567, -8.976019, -6.658907)

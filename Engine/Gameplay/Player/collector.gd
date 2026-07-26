@@ -18,6 +18,8 @@ var old_size: float = 0.0
 func _ready() -> void:
 	player_body = get_parent()
 	var control = get_tree().get_first_node_in_group("Level Control")
+	if (!control):
+		return
 	level_scale = control.level_scale
 	size = level_scale * player_body.scale.x
 	volume = pow(size, exponent)
