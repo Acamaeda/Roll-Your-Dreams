@@ -8,12 +8,10 @@ Key elements:
 		(You can also replace it with a different player object to change the player character)
 	- Zones: A zone is a portion of the level that unlocks when you reach a certain size. For small levels they don't matter a huge amount,
 		but you should put all of the Rollables into the "Rollables" of a zone.
-	- WorldEnvironment: Lets you change the background, and other visual details.
-	- Light Source: A source of global light.
 
 ## Initial stuff in Level Control
 
-The first thing you need to do is set the level's scale, which is the same as the player's starting size in meters.
+The first thing you need to do is set the level's scale, which is the same as the player's starting size in meters. Set map_scale to the same size (it will matter later)
 
 ## Building the level:
 	
@@ -39,3 +37,7 @@ Properties:
 	- Unlock with size: If true, it works how you'd expect. Otherwise, it must be unlocked another way.
 	- Size Required: The size the player needs to unlock the zone. If it's zero, the zone is always unlocked.
 	- Lowest height: The lowest height of the ground in the zone. (Needed to determine if the player fell off the map)
+
+## Advanced Customization
+
+You can modify the WorldEnvironment and DirectionalLight3D to change the look of the level as a whole a lot.

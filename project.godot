@@ -15,7 +15,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="Roll Your Dream"
-run/main_scene="uid://cp2xqchx20o7e"
+run/main_scene="uid://dml5f1sv4qj3b"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 

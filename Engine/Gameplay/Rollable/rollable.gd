@@ -78,8 +78,8 @@ func update_scale():
 	if (!control): #this means we aren't in a level scene and shouldn't rescale
 		return
 	var level_scale = 1/control.level_scale
-	scale *= level_scale
-	body.global_transform.basis.from_scale(Vector3(scale, scale, scale))
+	scale *= level_scale/body.scale.x
+	body.global_scale(Vector3(scale, scale, scale))
 	size = size_mult * base_size
 	
 func _set_solid(val):

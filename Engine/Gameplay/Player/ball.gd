@@ -9,7 +9,6 @@ var horizontal_mult = 0.5
 var back_mult = 0.3
 var turn_speed = 0.8
 var slow_force = 40
-var warp_height = -10
 var max_speed = 20
 var too_slow = 5
 var floor_angle = 0.5
@@ -109,7 +108,7 @@ func check_stuck(state, inputs :Vector2):
 		else:
 			stuck_timer2 += stored_delta
 
-	if (position.y < (min_height - collector.size * 5)) || (stuck_timer > stuck_limit && stuck_timer2 > stuck_limit):
+	if (position.y < (min_height - scale.x * 3)) || (stuck_timer > stuck_limit && stuck_timer2 > stuck_limit):
 		emergency_warp(state)
 
 func update_size():

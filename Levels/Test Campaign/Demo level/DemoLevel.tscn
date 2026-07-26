@@ -31,9 +31,14 @@
 [ext_resource type="PackedScene" uid="uid://dkaq3ggg780ay" path="res://The stuff you use/Rollables/Toy Car.tscn" id="19_pvnhs"]
 [ext_resource type="PackedScene" uid="uid://d2nd1mck0unw" path="res://The stuff you use/Features/Spin.tscn" id="19_up8i4"]
 
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_rp3c5"]
+sky_top_color = Color(0.13860002, 0.35154006, 0.63, 1)
+
 [sub_resource type="Sky" id="Sky_4gmba"]
+sky_material = SubResource("ProceduralSkyMaterial_rp3c5")
 
 [sub_resource type="Environment" id="Environment_02h4r"]
+background_mode = 2
 sky = SubResource("Sky_4gmba")
 ambient_light_source = 3
 ambient_light_color = Color(1, 1, 1, 1)
@@ -47,12 +52,14 @@ environment = SubResource("Environment_02h4r")
 
 [node name="Level Control" parent="." unique_id=574180729 instance=ExtResource("1_3eybd")]
 level_scale = 0.05
+map_scale = 0.05
 
 [node name="Hud" parent="Level Control" index="0" unique_id=856708716]
 position = Vector2(0, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1231630966]
 transform = Transform3D(0.99997354, 0, -0.0072779586, 0.0060000415, -0.5659891, 0.8243909, -0.004119245, -0.8244127, -0.5659741, -12.963337, 14.23407, 3.0084782)
+shadow_enabled = true
 
 [node name="Player" parent="." unique_id=1155221902 instance=ExtResource("1_ms6hv")]
 transform = Transform3D(-1, 0, 1.509958e-07, 0, 1, 0, -1.509958e-07, 0, -1, 1.2648032, 0.62239623, 23.264736)
@@ -305,7 +312,7 @@ shift_amount = -135.0
 scale = 0.038
 mode = 1
 
-[node name="Fidget Spinner9" type="AnimatableBody3D" parent="Zone/Rollables/Under Bed" unique_id=247306967 instance=ExtResource("18_8ymno")]
+[node name="Fidget Spinner9" type="AnimatableBody3D" parent="Zone/Rollables/Under Bed" unique_id=491960494 instance=ExtResource("18_8ymno")]
 transform = Transform3D(0.24319398, 0, -0.14276096, 0, 0.282, 0, 0.14276096, 0, 0.24319398, -19.75948, 0.5388713, -32.911873)
 collision_layer = 4
 collision_mask = 271
@@ -313,7 +320,7 @@ sync_to_physics = false
 
 [node name="Spin" parent="Zone/Rollables/Under Bed/Fidget Spinner9" unique_id=454664671 instance=ExtResource("19_up8i4")]
 
-[node name="Duck" type="AnimatableBody3D" parent="Zone/Rollables/Under Bed" unique_id=375159850 instance=ExtResource("10_nsjcu")]
+[node name="Duck" type="AnimatableBody3D" parent="Zone/Rollables/Under Bed" unique_id=1735089254 instance=ExtResource("10_nsjcu")]
 transform = Transform3D(0.55, 0, 0, 0, 0.55, 0, 0, 0, 0.55, -22.205263, 0.3963158, -33.5086)
 collision_layer = 4
 collision_mask = 271
@@ -322,7 +329,7 @@ sync_to_physics = false
 [node name="Spin" parent="Zone/Rollables/Under Bed/Duck" unique_id=527118733 instance=ExtResource("19_up8i4")]
 speed = -1.0
 
-[node name="Fidget Spinner7" type="AnimatableBody3D" parent="Zone/Rollables/Under Bed" unique_id=290679491 instance=ExtResource("18_8ymno")]
+[node name="Fidget Spinner7" type="AnimatableBody3D" parent="Zone/Rollables/Under Bed" unique_id=252986502 instance=ExtResource("18_8ymno")]
 transform = Transform3D(0.282, 0, 0, 0, 0.282, 0, 0, 0, 0.282, -19.423954, 0.5388713, -30.070099)
 collision_layer = 4
 collision_mask = 271
@@ -330,7 +337,7 @@ sync_to_physics = false
 
 [node name="Spin" parent="Zone/Rollables/Under Bed/Fidget Spinner7" unique_id=1225746405 instance=ExtResource("19_up8i4")]
 
-[node name="Fidget Spinner11" type="AnimatableBody3D" parent="Zone/Rollables/Under Bed" unique_id=600773771 instance=ExtResource("18_8ymno")]
+[node name="Fidget Spinner11" type="AnimatableBody3D" parent="Zone/Rollables/Under Bed" unique_id=521550746 instance=ExtResource("18_8ymno")]
 transform = Transform3D(0.282, 0, 0, 0, 0.282, 0, 0, 0, 0.282, -21.763357, 0.5388713, -30.747978)
 collision_layer = 4
 collision_mask = 271
@@ -338,7 +345,7 @@ sync_to_physics = false
 
 [node name="Spin" parent="Zone/Rollables/Under Bed/Fidget Spinner11" unique_id=1284723259 instance=ExtResource("19_up8i4")]
 
-[node name="Fidget Spinner10" type="AnimatableBody3D" parent="Zone/Rollables/Under Bed" unique_id=460575474 instance=ExtResource("18_8ymno")]
+[node name="Fidget Spinner10" type="AnimatableBody3D" parent="Zone/Rollables/Under Bed" unique_id=1256087782 instance=ExtResource("18_8ymno")]
 transform = Transform3D(0.24319398, 0, -0.14276096, 0, 0.282, 0, 0.14276096, 0, 0.24319398, -21.34519, 0.53887177, -36.15365)
 collision_layer = 4
 collision_mask = 271
@@ -362,7 +369,7 @@ shift_amount = -135.0
 scale = 0.038
 mode = 1
 
-[node name="Fidget Spinner8" type="AnimatableBody3D" parent="Zone/Rollables/Front Floor" unique_id=1767329656 instance=ExtResource("18_8ymno")]
+[node name="Fidget Spinner8" type="AnimatableBody3D" parent="Zone/Rollables/Front Floor" unique_id=891251735 instance=ExtResource("18_8ymno")]
 transform = Transform3D(0.282, 0, 0, 0, 0.282, 0, 0, 0, 0.282, 10.802324, 0, -8.254841)
 collision_layer = 4
 collision_mask = 271
@@ -370,7 +377,7 @@ sync_to_physics = false
 
 [node name="Spin" parent="Zone/Rollables/Front Floor/Fidget Spinner8" unique_id=1533887703 instance=ExtResource("19_up8i4")]
 
-[node name="Fidget Spinner2" type="AnimatableBody3D" parent="Zone/Rollables/Front Floor" unique_id=152475053 instance=ExtResource("18_8ymno")]
+[node name="Fidget Spinner2" type="AnimatableBody3D" parent="Zone/Rollables/Front Floor" unique_id=666855951 instance=ExtResource("18_8ymno")]
 transform = Transform3D(0.05211132, 0, 0.2771433, 0, 0.282, 0, -0.2771433, 0, 0.05211132, 10.802325, 0, -3.0328274)
 collision_layer = 4
 collision_mask = 271
@@ -378,7 +385,7 @@ sync_to_physics = false
 
 [node name="Spin" parent="Zone/Rollables/Front Floor/Fidget Spinner2" unique_id=1331553122 instance=ExtResource("19_up8i4")]
 
-[node name="Fidget Spinner" type="AnimatableBody3D" parent="Zone/Rollables/Front Floor" unique_id=257136203 instance=ExtResource("18_8ymno")]
+[node name="Fidget Spinner" type="AnimatableBody3D" parent="Zone/Rollables/Front Floor" unique_id=2018843627 instance=ExtResource("18_8ymno")]
 transform = Transform3D(0.25661927, 0, 0.1169211, 0, 0.282, 0, -0.1169211, 0, 0.25661927, 8.338493, 0, -17.521088)
 collision_layer = 4
 collision_mask = 271
@@ -695,7 +702,7 @@ transform = Transform3D(0.47283867, 0, -0.34952483, 0, 0.588, 0, 0.34952483, 0, 
 [node name="Fall" parent="Zone/Rollables/Front Floor/Teddy Bear" unique_id=827422468 instance=ExtResource("19_4gmba")]
 power = 9.8
 
-[node name="Fidget Spinner Boss" type="AnimatableBody3D" parent="Zone/Rollables" parent_id_path=PackedInt32Array(1418971655, 1164383247) index="8" unique_id=1104686736 instance=ExtResource("18_8ymno")]
+[node name="Fidget Spinner Boss" type="AnimatableBody3D" parent="Zone/Rollables" parent_id_path=PackedInt32Array(1418971655, 1164383247) index="8" unique_id=295123765 instance=ExtResource("18_8ymno")]
 transform = Transform3D(1.5980924, -0.0019248636, 0.7176098, 0.0020350083, 1.751817, 0.00016705073, -0.7176095, 0.0006812233, 1.5980936, -7.039078, 1.45, -14.841945)
 collision_layer = 4
 collision_mask = 271
@@ -717,11 +724,11 @@ scale = 0.205
 mode = 1
 
 [node name="Recolor" parent="Zone/Rollables/Fidget Spinner Boss" unique_id=916220387 instance=ExtResource("19_3w3u0")]
-shift_amount = -145.0
+shift_amount = -180.0
 
 [node name="Side Floor" type="Node3D" parent="Zone/Rollables" parent_id_path=PackedInt32Array(1418971655, 1164383247) index="9" unique_id=1848608942]
 
-[node name="Fidget Spinner6" type="AnimatableBody3D" parent="Zone/Rollables/Side Floor" unique_id=213513695 instance=ExtResource("18_8ymno")]
+[node name="Fidget Spinner6" type="AnimatableBody3D" parent="Zone/Rollables/Side Floor" unique_id=131237763 instance=ExtResource("18_8ymno")]
 transform = Transform3D(0.25694072, 0, 0.11621302, 0, 0.282, 0, -0.11621302, 0, 0.25694072, -28.209063, 0.7147286, 7.625338)
 collision_layer = 4
 collision_mask = 271
@@ -729,7 +736,7 @@ sync_to_physics = false
 
 [node name="Spin" parent="Zone/Rollables/Side Floor/Fidget Spinner6" unique_id=1683785356 instance=ExtResource("19_up8i4")]
 
-[node name="Fidget Spinner4" type="AnimatableBody3D" parent="Zone/Rollables/Side Floor" unique_id=1951655093 instance=ExtResource("18_8ymno")]
+[node name="Fidget Spinner4" type="AnimatableBody3D" parent="Zone/Rollables/Side Floor" unique_id=250277060 instance=ExtResource("18_8ymno")]
 transform = Transform3D(-0.10106435, 0, 0.26326793, 0, 0.282, 0, -0.26326793, 0, -0.10106435, -26.112057, 0.542289, 2.0431082)
 collision_layer = 4
 collision_mask = 271
@@ -798,7 +805,7 @@ transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -1.9073486e-06, 0, -
 [node name="Toy Car" parent="Zone/Rollables/Side Floor" unique_id=1479956586 instance=ExtResource("19_pvnhs")]
 transform = Transform3D(0.25272387, 0, 0.120543115, 0, 0.28, 0, -0.120543115, 0, 0.25272387, -28.725328, 0, 19.970848)
 
-[node name="Fidget Spinner5" type="AnimatableBody3D" parent="Zone/Rollables/Side Floor" unique_id=551750101 instance=ExtResource("18_8ymno")]
+[node name="Fidget Spinner5" type="AnimatableBody3D" parent="Zone/Rollables/Side Floor" unique_id=1507783179 instance=ExtResource("18_8ymno")]
 transform = Transform3D(0.05211132, 0, 0.2771433, 0, 0.282, 0, -0.2771433, 0, 0.05211132, -30.92368, 0.56165814, 6.486752)
 collision_layer = 4
 collision_mask = 271
@@ -807,31 +814,31 @@ sync_to_physics = false
 [node name="Spin" parent="Zone/Rollables/Side Floor/Fidget Spinner5" unique_id=817085290 instance=ExtResource("19_up8i4")]
 
 [node name="Orbit" parent="Zone/Rollables" parent_id_path=PackedInt32Array(1418971655, 1164383247) index="10" unique_id=805406640 instance=ExtResource("16_ywqpv")]
-transform = Transform3D(0.60132617, 0.7893578, -0.12377885, -0.7705313, 0.61388427, 0.1715447, 0.21139608, -0.0077787396, 0.9773695, 10.70368, 9.136653, 3.4720669)
+transform = Transform3D(0.60132617, 0.7893578, -0.12377885, -0.7705313, 0.61388427, 0.1715447, 0.21139608, -0.0077787396, 0.9773695, 10.704, 9.17, 3.472)
 radius = 10.0
 speed = 0.2
 arc_used = 180.0
 rotation_style = 1
 
-[node name="Paper Airplane" type="AnimatableBody3D" parent="Zone/Rollables/Orbit" unique_id=856373371 instance=ExtResource("17_8ymno")]
+[node name="Paper Airplane" type="AnimatableBody3D" parent="Zone/Rollables/Orbit" unique_id=2130986899 instance=ExtResource("17_8ymno")]
 transform = Transform3D(-1.5360998e-09, 0.019589292, -0.0040323264, 0.02, 1.5099579e-09, -2.8345667e-10, 2.6796378e-11, -0.0040323264, -0.019589292, 10.000001, 9.536743e-07, -4.7683716e-07)
 collision_layer = 4
 collision_mask = 271
 sync_to_physics = false
 
-[node name="Paper Airplane2" type="AnimatableBody3D" parent="Zone/Rollables/Orbit" unique_id=1699168266 instance=ExtResource("17_8ymno")]
+[node name="Paper Airplane2" type="AnimatableBody3D" parent="Zone/Rollables/Orbit" unique_id=715479912 instance=ExtResource("17_8ymno")]
 transform = Transform3D(-9.462278e-10, 0.0066760294, -0.018852867, 0.02, -3.2584135e-09, -2.1576463e-09, -3.7917474e-09, -0.018852867, -0.0066760294, 7.071068, 0, -7.071069)
 collision_layer = 4
 collision_mask = 271
 sync_to_physics = false
 
-[node name="Paper Airplane3" type="AnimatableBody3D" parent="Zone/Rollables/Orbit" unique_id=1695239990 instance=ExtResource("17_8ymno")]
+[node name="Paper Airplane3" type="AnimatableBody3D" parent="Zone/Rollables/Orbit" unique_id=1346619995 instance=ExtResource("17_8ymno")]
 transform = Transform3D(1.6341168e-11, -0.00422805, -0.019547982, 0.02, -8.7422775e-10, 2.0580651e-10, -8.979774e-10, -0.019547982, 0.00422805, -1.013279e-06, 1.9073486e-06, -10.000001)
 collision_layer = 4
 collision_mask = 271
 sync_to_physics = false
 
-[node name="Paper Airplane4" type="AnimatableBody3D" parent="Zone/Rollables/Orbit" unique_id=1693015853 instance=ExtResource("17_8ymno")]
+[node name="Paper Airplane4" type="AnimatableBody3D" parent="Zone/Rollables/Orbit" unique_id=1255034371 instance=ExtResource("17_8ymno")]
 transform = Transform3D(2.2944142e-10, -0.013791133, -0.014484634, 0.02, -8.7422775e-10, 1.1491778e-09, -1.4255667e-09, -0.014484634, 0.013791133, -7.0710683, 0, -7.071069)
 collision_layer = 4
 collision_mask = 271
@@ -842,25 +849,25 @@ transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, -2.188, 0, 
 radius = 18.0
 speed = -0.1
 
-[node name="Duck" type="AnimatableBody3D" parent="Zone/Rollables/Orbit2" unique_id=853199357 instance=ExtResource("10_nsjcu")]
+[node name="Duck" type="AnimatableBody3D" parent="Zone/Rollables/Orbit2" unique_id=1796896490 instance=ExtResource("10_nsjcu")]
 transform = Transform3D(0.55, 0, 0, 0, 0.55, 0, 0, 0, 0.55, 17.999998, 0, 0)
 collision_layer = 4
 collision_mask = 271
 sync_to_physics = false
 
-[node name="Duck2" type="AnimatableBody3D" parent="Zone/Rollables/Orbit2" unique_id=398725527 instance=ExtResource("10_nsjcu")]
+[node name="Duck2" type="AnimatableBody3D" parent="Zone/Rollables/Orbit2" unique_id=7621454 instance=ExtResource("10_nsjcu")]
 transform = Transform3D(-2.4041263e-08, 0, 0.55, 0, 0.55, 0, -0.55, 0, -2.4041263e-08, -7.1525574e-07, 0, -17.999998)
 collision_layer = 4
 collision_mask = 271
 sync_to_physics = false
 
-[node name="Duck3" type="AnimatableBody3D" parent="Zone/Rollables/Orbit2" unique_id=1371070934 instance=ExtResource("10_nsjcu")]
+[node name="Duck3" type="AnimatableBody3D" parent="Zone/Rollables/Orbit2" unique_id=237204138 instance=ExtResource("10_nsjcu")]
 transform = Transform3D(-0.55, 0, -8.3047695e-08, 0, 0.55, 0, 8.3047695e-08, 0, -0.55, -17.999998, 0, 1.9073486e-06)
 collision_layer = 4
 collision_mask = 271
 sync_to_physics = false
 
-[node name="Toy Car" type="AnimatableBody3D" parent="Zone/Rollables/Orbit2" unique_id=75116853 instance=ExtResource("19_pvnhs")]
+[node name="Toy Car" type="AnimatableBody3D" parent="Zone/Rollables/Orbit2" unique_id=2003596363 instance=ExtResource("19_pvnhs")]
 transform = Transform3D(-1.2239188e-08, 0, -0.28, 0, 0.28, 0, 0.28, 0, -1.2239188e-08, 2.3841858e-07, 0, 18)
 collision_layer = 4
 collision_mask = 271
@@ -871,19 +878,19 @@ transform = Transform3D(1, 0, 2.9802322e-08, 0, 1, 0, -2.9802322e-08, 0, 1, -6.8
 radius = 8.5
 speed = -0.3
 
-[node name="Toy Car" type="AnimatableBody3D" parent="Zone/Rollables/Orbit3" unique_id=1848288983 instance=ExtResource("19_pvnhs")]
+[node name="Toy Car" type="AnimatableBody3D" parent="Zone/Rollables/Orbit3" unique_id=1627346402 instance=ExtResource("19_pvnhs")]
 transform = Transform3D(0.28, 0, -8.34465e-09, 0, 0.28, 0, 8.34465e-09, 0, 0.28, 8.5, 0, 0)
 collision_layer = 4
 collision_mask = 271
 sync_to_physics = false
 
-[node name="Toy Car2" type="AnimatableBody3D" parent="Zone/Rollables/Orbit3" unique_id=2074230265 instance=ExtResource("19_pvnhs")]
+[node name="Toy Car2" type="AnimatableBody3D" parent="Zone/Rollables/Orbit3" unique_id=1978857644 instance=ExtResource("19_pvnhs")]
 transform = Transform3D(-0.14000002, 0, 0.2424871, 0, 0.28, 0, -0.2424871, 0, -0.14000002, -4.2499995, 0, -7.3612156)
 collision_layer = 4
 collision_mask = 271
 sync_to_physics = false
 
-[node name="Toy Car3" type="AnimatableBody3D" parent="Zone/Rollables/Orbit3" unique_id=1958514140 instance=ExtResource("19_pvnhs")]
+[node name="Toy Car3" type="AnimatableBody3D" parent="Zone/Rollables/Orbit3" unique_id=1144439026 instance=ExtResource("19_pvnhs")]
 transform = Transform3D(-0.13999996, 0, -0.24248715, 0, 0.28, 0, 0.24248715, 0, -0.13999996, -4.2499995, 0, 7.361216)
 collision_layer = 4
 collision_mask = 271

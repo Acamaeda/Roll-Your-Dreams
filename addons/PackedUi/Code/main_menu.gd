@@ -87,5 +87,6 @@ func _toggle_control(_id:String, _value:bool, _previous:String = "") -> void:
 func button_pressed(_id:String) -> void:
 	if (_id == "Play"):
 		get_tree().change_scene_to_file("res://Levels/Test Campaign/Demo level/DemoLevel.tscn")
+		GameControl.get_node("FreezeControl").set_pause(false)
 		visible = false
 	UI.ButtonPressed.emit(_id.to_lower(), id)
