@@ -6,30 +6,14 @@ extends Node
 		shift_amount = val
 		update_color()
 
-var target : MeshInstance3D
 var shader : Shader
 var shadermat : ShaderMaterial
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-
-	find_target(get_parent())
-	if (!target):
-		return
 	shader = load("res://Engine/Gameplay/Features/Recolor.gdshader")
 	shadermat = ShaderMaterial.new()
 	shadermat.shader = shader
-	for id in target.get_surface_override_material_count():
-		var newmat : StandardMaterial3D
-		if (target.get_active_material(id)):
-			newmat = target.get_active_material(id).duplicate()
-		else:
-			newmat = StandardMaterial3D.new()
-		newmat.next_pass = shadermat
-		shadermat.render_priority=shadermat.RENDER_PRIORITY_MIN
-		
-		target.set_surface_override_material(id, newmat)
-		
-
+	find_target(get_parent())
 	update_color()
 
 func update_color():
@@ -42,8 +26,19 @@ func update_color():
 func find_target(parent):
 	for child in parent.get_children():
 		if (child is MeshInstance3D):
-			target = child
-		else:
-			find_target(child)
-
+			shaderify(child)
 	
+		find_target(child)
+
+func shaderify(target):
+	for id in target.get_surface_override_material_count():
+		var newmat : StandardMaterial3D
+		if (target.get_active_material(id)):
+			newmat = target.get_active_material(id).duplicate()
+		else:
+			newmat = StandardMaterial3D.new()
+		newmat.next_pass = shadermat
+		newmat.transparency=BaseMaterial3D.TRANSPARENCY_DISABLED
+		shadermat.render_priority=shadermat.RENDER_PRIORITY_MIN
+		
+		target.set_surface_override_material(id, newmat)

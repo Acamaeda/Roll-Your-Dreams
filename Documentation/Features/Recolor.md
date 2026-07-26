@@ -5,5 +5,7 @@ all of the hues in the object.
 
 You can use this along with RollableProperties to fully make a variant of an object.
 
+(Note that it will disable any transparency on the object being recolored)
+
 ## Properties
 	- Shift amount: How much the color should be shifted, in degrees on the color wheel.

@@ -1,10 +1,10 @@
-[gd_scene format=4 uid="uid://dx2xuup8tyvar"]
+[gd_scene format=4 uid="uid://b0qguj0i0tgvo"]
 
-[ext_resource type="Script" uid="uid://dx6eyklyhmrga" path="res://Engine/Gameplay/Rollable/rollable.gd" id="1_o8qpc"]
-[ext_resource type="PackedScene" uid="uid://cc8qui7d0xf44" path="res://Assets/3d/Harry Charalambous/Candy/Peppermint.glb" id="2_ao0om"]
-[ext_resource type="PackedScene" uid="uid://dm12e03d7nkxa" path="res://The stuff you use/Features/Recolor.tscn" id="2_byv7p"]
-[ext_resource type="Texture2D" uid="uid://cndu5eycgdnmt" path="res://Assets/3d/Harry Charalambous/Candy/Peppermint_Candy Twist Red.png" id="4_npned"]
-[ext_resource type="Shader" uid="uid://x2mf6n4rgfgr" path="res://Engine/Gameplay/Features/Recolor.gdshader" id="5_6oagu"]
+[ext_resource type="Script" uid="uid://dx6eyklyhmrga" path="res://Engine/Gameplay/Rollable/rollable.gd" id="1_rent3"]
+[ext_resource type="PackedScene" uid="uid://dm12e03d7nkxa" path="res://The stuff you use/Features/Recolor.tscn" id="2_yk2v4"]
+[ext_resource type="PackedScene" uid="uid://cc8qui7d0xf44" path="res://Assets/3d/Harry Charalambous/Candy/Peppermint.glb" id="3_5x3ik"]
+[ext_resource type="Texture2D" uid="uid://cndu5eycgdnmt" path="res://Assets/3d/Harry Charalambous/Candy/Peppermint_Candy Twist Red.png" id="4_43tmq"]
+[ext_resource type="Shader" uid="uid://x2mf6n4rgfgr" path="res://Engine/Gameplay/Features/Recolor.gdshader" id="5_v8pgi"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_sqig6"]
 height = 0.46
@@ -12,7 +12,7 @@ radius = 0.59
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_byv7p"]
 render_priority = -128
-shader = ExtResource("5_6oagu")
+shader = ExtResource("5_v8pgi")
 shader_parameter/shift_amount = 180.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_npned"]
@@ -20,7 +20,7 @@ resource_name = "Peppermint_twist_Red"
 next_pass = SubResource("ShaderMaterial_byv7p")
 transparency = 4
 cull_mode = 2
-albedo_texture = ExtResource("4_npned")
+albedo_texture = ExtResource("4_43tmq")
 roughness = 0.5527864
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_qxka5"]
@@ -57,19 +57,19 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_qxka5")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_npned"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rent3"]
 render_priority = -128
-shader = ExtResource("5_6oagu")
-shader_parameter/shift_amount = 130.0
+shader = ExtResource("5_v8pgi")
+shader_parameter/shift_amount = -140.0
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6oagu"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yk2v4"]
 resource_name = "Peppermint_twist_Red"
-next_pass = SubResource("ShaderMaterial_npned")
+next_pass = SubResource("ShaderMaterial_rent3")
 cull_mode = 2
-albedo_texture = ExtResource("4_npned")
+albedo_texture = ExtResource("4_43tmq")
 roughness = 0.5527864
 
-[node name="Spearmint" type="StaticBody3D" unique_id=1036713240]
+[node name="Blue Mint" type="StaticBody3D" unique_id=1036713240]
 collision_layer = 4
 collision_mask = 271
 
@@ -82,22 +82,22 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.23, 0)
 shape = SubResource("CylinderShape3D_sqig6")
 
 [node name="Rollable" type="Node" parent="." unique_id=2084382761]
-script = ExtResource("1_o8qpc")
-object_name = "Spearmint"
-description = "About as far from spear-shaped as it gets."
+script = ExtResource("1_rent3")
+object_name = "Blue Mint"
+description = "Apparently blueberry is a type of mint now? "
 creator = "Harry Charalambous"
 link = "https://sketchfab.com/3d-models/candy-34bbb16e80dd4b768089b9b31d291aea"
 base_size = 0.013
 model_scale = 0.0212
 
-[node name="Recolor" parent="." unique_id=1266132782 instance=ExtResource("2_byv7p")]
-shift_amount = 130.0
+[node name="Recolor" parent="." unique_id=1266132782 instance=ExtResource("2_yk2v4")]
+shift_amount = -140.0
 
-[node name="Peppermint" parent="." unique_id=2102636189 instance=ExtResource("2_ao0om")]
+[node name="Peppermint" parent="." unique_id=2102636189 instance=ExtResource("3_5x3ik")]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0.23, 0)
 
 [node name="Peppermint_Twist_1_002" parent="Peppermint/Candy/Peppermint_Candy_Twist/Red_002" parent_id_path=PackedInt32Array(2102636189, 968383584) index="0" unique_id=580466939]
 mesh = SubResource("ArrayMesh_6oagu")
-surface_material_override/0 = SubResource("StandardMaterial3D_6oagu")
+surface_material_override/0 = SubResource("StandardMaterial3D_yk2v4")
 
 [editable path="Peppermint"]
