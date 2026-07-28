@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c42nqdb3cx7vk"]
 
 [ext_resource type="AudioStream" uid="uid://bmivrrlvkf6mv" path="res://Assets/Sounds/skylar.mianlind/640070__skylarmianlind__pew-pew.wav" id="1_wihbn"]
-[ext_resource type="Script" uid="uid://dbvih4ctmn0vb" path="res://Engine/Gameplay/Rollable/RollupSound.gd" id="2_eea2m"]
+[ext_resource type="Script" uid="uid://dbvih4ctmn0vb" path="res://Engine/Gameplay/Rollable/SoundEffect.gd" id="2_eea2m"]
 
 [node name="RollupSound" type="AudioStreamPlayer" unique_id=637469916]
 stream = ExtResource("1_wihbn")

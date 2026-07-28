@@ -49,8 +49,14 @@ Click on the "Rollable" object in the scene tree to edit it. It has the followin
 ## License stuff
 
 This only matters for officially adding the object to the RYD collection. If you don't have the rights to the model, it can't be added.
-If someone else made it and it has a downloadable license, include that lisence in the folder alongside the assets. If you made it, you can use your own license.
-I suggest making a copy of [point to noncommercial license template in repo]
+If you made something yourself, you should add a note saying what license it's under. Right now the best options are
+Creative Commons, and Creative Commons non-commercial.
+
+For things you don't own, they need to be under a license that allows distribution and making derivatives.
+
+## Other things
+
+You can change the sound for the RollupSound, also change the creator and link. (This feature will be improved in the future)
 
 ## Other collisions
 

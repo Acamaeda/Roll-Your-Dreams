@@ -7,3 +7,4 @@ Recolor is a Solo Feature that causes the object it's added to to fall downwards
 
 ## Properties
 	- Power: The acceleration due to gravity, which is scaled based on the player's size.
+	- Lock movement: Makes the object only move due to gravity, avoiding weirdness.

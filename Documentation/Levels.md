@@ -13,12 +13,16 @@ Key elements:
 
 The first thing you need to do is set the level's scale, which is the same as the player's starting size in meters. Set map_scale to the same size (it will matter later)
 
-## Building the level:
+## Building the level
 	
-Get Rollables from the "Stuff you use" folder and place them into the level under the "Rollables" of a Zone. You can adjust the position, rotation,
-and scale (which also changes rolling them up!). You can also duplicate existing objects to save time. While terrain technically doesn't have to be rollable, it's treated the same way.
+Get Rollables from the "Stuff you use" folder and place them into the level under the "Rollables" of a Zone. You can adjust the position and rotation.
+You can also duplicate existing objects to save time. While terrain technically doesn't have to be rollable, it's treated the same way.
 
 (Tip! Rotating objects differently can make things seem more natural and varied!)
+
+## Running the level
+
+Right click the tab for the scene at the top of the screen and choose "set as main scene". Then, when you press F5, it will run your level!
 
 ## Adding features to objects
 
@@ -38,6 +42,7 @@ Properties:
 	- Size Required: The size the player needs to unlock the zone. If it's zero, the zone is always unlocked.
 	- Lowest height: The lowest height of the ground in the zone. (Needed to determine if the player fell off the map)
 
-## Advanced Customization
+## More Customization
 
+You can change the song file in LevelControl's "music" 
 You can modify the WorldEnvironment and DirectionalLight3D to change the look of the level as a whole a lot.

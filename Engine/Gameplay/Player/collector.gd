@@ -11,7 +11,7 @@ var level_scale = 1.0
 @export var rollup_ratio = 2.15
 @export var exponent = 3.0
 @export var growth_mult = 1.0
-var volume = 1.0
+var volume = 1.0 
 
 var old_size: float = 0.0
 

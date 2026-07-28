@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://cndu5eycgdnmt" path="res://Assets/3d/Harry Charalambous/Candy/Peppermint_Candy Twist Red.png" id="4_43tmq"]
 [ext_resource type="Shader" uid="uid://x2mf6n4rgfgr" path="res://Engine/Gameplay/Features/Recolor.gdshader" id="5_v8pgi"]
 [ext_resource type="PackedScene" uid="uid://c42nqdb3cx7vk" path="res://Engine/Gameplay/Rollable/RollupSound.tscn" id="6_yk2v4"]
-[ext_resource type="Script" uid="uid://dbvih4ctmn0vb" path="res://Engine/Gameplay/Rollable/RollupSound.gd" id="7_5x3ik"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_sqig6"]
 height = 0.46
@@ -59,14 +58,14 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_qxka5")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_5x3ik"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yk2v4"]
 render_priority = -128
 shader = ExtResource("5_v8pgi")
 shader_parameter/shift_amount = -140.0
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_43tmq"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5x3ik"]
 resource_name = "Peppermint_twist_Red"
-next_pass = SubResource("ShaderMaterial_5x3ik")
+next_pass = SubResource("ShaderMaterial_yk2v4")
 cull_mode = 2
 albedo_texture = ExtResource("4_43tmq")
 roughness = 0.5527864
@@ -102,9 +101,8 @@ transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0.23, 0)
 
 [node name="Peppermint_Twist_1_002" parent="Peppermint/Candy/Peppermint_Candy_Twist/Red_002" parent_id_path=PackedInt32Array(2102636189, 968383584) index="0" unique_id=580466939]
 mesh = SubResource("ArrayMesh_6oagu")
-surface_material_override/0 = SubResource("StandardMaterial3D_43tmq")
+surface_material_override/0 = SubResource("StandardMaterial3D_5x3ik")
 
 [node name="RollupSound" parent="." unique_id=637469916 instance=ExtResource("6_yk2v4")]
-script = ExtResource("7_5x3ik")
 
 [editable path="Peppermint"]
