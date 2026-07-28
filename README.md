@@ -1,9 +1,7 @@
-# Roll-Your-Dream
-Very WIP roll-and-grow game engine.
+# Roll Your Dreams
+A roll=and-grow game that you can make your own levels for!
 
-No coding is required to create levels, but a lot will be possible with a variety of flexible tools!
-
-TODO: Something on playing levels
+No coding is required to create levels, and lot will be possible with a variety of flexible tools!
 
 To get started on learning to use RYD, [go here](res://Documentation/Introduction.md)
 
