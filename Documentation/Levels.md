@@ -45,4 +45,4 @@ Properties:
 ## More Customization
 
 You can change the song file in LevelControl's "music" 
-You can modify the WorldEnvironment and DirectionalLight3D to change the look of the level as a whole a lot.
+You can modify the WorldEnvironment and DirectionalLight3D to change the look of the level as a whole a lot. Particularly you can change the texture of the sky.

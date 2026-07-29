@@ -4,4 +4,3 @@
 
 [node name="Fall" type="Node3D" unique_id=2088710499]
 script = ExtResource("1_bsdvc")
-power = null

@@ -15,8 +15,8 @@ func ready2():
 	var parent :CharacterBody3D = get_parent()
 	parent.wall_min_slide_angle = 0
 	parent.platform_floor_layers=parent.collision_mask
-	if (parent.get_collision_mask_value(2)):
-		parent.platform_floor_layers -= 2
+	#if (parent.get_collision_mask_value(2)):
+	#	parent.platform_floor_layers -= 2
 	
 func _process(delta):
 	var parent : CharacterBody3D = get_parent()

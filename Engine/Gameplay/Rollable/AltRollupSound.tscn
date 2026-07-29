@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://der7p6m8edsxk"]
+
+[ext_resource type="AudioStream" uid="uid://bmivrrlvkf6mv" path="res://Assets/Sounds/skylar.mianlind/640070__skylarmianlind__pew-pew.wav" id="1_vfo33"]
+[ext_resource type="Script" uid="uid://dbvih4ctmn0vb" path="res://Engine/Gameplay/Rollable/SoundEffect.gd" id="2_ysh0t"]
+
+[node name="RollupSound" type="AudioStreamPlayer" unique_id=637469916]
+stream = ExtResource("1_vfo33")
+script = ExtResource("2_ysh0t")
+author = "skylar.mianlind"
+url = "https://freesound.org/people/skylar.mianlind/sounds/640070/"
