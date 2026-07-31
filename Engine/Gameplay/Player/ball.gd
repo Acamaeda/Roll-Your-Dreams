@@ -14,6 +14,9 @@ var too_slow = 5
 var floor_angle = 0.5
 var friction = 1.0
 
+var quickturn_speed = 0.5
+var quickturn_left = 0.0
+
 var horizontal = 0.0
 var vertical = 0.0
 var turn = 0.0
@@ -50,21 +53,31 @@ func _integrate_forces(state: PhysicsDirectBodyState3D):
 	set_collision_mask_value(6, false)
 	update_size();
 	check_collisions(state)
-
+	
 	inputs_advanced();
 	var inputs = Vector2(vertical, horizontal * horizontal_mult)
 	if vertical > 0:
 		inputs.x = inputs.x * back_mult
 	inputs = inputs.rotated(-1 * nonrolling.rotation.y)
-	var total_force = rolling_force
-	#Speed up if player is just starting to move
-	if(state.angular_velocity.length() < too_slow):
-		total_force *= 2
-	var change = Vector3(total_force*inputs.x*stored_delta, 0,  total_force*inputs.y*stored_delta)
-	state.angular_velocity.x += change.x
-	state.angular_velocity.z += change.z
-	camera_angle += turn*turn_speed*stored_delta;
-	slow_down(stored_delta, state, change, inputs)
+	
+	if (quickturn_left > 0):
+		var turn_amount = min(quickturn_left, stored_delta/quickturn_speed*PI)
+		quickturn_left -= turn_amount
+		camera_angle += turn_amount
+		angular_velocity = Vector3.ZERO
+	elif (Input.is_action_just_pressed("QuickTurn") && angular_velocity.length() < too_slow*1.5):
+		quickturn_left = PI
+		angular_velocity = Vector3.ZERO
+	else:
+		var total_force = rolling_force
+		#Speed up if player is just starting to move
+		if(state.angular_velocity.length() < too_slow):
+			total_force *= 2
+		var change = Vector3(total_force*inputs.x*stored_delta, 0,  total_force*inputs.y*stored_delta)
+		state.angular_velocity.x += change.x
+		state.angular_velocity.z += change.z
+		camera_angle += turn*turn_speed*stored_delta;
+		slow_down(stored_delta, state, change, inputs)
 
 	check_stuck(state, inputs)
 	
