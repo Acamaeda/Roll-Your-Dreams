@@ -11,6 +11,7 @@ class_name MainMenu extends SMenuControl
 @onready var hbox_seperator_01: Control = %hbox_seperator_01
 @onready var hbox_seperator_02: Control = %hbox_seperator_02
 @onready var buttons_hbox: HBoxContainer = %buttons_hbox
+@onready var logo: TextureRect = %logo
 
 var button_list:Array[MainMenuButton] = []
 
@@ -22,9 +23,11 @@ func _ready() -> void:
 		await UI.ready
 	
 	_set_game_title(game_title)
-	menu_button_vbox.custom_minimum_size.x = UI.width/3
-	hbox_seperator_01.custom_minimum_size.x = UI.width/3
-	hbox_seperator_02.custom_minimum_size.x = UI.width/3
+	var logoScale = UI.width/2/640
+	logo.scale = Vector2(logoScale, logoScale)
+	menu_button_vbox.custom_minimum_size.x = UI.width/4
+	hbox_seperator_01.custom_minimum_size.x = UI.width/3*2
+	hbox_seperator_02.custom_minimum_size.x = UI.width/6
 	_make_buttons(menu_options)
 	
 	if not button_list.is_empty() and not button_list[-1].is_node_ready():
