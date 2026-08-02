@@ -24,6 +24,16 @@ You can also duplicate existing objects to save time. While terrain technically 
 
 Right click the tab for the scene at the top of the screen and choose "set as main scene". Then, when you press F5, it will run your level!
 
+## The Player
+
+The Player has various features that can be customized. Anything related to the player's physics and movement will be in the
+root "player" node, while things related to rolling up and growing are in the "collector" node.
+
+Collector features:
+	- Rollup ratio: How many times bigger the player needs to be than an object to roll it up.
+	- Exponent: Affects how much growth you get from objects of different sizes. With 3 exponent, a 2-meter object is worth 8 1-meter objects.
+	- Growth mult: A flat multiplier to the player's growth.
+
 ## Adding features to objects
 
 You can put a Feature as a child of a Rollable to change it in some way. The most important Feature, RollableProperties, lets you modify some basic properties of a Rollable.

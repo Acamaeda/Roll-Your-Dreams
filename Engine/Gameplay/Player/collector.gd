@@ -1,7 +1,7 @@
 @tool
 
 extends Node3D
-@export var player_body:PhysicsBody3D
+var player_body:PhysicsBody3D
 var nonrolling:Node3D
 signal size_changed(size, rollup_size)
 
