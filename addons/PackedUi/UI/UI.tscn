@@ -6,11 +6,10 @@
 [ext_resource type="Script" uid="uid://xcjw31tugekq" path="res://addons/PackedUi/Code/options_menu.gd" id="4_wx7w4"]
 [ext_resource type="Texture2D" uid="uid://fuq5uf0htdfb" path="res://logo.png" id="5_5aica"]
 [ext_resource type="Script" uid="uid://t6uatjlkx0r5" path="res://addons/PackedUi/Code/credits.gd" id="5_6nx8t"]
-[ext_resource type="Script" uid="uid://c01npx0xkbd74" path="res://addons/PackedUi/Code/credits_section_data.gd" id="6_86k27"]
 [ext_resource type="Script" uid="uid://b3hloetri6kjq" path="res://addons/PackedUi/Code/player_ui.gd" id="6_im37q"]
-[ext_resource type="Resource" uid="uid://cj8cddje77ep4" path="res://addons/PackedUi/Credit Datas/demo_data.tres" id="7_5cen7"]
 [ext_resource type="Script" uid="uid://rfmci6rsr2ah" path="res://addons/PackedUi/Code/pause_menu.gd" id="7_r3cjq"]
 [ext_resource type="Script" uid="uid://cllcxb0nd4xro" path="res://addons/PackedUi/Code/result_screen.gd" id="8_p1pvi"]
+[ext_resource type="Script" uid="uid://b6fiy7hd3317w" path="res://addons/PackedUi/Code/generic_menu.gd" id="8_pg6b6"]
 [ext_resource type="Script" uid="uid://e6mu755gfabv" path="res://addons/PackedUi/Code/wrappers/toggle_ui_button.gd" id="9_xcvtp"]
 [ext_resource type="Script" uid="uid://bo7h3sb3lapsl" path="res://addons/PackedUi/Code/popups.gd" id="9_y8v47"]
 [ext_resource type="Texture2D" uid="uid://ciphdoorlai41" path="res://addons/PackedUi/icon.svg" id="13_vydkj"]
@@ -204,7 +203,6 @@ anchors_preset = 0
 offset_right = 1280.0
 offset_bottom = 720.0
 script = ExtResource("5_6nx8t")
-credit_sections = Array[ExtResource("6_86k27")]([ExtResource("7_5cen7")])
 background_color = Color(0.131654, 0.250022, 0.218582, 1)
 background = NodePath("background")
 id = "credits"
@@ -258,55 +256,24 @@ offset_bottom = 619.0
 theme = ExtResource("3_ohvov")
 text = "Back"
 
-[node name="HowToPlay" type="Control" parent="." unique_id=1701940331 node_paths=PackedStringArray("background") groups=["Credits"]]
+[node name="How To Play" type="Control" parent="." unique_id=1701940331 groups=["How To Play"]]
 visible = false
 custom_minimum_size = Vector2(1280, 720)
 layout_mode = 3
 anchors_preset = 0
 offset_right = 1280.0
 offset_bottom = 720.0
-script = ExtResource("5_6nx8t")
-credit_sections = Array[ExtResource("6_86k27")]([ExtResource("7_5cen7")])
-background_color = Color(0.131654, 0.250022, 0.218582, 1)
-background = NodePath("background")
-id = "credits"
+script = ExtResource("8_pg6b6")
+id = "how to play"
 
-[node name="background" type="ColorRect" parent="HowToPlay" unique_id=1865348690]
+[node name="background" type="ColorRect" parent="How To Play" unique_id=1865348690]
 custom_minimum_size = Vector2(1280, 720)
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 color = Color(0.133333, 0.25098, 0.219608, 1)
 
-[node name="credits_scroll" type="ScrollContainer" parent="HowToPlay" unique_id=1048325688]
-custom_minimum_size = Vector2(1280, 720)
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-theme = ExtResource("3_ohvov")
-horizontal_scroll_mode = 0
-
-[node name="credits_vbox" type="VBoxContainer" parent="HowToPlay/credits_scroll" unique_id=699924930]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_constants/separation = 0
-
-[node name="spacer" type="Control" parent="HowToPlay/credits_scroll/credits_vbox" unique_id=1698178200]
-custom_minimum_size = Vector2(0, 60)
-layout_mode = 2
-
-[node name="game_name_in_credits" type="RichTextLabel" parent="HowToPlay/credits_scroll/credits_vbox" unique_id=1248360310]
-custom_minimum_size = Vector2(0, 100)
-layout_mode = 2
-theme = ExtResource("3_ohvov")
-bbcode_enabled = true
-
-[node name="spacer2" type="Control" parent="HowToPlay/credits_scroll/credits_vbox" unique_id=98250101]
-custom_minimum_size = Vector2(0, 60)
-layout_mode = 2
-
-[node name="back_btn" type="Button" parent="HowToPlay" unique_id=339799925]
+[node name="back_btn" type="Button" parent="How To Play" unique_id=339799925]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 0
 offset_left = 931.0
@@ -316,18 +283,15 @@ offset_bottom = 619.0
 theme = ExtResource("3_ohvov")
 text = "Back"
 
-[node name="Make Levels" type="Control" parent="." unique_id=183976931 node_paths=PackedStringArray("background") groups=["Credits"]]
+[node name="Make Levels" type="Control" parent="." unique_id=183976931 groups=["Make Levels"]]
 visible = false
 custom_minimum_size = Vector2(1280, 720)
 layout_mode = 3
 anchors_preset = 0
 offset_right = 1280.0
 offset_bottom = 720.0
-script = ExtResource("5_6nx8t")
-credit_sections = Array[ExtResource("6_86k27")]([ExtResource("7_5cen7")])
-background_color = Color(0.131654, 0.250022, 0.218582, 1)
-background = NodePath("background")
-id = "credits"
+script = ExtResource("8_pg6b6")
+id = "make levels"
 
 [node name="background" type="ColorRect" parent="Make Levels" unique_id=1851099265]
 custom_minimum_size = Vector2(1280, 720)
@@ -335,34 +299,6 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 color = Color(0.133333, 0.25098, 0.219608, 1)
-
-[node name="credits_scroll" type="ScrollContainer" parent="Make Levels" unique_id=1812799905]
-custom_minimum_size = Vector2(1280, 720)
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-theme = ExtResource("3_ohvov")
-horizontal_scroll_mode = 0
-
-[node name="credits_vbox" type="VBoxContainer" parent="Make Levels/credits_scroll" unique_id=2137318876]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_constants/separation = 0
-
-[node name="spacer" type="Control" parent="Make Levels/credits_scroll/credits_vbox" unique_id=1074344263]
-custom_minimum_size = Vector2(0, 60)
-layout_mode = 2
-
-[node name="game_name_in_credits" type="RichTextLabel" parent="Make Levels/credits_scroll/credits_vbox" unique_id=1044261836]
-custom_minimum_size = Vector2(0, 100)
-layout_mode = 2
-theme = ExtResource("3_ohvov")
-bbcode_enabled = true
-
-[node name="spacer2" type="Control" parent="Make Levels/credits_scroll/credits_vbox" unique_id=1322275518]
-custom_minimum_size = Vector2(0, 60)
-layout_mode = 2
 
 [node name="back_btn" type="Button" parent="Make Levels" unique_id=1299875652]
 custom_minimum_size = Vector2(200, 0)
