@@ -902,9 +902,6 @@ text = "Well, this is embarrassing. (Press space/b button to continue)"
 [node name="ShowDialogue2" parent="Zone/SizeTrigger" unique_id=980559804 instance=ExtResource("14_smuyr")]
 text = "There aren't actually enough objects for you to roll up those cubes. But maybe we can cheat a little?"
 
-[node name="ShowDialogue3" parent="Zone/SizeTrigger" unique_id=1023856091 instance=ExtResource("14_smuyr")]
-text = "(You can't use the controller for confirmations yet)"
-
 [node name="Confirmation" parent="Zone/SizeTrigger" unique_id=1616909384 instance=ExtResource("15_au646")]
 text = "Do you want to be big enough to escape?"
 

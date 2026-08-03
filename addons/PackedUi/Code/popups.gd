@@ -83,6 +83,8 @@ func _process(delta: float) -> void:
 	if large_popup_timed:
 		large_timer += delta
 	if (Input.is_action_just_pressed("Okay")):
+		if (large_popup.is_visible_in_tree()):
+			_confirm_btn_pressed()
 		if (small_displayed):
 			_hide_small_popup()
 		
