@@ -8,7 +8,7 @@ func _ready() -> void:
 	Utils.upgrade_physics.call_deferred(get_parent(), 1)
 	var roll : Rollable = get_parent().get_node_or_null("Rollable")
 	if(roll):
-		var vscale = roll.size
+		var vscale = roll.size/roll.model_scale
 		if Engine.is_editor_hint():
 			get_node("Visualizer").scale = Vector3(vscale, vscale, vscale)
 		

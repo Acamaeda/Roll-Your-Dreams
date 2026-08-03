@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bq5p23e7ucadm"]
 
 [ext_resource type="Script" uid="uid://cdye777k5jnr5" path="res://Engine/Gameplay/Features/Orbit.gd" id="1_vqey7"]
-[ext_resource type="Script" uid="uid://btv8ng58fmx0l" path="res://Engine/Gameplay/Features/EditorOnly.gd" id="2_7gwp4"]
+[ext_resource type="Script" uid="uid://btv8ng58fmx0l" path="res://Engine/Gameplay/Features/Visualizer.gd" id="2_7gwp4"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_niy75"]
 transparency = 1

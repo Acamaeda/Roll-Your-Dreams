@@ -25,7 +25,7 @@ func update_color():
 	
 func find_target(parent):
 	for child in parent.get_children():
-		if (child is MeshInstance3D):
+		if (child is MeshInstance3D && ! child is Visualizer):
 			shaderify(child)
 	
 		find_target(child)

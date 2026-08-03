@@ -10,7 +10,6 @@ class_name GenericMenu extends SMenuControl
 
 func _ready() -> void:
 	super()
-	print(back_btn)
 	back_btn.pressed.connect(_back_btn_pressed)
 	if set_position_of_buttons:
 		back_btn.position = (Vector2(UI.width, UI.height) * 0.95) - back_btn.size
