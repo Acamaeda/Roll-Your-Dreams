@@ -1,7 +1,7 @@
-#An Introduction to Rolling Your Dreams
+# An Introduction to Rolling Your Dreams
 Roll Your Dreams takes advantage of Godot's 3D editor and design principles to make creating things accessible.
 
-Get started by downloading Godot 4.7.1 and the RYD source code. (You can also properly use Github if you're planning to do dev work)
+Get started by downloading [Godot 4.7.1](https://godotengine.org/download/archive/4.7.1-stable) and the RYD source code. (You can also properly use Github if you're planning to do dev work)
 
 Some helpful introductory Godot materials:
 https://docs.godotengine.org/en/stable/getting_started/introduction/key_concepts_overview.html

@@ -49,8 +49,9 @@ Click on the "Rollable" object in the scene tree to edit it. It has the followin
 ## License stuff
 
 This only matters for officially adding the object to the RYD collection. If you don't have the rights to the model, it can't be added.
-If you made something yourself, you should add a note saying what license it's under. Right now the best options are
-Creative Commons, and Creative Commons non-commercial.
+If you made something yourself, if you don't use a license it's assumed to be under RYD's MIT license. Right now the best options are
+[Creative Commons](https://mirrors.creativecommons.org/presskit/buttons/88x31/png/by.png), and [Creative Commons non-commercial](https://mirrors.creativecommons.org/presskit/buttons/88x31/png/by-nc.png).
+If you want to use one of these licenses, just add a copy of one of those images alongside your asset.
 
 For things you don't own, they need to be under a license that allows distribution and making derivatives.
 

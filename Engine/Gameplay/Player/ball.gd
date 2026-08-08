@@ -14,7 +14,7 @@ var too_slow = 5
 var floor_angle = 0.5
 var friction = 1.0
 
-var quickturn_speed = 0.5
+var quickturn_speed = 0.3
 var quickturn_left = 0.0
 
 var horizontal = 0.0
