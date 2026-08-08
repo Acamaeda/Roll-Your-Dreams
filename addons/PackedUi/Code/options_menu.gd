@@ -69,7 +69,7 @@ const DROP_DOWN_OPTION = preload("res://addons/PackedUi/UI/drop_down_option.tscn
 ## Name displayed in the section label.
 @export var language_section_name:String = "Language"
 
-@onready var option_back_btn: Button = %option_back_btn
+@onready var option_back_btn: Button = get_node("option_back_btn")
 @onready var options_page_title: RichTextLabel = %options_page_title
 @onready var tab_container: TabContainer = %TabContainer
 @onready var basics_vbox: VBoxContainer = %basics_vbox
@@ -182,7 +182,8 @@ func _build_sound_options(_name:String, _buses:Array[String]) -> void:
 		audio_options[each] = slider
 	new_audio_levels = current_audio_levels.duplicate()
 	starting_audio_levels = current_audio_levels.duplicate()
-
+	for each in _buses:
+		_update_audio_levels(each, default_audio_slider_value, false)
 
 func _build_display_options(_name:String, _window:Array[String], _sizes:Array[Vector2i]) -> void:
 	var title = _add_section_title(_name)
@@ -236,7 +237,8 @@ func _get_window_option() -> WindowOption:
 func _update_audio_levels(_id:String, _value:float, is_user_change:bool = true) -> void:
 	if new_audio_levels.has(_id):
 		new_audio_levels[_id] = _value
-	
+		AudioServer.set_bus_volume_linear(AudioServer.get_bus_index(_id), _value)
+
 		if is_user_change:
 			changes_made = true
 
