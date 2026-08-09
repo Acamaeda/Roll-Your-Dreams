@@ -259,7 +259,6 @@ theme = ExtResource("3_ohvov")
 text = "Back"
 
 [node name="How To Play" type="Control" parent="." unique_id=1701940331 groups=["How To Play"]]
-visible = false
 custom_minimum_size = Vector2(1280, 720)
 layout_mode = 3
 anchors_preset = 0
@@ -274,6 +273,57 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 color = Color(0.133333, 0.25098, 0.219608, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="How To Play" unique_id=211371471]
+layout_mode = 0
+offset_right = 1276.0
+offset_bottom = 713.0
+
+[node name="spacer" type="Control" parent="How To Play/HBoxContainer" unique_id=954841901]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+
+[node name="box2" type="VBoxContainer" parent="How To Play/HBoxContainer" unique_id=1919491628]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+
+[node name="spacer" type="Control" parent="How To Play/HBoxContainer/box2" unique_id=16541056]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+
+[node name="Text" type="RichTextLabel" parent="How To Play/HBoxContainer/box2" unique_id=53073175]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme = ExtResource("3_ohvov")
+bbcode_enabled = true
+text = "How to play"
+
+[node name="spacer2" type="Control" parent="How To Play/HBoxContainer/box2" unique_id=1529984178]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+
+[node name="Text2" type="RichTextLabel" parent="How To Play/HBoxContainer/box2" unique_id=1102281067]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme = ExtResource("3_ohvov")
+theme_type_variation = &"CreditsRichText"
+bbcode_enabled = true
+text = "Left side: Left Stick/WASD          	Right side: Right stick/IJKL
+Quick turn: Press left stick/Control     Confirm: B/Space"
+
+[node name="spacer3" type="Control" parent="How To Play/HBoxContainer/box2" unique_id=1097152957]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+
+[node name="Text3" type="RichTextLabel" parent="How To Play/HBoxContainer/box2" unique_id=1119054637]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme = ExtResource("3_ohvov")
+theme_type_variation = &"CreditsRichText"
+bbcode_enabled = true
+text = "Move the ball by moving both sides in the same direction. Turn the camera by moving one forwards and one backwards. Roll up small things to grow!"
 
 [node name="back_btn" type="Button" parent="How To Play" unique_id=339799925]
 custom_minimum_size = Vector2(200, 0)
