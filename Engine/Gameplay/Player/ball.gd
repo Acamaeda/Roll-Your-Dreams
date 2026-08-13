@@ -2,7 +2,6 @@ extends RigidBody3D
 
 var nonrolling : Node3D
 var collector : Node3D
-var ghost_floor : Node3D
 var base_mass = 1.5
 var rolling_force = 60
 var horizontal_mult = 0.5

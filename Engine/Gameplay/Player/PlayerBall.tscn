@@ -1,16 +1,15 @@
 [gd_scene format=3 uid="uid://d37a1hkqxg1aw"]
 
 [ext_resource type="Script" uid="uid://drq8xkxw2ds7h" path="res://Engine/Gameplay/Player/ball.gd" id="1_gvvae"]
+[ext_resource type="PackedScene" uid="uid://q4mwe7vgl26o" path="res://Engine/Gameplay/Player/misc.tscn" id="2_3s7gs"]
 [ext_resource type="Script" uid="uid://bt6nakmxinsvh" path="res://Engine/Gameplay/Player/collector.gd" id="2_ok2uk"]
+[ext_resource type="PackedScene" uid="uid://osvfcx2hol0p" path="res://Engine/Gameplay/Player/nonrolling.tscn" id="3_r1faj"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ok2uk"]
 friction = 1.5
 rough = true
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_0jfm5"]
-
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_ok2uk"]
-height = 0.5
 
 [sub_resource type="Curve" id="Curve_wonpf"]
 _data = [Vector2(0.09215017, 0.53153145), 0.0, 0.0, 0, 0, Vector2(0.4300341, 0.36936933), 0.0, 0.0, 0, 0, Vector2(0.9761092, 0.58558553), 0.0, 0.0, 0, 0]
@@ -36,9 +35,6 @@ albedo_texture = SubResource("CurveXYZTexture_4s7gy")
 [sub_resource type="SphereMesh" id="SphereMesh_1rerk"]
 material = SubResource("StandardMaterial3D_0jfm5")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_ok2uk"]
-size = Vector3(1, 0.02, 1)
-
 [sub_resource type="SphereShape3D" id="SphereShape3D_3s7gs"]
 
 [node name="Player" type="RigidBody3D" unique_id=1155221902 groups=["Player"]]
@@ -53,28 +49,14 @@ script = ExtResource("1_gvvae")
 shape = SubResource("SphereShape3D_0jfm5")
 debug_color = Color(3.946722e-06, 0.58577627, 0.7770228, 0.41960785)
 
-[node name="Ghost Hat" type="ShapeCast3D" parent="." unique_id=1471876128]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
-shape = SubResource("CylinderShape3D_ok2uk")
+[node name="Misc" parent="." unique_id=410399177 instance=ExtResource("2_3s7gs")]
+transform = Transform3D(1, 0, 0, 0, 0.8660254, 0.5, 0, -0.5, 0.8660254, 0, 1.8, 2)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1938959127]
 mesh = SubResource("SphereMesh_1rerk")
 skeleton = NodePath("../..")
 
-[node name="Nonrolling" type="Node3D" parent="." unique_id=677675216]
-top_level = true
-
-[node name="Camera3D" type="Camera3D" parent="Nonrolling" unique_id=1851755613]
-transform = Transform3D(1, 0, 0, 0, 0.8660254, 0.49999997, 0, -0.5, 0.8660253, 0, 1.8, 2)
-current = true
-
-[node name="Ghost floor" type="StaticBody3D" parent="Nonrolling" unique_id=1750965162]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.51, 0)
-collision_layer = 32
-collision_mask = 0
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Nonrolling/Ghost floor" unique_id=828342974]
-shape = SubResource("BoxShape3D_ok2uk")
+[node name="Nonrolling" parent="." unique_id=127205707 instance=ExtResource("3_r1faj")]
 
 [node name="Collector" type="Area3D" parent="." unique_id=1608999626]
 collision_layer = 16

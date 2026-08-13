@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://osvfcx2hol0p"]
+
+[node name="Nonrolling" type="Node3D" unique_id=127205707]
+top_level = true
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1496084221]
+transform = Transform3D(1, 0, 0, 0, 0.8660254, 0.49999997, 0, -0.5, 0.8660253, 0, 1.8, 2)
+current = true
