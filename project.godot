@@ -19,6 +19,10 @@ run/main_scene="uid://cp2xqchx20o7e"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="uid://cniq0irnk8ssq"
+
 [autoload]
 
 UI="*res://addons/PackedUi/UI/UI.tscn"

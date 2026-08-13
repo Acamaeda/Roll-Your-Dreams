@@ -42,7 +42,11 @@ func replace_physics_node(old: PhysicsBody3D, new: PhysicsBody3D):
 
 func update_tree(new):
 	new.owner=get_tree().edited_scene_root
-	EditorInterface.get_edited_scene_root().notify_property_list_changed.call_deferred()
+	if not Engine.has_singleton(&"EditorInterface"):
+		notify_property_list_changed()
+		return
+	var ei: Object = Engine.get_singleton(&"EditorInterface")
+	ei.get_edited_scene_root().notify_property_list_changed.call_deferred()
 	
 func create_physics_node(level):
 	match level:

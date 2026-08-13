@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://rfmci6rsr2ah" path="res://addons/PackedUi/Code/pause_menu.gd" id="7_r3cjq"]
 [ext_resource type="Script" uid="uid://cllcxb0nd4xro" path="res://addons/PackedUi/Code/result_screen.gd" id="8_p1pvi"]
 [ext_resource type="Script" uid="uid://b6fiy7hd3317w" path="res://addons/PackedUi/Code/generic_menu.gd" id="8_pg6b6"]
+[ext_resource type="Script" uid="uid://dbnx4cmhh22fa" path="res://Engine/UI/url_text.gd" id="9_5aica"]
 [ext_resource type="Script" uid="uid://e6mu755gfabv" path="res://addons/PackedUi/Code/wrappers/toggle_ui_button.gd" id="9_xcvtp"]
 [ext_resource type="Script" uid="uid://bo7h3sb3lapsl" path="res://addons/PackedUi/Code/popups.gd" id="9_y8v47"]
 [ext_resource type="Texture2D" uid="uid://ciphdoorlai41" path="res://addons/PackedUi/icon.svg" id="13_vydkj"]
@@ -352,6 +353,59 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 color = Color(0.133333, 0.25098, 0.219608, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Make Levels" unique_id=1510345168]
+layout_mode = 0
+offset_right = 1276.0
+offset_bottom = 713.0
+
+[node name="spacer" type="Control" parent="Make Levels/HBoxContainer" unique_id=353851127]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+
+[node name="box2" type="VBoxContainer" parent="Make Levels/HBoxContainer" unique_id=797228715]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+
+[node name="spacer" type="Control" parent="Make Levels/HBoxContainer/box2" unique_id=696369514]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+
+[node name="Text" type="RichTextLabel" parent="Make Levels/HBoxContainer/box2" unique_id=1967922576]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme = ExtResource("3_ohvov")
+bbcode_enabled = true
+text = "Make Levels"
+
+[node name="spacer2" type="Control" parent="Make Levels/HBoxContainer/box2" unique_id=621547225]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+
+[node name="Text2" type="RichTextLabel" parent="Make Levels/HBoxContainer/box2" unique_id=890935534]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+theme = ExtResource("3_ohvov")
+theme_type_variation = &"CreditsRichText"
+bbcode_enabled = true
+text = "Making levels doesn't take any code, it's all about placing objects and
+tweaking values in Godot's 3D editor. To get started, download the source code  [color=red][url=\"https://github.com/Acamaeda/Roll-Your-Dreams/\"]here[/url] [/color]and look at the \"Documentation\" folder for more directions."
+script = ExtResource("9_5aica")
+
+[node name="spacer3" type="Control" parent="Make Levels/HBoxContainer/box2" unique_id=1560700577]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+
+[node name="Text3" type="RichTextLabel" parent="Make Levels/HBoxContainer/box2" unique_id=1894988254]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme = ExtResource("3_ohvov")
+theme_type_variation = &"CreditsRichText"
+bbcode_enabled = true
+text = "Also, [color=red][url=\"https://discord.gg/hUc3wtej2Y\"]join the Discord[/url][/color]! You can get help and feedback on your levels, and play other people's, and help contribute to RYD's collection of objects to roll up!"
+script = ExtResource("9_5aica")
 
 [node name="back_btn" type="Button" parent="Make Levels" unique_id=1299875652]
 custom_minimum_size = Vector2(200, 0)

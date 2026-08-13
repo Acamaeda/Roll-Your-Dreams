@@ -76,11 +76,10 @@ collision_mask = 0
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Nonrolling/Ghost floor" unique_id=828342974]
 shape = SubResource("BoxShape3D_ok2uk")
 
-[node name="Collector" type="Area3D" parent="." unique_id=1608999626 node_paths=PackedStringArray("player_body")]
+[node name="Collector" type="Area3D" parent="." unique_id=1608999626]
 collision_layer = 16
 collision_mask = 8
 script = ExtResource("2_ok2uk")
-player_body = NodePath("..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Collector" unique_id=430733126]
 transform = Transform3D(1.05, 0, 0, 0, 1.05, 0, 0, 0, 1.05, 0, 0, 0)
