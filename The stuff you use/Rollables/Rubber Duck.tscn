@@ -48,7 +48,7 @@ shape = SubResource("CylinderShape3D_bsjop")
 [node name="Rollable" type="Node" parent="." unique_id=2084382761]
 script = ExtResource("1_c6i05")
 object_name = "Rubber Duck"
-description = "It's probably too HD for this universe."
+description = "An unfathomably ancient being with great wisdom."
 creator = "Plat251"
 link = "https://polyhaven.com/a/rubber_duck_toy"
 base_size = 0.08

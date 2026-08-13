@@ -14,7 +14,6 @@ const CREDITS_SECTION = preload("res://addons/PackedUi/UI/credits_section.tscn")
 @export var set_position_of_buttons:bool = true
 
 @onready var credits_scroll: ScrollContainer = %credits_scroll
-@onready var game_name_in_credits: RichTextLabel = %game_name_in_credits
 @onready var credits_vbox: VBoxContainer = %credits_vbox
 @onready var back_btn: Button = %back_btn
 
@@ -34,7 +33,6 @@ func _ready() -> void:
 	credits_scroll.scroll_ended.connect(_scroll_ended)
 	if credit_sections.is_empty():
 		push_warning("Credits Ui does not have any Credit Section Data to display.")
-	game_name_in_credits.text = UI.game_name
 	_create_credits(credit_sections)
 	back_btn.pressed.connect(_back_btn_pressed)
 	
@@ -70,7 +68,6 @@ func _toggle_control(_id:String, _value:bool, _previous:String = "") -> void:
 		UI.previous_menu = _previous
 		if _id == id:
 			for each in sections:
-				game_name_in_credits.text = UI.game_name
 				each.update_localization()
 			set_deferred("visible", _value)
 			if not _value:

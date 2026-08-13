@@ -15,10 +15,10 @@ var text_section_text:String:
 func set_section(_section_data:CreditSectionData) -> void:
 	section_name.text = _section_data.section_name
 	if not _section_data.logo_images.is_empty():
-		if _section_data.logo_images.size() < 3:
+		if _section_data.logo_images.size() < 2:
 			grid_of_logos.columns = _section_data.logo_images.size()
 		else:
-			grid_of_logos.columns = 3
+			grid_of_logos.columns = 2
 		var max_height:float = 0.0
 		var x:int = 0
 		
@@ -54,10 +54,10 @@ func set_section(_section_data:CreditSectionData) -> void:
 	
 	# Name section
 	if not _section_data.list_of_names.is_empty():
-		if _section_data.list_of_names.size() < 5:
+		if _section_data.list_of_names.size() < 2:
 			grid_of_names.columns = _section_data.list_of_names.size()
 		else:
-			grid_of_names.columns = 5
+			grid_of_names.columns = 2
 		for _name in _section_data.list_of_names:
 			var new_label = Label.new()
 			new_label.custom_minimum_size = Vector2((UI.width-400)/grid_of_names.columns, 40)
