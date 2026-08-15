@@ -44,6 +44,11 @@ section_name = "Sound Effects"
 list_of_names = Array[String](["busukbangak: Rollup sound (\"Doublejump\")"])
 metadata/_custom_type_script = "uid://c01npx0xkbd74"
 
+[sub_resource type="Resource" id="Resource_76vxg"]
+script = ExtResource("8_nb1pa")
+section_name = "Packed UI by symbol24"
+metadata/_custom_type_script = "uid://c01npx0xkbd74"
+
 [node name="Ui" type="CanvasLayer" unique_id=933330827]
 process_mode = 3
 script = ExtResource("1_j1lf8")
@@ -234,7 +239,7 @@ anchors_preset = 0
 offset_right = 1280.0
 offset_bottom = 720.0
 script = ExtResource("5_6nx8t")
-credit_sections = Array[ExtResource("8_nb1pa")]([SubResource("Resource_5aica"), SubResource("Resource_77rcw"), SubResource("Resource_dxje4"), SubResource("Resource_nb1pa"), SubResource("Resource_7otxs")])
+credit_sections = Array[ExtResource("8_nb1pa")]([SubResource("Resource_5aica"), SubResource("Resource_77rcw"), SubResource("Resource_dxje4"), SubResource("Resource_nb1pa"), SubResource("Resource_7otxs"), SubResource("Resource_76vxg")])
 background_color = Color(0.131654, 0.250022, 0.218582, 1)
 background = NodePath("background")
 id = "credits"
@@ -356,6 +361,7 @@ theme = ExtResource("3_ohvov")
 text = "Back"
 
 [node name="Make Levels" type="Control" parent="." unique_id=183976931 groups=["Make Levels"]]
+visible = false
 custom_minimum_size = Vector2(1280, 720)
 layout_mode = 3
 anchors_preset = 0
