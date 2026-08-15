@@ -356,7 +356,6 @@ theme = ExtResource("3_ohvov")
 text = "Back"
 
 [node name="Make Levels" type="Control" parent="." unique_id=183976931 groups=["Make Levels"]]
-visible = false
 custom_minimum_size = Vector2(1280, 720)
 layout_mode = 3
 anchors_preset = 0
@@ -370,7 +369,7 @@ custom_minimum_size = Vector2(1280, 720)
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-color = Color(0.133333, 0.25098, 0.219608, 1)
+color = Color(0.42, 0.26753998, 0.0041999957, 1)
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Make Levels" unique_id=1510345168]
 layout_mode = 0
@@ -409,7 +408,7 @@ theme = ExtResource("3_ohvov")
 theme_type_variation = &"CreditsRichText"
 bbcode_enabled = true
 text = "Making levels doesn't take any code, it's all about placing objects and
-tweaking values in Godot's 3D editor. To get started, download the source code  [color=red][url=\"https://github.com/Acamaeda/Roll-Your-Dreams/\"]here[/url] [/color]and look at the \"Documentation\" folder for more directions."
+tweaking values in Godot's 3D editor. To get started, download the source [color=blue][url=\"https://github.com/Acamaeda/Roll-Your-Dreams/\"]here[/url] [/color]and look at the \"Documentation\" folder for more directions."
 script = ExtResource("9_5aica")
 
 [node name="spacer3" type="Control" parent="Make Levels/HBoxContainer/box2" unique_id=1560700577]
@@ -422,7 +421,7 @@ layout_mode = 2
 theme = ExtResource("3_ohvov")
 theme_type_variation = &"CreditsRichText"
 bbcode_enabled = true
-text = "Also, [color=red][url=\"https://discord.gg/hUc3wtej2Y\"]join the Discord[/url][/color]! You can get help and feedback on your levels, and play other people's, and help contribute to RYD's collection of objects to roll up!"
+text = "Also, [color=blue][url=\"https://discord.gg/hUc3wtej2Y\"]join the Discord[/url][/color]! You can get help and feedback on your levels, and play other people's, and help contribute to RYD's collection of objects to roll up!"
 script = ExtResource("9_5aica")
 
 [node name="back_btn" type="Button" parent="Make Levels" unique_id=1299875652]

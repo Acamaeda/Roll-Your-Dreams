@@ -16,4 +16,5 @@ position = Vector2(474.41266, 189.7562)
 stream = ExtResource("3_hrn5y")
 volume_db = -10.492
 autoplay = true
+playback_type = 1
 parameters/looping = true
