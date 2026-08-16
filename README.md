@@ -1,5 +1,5 @@
 # Roll Your Dreams
-A roll=and-grow level creation system!
+A roll-and-grow level creation system!
 
 No coding is required to create levels, and lot will be possible with a variety of flexible tools!
 
