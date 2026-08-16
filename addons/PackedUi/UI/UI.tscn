@@ -414,7 +414,7 @@ theme = ExtResource("3_ohvov")
 theme_type_variation = &"CreditsRichText"
 bbcode_enabled = true
 text = "Making levels doesn't take any code, it's all about placing objects and
-tweaking values in Godot's 3D editor. To get started, download the source [color=blue][url=\"https://github.com/Acamaeda/Roll-Your-Dreams/\"]here[/url] [/color]and look at the \"Documentation\" folder for more directions."
+tweaking values in Godot's 3D editor. To get started, download the source [color=blue][url=\"https://github.com/Acamaeda/Roll-Your-Dreams/archive/refs/heads/main.zip\"]here[/url] [/color]and look at the \"Documentation\" folder for more directions."
 script = ExtResource("9_5aica")
 
 [node name="spacer3" type="Control" parent="Make Levels/HBoxContainer/box2" unique_id=1560700577]
