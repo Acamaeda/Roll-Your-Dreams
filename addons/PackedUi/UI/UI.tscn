@@ -49,6 +49,12 @@ script = ExtResource("8_nb1pa")
 section_name = "Packed UI by symbol24"
 metadata/_custom_type_script = "uid://c01npx0xkbd74"
 
+[sub_resource type="Resource" id="Resource_taq0q"]
+script = ExtResource("8_nb1pa")
+section_name = "Textures"
+list_of_names = Array[String](["Skybox-alien by Kenney", "Hardwood Floor by bart"])
+metadata/_custom_type_script = "uid://c01npx0xkbd74"
+
 [node name="Ui" type="CanvasLayer" unique_id=933330827]
 process_mode = 3
 script = ExtResource("1_j1lf8")
@@ -239,7 +245,7 @@ anchors_preset = 0
 offset_right = 1280.0
 offset_bottom = 720.0
 script = ExtResource("5_6nx8t")
-credit_sections = Array[ExtResource("8_nb1pa")]([SubResource("Resource_5aica"), SubResource("Resource_77rcw"), SubResource("Resource_dxje4"), SubResource("Resource_nb1pa"), SubResource("Resource_7otxs"), SubResource("Resource_76vxg")])
+credit_sections = Array[ExtResource("8_nb1pa")]([SubResource("Resource_5aica"), SubResource("Resource_77rcw"), SubResource("Resource_dxje4"), SubResource("Resource_nb1pa"), SubResource("Resource_7otxs"), SubResource("Resource_76vxg"), SubResource("Resource_taq0q")])
 background_color = Color(0.131654, 0.250022, 0.218582, 1)
 background = NodePath("background")
 id = "credits"
