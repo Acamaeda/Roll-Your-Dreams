@@ -1,10 +1,6 @@
 [gd_scene format=3 uid="uid://cp2xqchx20o7e"]
 
 [ext_resource type="Script" uid="uid://ccr0t1q0sea2c" path="res://Engine/UI/main_menu.gd" id="1_i2f47"]
-[ext_resource type="Script" uid="uid://bbwmnxvhjxyvt" path="res://Engine/UI/LevelHolder.gd" id="2_6ckqb"]
 
 [node name="MainMenu" type="Node2D" unique_id=1441466593]
 script = ExtResource("1_i2f47")
-
-[node name="LevelHolder" type="Node" parent="." unique_id=732664010 groups=["LevelHolder"]]
-script = ExtResource("2_6ckqb")

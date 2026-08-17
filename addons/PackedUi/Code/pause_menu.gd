@@ -72,5 +72,6 @@ func _restart_btn_pressed():
 func _main_menu_btn_pressed() -> void:
 	UI.ReturnToMainMenu.emit()
 	UI.ToggleUi.emit("main_menu", true, id)
+	get_tree().change_scene_to_file("res://Levels/Test Campaign/Demo level/DemoLevel.tscn")
 
 	
