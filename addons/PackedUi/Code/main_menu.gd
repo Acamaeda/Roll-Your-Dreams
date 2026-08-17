@@ -91,6 +91,7 @@ func button_pressed(_id:String) -> void:
 	if (_id == "Play"):
 		var loading= get_tree().get_first_node_in_group("Loading")
 		loading.visible = true
+		await get_tree().create_timer(0.1).timeout 
 		var holder = get_tree().get_first_node_in_group("LevelHolder")
 		holder.start_level()
 		visible = false
