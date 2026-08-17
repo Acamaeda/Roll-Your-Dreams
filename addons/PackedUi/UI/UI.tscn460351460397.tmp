@@ -77,6 +77,7 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("2_dhl62")
+get_name_from_properties = null
 game_title = "Roll Your Dreams"
 menu_options = Array[String](["Play", "How To Play", "Make Levels", "Settings", "Credits"])
 background_color = Color(0.242052, 0.18342, 0.265668, 1)
