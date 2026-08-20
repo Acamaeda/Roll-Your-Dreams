@@ -37,14 +37,16 @@ Click on the "Rollable" object in the scene tree to edit it. It has the followin
 	- Description: Description in the Collection (You can also get suggestions from other people on this)
 	- Creator: The creator of the model for the object
 	- Link: Link to the creator's page/source for the model
-	- Base size: The size of the object without scaling. This is 1/2.16 the standard "size to roll up", and it's up to you to figure out what feels right.
+	- Base size: The size of the object without scaling. This is 1/2.15 the standard "size to roll up", and it's up to you to figure out what feels right.
 		"1" size is a 1-meter sphere, a solid 1-meter cube has 1.2 times more size. 
+		The "size to roll up visualizer" setting can help with figuring this out.
 		The average of the length, width, and height is a good starting point. (Or cube root of l*w*h)
 	- Model scale: The scale your model is at. How many meters one unit is equal to.
 	- Max dimension: The largest of your object's length, width, and height, in the current scene's scaling. (Can be approximate)
 	- Center height: The height of the center point of the object, in the current scene's scaling. (Can be approximate)
 		(These two are for displaying the object)
 	- Solid: Determines if the object can collide with other objects and the player (it can still be rolled up)
+	- Size to roll up visualizer: Toggle this to show a sphere the size the player needs to be in order to roll up the object.
 
 ## License stuff
 

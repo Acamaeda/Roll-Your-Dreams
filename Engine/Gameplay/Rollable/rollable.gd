@@ -21,6 +21,21 @@ var collision: int
 var rollable: bool = true
 var include_in_collection: bool = true
 
+@export var size_to_roll_up_visualizer = false:
+	set(val):
+		if (val):
+			var visualizer =load("res://Engine/Gameplay/Rollable/RollupVisualizer.tscn").instantiate()
+			add_sibling(visualizer)
+			var vscale = base_size/model_scale*2.15
+			visualizer.scale = Vector3(vscale, vscale, vscale)
+
+		else:
+			var visualizer = get_parent().get_node_or_null("RollupVisualizer")
+			if (visualizer):
+				visualizer.queue_free()
+		size_to_roll_up_visualizer = val
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	player = get_tree().get_first_node_in_group("Player")

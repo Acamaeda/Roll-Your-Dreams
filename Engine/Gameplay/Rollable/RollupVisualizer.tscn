@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dyx1klep3jrux"]
+
+[ext_resource type="Script" uid="uid://btv8ng58fmx0l" path="res://Engine/Gameplay/Features/Visualizer.gd" id="1_ehrmu"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wwvtk"]
+transparency = 1
+albedo_color = Color(0.023529412, 1, 1, 0.50980395)
+
+[sub_resource type="SphereMesh" id="SphereMesh_osnnr"]
+material = SubResource("StandardMaterial3D_wwvtk")
+
+[node name="RollupVisualizer" type="Node3D" unique_id=235211475]
+transform = Transform3D(6.2545457, 0, 0, 0, 6.2545457, 0, 0, 0, 6.2545457, 0, 0, 0)
+
+[node name="Visualizer" type="MeshInstance3D" parent="." unique_id=450284045]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 1.0083742, 0.49999997, 0)
+mesh = SubResource("SphereMesh_osnnr")
+skeleton = NodePath("../../Rollable")
+script = ExtResource("1_ehrmu")
