@@ -4,9 +4,10 @@ var nonrolling : Node3D
 var collector : Node3D
 var base_mass = 1.5
 var rolling_force = 60
-var horizontal_mult = 0.5
-var back_mult = 0.3
-var turn_speed = 0.8
+@export var speed_mult = 1.0
+@export var horizontal_mult = 0.5
+@export var back_mult = 0.3
+@export var turn_speed = 1.0
 var slow_force = 40
 var max_speed = 20
 var too_slow = 5
@@ -68,7 +69,7 @@ func _integrate_forces(state: PhysicsDirectBodyState3D):
 		quickturn_left = PI
 		angular_velocity = Vector3.ZERO
 	else:
-		var total_force = rolling_force
+		var total_force = rolling_force*speed_mult
 		#Speed up if player is just starting to move
 		if(state.angular_velocity.length() < too_slow):
 			total_force *= 2
@@ -165,7 +166,7 @@ func emergency_warp(state: PhysicsDirectBodyState3D):
 func slow_down(delta: float, state: PhysicsDirectBodyState3D, change, inputs):
 	# Get an "intended" speed based on the change in velocity
 	var diff = change
-	var curr_max = max_speed * max(inputs.length(), back_mult)
+	var curr_max = max_speed * speed_mult * max(inputs.length(), back_mult)
 	if !grounded:
 		curr_max = curr_max / 2
 	var intended = diff.normalized() * curr_max 
@@ -181,9 +182,9 @@ func slow_down(delta: float, state: PhysicsDirectBodyState3D, change, inputs):
 		next = state.angular_velocity + (state.angular_velocity.direction_to(intended) * adjustAmount)
 	
 	next = next.limit_length(state.angular_velocity.length())
-	next = next.limit_length(max(curr_max, last_vel.length() - delta * rolling_force * (1+inputs.length())/2))
+	next = next.limit_length(max(curr_max, last_vel.length() - delta * rolling_force * speed_mult * (1+inputs.length())/2))
 
-	if (inputs.length() == 0 && grounded && state.angular_velocity.length() < delta * rolling_force * 0.3):
+	if (inputs.length() == 0 && grounded && state.angular_velocity.length() < delta * rolling_force * speed_mult * 0.3):
 		next = Vector3.ZERO
 		set_collision_mask_value(6, true)
 
