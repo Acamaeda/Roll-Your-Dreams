@@ -6,7 +6,7 @@ var nonrolling:Node3D
 signal size_changed(size, rollup_size)
 
 var size: float = 1.0
-var level_scale = 1.0
+var control: LevelControl
 
 @export var rollup_ratio = 2.15
 @export var exponent = 3.0
@@ -17,11 +17,11 @@ var old_size: float = 0.0
 
 func _ready() -> void:
 	player_body = get_parent()
-	var control = get_tree().get_first_node_in_group("Level Control")
+	control = get_tree().get_first_node_in_group("Level Control")
 	if (!control):
 		return
-	level_scale = control.level_scale
-	size = level_scale * player_body.scale.x
+	
+	size = control.level_scale * player_body.scale.x
 	volume = pow(size, exponent)
 
 
@@ -57,6 +57,7 @@ func _on_body_entered(other):
 
 func absorb(other):
 	var absorbed : Node3D = load("res://Engine/Gameplay/Rollable/AbsorbedObject.tscn").instantiate()
+	player_body.get_parent().add_child(absorbed)
 	absorbed.global_transform = other.global_transform
 	absorbed.player = player_body
 	absorbed.size = size
@@ -65,7 +66,6 @@ func absorb(other):
 		sound.reparent(absorbed, true)
 		sound.play.call_deferred()
 	
-	player_body.get_parent().add_child(absorbed)
 	rescue_meshes(other, absorbed)
 	Utils.delete_node.call_deferred(other)
 

@@ -82,7 +82,7 @@ func _integrate_forces(state: PhysicsDirectBodyState3D):
 	check_stuck(state, inputs)
 	
 	nonrolling.rotation.y = camera_angle
-	nonrolling.position = position
+	nonrolling.position = position/collector.control.level_scale*collector.control.map_scale
 	
 
 	last_pos = position
@@ -125,12 +125,13 @@ func check_stuck(state, inputs :Vector2):
 		emergency_warp(state)
 
 func update_size():
-	var size = collector.size/collector.level_scale
+	var size = collector.size/collector.control.map_scale
 	var big = Vector3(size, size, size)
 	gravity_scale = size
 	mass = base_mass * pow(size, collector.exponent)
 	scale = big
-	nonrolling.scale = big
+	nonrolling.scale = big/collector.control.level_scale*collector.control.map_scale
+
 
 func inputs_advanced():
 	var h1 = Input.get_axis("Right1", "Left1")

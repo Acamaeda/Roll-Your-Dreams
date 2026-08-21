@@ -71,6 +71,7 @@ script = ExtResource("6_im37q")
 id = "player_ui"
 
 [node name="MainMenu" type="Control" parent="." unique_id=1518673326 node_paths=PackedStringArray("background") groups=["MainMenu"]]
+visible = false
 custom_minimum_size = Vector2(1280, 720)
 layout_mode = 3
 anchors_preset = 0

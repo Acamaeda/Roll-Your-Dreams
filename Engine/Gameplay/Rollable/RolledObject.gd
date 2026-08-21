@@ -19,6 +19,7 @@ func _process(delta: float) -> void:
 		return
 	var direction = (distance).normalized() 
 	position += direction * step_size
+
 	
 	var new_size = scale.x * pow(shrink_factor, delta)
 	scale = Vector3(new_size, new_size, new_size)

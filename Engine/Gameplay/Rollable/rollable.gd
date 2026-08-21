@@ -23,6 +23,8 @@ var include_in_collection: bool = true
 
 @export var size_to_roll_up_visualizer = false:
 	set(val):
+		if (!Engine.is_editor_hint()):
+			return
 		if (val):
 			var visualizer =load("res://Engine/Gameplay/Rollable/RollupVisualizer.tscn").instantiate()
 			add_sibling(visualizer)
@@ -30,6 +32,9 @@ var include_in_collection: bool = true
 			visualizer.scale = Vector3(vscale, vscale, vscale)
 
 		else:
+			if !get_parent():
+				size_to_roll_up_visualizer = val
+				return
 			var visualizer = get_parent().get_node_or_null("RollupVisualizer")
 			if (visualizer):
 				visualizer.queue_free()
@@ -93,7 +98,7 @@ func update_scale():
 	var control = get_tree().get_first_node_in_group("Level Control")
 	if (!control): #this means we aren't in a level scene and shouldn't rescale
 		return
-	var level_scale = 1/control.level_scale
+	var level_scale = 1/control.map_scale
 	scale *= level_scale/body.scale.x
 	body.global_scale(Vector3(scale, scale, scale))
 	size = size_mult * base_size

@@ -47,12 +47,13 @@ ambient_light_sky_contribution = 0.33
 ambient_light_energy = 0.11
 
 [node name="Node3D" type="Node3D" unique_id=1992448230]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=365538902]
 environment = SubResource("Environment_02h4r")
 
 [node name="Level Control" parent="." unique_id=574180729 instance=ExtResource("1_3eybd")]
-level_scale = 0.05
+level_scale = 0.1
 map_scale = 0.05
 
 [node name="Hud" parent="Level Control" index="0" unique_id=856708716]
@@ -93,51 +94,51 @@ transform = Transform3D(-0.5845319, 0, -0.06376887, 0, 0.588, 0, 0.06376887, 0, 
 transform = Transform3D(-0.7910099, 0, 0.6118033, 0, 1, 0, -0.6118033, 0, -0.7910099, -6.593, 0, 23.127)
 
 [node name="Candy Cane" parent="Zone/Rollables/Jail/Duck Wall" unique_id=478677743 instance=ExtResource("5_fqft0")]
-transform = Transform3D(2.9802322e-08, 0.7500001, -3.278352e-08, 0, -3.278349e-08, -0.74999917, -0.7500001, 2.9802322e-08, -8.881784e-15, -2.6442204, 0.93, -0.73557854)
+transform = Transform3D(2.9802322e-08, 0.7500001, -3.2783497e-08, 0, -3.2783426e-08, -0.7499981, -0.7500001, 2.9802322e-08, -1.9539925e-14, -2.6442204, 0.93, -0.73557854)
 
 [node name="Duck" parent="Zone/Rollables/Jail/Duck Wall" unique_id=731869967 instance=ExtResource("10_nsjcu")]
-transform = Transform3D(0.5500001, 0, -2.3841858e-07, 0, 0.5499996, 0, 2.3841858e-07, 0, 0.5500001, 0, 0, 0)
+transform = Transform3D(0.5500001, 0, -2.3841858e-07, 0, 0.54999924, 0, 2.3841858e-07, 0, 0.5500001, 0, 0, 0)
 
 [node name="Duck2" parent="Zone/Rollables/Jail/Duck Wall" unique_id=1640217043 instance=ExtResource("10_nsjcu")]
-transform = Transform3D(0.5500001, 0, -2.3841858e-07, 0, 0.5499996, 0, 2.3841858e-07, 0, 0.5500001, -2.8311272, 2.3841858e-07, -0.098869324)
+transform = Transform3D(0.5500001, 0, -2.3841858e-07, 0, 0.54999924, 0, 2.3841858e-07, 0, 0.5500001, -2.8311272, 2.3841858e-07, -0.098869324)
 
 [node name="Duck Wall3" type="Node3D" parent="Zone/Rollables/Jail" unique_id=141817605]
 transform = Transform3D(-0.58739, 0, -0.8093041, 0, 1, 0, 0.8093041, 0, -0.58739, 4.168, 0, 26.28)
 
 [node name="Candy Cane" parent="Zone/Rollables/Jail/Duck Wall3" unique_id=430505285 instance=ExtResource("5_fqft0")]
-transform = Transform3D(0, 0.74999994, -3.2783554e-08, 0, -3.2783557e-08, -0.7500006, -0.74999994, 0, 8.881784e-15, -2.6442184, 0.93, -0.7355766)
+transform = Transform3D(0, 0.74999994, -3.2783568e-08, 0, -3.278358e-08, -0.7500013, -0.74999994, 0, 1.4210855e-14, -2.6442184, 0.93, -0.7355766)
 
 [node name="Duck" parent="Zone/Rollables/Jail/Duck Wall3" unique_id=15990991 instance=ExtResource("10_nsjcu")]
-transform = Transform3D(0.54999995, 0, 0, 0, 0.5500003, 0, 0, 0, 0.54999995, 0, 0, 0)
+transform = Transform3D(0.54999995, 0, 0, 0, 0.55000067, 0, 0, 0, 0.54999995, 0, 0, 0)
 
 [node name="Duck2" parent="Zone/Rollables/Jail/Duck Wall3" unique_id=518671031 instance=ExtResource("10_nsjcu")]
-transform = Transform3D(0.54999995, 0, 0, 0, 0.5500003, 0, 0, 0, 0.54999995, -2.8311272, 2.3841858e-07, -0.09887123)
+transform = Transform3D(0.54999995, 0, 0, 0, 0.55000067, 0, 0, 0, 0.54999995, -2.8311272, 2.3841858e-07, -0.09887123)
 
 [node name="Duck Wall4" type="Node3D" parent="Zone/Rollables/Jail" unique_id=168731688]
 transform = Transform3D(-0.0019374788, 0, -0.9999982, 0, 1, 0, 0.9999982, 0, -0.0019374788, 6.269, 0, 22.701)
 
 [node name="Candy Cane" parent="Zone/Rollables/Jail/Duck Wall4" unique_id=190993313 instance=ExtResource("5_fqft0")]
-transform = Transform3D(-3.3527613e-08, 0.75000006, -3.278352e-08, 0, -3.278352e-08, -0.7499997, -0.75000006, -3.3527613e-08, 1.3600232e-15, -2.6441956, 0.93, -0.7355771)
+transform = Transform3D(-3.4226105e-08, 0.75000006, -3.27835e-08, 0, -3.27835e-08, -0.74999934, -0.75000006, -3.4226105e-08, 1.2767565e-15, -2.6441727, 0.93, -0.7355771)
 
 [node name="Duck" parent="Zone/Rollables/Jail/Duck Wall4" unique_id=2004142753 instance=ExtResource("10_nsjcu")]
-transform = Transform3D(0.55, 0, -1.3969839e-09, 0, 0.55, 0, 1.3969839e-09, 0, 0.55, 0, 0, 0)
+transform = Transform3D(0.55, 0, -2.7939677e-09, 0, 0.55, 0, 2.7939677e-09, 0, 0.55, 0, 0, 0)
 
 [node name="Recolor" parent="Zone/Rollables/Jail/Duck Wall4/Duck" unique_id=1538109663 instance=ExtResource("19_3w3u0")]
 
 [node name="Duck2" parent="Zone/Rollables/Jail/Duck Wall4" unique_id=1320004524 instance=ExtResource("10_nsjcu")]
-transform = Transform3D(0.55, 0, -1.3969839e-09, 0, 0.55, 0, 1.3969839e-09, 0, 0.55, -2.8311272, 2.3841858e-07, -0.09887695)
+transform = Transform3D(0.55, 0, -2.7939677e-09, 0, 0.55, 0, 2.7939677e-09, 0, 0.55, -2.8311272, 2.3841858e-07, -0.098882675)
 
 [node name="Duck Wall5" type="Node3D" parent="Zone/Rollables/Jail" unique_id=2124047860]
 transform = Transform3D(0.40156442, 0, 0.91583085, 0, 1, 0, -0.91583085, 0, 0.40156442, -5.634, 0, 17.121)
 
 [node name="Candy Cane" parent="Zone/Rollables/Jail/Duck Wall5" unique_id=4652424 instance=ExtResource("5_fqft0")]
-transform = Transform3D(5.9604645e-08, 0.75000006, -3.2783525e-08, 0, -3.278351e-08, -0.7499995, -0.75000006, 5.9604645e-08, -2.6645353e-15, -2.6442184, 0.93, -0.7355766)
+transform = Transform3D(5.9604645e-08, 0.75000006, -3.2783525e-08, 0, -3.278347e-08, -0.7499988, -0.75000006, 5.9604645e-08, -2.6645353e-15, -2.6442184, 0.93, -0.7355766)
 
 [node name="Duck" parent="Zone/Rollables/Jail/Duck Wall5" unique_id=943308250 instance=ExtResource("10_nsjcu")]
-transform = Transform3D(0.5500001, 0, -1.4901161e-08, 0, 0.5499994, 0, 1.4901161e-08, 0, 0.5500001, 0, 0, 0)
+transform = Transform3D(0.5500001, 0, -1.4901161e-08, 0, 0.5499987, 0, 1.4901161e-08, 0, 0.5500001, 0, 0, 0)
 
 [node name="Duck2" parent="Zone/Rollables/Jail/Duck Wall5" unique_id=770089745 instance=ExtResource("10_nsjcu")]
-transform = Transform3D(0.5500001, 0, -1.4901161e-08, 0, 0.5499994, 0, 1.4901161e-08, 0, 0.5500001, -2.8311272, 2.3841858e-07, -0.09887123)
+transform = Transform3D(0.5500001, 0, -1.4901161e-08, 0, 0.5499987, 0, 1.4901161e-08, 0, 0.5500001, -2.8311272, 2.3841858e-07, -0.09887123)
 
 [node name="Duck Wall6" type="Node3D" parent="Zone/Rollables/Jail" unique_id=756647066]
 transform = Transform3D(0.7594758, 0, 0.6505355, 0, 1, 0, -0.6505355, 0, 0.7594758, -2.703, 0, 14.234)
@@ -158,13 +159,13 @@ transform = Transform3D(0.55, 0, 2.9802322e-08, 0, 0.55, 0, -2.9802322e-08, 0, 0
 transform = Transform3D(-0.9606725, -0.002279442, 0.27767467, -0.0026666438, 0.99999595, -0.0010167393, -0.27767122, -0.0017172329, -0.96067464, -3.152, 0, 25.538)
 
 [node name="Candy Cane" parent="Zone/Rollables/Jail/Duck Wall2" unique_id=1951410539 instance=ExtResource("5_fqft0")]
-transform = Transform3D(1.6391277e-07, 0.7499996, -3.2101525e-08, 9.313226e-10, -3.236346e-08, -0.7499996, -0.74999994, -1.0430813e-07, -4.656613e-10, -2.6442165, 0.9299986, -0.73555374)
+transform = Transform3D(3.1292439e-07, 0.7499995, -3.1635864e-08, 1.6298145e-09, -3.047171e-08, -0.7499992, -0.74999994, -2.0861626e-07, -1.3969839e-09, -2.644217, 0.92999715, -0.7355366)
 
 [node name="Duck" parent="Zone/Rollables/Jail/Duck Wall2" unique_id=485306546 instance=ExtResource("10_nsjcu")]
-transform = Transform3D(0.54999995, -1.9499566e-09, -4.4703484e-08, 4.656613e-10, 0.5500004, -1.0477379e-09, -8.940697e-08, -5.820766e-11, 0.55, 0, 0, 0)
+transform = Transform3D(0.54999995, -3.6670826e-09, -4.4703484e-08, 4.656613e-10, 0.55000114, -2.4447218e-09, -8.940697e-08, -2.3283064e-10, 0.55, 0, 0, 0)
 
 [node name="Duck2" parent="Zone/Rollables/Jail/Duck Wall2" unique_id=270077958 instance=ExtResource("10_nsjcu")]
-transform = Transform3D(0.54999995, -1.9499566e-09, -4.4703484e-08, 4.656613e-10, 0.5500004, -1.0477379e-09, -8.940697e-08, -5.820766e-11, 0.55, -2.8311257, 2.2724271e-07, -0.09884834)
+transform = Transform3D(0.54999995, -3.6670826e-09, -4.4703484e-08, 4.656613e-10, 0.55000114, -2.4447218e-09, -8.940697e-08, -2.3283064e-10, 0.55, -2.831122, 2.2724271e-07, -0.09882355)
 
 [node name="Candy Jar" parent="Zone/Rollables/Jail" unique_id=1221359280 instance=ExtResource("9_nsjcu")]
 transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -8.103, 0, 21.12)
@@ -239,7 +240,7 @@ scale = 0.038
 mode = 1
 
 [node name="Cube2" parent="Zone/Rollables/Start" unique_id=605297067 instance=ExtResource("18_au646")]
-transform = Transform3D(0.16779108, 0, -0.6107022, 0, 0.6333333, 0, 0.6107022, 0, 0.16779108, 2.5063424, -9.536743e-07, 14.4827175)
+transform = Transform3D(0.16779102, 0, -0.6107023, 0, 0.6333334, 0, 0.6107023, 0, 0.16779102, 2.5063424, -9.536743e-07, 14.4827175)
 
 [node name="Recolor" parent="Zone/Rollables/Start/Cube2" unique_id=339522213 instance=ExtResource("19_3w3u0")]
 shift_amount = -135.0
@@ -266,7 +267,7 @@ transform = Transform3D(0.3299778, 0, -0.6735092, 0, 0.74999994, 0, 0.6735092, 0
 transform = Transform3D(-0.44454777, 0, -0.60405076, 0, 0.75, 0, 0.60405076, 0, -0.44454777, -20.54829, 0.32964468, -3.284082)
 
 [node name="Cube19" parent="Zone/Rollables/Under Bed" unique_id=635074913 instance=ExtResource("18_au646")]
-transform = Transform3D(0.63321257, 0, 0.012368357, 0, 0.6333337, 0, -0.012368357, 0, 0.63321257, -20.450996, 0.33786607, -4.3331537)
+transform = Transform3D(0.63321257, 0, 0.012368357, 0, 0.63333404, 0, -0.012368357, 0, 0.63321257, -20.450996, 0.33786607, -4.3331537)
 
 [node name="Recolor" parent="Zone/Rollables/Under Bed/Cube19" unique_id=362859027 instance=ExtResource("19_3w3u0")]
 shift_amount = -135.0
@@ -276,7 +277,7 @@ scale = 0.038
 mode = 1
 
 [node name="Cube18" parent="Zone/Rollables/Under Bed" unique_id=92411045 instance=ExtResource("18_au646")]
-transform = Transform3D(0.63321257, 0, 0.012368357, 0, 0.6333337, 0, -0.012368357, 0, 0.63321257, -20.450996, 0.33786607, -2.6445994)
+transform = Transform3D(0.63321257, 0, 0.012368357, 0, 0.63333404, 0, -0.012368357, 0, 0.63321257, -20.450996, 0.33786607, -2.6445994)
 
 [node name="Recolor" parent="Zone/Rollables/Under Bed/Cube18" unique_id=835980538 instance=ExtResource("19_3w3u0")]
 shift_amount = -135.0
@@ -286,7 +287,7 @@ scale = 0.038
 mode = 1
 
 [node name="Cube20" parent="Zone/Rollables/Under Bed" unique_id=740039327 instance=ExtResource("18_au646")]
-transform = Transform3D(0.63321257, 0, 0.012368357, 0, 0.6333337, 0, -0.012368357, 0, 0.63321257, -20.450996, 0.33786607, -6.052192)
+transform = Transform3D(0.63321257, 0, 0.012368357, 0, 0.63333404, 0, -0.012368357, 0, 0.63321257, -20.450996, 0.33786607, -6.052192)
 
 [node name="Recolor" parent="Zone/Rollables/Under Bed/Cube20" unique_id=1664591378 instance=ExtResource("19_3w3u0")]
 shift_amount = -135.0
@@ -296,7 +297,7 @@ scale = 0.038
 mode = 1
 
 [node name="Cube21" parent="Zone/Rollables/Under Bed" unique_id=836432986 instance=ExtResource("18_au646")]
-transform = Transform3D(0.63321257, 0, 0.012368357, 0, 0.6333337, 0, -0.012368357, 0, 0.63321257, -20.450996, 0.33786607, -6.052192)
+transform = Transform3D(0.63321257, 0, 0.012368357, 0, 0.63333404, 0, -0.012368357, 0, 0.63321257, -20.450996, 0.33786607, -6.052192)
 
 [node name="Recolor" parent="Zone/Rollables/Under Bed/Cube21" unique_id=1993701590 instance=ExtResource("19_3w3u0")]
 shift_amount = -135.0
@@ -306,7 +307,7 @@ scale = 0.038
 mode = 1
 
 [node name="Cube22" parent="Zone/Rollables/Under Bed" unique_id=1460163367 instance=ExtResource("18_au646")]
-transform = Transform3D(0.63321257, 0, 0.012368357, 0, 0.6333337, 0, -0.012368357, 0, 0.63321257, -20.678701, 0.33786607, -8.353322)
+transform = Transform3D(0.63321257, 0, 0.012368357, 0, 0.63333404, 0, -0.012368357, 0, 0.63321257, -20.678701, 0.33786607, -8.353322)
 
 [node name="Recolor" parent="Zone/Rollables/Under Bed/Cube22" unique_id=1727235470 instance=ExtResource("19_3w3u0")]
 shift_amount = -135.0
@@ -315,7 +316,7 @@ shift_amount = -135.0
 scale = 0.038
 mode = 1
 
-[node name="Fidget Spinner9" type="AnimatableBody3D" parent="Zone/Rollables/Under Bed" unique_id=1010189044 instance=ExtResource("18_8ymno")]
+[node name="Fidget Spinner9" type="AnimatableBody3D" parent="Zone/Rollables/Under Bed" unique_id=2130600949 instance=ExtResource("18_8ymno")]
 transform = Transform3D(0.24319398, 0, -0.14276096, 0, 0.282, 0, 0.14276096, 0, 0.24319398, -19.75948, 0.5388713, -32.911873)
 collision_layer = 4
 collision_mask = 271
@@ -323,7 +324,7 @@ sync_to_physics = false
 
 [node name="Spin" parent="Zone/Rollables/Under Bed/Fidget Spinner9" unique_id=454664671 instance=ExtResource("19_up8i4")]
 
-[node name="Duck" type="AnimatableBody3D" parent="Zone/Rollables/Under Bed" unique_id=1110837995 instance=ExtResource("10_nsjcu")]
+[node name="Duck" type="AnimatableBody3D" parent="Zone/Rollables/Under Bed" unique_id=1141962702 instance=ExtResource("10_nsjcu")]
 transform = Transform3D(0.55, 0, 0, 0, 0.55, 0, 0, 0, 0.55, -22.205263, 0.3963158, -33.5086)
 collision_layer = 4
 collision_mask = 271
@@ -332,7 +333,7 @@ sync_to_physics = false
 [node name="Spin" parent="Zone/Rollables/Under Bed/Duck" unique_id=527118733 instance=ExtResource("19_up8i4")]
 speed = -1.0
 
-[node name="Fidget Spinner7" type="AnimatableBody3D" parent="Zone/Rollables/Under Bed" unique_id=1617350375 instance=ExtResource("18_8ymno")]
+[node name="Fidget Spinner7" type="AnimatableBody3D" parent="Zone/Rollables/Under Bed" unique_id=802717154 instance=ExtResource("18_8ymno")]
 transform = Transform3D(0.282, 0, 0, 0, 0.282, 0, 0, 0, 0.282, -19.423954, 0.5388713, -30.070099)
 collision_layer = 4
 collision_mask = 271
@@ -340,7 +341,7 @@ sync_to_physics = false
 
 [node name="Spin" parent="Zone/Rollables/Under Bed/Fidget Spinner7" unique_id=1225746405 instance=ExtResource("19_up8i4")]
 
-[node name="Fidget Spinner11" type="AnimatableBody3D" parent="Zone/Rollables/Under Bed" unique_id=954360563 instance=ExtResource("18_8ymno")]
+[node name="Fidget Spinner11" type="AnimatableBody3D" parent="Zone/Rollables/Under Bed" unique_id=1917999694 instance=ExtResource("18_8ymno")]
 transform = Transform3D(0.282, 0, 0, 0, 0.282, 0, 0, 0, 0.282, -21.763357, 0.5388713, -30.747978)
 collision_layer = 4
 collision_mask = 271
@@ -348,7 +349,7 @@ sync_to_physics = false
 
 [node name="Spin" parent="Zone/Rollables/Under Bed/Fidget Spinner11" unique_id=1284723259 instance=ExtResource("19_up8i4")]
 
-[node name="Fidget Spinner10" type="AnimatableBody3D" parent="Zone/Rollables/Under Bed" unique_id=342211620 instance=ExtResource("18_8ymno")]
+[node name="Fidget Spinner10" type="AnimatableBody3D" parent="Zone/Rollables/Under Bed" unique_id=171683302 instance=ExtResource("18_8ymno")]
 transform = Transform3D(0.24319398, 0, -0.14276096, 0, 0.282, 0, 0.14276096, 0, 0.24319398, -21.34519, 0.53887177, -36.15365)
 collision_layer = 4
 collision_mask = 271
@@ -360,7 +361,7 @@ sync_to_physics = false
 transform = Transform3D(1, 0, 1.8626451e-09, 0, 1, 0, -1.8626451e-09, 0, 1, 0, 0, 0)
 
 [node name="Cube4" parent="Zone/Rollables/Front Floor" unique_id=582903720 instance=ExtResource("18_au646")]
-transform = Transform3D(0.63321257, 0, 0.012368356, 0, 0.6333337, 0, -0.012368356, 0, 0.63321257, 11.817838, 2.4, -10.935043)
+transform = Transform3D(0.63321257, 0, 0.012368356, 0, 0.63333404, 0, -0.012368356, 0, 0.63321257, 11.817838, 2.4, -10.935043)
 
 [node name="Fall" parent="Zone/Rollables/Front Floor/Cube4" unique_id=716713753 instance=ExtResource("19_4gmba")]
 
@@ -371,7 +372,7 @@ shift_amount = -135.0
 scale = 0.038
 mode = 1
 
-[node name="Fidget Spinner8" type="AnimatableBody3D" parent="Zone/Rollables/Front Floor" unique_id=1143593884 instance=ExtResource("18_8ymno")]
+[node name="Fidget Spinner8" type="AnimatableBody3D" parent="Zone/Rollables/Front Floor" unique_id=1720615681 instance=ExtResource("18_8ymno")]
 transform = Transform3D(0.282, 0, 0, 0, 0.282, 0, 0, 0, 0.282, 10.802324, 0, -8.254841)
 collision_layer = 4
 collision_mask = 271
@@ -379,7 +380,7 @@ sync_to_physics = false
 
 [node name="Spin" parent="Zone/Rollables/Front Floor/Fidget Spinner8" unique_id=1533887703 instance=ExtResource("19_up8i4")]
 
-[node name="Fidget Spinner2" type="AnimatableBody3D" parent="Zone/Rollables/Front Floor" unique_id=280765271 instance=ExtResource("18_8ymno")]
+[node name="Fidget Spinner2" type="AnimatableBody3D" parent="Zone/Rollables/Front Floor" unique_id=1089132820 instance=ExtResource("18_8ymno")]
 transform = Transform3D(0.05211132, 0, 0.2771433, 0, 0.282, 0, -0.2771433, 0, 0.05211132, 10.802325, 0, -3.0328274)
 collision_layer = 4
 collision_mask = 271
@@ -387,7 +388,7 @@ sync_to_physics = false
 
 [node name="Spin" parent="Zone/Rollables/Front Floor/Fidget Spinner2" unique_id=1331553122 instance=ExtResource("19_up8i4")]
 
-[node name="Fidget Spinner" type="AnimatableBody3D" parent="Zone/Rollables/Front Floor" unique_id=648985836 instance=ExtResource("18_8ymno")]
+[node name="Fidget Spinner" type="AnimatableBody3D" parent="Zone/Rollables/Front Floor" unique_id=1993160506 instance=ExtResource("18_8ymno")]
 transform = Transform3D(0.25661927, 0, 0.1169211, 0, 0.282, 0, -0.1169211, 0, 0.25661927, 8.338493, 0, -17.521088)
 collision_layer = 4
 collision_mask = 271
@@ -396,7 +397,7 @@ sync_to_physics = false
 [node name="Spin" parent="Zone/Rollables/Front Floor/Fidget Spinner" unique_id=1989159403 instance=ExtResource("19_up8i4")]
 
 [node name="Cube9" parent="Zone/Rollables/Front Floor" unique_id=1869910714 instance=ExtResource("18_au646")]
-transform = Transform3D(0.4414269, 0, -0.45415127, 0, 0.6333336, 0, 0.45415127, 0, 0.4414269, -2.170269, -9.536743e-07, -15.94595)
+transform = Transform3D(0.4414269, 0, -0.45415127, 0, 0.633334, 0, 0.45415127, 0, 0.4414269, -2.170269, -9.536743e-07, -15.94595)
 
 [node name="Recolor" parent="Zone/Rollables/Front Floor/Cube9" unique_id=1113790085 instance=ExtResource("19_3w3u0")]
 shift_amount = -135.0
@@ -430,7 +431,7 @@ mode = 1
 [node name="Fall" parent="Zone/Rollables/Front Floor/Cube13" unique_id=2053937464 instance=ExtResource("19_4gmba")]
 
 [node name="Cube11" parent="Zone/Rollables/Front Floor" unique_id=893743064 instance=ExtResource("18_au646")]
-transform = Transform3D(0.63321257, -2.9491914e-10, 0.012368356, 0.0008896887, 0.631693, -0.04554868, -0.012336307, 0.04555735, 0.6315725, 11.077691, -9.536743e-07, -11.032035)
+transform = Transform3D(0.63321257, -2.9491926e-10, 0.012368356, 0.00088968937, 0.63169336, -0.045548704, -0.012336307, 0.04555735, 0.6315725, 11.077691, -9.536743e-07, -11.032035)
 
 [node name="Recolor" parent="Zone/Rollables/Front Floor/Cube11" unique_id=227509160 instance=ExtResource("19_3w3u0")]
 shift_amount = -135.0
@@ -453,7 +454,7 @@ scale = 0.038
 mode = 1
 
 [node name="Cube14" parent="Zone/Rollables/Front Floor" unique_id=2047293430 instance=ExtResource("18_au646")]
-transform = Transform3D(0.63321257, 0, 0.012368356, 0, 0.6333337, 0, -0.012368356, 0, 0.63321257, -10.446583, -9.536743e-07, -17.953892)
+transform = Transform3D(0.63321257, 0, 0.012368356, 0, 0.63333404, 0, -0.012368356, 0, 0.63321257, -10.446583, -9.536743e-07, -17.953892)
 
 [node name="Recolor" parent="Zone/Rollables/Front Floor/Cube14" unique_id=1641579266 instance=ExtResource("19_3w3u0")]
 shift_amount = -135.0
@@ -545,7 +546,7 @@ scale = 0.038
 mode = 1
 
 [node name="Cube6" parent="Zone/Rollables/Front Floor" unique_id=702316008 instance=ExtResource("18_au646")]
-transform = Transform3D(0.63321257, 0, 0.012368356, 0, 0.6333337, 0, -0.012368356, 0, 0.63321257, -10.190423, -9.536743e-07, -11.962656)
+transform = Transform3D(0.63321257, 0, 0.012368356, 0, 0.63333404, 0, -0.012368356, 0, 0.63321257, -10.190423, -9.536743e-07, -11.962656)
 
 [node name="Recolor" parent="Zone/Rollables/Front Floor/Cube6" unique_id=1313224842 instance=ExtResource("19_3w3u0")]
 shift_amount = -135.0
@@ -699,7 +700,7 @@ transform = Transform3D(0.47283867, 0, -0.34952483, 0, 0.588, 0, 0.34952483, 0, 
 
 [node name="Fall" parent="Zone/Rollables/Front Floor/Teddy Bear" unique_id=827422468 instance=ExtResource("19_4gmba")]
 
-[node name="Fidget Spinner Boss" type="AnimatableBody3D" parent="Zone/Rollables" parent_id_path=PackedInt32Array(1418971655, 1164383247) index="8" unique_id=506566614 instance=ExtResource("18_8ymno")]
+[node name="Fidget Spinner Boss" type="AnimatableBody3D" parent="Zone/Rollables" parent_id_path=PackedInt32Array(1418971655, 1164383247) index="8" unique_id=1459808804 instance=ExtResource("18_8ymno")]
 transform = Transform3D(1.5980926, -0.0019248638, 0.7176099, 0.0020350085, 1.7518171, 0.00016705075, -0.7176096, 0.00068122335, 1.5980936, -7.039078, 1.45, -14.841945)
 collision_layer = 4
 collision_mask = 271
@@ -725,7 +726,7 @@ shift_amount = -180.0
 
 [node name="Side Floor" type="Node3D" parent="Zone/Rollables" parent_id_path=PackedInt32Array(1418971655, 1164383247) index="9" unique_id=1848608942]
 
-[node name="Fidget Spinner6" type="AnimatableBody3D" parent="Zone/Rollables/Side Floor" unique_id=1980475884 instance=ExtResource("18_8ymno")]
+[node name="Fidget Spinner6" type="AnimatableBody3D" parent="Zone/Rollables/Side Floor" unique_id=265787144 instance=ExtResource("18_8ymno")]
 transform = Transform3D(0.25694072, 0, 0.11621302, 0, 0.282, 0, -0.11621302, 0, 0.25694072, -28.209063, 0.7147286, 7.625338)
 collision_layer = 4
 collision_mask = 271
@@ -733,7 +734,7 @@ sync_to_physics = false
 
 [node name="Spin" parent="Zone/Rollables/Side Floor/Fidget Spinner6" unique_id=1683785356 instance=ExtResource("19_up8i4")]
 
-[node name="Fidget Spinner4" type="AnimatableBody3D" parent="Zone/Rollables/Side Floor" unique_id=16177215 instance=ExtResource("18_8ymno")]
+[node name="Fidget Spinner4" type="AnimatableBody3D" parent="Zone/Rollables/Side Floor" unique_id=300270733 instance=ExtResource("18_8ymno")]
 transform = Transform3D(-0.10106435, 0, 0.26326793, 0, 0.282, 0, -0.26326793, 0, -0.10106435, -26.112057, 0.542289, 2.0431082)
 collision_layer = 4
 collision_mask = 271
@@ -742,7 +743,7 @@ sync_to_physics = false
 [node name="Spin" parent="Zone/Rollables/Side Floor/Fidget Spinner4" unique_id=1097705397 instance=ExtResource("19_up8i4")]
 
 [node name="Cube24" parent="Zone/Rollables/Side Floor" unique_id=1778449296 instance=ExtResource("18_au646")]
-transform = Transform3D(0.63321257, 0, 0.012368357, 0, 0.6333337, 0, -0.012368357, 0, 0.63321257, -30.908997, -9.536743e-07, 6.489622)
+transform = Transform3D(0.63321257, 0, 0.012368357, 0, 0.63333404, 0, -0.012368357, 0, 0.63321257, -30.908997, -9.536743e-07, 6.489622)
 
 [node name="Recolor" parent="Zone/Rollables/Side Floor/Cube24" unique_id=2143390993 instance=ExtResource("19_3w3u0")]
 shift_amount = -135.0
@@ -752,7 +753,7 @@ scale = 0.038
 mode = 1
 
 [node name="Cube26" parent="Zone/Rollables/Side Floor" unique_id=2065177245 instance=ExtResource("18_au646")]
-transform = Transform3D(0.63321257, 0, 0.012368357, 0, 0.6333337, 0, -0.012368357, 0, 0.63321257, -26.112553, -9.536743e-07, 2.0710802)
+transform = Transform3D(0.63321257, 0, 0.012368357, 0, 0.63333404, 0, -0.012368357, 0, 0.63321257, -26.112553, -9.536743e-07, 2.0710802)
 
 [node name="Recolor" parent="Zone/Rollables/Side Floor/Cube26" unique_id=525668437 instance=ExtResource("19_3w3u0")]
 shift_amount = -135.0
@@ -762,7 +763,7 @@ scale = 0.038
 mode = 1
 
 [node name="Cube27" parent="Zone/Rollables/Side Floor" unique_id=693508743 instance=ExtResource("18_au646")]
-transform = Transform3D(0.63321257, 0, 0.012368357, 0, 0.6333337, 0, -0.012368357, 0, 0.63321257, -28.392553, -9.536743e-07, 7.6535063)
+transform = Transform3D(0.63321257, 0, 0.012368357, 0, 0.63333404, 0, -0.012368357, 0, 0.63321257, -28.392553, -9.536743e-07, 7.6535063)
 
 [node name="Recolor" parent="Zone/Rollables/Side Floor/Cube27" unique_id=943905306 instance=ExtResource("19_3w3u0")]
 shift_amount = -135.0
@@ -772,7 +773,7 @@ scale = 0.038
 mode = 1
 
 [node name="Cube28" parent="Zone/Rollables/Side Floor" unique_id=197537449 instance=ExtResource("18_au646")]
-transform = Transform3D(0.63321257, 0, 0.012368357, 0, 0.6333337, 0, -0.012368357, 0, 0.63321257, -28.392553, -9.536743e-07, 7.6535063)
+transform = Transform3D(0.63321257, 0, 0.012368357, 0, 0.63333404, 0, -0.012368357, 0, 0.63321257, -28.392553, -9.536743e-07, 7.6535063)
 
 [node name="Recolor" parent="Zone/Rollables/Side Floor/Cube28" unique_id=1676189784 instance=ExtResource("19_3w3u0")]
 shift_amount = -135.0
@@ -802,7 +803,7 @@ transform = Transform3D(0.75, 0, 1.8626451e-09, 0, 0.75, 0, -1.8626451e-09, 0, 0
 [node name="Toy Car" parent="Zone/Rollables/Side Floor" unique_id=1479956586 instance=ExtResource("19_pvnhs")]
 transform = Transform3D(0.25272387, 0, 0.120543115, 0, 0.28, 0, -0.120543115, 0, 0.25272387, -28.725328, 0, 19.970848)
 
-[node name="Fidget Spinner5" type="AnimatableBody3D" parent="Zone/Rollables/Side Floor" unique_id=1735337209 instance=ExtResource("18_8ymno")]
+[node name="Fidget Spinner5" type="AnimatableBody3D" parent="Zone/Rollables/Side Floor" unique_id=2027630289 instance=ExtResource("18_8ymno")]
 transform = Transform3D(0.05211132, 0, 0.2771433, 0, 0.282, 0, -0.2771433, 0, 0.05211132, -30.92368, 0.56165814, 6.486752)
 collision_layer = 4
 collision_mask = 271
@@ -817,26 +818,26 @@ speed = 0.2
 arc_used = 180.0
 rotation_style = 1
 
-[node name="Paper Airplane" type="AnimatableBody3D" parent="Zone/Rollables/Orbit" unique_id=1201572992 instance=ExtResource("17_8ymno")]
-transform = Transform3D(-1.5386378e-09, 0.019589296, -0.004032327, 0.020000003, 1.5099583e-09, -2.960432e-10, 1.44683935e-11, -0.004032327, -0.019589296, 10.000001, 0, 0)
+[node name="Paper Airplane" type="AnimatableBody3D" parent="Zone/Rollables/Orbit" unique_id=141316136 instance=ExtResource("17_8ymno")]
+transform = Transform3D(1.0290387e-07, 0.019589322, -0.0040322477, 0.020000003, -1.17699415e-07, -6.13979e-08, -8.386676e-08, -0.00403225, -0.01958931, 0.0062497854, -9.536743e-07, 2.3841858e-07)
 collision_layer = 4
 collision_mask = 271
 sync_to_physics = false
 
-[node name="Paper Airplane2" type="AnimatableBody3D" parent="Zone/Rollables/Orbit" unique_id=1266233705 instance=ExtResource("17_8ymno")]
-transform = Transform3D(5.7857447e-10, 0.00667603, -0.018852869, 0.020000001, -8.742278e-10, 3.0420405e-10, -7.2254136e-10, -0.018852869, -0.00667603, 7.0710664, 0, -7.071068)
+[node name="Paper Airplane2" type="AnimatableBody3D" parent="Zone/Rollables/Orbit" unique_id=1852940901 instance=ExtResource("17_8ymno")]
+transform = Transform3D(1.0733566e-07, 0.006675536, -0.018853048, 0.020000001, -1.4218491e-06, -3.8958655e-07, -1.470344e-06, -0.018853044, -0.006675537, 0.004419446, 0, -0.004419327)
 collision_layer = 4
 collision_mask = 271
 sync_to_physics = false
 
-[node name="Paper Airplane3" type="AnimatableBody3D" parent="Zone/Rollables/Orbit" unique_id=1978695464 instance=ExtResource("17_8ymno")]
-transform = Transform3D(-4.897064e-10, -0.0042280518, -0.01954799, 0.020000001, -3.2584149e-09, 2.0373514e-10, -3.2278409e-09, -0.01954799, 0.0042280518, -7.748604e-07, -9.536743e-07, -10)
+[node name="Paper Airplane3" type="AnimatableBody3D" parent="Zone/Rollables/Orbit" unique_id=1600241845 instance=ExtResource("17_8ymno")]
+transform = Transform3D(1.0719199e-07, -0.0042280518, -0.01954799, 0.020000001, -1.2795161e-08, 1.1243815e-07, -3.6275676e-08, -0.01954799, 0.0042280518, -5.364418e-07, 0, -0.0062499046)
 collision_layer = 4
 collision_mask = 271
 sync_to_physics = false
 
-[node name="Paper Airplane4" type="AnimatableBody3D" parent="Zone/Rollables/Orbit" unique_id=267478939 instance=ExtResource("17_8ymno")]
-transform = Transform3D(-2.048408e-09, -0.013791137, -0.014484638, 0.020000001, -3.2584142e-09, 2.7401909e-10, -2.5487983e-09, -0.014484636, 0.01379114, -7.0710673, -1.9073486e-06, -7.071068)
+[node name="Paper Airplane4" type="AnimatableBody3D" parent="Zone/Rollables/Orbit" unique_id=74994348 instance=ExtResource("17_8ymno")]
+transform = Transform3D(-1.1753048e-07, -0.013790864, -0.014484905, 0.020000001, 4.5688958e-07, -5.9727813e-07, 7.4274857e-07, -0.014484902, 0.013790866, -0.0044198036, -9.536743e-07, -0.0044190884)
 collision_layer = 4
 collision_mask = 271
 sync_to_physics = false
@@ -846,26 +847,26 @@ transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, -2.188, 0, 
 radius = 0.9
 speed = -0.1
 
-[node name="Duck" type="AnimatableBody3D" parent="Zone/Rollables/Orbit2" unique_id=2058917399 instance=ExtResource("10_nsjcu")]
-transform = Transform3D(0.54999995, 0, 0, 0, 0.5500006, 0, 0, 0, 0.54999995, 17.999996, 0, 0)
+[node name="Duck" type="AnimatableBody3D" parent="Zone/Rollables/Orbit2" unique_id=47565510 instance=ExtResource("10_nsjcu")]
+transform = Transform3D(0.54999995, 0, 0, 0, 0.5500013, 0, 0, 0, 0.54999995, 0.011250019, 0, 0)
 collision_layer = 4
 collision_mask = 271
 sync_to_physics = false
 
-[node name="Duck2" type="AnimatableBody3D" parent="Zone/Rollables/Orbit2" unique_id=502930723 instance=ExtResource("10_nsjcu")]
-transform = Transform3D(-2.4041261e-08, 0, 0.54999995, 0, 0.5500006, 0, -0.54999995, 0, -2.4041261e-08, -7.1525574e-07, 0, -17.999996)
+[node name="Duck2" type="AnimatableBody3D" parent="Zone/Rollables/Orbit2" unique_id=589714125 instance=ExtResource("10_nsjcu")]
+transform = Transform3D(-2.4041261e-08, 0, 0.54999995, 0, 0.5500013, 0, -0.54999995, 0, -2.4041261e-08, 0, 0, -0.011249542)
 collision_layer = 4
 collision_mask = 271
 sync_to_physics = false
 
-[node name="Duck3" type="AnimatableBody3D" parent="Zone/Rollables/Orbit2" unique_id=1950877932 instance=ExtResource("10_nsjcu")]
-transform = Transform3D(-0.54999995, 0, -8.304768e-08, 0, 0.5500006, 0, 8.304768e-08, 0, -0.54999995, -17.999996, 0, 1.9073486e-06)
+[node name="Duck3" type="AnimatableBody3D" parent="Zone/Rollables/Orbit2" unique_id=2060653745 instance=ExtResource("10_nsjcu")]
+transform = Transform3D(-0.54999995, 0, -4.8082523e-08, 0, 0.5500013, 0, 4.8082523e-08, 0, -0.54999995, -0.011250019, 0, 0)
 collision_layer = 4
 collision_mask = 271
 sync_to_physics = false
 
-[node name="Toy Car" type="AnimatableBody3D" parent="Zone/Rollables/Orbit2" unique_id=1664369558 instance=ExtResource("19_pvnhs")]
-transform = Transform3D(-1.2239187e-08, 0, -0.27999997, 0, 0.2800003, 0, 0.27999997, 0, -1.2239187e-08, 2.3841858e-07, 0, 17.999996)
+[node name="Toy Car" type="AnimatableBody3D" parent="Zone/Rollables/Orbit2" unique_id=759935854 instance=ExtResource("19_pvnhs")]
+transform = Transform3D(-1.2239187e-08, 0, -0.27999997, 0, 0.28000066, 0, 0.27999997, 0, -1.2239187e-08, 0, 0, 0.011249542)
 collision_layer = 4
 collision_mask = 271
 sync_to_physics = false
@@ -875,20 +876,20 @@ transform = Transform3D(1, 0, 2.9802322e-08, 0, 1, 0, -2.9802322e-08, 0, 1, -6.8
 radius = 0.425
 speed = -0.3
 
-[node name="Toy Car" type="AnimatableBody3D" parent="Zone/Rollables/Orbit3" unique_id=1442907643 instance=ExtResource("19_pvnhs")]
-transform = Transform3D(0.28, 0, -8.34465e-09, 0, 0.28, 0, 8.34465e-09, 0, 0.28, 8.5, 0, 0)
+[node name="Toy Car" type="AnimatableBody3D" parent="Zone/Rollables/Orbit3" unique_id=238423364 instance=ExtResource("19_pvnhs")]
+transform = Transform3D(0.28, 0, -8.34465e-09, 0, 0.28, 0, 8.34465e-09, 0, 0.28, 0.005312443, 0, 0)
 collision_layer = 4
 collision_mask = 271
 sync_to_physics = false
 
-[node name="Toy Car2" type="AnimatableBody3D" parent="Zone/Rollables/Orbit3" unique_id=1277156881 instance=ExtResource("19_pvnhs")]
-transform = Transform3D(-0.14000002, 0, 0.2424871, 0, 0.28, 0, -0.2424871, 0, -0.14000002, -4.2499995, 0, -7.3612156)
+[node name="Toy Car2" type="AnimatableBody3D" parent="Zone/Rollables/Orbit3" unique_id=704485819 instance=ExtResource("19_pvnhs")]
+transform = Transform3D(-0.13999481, 0, 0.24249011, 0, 0.28, 0, -0.24249011, 0, -0.13999481, -0.0026564598, 0, -0.004600525)
 collision_layer = 4
 collision_mask = 271
 sync_to_physics = false
 
-[node name="Toy Car3" type="AnimatableBody3D" parent="Zone/Rollables/Orbit3" unique_id=1154826297 instance=ExtResource("19_pvnhs")]
-transform = Transform3D(-0.13999996, 0, -0.24248715, 0, 0.28, 0, 0.24248715, 0, -0.13999996, -4.2499995, 0, 7.361216)
+[node name="Toy Car3" type="AnimatableBody3D" parent="Zone/Rollables/Orbit3" unique_id=669826181 instance=ExtResource("19_pvnhs")]
+transform = Transform3D(-0.13999481, 0, -0.24249011, 0, 0.28, 0, 0.24249011, 0, -0.13999481, -0.0026564598, 0, 0.004600525)
 collision_layer = 4
 collision_mask = 271
 sync_to_physics = false

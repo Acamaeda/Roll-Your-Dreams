@@ -7,7 +7,7 @@ extends Node3D
 		if(!get_parent()):
 			return
 		var controller = get_tree().get_first_node_in_group("Level Control")
-		internal_radius = global_basis.get_scale().x*radius/controller.level_scale
+		internal_radius = global_basis.get_scale().x*radius*controller.magic_scale
 		if Engine.is_editor_hint():
 			updateVisualizer()
 @export var speed: float = 1.0
@@ -19,7 +19,7 @@ var internal_radius = 0.0
 
 func _ready() -> void:
 	var controller = get_tree().get_first_node_in_group("Level Control")
-	internal_radius = global_basis.get_scale().x*radius/controller.level_scale
+	internal_radius = global_basis.get_scale().x*radius*controller.magic_scale
 	if Engine.is_editor_hint():
 		updateVisualizer()
 	var count = get_child_count()

@@ -11,7 +11,9 @@ Key elements:
 
 ## Initial stuff in Level Control
 
-The first thing you need to do is set the level's scale, which is the same as the player's starting size in meters. Set map_scale to the same size (it will matter later)
+The first thing you need to do is set the level's scale, which is the same as the player's starting size in meters.
+If you aren't using an existing map, set map_scale to the same size.
+Tip: If the level is getting hard to edit because it's too big, increase level_scale temporarily to shrink it down.
 
 ## Building the level
 	
