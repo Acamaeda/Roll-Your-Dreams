@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://dy8e5yb11ckt2"]
+
+[ext_resource type="Script" uid="uid://cy0sr8g6lnvgq" path="res://Engine/Events/Actions/ChangePlayerSize.gd" id="1_l2a85"]
+
+[node name="ChangeSize" type="Node" unique_id=193682173]
+script = ExtResource("1_l2a85")
+amount = 0.1

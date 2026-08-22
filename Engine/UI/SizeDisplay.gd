@@ -31,6 +31,10 @@ func test():
 	print(formatSize(lightyear * 953454354352.3))
 
 func formatSize(size:float):
+	if (size == 0):
+		return "zero"
+	elif (size < 0):
+		return "-" + formatSize(size*-1)
 	if (size > lightyear):
 		return metricify(size/lightyear) + "ly"
 	if (size > au):

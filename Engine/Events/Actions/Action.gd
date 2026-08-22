@@ -3,6 +3,7 @@ extends "res://Engine/Events/Triggers/EventBase.gd"
 @export var wait_for_complete: bool = true
 
 
+
 func act():
 	active = true
 	await action()
