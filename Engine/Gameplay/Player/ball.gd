@@ -3,14 +3,14 @@ extends RigidBody3D
 var nonrolling : Node3D
 var collector : Node3D
 var base_mass = 1.5
-var rolling_force = 60
+var rolling_force = 60.0
 @export var speed_mult = 1.0
 @export var horizontal_mult = 0.5
 @export var back_mult = 0.3
-@export var turn_speed = 1.0
-var slow_force = 40
-var max_speed = 20
-var too_slow = 5
+@export var turn_speed = 1.2
+var slow_force = 40.0
+var max_speed = 20.0
+var too_slow = 5.0
 var floor_angle = 0.5
 var friction = 1.0
 
@@ -24,15 +24,16 @@ var last_vel = Vector3.ZERO
 @onready var last_pos= position
 @onready var last_rot = rotation
 var stored_delta = 0.0167
-var camera_angle = 0
+var camera_angle = 0.0
 var grounded = false
+var turn_vel = 0.0
 
-var stuck_timer = 0
-var stuck_timer2 = 0
+var stuck_timer = 0.0
+var stuck_timer2 = 0.0
 
 var stuck_limit = 0.75
 var initial_stuck_direction = null
-var min_height = 0
+var min_height = 0.0
 var emergency_pos
 
 
@@ -67,6 +68,7 @@ func _integrate_forces(state: PhysicsDirectBodyState3D):
 		angular_velocity = Vector3.ZERO
 	elif (Input.is_action_just_pressed("QuickTurn") && angular_velocity.length() < too_slow*1.5):
 		quickturn_left = PI
+		turn_vel = 0.0
 		angular_velocity = Vector3.ZERO
 	else:
 		var total_force = rolling_force*speed_mult
@@ -76,7 +78,9 @@ func _integrate_forces(state: PhysicsDirectBodyState3D):
 		var change = Vector3(total_force*inputs.x*stored_delta, 0,  total_force*inputs.y*stored_delta)
 		state.angular_velocity.x += change.x
 		state.angular_velocity.z += change.z
-		camera_angle += turn*turn_speed*stored_delta;
+		turn_vel = lerp(turn_vel, turn*turn_speed, turn_speed*stored_delta * 10)
+		
+		camera_angle += turn_vel*stored_delta;
 		slow_down(stored_delta, state, change, inputs)
 
 	check_stuck(state, inputs)

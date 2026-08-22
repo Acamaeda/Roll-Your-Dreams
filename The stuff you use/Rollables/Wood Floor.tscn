@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://c42nqdb3cx7vk" path="res://Engine/Gameplay/Rollable/RollupSound.tscn" id="3_2qknd"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_v8qqq"]
-size = Vector3(4, 0.01, 4)
+size = Vector3(40, 0.1, 40)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v8qqq"]
 albedo_texture = ExtResource("1_wt5d7")
@@ -14,14 +14,14 @@ uv1_triplanar = true
 
 [sub_resource type="BoxMesh" id="BoxMesh_utinr"]
 material = SubResource("StandardMaterial3D_v8qqq")
-size = Vector3(4, 0.01, 4)
+size = Vector3(40, 0.1, 40)
 
 [node name="Wood Floor" type="StaticBody3D" unique_id=1036713240]
 collision_layer = 4
 collision_mask = 15
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=871267849]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.01, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.051, 0)
 shape = SubResource("BoxShape3D_v8qqq")
 
 [node name="Rollable" type="Node" parent="." unique_id=2084382761]
@@ -31,10 +31,11 @@ description = "They were restored after someone hit them with a sword."
 creator = "bart"
 link = "https://opengameart.org/node/11950"
 base_size = 1.5
+model_scale = 0.1
 max_dimension = 4.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1247970781]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.01, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.051, 0)
 mesh = SubResource("BoxMesh_utinr")
 
 [node name="RollupSound" parent="." unique_id=637469916 instance=ExtResource("3_2qknd")]
