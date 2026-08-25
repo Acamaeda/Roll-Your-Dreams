@@ -15,6 +15,8 @@ func rescue_active_events(node: Node):
 			rescue_active_events(child)
 		
 func upgrade_physics(node: Node, level):
+	if (Engine.is_editor_hint()):
+		return
 	for child in node.get_children():
 		upgrade_physics(child, level)
 	

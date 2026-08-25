@@ -1,5 +1,8 @@
 # Changelog
 
+### 0.1.3
+- Fixed moving objects being deleted (including in demo level)
+
 ### 0.1.2
 - The camera now zooms in to avoid clipping into walls.
 - Camera now has smoother rotation.
