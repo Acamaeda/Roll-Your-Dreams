@@ -12,8 +12,24 @@ signal onRollup
 @export var description: String = "Some kind of funny detail."
 @export var creator: String = "Somebody"
 @export var link: String = ""
-@export_range(0, 5555, 1e-14, "or_greater", "or_less", "hide_control") var base_size: float = 1.0
-@export_range(0, 4444, 1e-14, "or_greater", "or_less", "hide_control") var model_scale: float = 1.0
+@export_range(0, 5555, 1e-14, "or_greater", "or_less", "hide_control") var base_size: float = 1.0:
+	set(val):
+		base_size = val
+		if !get_parent():
+			return
+		var visualizer = get_parent().get_node_or_null("RollupVisualizer")
+		if (visualizer):
+			var vscale = base_size/model_scale*2.15
+			visualizer.scale = Vector3(vscale, vscale, vscale)
+@export_range(0, 4444, 1e-14, "or_greater", "or_less", "hide_control") var model_scale: float = 1.0:
+	set(val):
+		model_scale =val
+		if !get_parent():
+			return
+		var visualizer = get_parent().get_node_or_null("RollupVisualizer")
+		if (visualizer):
+			var vscale = base_size/model_scale*2.15
+			visualizer.scale = Vector3(vscale, vscale, vscale)
 @export var max_dimension = 10.0
 @export var center_height = 0.0
 var collision: int
@@ -59,6 +75,14 @@ func _ready() -> void:
 	_on_player_size_change(collector.size, collector.size * collector.rollup_ratio)
 	
 	choose_collision.call_deferred()	
+
+func _enter_tree():
+	player = get_tree().get_first_node_in_group("Player")
+	if (!player): #this means we aren't in a level scene and shouldn't rescale
+		return
+	body = get_parent()
+	update_scale()
+
 
 func cleanup_collision():
 	var node = get_node_or_null("../DetailedCollision")

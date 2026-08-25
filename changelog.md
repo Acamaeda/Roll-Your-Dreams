@@ -2,6 +2,7 @@
 
 ### 0.1.3
 - Fixed moving objects being deleted (including in demo level)
+- Changing size values automatically updates the rollable visualizer.
 
 ### 0.1.2
 - The camera now zooms in to avoid clipping into walls.

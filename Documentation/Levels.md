@@ -17,7 +17,8 @@ Tip: If the level is getting hard to edit because it's too big, increase level_s
 
 ## Building the level
 	
-Get Rollables from the "Stuff you use" folder and place them into the level under the "Rollables" of a Zone. You can adjust the position and rotation.
+Get Rollables from the "Stuff you use" folder and place them into the level under the "Rollables" of a Zone.
+Don't drag them into the scene directly or they'll be the wrong size. You can adjust the position and rotation.
 You can also duplicate existing objects to save time. While terrain technically doesn't have to be rollable, it's treated the same way.
 
 (Tip! Rotating objects differently can make things seem more natural and varied!)
@@ -33,7 +34,7 @@ root "player" node, while things related to rolling up and growing are in the "c
 
 Collector features:
 	- Rollup ratio: How many times bigger the player needs to be than an object to roll it up.
-	- Exponent: Affects how much growth you get from objects of different sizes. With 3 exponent, a 2-meter object is worth 8 1-meter objects.
+	- Exponent: Affects how much growth you get from Rollables of different sizes. With 3 exponent, a 2-meter object is worth 8 1-meter objects.
 	- Growth mult: A flat multiplier to the player's growth.
 
 ## Adding features to objects
