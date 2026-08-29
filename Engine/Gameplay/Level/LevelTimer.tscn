@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cnkmc8kbsdxo0"]
+
+[ext_resource type="Script" uid="uid://coikqggnf4tn7" path="res://Engine/Events/Counters/Special_Timer.gd" id="1_0nh5e"]
+
+[node name="Level Timer" type="Node" unique_id=782964263]
+script = ExtResource("1_0nh5e")

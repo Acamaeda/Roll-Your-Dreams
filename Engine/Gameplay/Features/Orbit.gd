@@ -7,6 +7,7 @@ extends Node3D
 		if(!get_parent()):
 			return
 		var controller = get_tree().get_first_node_in_group("Level Control")
+		if (!controller): return
 		internal_radius = global_basis.get_scale().x*radius*controller.magic_scale
 		if Engine.is_editor_hint():
 			updateVisualizer()
