@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dceahmyv826xe"]
+
+[ext_resource type="Script" uid="uid://dgem2cdb2lvb5" path="res://Engine/Events/Actions/ChangeCounterValue.gd" id="1_yp3ve"]
+
+[node name="ChangeCounterValue" type="Node" unique_id=193682173]
+script = ExtResource("1_yp3ve")

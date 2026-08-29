@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://ctr4dx2p6lvwv"]
+
+[ext_resource type="Script" uid="uid://vm80a47ht6wt" path="res://Engine/Events/Actions/ChangeTimerSpeed.gd" id="1_dbbyb"]
+
+[node name="ChangeTimerSpeed" type="Node" unique_id=193682173]
+script = ExtResource("1_dbbyb")
