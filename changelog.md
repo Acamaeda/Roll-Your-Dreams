@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.2
+- Added Counters and Timers! They're key to many current and future features.
+- Added level timer.
+- Added ChangeCounterValue, ChangeTimerSpeed actions.
+
 ### 0.1.3
 - Fixed moving objects being deleted (including in demo level)
 - Changing size values automatically updates the rollable visualizer.
