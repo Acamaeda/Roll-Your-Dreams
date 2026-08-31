@@ -10,7 +10,7 @@ signal PopupLarge(severity, title:String, text:String, popup_id:String, icon:Com
 signal PopupResult(id:String, result:bool)
 signal ButtonPressed(id:String, from:String)
 signal dialogue_done(text)
-
+signal ui_rescale()
 ## Setting your own theme here will make the menu more personalized. Please note that a lot of Type Variations are being used. Have a look at the default_theme.tres in the Packed Ui addon folder. A lot of Style Boxes are used and can be found in the StyleBoxes folder.
 @export var default_theme:Theme
 
@@ -34,15 +34,19 @@ var previous_menu:String
 
 
 func _ready() -> void:
-	window_size = _get_window_size(window_size)
-	width = ProjectSettings.get_setting("display/window/size/viewport_width")
-	height = ProjectSettings.get_setting("display/window/size/viewport_height")
-	var newscale = get_viewport().size.x/width
-	scale = Vector2(newscale, newscale)
+	update_scale()
+	get_window().size_changed.connect(update_scale)
 	_set_theme_ui.call_deferred(_get_themed_ui(), default_theme)
 func _physics_process(delta: float) -> void:
 	size_timer += delta
 
+func update_scale():
+	window_size = _get_window_size(window_size)
+	width = ProjectSettings.get_setting("display/window/size/viewport_width")
+	height = ProjectSettings.get_setting("display/window/size/viewport_height")
+	var newscale = min(get_viewport().size.x/width, get_viewport().size.y/height)
+	scale = Vector2(newscale, newscale)
+	ui_rescale.emit()
 
 func _get_window_size(_current:Vector2i) -> Vector2i:
 	if _current != Vector2i(ProjectSettings.get_setting("display/window/size/viewport_width"), ProjectSettings.get_setting("display/window/size/viewport_height")):
