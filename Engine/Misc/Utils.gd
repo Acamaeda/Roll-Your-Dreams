@@ -1,6 +1,6 @@
 @tool
 extends Node
-
+@onready var format = get_node("Format")
 
 func delete_node(node : Node):
 	rescue_active_events(node)

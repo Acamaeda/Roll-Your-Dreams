@@ -7,7 +7,7 @@ func _ready() -> void:
 	var control = get_tree().get_first_node_in_group("Level Control")
 	if (!control): #this means we aren't in a level scene and shouldn't rescale
 		return
-	timer = control.get_node("Level Timer")
+	timer = control.get_node("Counters/Time")
 	timer.value_changed.connect(_time_changed)
 	text.add_theme_font_size_override("normal_font_size", 64)
 	_time_changed(timer.value)
