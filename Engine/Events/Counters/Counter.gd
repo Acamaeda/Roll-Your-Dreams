@@ -1,3 +1,4 @@
+@tool
 extends Node
 class_name Counter
 @export var value = 0.0:
@@ -6,3 +7,6 @@ class_name Counter
 			value = newval
 			value_changed.emit(value)
 signal value_changed(value)
+
+func _validate_property(property: Dictionary):
+	pass

@@ -24,12 +24,12 @@ func formatSize(size:float):
 	return text
 
 
-func metric(val: float, use_long:bool):
+func metric(val: float, use_long:bool, decimals :int):
 	if (val < 0):
-		return "-" + metric(val*-1, use_long)
-	return metricify(val, use_long)
+		return "-" + metric(val*-1, use_long, decimals)
+	return metricify(val, use_long, decimals)
 
-func metricify(val: float, use_long: bool):
+func metricify(val: float, use_long: bool, _decimals = 3):
 	var level :int = floor(log(val)/log(1000))
 	level = clamp(level, negative_prefixes.size()*-1, positive_prefixes.size())
 	var amount = val / pow(1000, level)
@@ -44,4 +44,7 @@ func metricify(val: float, use_long: bool):
 			prefix = full_positive_prefixes[level*-1]
 		else:
 			prefix = positive_prefixes[level]
-	return(("%.3f" % amount) + " " + prefix)
+	return(number(amount, _decimals) + " " + prefix)
+	
+func number(val: float, decimals : int):
+	return (("%." + str(decimals)+"f") % val)

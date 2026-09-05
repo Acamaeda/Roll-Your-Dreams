@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://btujuevsj8rty"]
+
+[ext_resource type="Script" uid="uid://1h1gtoxmgp6" path="res://Engine/Events/Triggers/Immediately.gd" id="1_nlsyq"]
+
+[node name="Immediately" type="Node" unique_id=1378333904]
+script = ExtResource("1_nlsyq")

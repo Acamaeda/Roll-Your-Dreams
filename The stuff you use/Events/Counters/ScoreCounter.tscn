@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://s10rqj67qxja"]
+
+[ext_resource type="Script" uid="uid://cknyufiotsg6s" path="res://Engine/Events/Counters/ScoreCounter.gd" id="1_6yki2"]
+
+[node name="ScoreCounter" type="Node" unique_id=1378333904]
+script = ExtResource("1_6yki2")

@@ -7,6 +7,7 @@ var scale = 1.0
 var body : PhysicsBody3D
 var player : Node
 signal onRollup
+signal onRollupWithName(name)
 
 @export var object_name: String = "Thing"
 @export var description: String = "Some kind of funny detail."
@@ -74,7 +75,16 @@ func _ready() -> void:
 	body.set_collision_mask_value(4, solid)
 	_on_player_size_change(collector.size, collector.size * collector.rollup_ratio)
 	
-	choose_collision.call_deferred()	
+	choose_collision.call_deferred()
+	set_up_values.call_deferred()
+	
+func set_up_values():
+	for counter in get_tree().get_first_node_in_group("Level Control").get_node("Counters").get_children():
+		if (counter is ScoreCounter):
+			if (counter.object_values.has(object_name)):
+				print(object_name)
+				onRollupWithName.connect(counter.add_from_object)
+
 
 func _enter_tree():
 	player = get_tree().get_first_node_in_group("Player")
@@ -153,3 +163,4 @@ func _on_player_size_change(_player_size, rollup_size):
 
 func rolled_up():
 	onRollup.emit()
+	onRollupWithName.emit(object_name)
