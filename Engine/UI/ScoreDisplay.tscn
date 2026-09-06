@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://be3n0xrhrr16x"]
+
+[ext_resource type="Theme" uid="uid://cpqt1hqsijy37" path="res://addons/PackedUi/default_theme.tres" id="1_tfrmc"]
+[ext_resource type="Script" uid="uid://bpshdkvnw816b" path="res://Engine/UI/ScoreDisplay.gd" id="2_tfrmc"]
+
+[node name="Score_display" type="PanelContainer" unique_id=360306237]
+clip_contents = true
+theme = ExtResource("1_tfrmc")
+theme_type_variation = &"SmallPopupPanel"
+script = ExtResource("2_tfrmc")
+
+[node name="b1" type="HBoxContainer" parent="." unique_id=306786803]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="spacer" type="Control" parent="b1" unique_id=1007788725]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+
+[node name="b2" type="VBoxContainer" parent="b1" unique_id=142205822]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="spacer" type="Control" parent="b1/b2" unique_id=1290922990]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+
+[node name="text" type="RichTextLabel" parent="b1/b2" unique_id=734862611]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("1_tfrmc")
+theme_type_variation = &"SmallPopupRLabel"
+bbcode_enabled = true
+text = "Text goes here"
+fit_content = true
+scroll_active = false
+
+[node name="spacer2" type="Control" parent="b1" unique_id=1962639807]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2

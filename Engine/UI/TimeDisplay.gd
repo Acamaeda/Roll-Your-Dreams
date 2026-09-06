@@ -1,7 +1,6 @@
-extends PanelContainer
+extends Display
 
 var timer : RYDTimer
-@onready var text : RichTextLabel = get_node("b1/b2/text")
 
 func _ready() -> void:
 	var control = get_tree().get_first_node_in_group("Level Control")

@@ -57,6 +57,7 @@ metadata/_custom_type_script = "uid://c01npx0xkbd74"
 
 [node name="Ui" type="CanvasLayer" unique_id=933330827]
 process_mode = 3
+layer = 2
 script = ExtResource("1_j1lf8")
 default_theme = ExtResource("3_ohvov")
 

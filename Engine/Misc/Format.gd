@@ -27,10 +27,13 @@ func formatSize(size:float):
 func metric(val: float, use_long:bool, decimals :int):
 	if (val < 0):
 		return "-" + metric(val*-1, use_long, decimals)
+	elif val == 0:
+		return number(val, decimals)
 	return metricify(val, use_long, decimals)
 
 func metricify(val: float, use_long: bool, _decimals = 3):
 	var level :int = floor(log(val)/log(1000))
+	print(val)
 	level = clamp(level, negative_prefixes.size()*-1, positive_prefixes.size())
 	var amount = val / pow(1000, level)
 	var prefix = ""

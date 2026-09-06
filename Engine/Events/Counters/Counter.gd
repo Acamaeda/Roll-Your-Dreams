@@ -8,5 +8,5 @@ class_name Counter
 			value_changed.emit(value)
 signal value_changed(value)
 
-func _validate_property(property: Dictionary):
+func _validate_property(_property: Dictionary):
 	pass

@@ -64,7 +64,7 @@ custom_minimum_size = Vector2(10, 0)
 layout_mode = 2
 
 [node name="Displays" type="VBoxContainer" parent="." unique_id=452148066]
-offset_right = 400.0
+offset_right = 300.0
 offset_bottom = 472.0
 
 [node name="Size_display" type="PanelContainer" parent="Displays" unique_id=1218147256]

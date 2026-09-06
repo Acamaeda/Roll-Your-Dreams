@@ -8,3 +8,8 @@ func _ready() -> void:
 
 func rescale():
 	scale = UI.scale
+
+func add_score_display(counter : ScoreCounter):
+	var display : ScoreDisplay = load("res://Engine/UI/ScoreDisplay.tscn").instantiate()
+	display.counter = counter
+	get_node("Displays").add_child(display)
