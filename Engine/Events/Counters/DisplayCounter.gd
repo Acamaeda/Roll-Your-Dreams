@@ -21,3 +21,7 @@ func format():
 			text += Utils.format.metric(value, true, decimal_places)
 	text += unit
 	return text
+	
+	
+func _validate_property(property: Dictionary):
+	super(property)

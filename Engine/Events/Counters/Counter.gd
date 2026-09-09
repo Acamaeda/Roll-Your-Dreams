@@ -2,10 +2,8 @@
 extends Node
 class_name Counter
 @export var value = 0.0:
-	set(newval):
-		if (newval != value):
-			value = newval
-			value_changed.emit(value)
+	set = set_value,
+	get = get_value
 signal value_changed(value)
 
 func _ready():
@@ -14,3 +12,11 @@ func _ready():
 	
 func _validate_property(_property: Dictionary):
 	pass
+
+func set_value(newval):
+	if (newval != value):
+		value = newval
+		value_changed.emit(newval)
+		
+func get_value():
+	return value

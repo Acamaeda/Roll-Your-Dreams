@@ -4,7 +4,7 @@ extends Node3D
 var player_body:PhysicsBody3D
 var nonrolling:Node3D
 signal size_changed(size, rollup_size)
-
+signal rolled_up(object)
 var size: float = 1.0
 var control: LevelControl
 
@@ -65,7 +65,7 @@ func absorb(other):
 	if (sound):
 		sound.reparent(absorbed, true)
 		sound.play.call_deferred()
-	
+	rolled_up.emit(other)
 	rescue_meshes(other, absorbed)
 	Utils.delete_node.call_deferred(other)
 
