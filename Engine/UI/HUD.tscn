@@ -8,14 +8,14 @@
 [node name="Hud" type="CanvasLayer" unique_id=420480419]
 script = ExtResource("1_pg2ml")
 
-[node name="Control" type="Control" parent="." unique_id=341093182]
+[node name="Right_side" type="Control" parent="." unique_id=341093182]
 custom_minimum_size = Vector2(1280, 720)
 layout_mode = 3
 anchors_preset = 0
 offset_right = 1280.0
 offset_bottom = 720.0
 
-[node name="Time_display" type="PanelContainer" parent="Control" unique_id=2065592453]
+[node name="Time_display" type="PanelContainer" parent="Right_side" unique_id=2065592453]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(340, 120)
 clip_contents = true
@@ -31,24 +31,24 @@ theme = ExtResource("1_4e1th")
 theme_type_variation = &"SmallPopupPanel"
 script = ExtResource("4_p3ynq")
 
-[node name="b1" type="HBoxContainer" parent="Control/Time_display" unique_id=1269114871]
+[node name="b1" type="HBoxContainer" parent="Right_side/Time_display" unique_id=1269114871]
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="spacer" type="Control" parent="Control/Time_display/b1" unique_id=304928674]
+[node name="spacer" type="Control" parent="Right_side/Time_display/b1" unique_id=304928674]
 custom_minimum_size = Vector2(10, 0)
 layout_mode = 2
 
-[node name="b2" type="VBoxContainer" parent="Control/Time_display/b1" unique_id=105936912]
+[node name="b2" type="VBoxContainer" parent="Right_side/Time_display/b1" unique_id=105936912]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 0
 
-[node name="spacer" type="Control" parent="Control/Time_display/b1/b2" unique_id=763536760]
+[node name="spacer" type="Control" parent="Right_side/Time_display/b1/b2" unique_id=763536760]
 custom_minimum_size = Vector2(10, 10)
 layout_mode = 2
 
-[node name="text" type="RichTextLabel" parent="Control/Time_display/b1/b2" unique_id=1497227199]
+[node name="text" type="RichTextLabel" parent="Right_side/Time_display/b1/b2" unique_id=1497227199]
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("1_4e1th")
@@ -59,7 +59,7 @@ fit_content = true
 scroll_active = false
 horizontal_alignment = 1
 
-[node name="spacer2" type="Control" parent="Control/Time_display/b1" unique_id=1255912052]
+[node name="spacer2" type="Control" parent="Right_side/Time_display/b1" unique_id=1255912052]
 custom_minimum_size = Vector2(10, 0)
 layout_mode = 2
 

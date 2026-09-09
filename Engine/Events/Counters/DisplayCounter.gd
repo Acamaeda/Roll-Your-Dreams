@@ -7,6 +7,9 @@ class_name DisplayCounter
 @export var decimal_places = 0
 @export_enum("None", "Abbreviated", "Full")  var metric_prefixes = 0
 
+func _ready():
+	super()
+	
 func format():
 	var text = pre_unit
 	match metric_prefixes:

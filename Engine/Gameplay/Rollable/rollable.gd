@@ -79,10 +79,10 @@ func _ready() -> void:
 	set_up_values.call_deferred()
 	
 func set_up_values():
+	var name_l = object_name.to_lower()
 	for counter in get_tree().get_first_node_in_group("Level Control").get_node("Counters").get_children():
 		if (counter is ScoreCounter):
-			if (counter.object_values.has(object_name)):
-				print(object_name)
+			if (counter.object_values.has(name_l)):
 				onRollupWithName.connect(counter.add_from_object)
 
 
@@ -163,4 +163,4 @@ func _on_player_size_change(_player_size, rollup_size):
 
 func rolled_up():
 	onRollup.emit()
-	onRollupWithName.emit(object_name)
+	onRollupWithName.emit(object_name.to_lower())

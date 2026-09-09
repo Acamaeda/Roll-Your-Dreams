@@ -10,6 +10,11 @@ class_name ScoreCounter
 func _ready():
 	if(!Engine.is_editor_hint() && display):
 		get_tree().get_first_node_in_group("Level Control").get_node("Hud").add_score_display(self)
+		var l_values : Dictionary[String, float] = {} 
+		for key in object_values.keys():
+			l_values.set(key.to_lower(), object_values.get(key))
+		object_values = l_values
+	super()
 
 func add_from_object(object:String):
 	var add = object_values.get(object, 0)

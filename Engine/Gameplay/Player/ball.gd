@@ -5,8 +5,8 @@ var collector : Node3D
 var base_mass = 1.5
 var rolling_force = 60.0
 @export var speed_mult = 1.0
-@export var horizontal_mult = 0.5
-@export var back_mult = 0.3
+@export var horizontal_mult = 0.66
+@export var back_mult = 0.66
 @export var turn_speed = 1.2
 var slow_force = 40.0
 var max_speed = 20.0

@@ -3,7 +3,10 @@
 ## 0.2
 - Added Counters and Timers! They're key to many current and future features.
 - Added level timer.
+- Added ScoreCounters which lets you give objects different types of values when you roll them up
+	- ScoreCounter values can be displayed along with size.
 - Added ChangeCounterValue, ChangeTimerSpeed actions.
+- Increased default sideways and backwards speed.
 
 ### 0.1.3
 - Fixed moving objects being deleted (including in demo level)
