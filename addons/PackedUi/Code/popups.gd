@@ -73,7 +73,7 @@ func _ready() -> void:
 	small_popup.hide()
 	large_popup.set_deferred("modulate", Color.TRANSPARENT)
 	large_popup.hide()
-
+	Utils.cancel_dialogue.connect(_hide_small_popup)
 
 # Process is used for timers.
 func _process(delta: float) -> void:

@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bbt867qk676jl"]
+
+[ext_resource type="Script" uid="uid://cbnu2m86uutm" path="res://Engine/Events/Triggers/CounterTrigger.gd" id="1_q8fay"]
+
+[node name="CounterTrigger" type="Node" unique_id=1718198340]
+script = ExtResource("1_q8fay")

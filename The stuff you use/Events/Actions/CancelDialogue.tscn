@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cujxonilykvbb"]
+
+[ext_resource type="Script" uid="uid://bmetfkka2w4p0" path="res://Engine/Events/Actions/CancelDialogue.gd" id="1_w48sj"]
+
+[node name="CancelDialogue" type="Node" unique_id=1622087298]
+script = ExtResource("1_w48sj")

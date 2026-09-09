@@ -1,6 +1,8 @@
 @tool
 extends Node
 @onready var format = get_node("Format")
+@warning_ignore("unused_signal")
+signal cancel_dialogue
 
 func delete_node(node : Node):
 	rescue_active_events(node)
