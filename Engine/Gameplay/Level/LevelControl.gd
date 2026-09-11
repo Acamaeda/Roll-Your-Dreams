@@ -19,3 +19,10 @@ var magic_scale
 func _ready() -> void:
 	size_ratio = map_scale/level_scale
 	magic_scale = level_scale/map_scale/map_scale
+
+func end_level():
+	get_node("Counters/time").rate = 0
+	var player = get_tree().get_first_node_in_group("Player")
+	player.get_node("Collector").monitoring=false
+	player.stopped = true
+	get_node("Ending").trigger()

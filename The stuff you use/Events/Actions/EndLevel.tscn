@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://b6g677uks6ik"]
+
+[ext_resource type="Script" uid="uid://cuqqkrv3fhl01" path="res://Engine/Events/Actions/EndLevel.gd" id="1_fmhok"]
+
+[node name="EndLevel" type="Node" unique_id=1212578588]
+script = ExtResource("1_fmhok")

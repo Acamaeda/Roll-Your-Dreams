@@ -36,6 +36,7 @@ var initial_stuck_direction = null
 var min_height = 0.0
 var emergency_pos
 
+var stopped = false
 
 func _ready() -> void:
 	nonrolling = get_node("Nonrolling")
@@ -51,6 +52,10 @@ func _process(delta: float) -> void:
 	stored_delta = delta
 
 func _integrate_forces(state: PhysicsDirectBodyState3D):
+	if (stopped):
+		linear_velocity = Vector3.ZERO
+		angular_velocity = Vector3.ZERO
+		return
 	set_collision_mask_value(6, false)
 	update_size();
 	check_collisions(state)

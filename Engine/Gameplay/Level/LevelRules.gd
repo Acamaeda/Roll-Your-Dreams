@@ -35,6 +35,7 @@ func _ready() -> void:
 		0:
 			timer.rate = -1
 			timer.value = time_limit
+			timer.value_changed.connect(check_end_time)
 		1:
 			timer.rate = 1
 			timer.value = 0
@@ -42,10 +43,16 @@ func _ready() -> void:
 			timer.rate = 0
 			control.get_node("Hud/Right_side/Time_display").visible=false
 
+func check_end_time(value):
+	if (value <= 0):
+		timer.value = 0
+		get_parent().end_level()
+
+
 func check_end_level(value):
 	if !check_condition(value, end_mode, end_target):
 		return
-		
+	get_parent().end_level()
 
 func check_condition(value, mode, target):
 	match mode:
@@ -62,6 +69,6 @@ func check_condition(value, mode, target):
 func _validate_property(property: Dictionary):
 	if property.name == "time_limit":
 		if (timer_mode == 0):
-			property.usage= PROPERTY_USAGE_EDITOR
+			property.usage= PROPERTY_USAGE_DEFAULT
 		else:
 			property.usage = PROPERTY_USAGE_NO_EDITOR

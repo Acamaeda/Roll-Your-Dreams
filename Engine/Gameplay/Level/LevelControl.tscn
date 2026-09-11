@@ -7,12 +7,17 @@
 [ext_resource type="Script" uid="uid://bsxgev3c1kn0l" path="res://Engine/Events/Counters/SizeCounter.gd" id="3_jwigq"]
 [ext_resource type="PackedScene" uid="uid://cnkmc8kbsdxo0" path="res://Engine/Gameplay/Level/LevelTimer.tscn" id="4_kqcmu"]
 [ext_resource type="Script" uid="uid://dbr4wld8t5331" path="res://Engine/Events/Counters/ObjectCounter.gd" id="5_2np3r"]
+[ext_resource type="Script" uid="uid://bc72hsfdx2fxn" path="res://Engine/Gameplay/Level/Ending.gd" id="7_6g7uo"]
 
 [node name="Level Control" type="Node" unique_id=574180729 groups=["Level Control"]]
 script = ExtResource("1_5a3xf")
 
 [node name="Level Rules" type="Node" parent="." unique_id=1323895039]
 script = ExtResource("2_5spax")
+win_mode = null
+win_target = null
+end_mode = null
+end_target = null
 
 [node name="Counters" type="Node" parent="." unique_id=398504699]
 
@@ -36,5 +41,8 @@ volume_db = -10.492
 autoplay = true
 playback_type = 1
 parameters/looping = true
+
+[node name="Ending" type="Node" parent="." unique_id=1530570587]
+script = ExtResource("7_6g7uo")
 
 [node name="Hud" parent="." unique_id=856708716 instance=ExtResource("2_eswtl")]

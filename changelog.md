@@ -9,7 +9,7 @@
 - ShowDialogue changes:
 	- A single ShowDialogue action now can contain multiple dialogue messages.
 	- You can use %countername (e.g. %size) to insert them into the dialogue.
-	- Added CancelDialogue action
+	- Added CancelDialogue action.
 - Increased default sideways and backwards speed.
 
 ### 0.1.3
