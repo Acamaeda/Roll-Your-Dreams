@@ -7,7 +7,10 @@ class_name DisplayCounter
 @export var decimal_places = 0
 @export_enum("None", "Abbreviated", "Full")  var metric_prefixes = 0
 
+var display_name = ""
+
 func _ready():
+	display_name = name
 	super()
 	
 func format():

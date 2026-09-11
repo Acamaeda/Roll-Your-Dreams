@@ -50,3 +50,13 @@ func metricify(val: float, use_long: bool, _decimals = 3):
 	
 func number(val: float, decimals : int):
 	return (("%." + str(decimals)+"f") % val)
+
+
+func formatTime(time):
+	var mins = int(floor(time/60))
+	time = int(floor(time))
+	var secs = int(floor(time%60))
+	var secs_txt = str(secs)
+	if (secs < 10):
+		secs_txt = "0" + secs_txt
+	return str(mins) + ":" + str(secs_txt)

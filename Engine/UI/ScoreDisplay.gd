@@ -14,5 +14,5 @@ func finish_setup():
 func _on_value_change(_value):
 	var newtext = counter.format()
 	if (counter.use_label):
-		newtext = counter.name + ": " + newtext
+		newtext = counter.display_name + ": " + newtext
 	text.text = newtext

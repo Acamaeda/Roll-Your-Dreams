@@ -8,6 +8,7 @@ func _ready():
 	if Engine.is_editor_hint():
 		return
 	collector = get_tree().get_first_node_in_group("Player").get_node("Collector")
+	super()
 
 func get_value():
 	if (!collector): return 0.0
@@ -25,3 +26,6 @@ func _validate_property(property: Dictionary):
 	if property.name == "value" || property.name == "min":
 		property.usage = PROPERTY_USAGE_NO_EDITOR
 	super(property)
+	
+func format():
+	return Utils.format.formatSize(value)
