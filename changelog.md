@@ -5,7 +5,11 @@
 - Added level timer.
 - Added ScoreCounters which lets you give objects different types of values when you roll them up
 	- ScoreCounter values can be displayed along with size.
-- Added ChangeCounterValue, ChangeTimerSpeed actions.
+- Added ChangeCounterValue, ChangeTimerSpeed actions, CounterTrigger.
+- ShowDialogue changes:
+	- A single ShowDialogue action now can contain multiple dialogue messages.
+	- You can use %countername (e.g. %size) to insert them into the dialogue.
+	- Added CancelDialogue action
 - Increased default sideways and backwards speed.
 
 ### 0.1.3

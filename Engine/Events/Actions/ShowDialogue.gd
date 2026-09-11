@@ -18,12 +18,15 @@ func action():
 	return
 
 func insert_counters(text : String):
-	var slices = text.split("%", false)
+	var slices = text.split("%", true)
 	if (slices.size() == 1):
 		return text
 	var newtext = ""
+	var first_slice = true
 	for slice in slices:
-		if (slice.begins_with(" ")):
+		if (first_slice):
+			newtext += slice
+		elif (slice.begins_with(" ") || slice.length() == 0):
 			newtext += "%" + slice
 		else:
 			var subslices = slice.split(" ", true, 1)
@@ -34,7 +37,8 @@ func insert_counters(text : String):
 				newtext = newtext + counter.format() + " " + subslices[1]
 				
 			else:
-				newtext = newtext + "%" + slice
+				newtext += "%" + slice
+		first_slice = false
 	if (text.ends_with("%")):
 		newtext += "%"
 	return newtext
