@@ -79,7 +79,6 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if small_displayed:
 		small_timer += delta
-	
 	if large_popup_timed:
 		large_timer += delta
 	if (Input.is_action_just_pressed("Okay")):
@@ -130,7 +129,8 @@ func _hide_small_popup():
 	small_popup.hide()
 	UI.dialogue_done.emit(small_popup_text.text)
 	hide()
-
+	small_displayed = false
+	
 # The large popup receives a larger amounf of parameters.
 # _severity indicates the severity of the popup (normal, warning, error). Normal popups do not display the icon._add_constant_central_force
 # _id is used by the receiving code of the UI.PopupResult siganl to identify the popup._add_constant_central_force
@@ -188,7 +188,6 @@ func _close_large_popup() -> void:
 	large_popup.hide()
 	UI.dialogue_done.emit()
 	hide()
-
 
 # Confirm and Cancel buttons are handled in the popups script.
 func _cancel_btn_pressed() -> void:

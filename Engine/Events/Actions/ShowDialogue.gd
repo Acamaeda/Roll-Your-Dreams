@@ -31,7 +31,6 @@ func insert_counters(text : String):
 		else:
 			var subslices = slice.split(" ", true, 1)
 			var cname = subslices[0].to_lower()
-			print(cname)
 			var counter = get_tree().get_first_node_in_group("Level Control").get_node_or_null("Counters/" + cname)
 			if (counter):
 				newtext = newtext + counter.format() + " " + subslices[1]

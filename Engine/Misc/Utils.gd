@@ -4,6 +4,9 @@ extends Node
 @warning_ignore("unused_signal")
 signal cancel_dialogue
 
+enum endings {NORMAL, LOSE, PERFECT}  
+
+
 func delete_node(node : Node):
 	rescue_active_events(node)
 	node.queue_free()

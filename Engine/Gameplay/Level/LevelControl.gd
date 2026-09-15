@@ -6,7 +6,6 @@ class_name LevelControl
 		var parent = get_parent()
 		if parent is Node3D:
 			var newscale = map_scale/val
-			print(newscale)
 			parent.scale = Vector3(newscale, newscale, newscale)
 		level_scale = val
 		size_ratio = map_scale/level_scale
@@ -15,14 +14,20 @@ class_name LevelControl
 
 var size_ratio
 var magic_scale
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	size_ratio = map_scale/level_scale
 	magic_scale = level_scale/map_scale/map_scale
 
-func end_level():
+func end_level(_mode = 0):
+	if (!_mode):
+		_mode = get_node("Level Rules").get_end_status()
 	get_node("Counters/time").rate = 0
 	var player = get_tree().get_first_node_in_group("Player")
 	player.get_node("Collector").monitoring=false
 	player.stopped = true
-	get_node("Ending").trigger()
+	if (_mode == Utils.endings.LOSE):
+		get_node("Bad Ending").trigger()
+	else:
+		get_node("Ending").trigger()

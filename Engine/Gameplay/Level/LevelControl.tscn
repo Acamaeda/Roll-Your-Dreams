@@ -8,16 +8,15 @@
 [ext_resource type="PackedScene" uid="uid://cnkmc8kbsdxo0" path="res://Engine/Gameplay/Level/LevelTimer.tscn" id="4_kqcmu"]
 [ext_resource type="Script" uid="uid://dbr4wld8t5331" path="res://Engine/Events/Counters/ObjectCounter.gd" id="5_2np3r"]
 [ext_resource type="Script" uid="uid://bc72hsfdx2fxn" path="res://Engine/Gameplay/Level/Ending.gd" id="7_6g7uo"]
+[ext_resource type="PackedScene" uid="uid://ctsgymfkmwq83" path="res://Engine/Gameplay/Level/TryAgain.tscn" id="8_48hgk"]
+[ext_resource type="PackedScene" uid="uid://cc161gdtqu1n3" path="res://The stuff you use/Events/Actions/ShowDialogue.tscn" id="8_fsuds"]
 
 [node name="Level Control" type="Node" unique_id=574180729 groups=["Level Control"]]
 script = ExtResource("1_5a3xf")
 
 [node name="Level Rules" type="Node" parent="." unique_id=1323895039]
 script = ExtResource("2_5spax")
-win_mode = null
-win_target = null
-end_mode = null
-end_target = null
+end_on_fail = null
 
 [node name="Counters" type="Node" parent="." unique_id=398504699]
 
@@ -32,6 +31,7 @@ script = ExtResource("5_2np3r")
 countdown = null
 display = false
 use_label = true
+object_values = false
 
 [node name="Music" type="Node" parent="." unique_id=2076520794]
 
@@ -44,5 +44,13 @@ parameters/looping = true
 
 [node name="Ending" type="Node" parent="." unique_id=1530570587]
 script = ExtResource("7_6g7uo")
+
+[node name="Bad Ending" type="Node" parent="." unique_id=123648375]
+script = ExtResource("7_6g7uo")
+
+[node name="ShowDialogue" parent="Bad Ending" unique_id=1622087298 instance=ExtResource("8_fsuds")]
+dialogue = Array[String](["You lose!"])
+
+[node name="TryAgain" parent="Bad Ending" unique_id=652738283 instance=ExtResource("8_48hgk")]
 
 [node name="Hud" parent="." unique_id=856708716 instance=ExtResource("2_eswtl")]

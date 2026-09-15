@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://ctsgymfkmwq83"]
+
+[ext_resource type="Script" uid="uid://cwqak01runbm3" path="res://Engine/Events/Conditions/Always.gd" id="1_db8fj"]
+[ext_resource type="PackedScene" uid="uid://trs8hjim0g4m" path="res://The stuff you use/Events/Conditions/Confirmation.tscn" id="1_lspnr"]
+[ext_resource type="PackedScene" uid="uid://clfdt71f23b45" path="res://The stuff you use/Events/Conditions/Otherwise.tscn" id="2_db8fj"]
+[ext_resource type="Script" uid="uid://b7xhs6bgoebyh" path="res://Engine/Events/Actions/ReloadScene.gd" id="3_iyy4n"]
+[ext_resource type="Script" uid="uid://cnjlv5b6dq8ha" path="res://Engine/Events/Actions/ExitLevel.gd" id="5_8infh"]
+
+[node name="TryAgain" type="Node" unique_id=652738283]
+script = ExtResource("1_db8fj")
+
+[node name="Confirmation" parent="." unique_id=1378333904 instance=ExtResource("1_lspnr")]
+text = "Do you want to try again?"
+repeatable = true
+
+[node name="Node" type="Node" parent="Confirmation" unique_id=1299081385]
+script = ExtResource("3_iyy4n")
+
+[node name="Otherwise" parent="." unique_id=737705942 instance=ExtResource("2_db8fj")]
+
+[node name="Node" type="Node" parent="Otherwise" unique_id=1585146569]
+script = ExtResource("5_8infh")

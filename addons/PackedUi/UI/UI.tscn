@@ -536,7 +536,7 @@ offset_top = 408.0
 offset_right = 754.0
 offset_bottom = 454.0
 theme = ExtResource("3_ohvov")
-text = "Return"
+text = "Resume"
 
 [node name="settings_btn" type="Button" parent="PauseMenu" unique_id=975175789]
 unique_name_in_owner = true
@@ -741,7 +741,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("3_ohvov")
 theme_type_variation = &"LargePopupButton"
-text = "Cancel"
+text = "No"
 
 [node name="spacer3" type="Control" parent="Popups/large_popup/large_popup_panel/vbox/buttons" unique_id=1276356399]
 custom_minimum_size = Vector2(10, 35)
@@ -754,5 +754,4 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("3_ohvov")
 theme_type_variation = &"LargePopupButton"
-text = "Confirm
-"
+text = "Yes"
