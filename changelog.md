@@ -2,15 +2,18 @@
 
 ## 0.2
 - Added Counters and Timers! They're key to many current and future features.
-- Added level timer.
+- Added level timer with modes to count up or down.
 - Added ScoreCounters which lets you give objects different types of values when you roll them up
 	- ScoreCounter values can be displayed along with size.
 - Added ChangeCounterValue, ChangeTimerSpeed actions, CounterTrigger.
+- Added level win, end, and perfect clear conditions.
+- Added good and bad endings.
 - ShowDialogue changes:
 	- A single ShowDialogue action now can contain multiple dialogue messages.
 	- You can use %countername (e.g. %size) to insert them into the dialogue.
 	- Added CancelDialogue action.
 - Increased default sideways and backwards speed.
+- Fixed a bug where spamming confirm could skip the confirmation dialogue.
 
 ### 0.1.3
 - Fixed moving objects being deleted (including in demo level)

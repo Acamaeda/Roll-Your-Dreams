@@ -18,5 +18,5 @@ script = ExtResource("3_iyy4n")
 
 [node name="Otherwise" parent="." unique_id=737705942 instance=ExtResource("2_db8fj")]
 
-[node name="Node" type="Node" parent="Otherwise" unique_id=1585146569]
+[node name="Main Menu" type="Node" parent="Otherwise" unique_id=1585146569]
 script = ExtResource("5_8infh")

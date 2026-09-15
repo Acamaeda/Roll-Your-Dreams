@@ -43,7 +43,11 @@ You can put a Feature as a child of a Rollable to change it in some way. The mos
 For example, if an object is too large to roll up in the level, you should set "include in collection" to false so it's possible to complete the collection for the level.
 Also, if a value is left blank it keeps the Rollable's original value.
 
-## More on Zones
+## Setting up the timer, goals, and other score values
+
+All of this is related to the Level Rules, which has its own page.
+
+## Making larger levels
 
 The idea of Zones is to break up the level into sections that are unlocked at different sizes, then load in things for that section. Zones have three key parts:
 	- Rollables: The stuff that loads when this zone is opened. But remember, things go into a zone if they're VISIBLE from that zone, even if outside it.
@@ -58,4 +62,5 @@ Properties:
 ## More Customization
 
 You can change the song file in LevelControl's "music" 
-You can modify the WorldEnvironment and DirectionalLight3D to change the look of the level as a whole a lot. Particularly you can change the texture of the sky.
+You can modify the WorldEnvironment and DirectionalLight3D to change the look of the level as a whole a lot.
+Particularly you can change the texture of the sky.
