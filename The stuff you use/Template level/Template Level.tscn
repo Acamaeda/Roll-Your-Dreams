@@ -1,0 +1,101 @@
+[gd_scene format=3 uid="uid://okbmbyel7mkd"]
+
+[ext_resource type="Texture2D" uid="uid://ch65grnbgytps" path="res://Assets/2d/Kenney/Skyboxes/skybox-day.png" id="1_xcc0f"]
+[ext_resource type="PackedScene" uid="uid://8qtwqcg30ut6" path="res://Engine/Gameplay/Level/LevelControl.tscn" id="2_altbf"]
+[ext_resource type="PackedScene" uid="uid://d37a1hkqxg1aw" path="res://Engine/Gameplay/Player/PlayerBall.tscn" id="4_jpqle"]
+[ext_resource type="PackedScene" uid="uid://ctcv6q11r7du3" path="res://Engine/Gameplay/Level/Zone.tscn" id="5_t2385"]
+[ext_resource type="PackedScene" uid="uid://b4av1chmw2uy" path="res://The stuff you use/Rollables/Wood Floor.tscn" id="6_at8ah"]
+[ext_resource type="PackedScene" uid="uid://brrbkw04pic7f" path="res://The stuff you use/Rollables/Peppermint.tscn" id="17_lvo3a"]
+[ext_resource type="PackedScene" uid="uid://b0qguj0i0tgvo" path="res://The stuff you use/Rollables/Blue Mint.tscn" id="18_5jbe1"]
+[ext_resource type="PackedScene" uid="uid://dx2xuup8tyvar" path="res://The stuff you use/Rollables/Spearmint.tscn" id="19_gx2lw"]
+[ext_resource type="PackedScene" uid="uid://c4l3folog5st7" path="res://The stuff you use/Rollables/Caramel.tscn" id="20_k5uwk"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_2p604"]
+panorama = ExtResource("1_xcc0f")
+
+[sub_resource type="Sky" id="Sky_4gmba"]
+sky_material = SubResource("PanoramaSkyMaterial_2p604")
+
+[sub_resource type="Environment" id="Environment_02h4r"]
+background_mode = 2
+sky = SubResource("Sky_4gmba")
+ambient_light_source = 3
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_sky_contribution = 0.33
+ambient_light_energy = 0.11
+
+[node name="Level" type="Node3D" unique_id=1992448230]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=365538902]
+environment = SubResource("Environment_02h4r")
+
+[node name="Level Control" parent="." unique_id=574180729 instance=ExtResource("2_altbf")]
+level_scale = 0.05
+map_scale = 0.05
+
+[node name="Objects" parent="Level Control/Counters" parent_id_path=PackedInt32Array(574180729, 398504699) index="2" unique_id=1899904356]
+countdown = false
+object_values = Dictionary[String, float]({})
+
+[node name="AudioStreamPlayer" parent="Level Control/Music" parent_id_path=PackedInt32Array(574180729, 2076520794) index="0" unique_id=203116786]
+bus = &"Music"
+
+[node name="ShowDialogue" parent="Level Control/Ending" parent_id_path=PackedInt32Array(574180729, 1530570587) index="0" unique_id=1622087298]
+dialogue = Array[String](["You did it! And in %time too!", "Join the Discord to learn how to make your own levels!", "There's no proper ending screen yet, so let's go back to the main menu."])
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1231630966]
+transform = Transform3D(0.99997354, 0, -0.0072779586, 0.0060000415, -0.5659891, 0.8243909, -0.004119245, -0.8244127, -0.5659741, -12.963337, 14.23407, 3.0084782)
+shadow_enabled = true
+
+[node name="Player" parent="." unique_id=1155221902 instance=ExtResource("4_jpqle")]
+transform = Transform3D(-1, 0, 1.509958e-07, 0, 1, 0, -1.509958e-07, 0, -1, 1.2648032, 0.62239623, 23.264736)
+
+[node name="Collector" parent="Player" index="4" unique_id=1608999626]
+growth_mult = 2.0
+
+[node name="Zone" parent="." unique_id=1418971655 instance=ExtResource("5_t2385")]
+
+[node name="Wood Floor" parent="Zone/Rollables" parent_id_path=PackedInt32Array(1418971655, 1164383247) index="0" unique_id=1766288129 instance=ExtResource("6_at8ah")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+
+[node name="Start" type="Node3D" parent="Zone/Rollables" parent_id_path=PackedInt32Array(1418971655, 1164383247) index="1" unique_id=2113165512]
+
+[node name="Peppermint" parent="Zone/Rollables/Start" unique_id=1402097355 instance=ExtResource("17_lvo3a")]
+transform = Transform3D(0.424, 0, 0, 0, 0.424, 0, 0, 0, 0.424, 0, 0, 17.513397)
+
+[node name="Blue Mint" parent="Zone/Rollables/Start" unique_id=485442055 instance=ExtResource("18_5jbe1")]
+transform = Transform3D(0.424, 0, 0, 0, 0.424, 0, 0, 0, 0.424, -0.7851846, 0, 17.891783)
+
+[node name="Spearmint2" parent="Zone/Rollables/Start" unique_id=686320114 instance=ExtResource("19_gx2lw")]
+transform = Transform3D(0.424, 0, 0, 0, 0.424, 0, 0, 0, 0.424, -3.453699, 0, 17.891783)
+
+[node name="Blue Mint2" parent="Zone/Rollables/Start" unique_id=1879142653 instance=ExtResource("18_5jbe1")]
+transform = Transform3D(0.424, 0, 0, 0, 0.424, 0, 0, 0, 0.424, -3.453699, 0, 19.049137)
+
+[node name="Peppermint10" parent="Zone/Rollables/Start" unique_id=865919846 instance=ExtResource("17_lvo3a")]
+transform = Transform3D(0.424, 0, 0, 0, 0.424, 0, 0, 0, 0.424, -2.514837, 0, 19.049137)
+
+[node name="Spearmint" parent="Zone/Rollables/Start" unique_id=173319530 instance=ExtResource("19_gx2lw")]
+transform = Transform3D(0.424, 0, 0, 0, 0.424, 0, 0, 0, 0.424, -2.514837, 0, 17.049137)
+
+[node name="Peppermint5" parent="Zone/Rollables/Start" unique_id=1979027481 instance=ExtResource("17_lvo3a")]
+transform = Transform3D(0.424, 0, 0, 0, 0.424, 0, 0, 0, 0.424, -1.6450814, 0, 19.289356)
+
+[node name="Caramel" parent="Zone/Rollables/Start" unique_id=881897870 instance=ExtResource("20_k5uwk")]
+transform = Transform3D(0.424, 0, 0, 0, 0.424, 0, 0, 0, 0.424, 2.55, 0, 18.797)
+
+[node name="Caramel2" parent="Zone/Rollables/Start" unique_id=1003534323 instance=ExtResource("20_k5uwk")]
+transform = Transform3D(0.424, 0, 0, 0, 0.424, 0, 0, 0, 0.424, 3.323, 0, 19.509)
+
+[node name="Caramel3" parent="Zone/Rollables/Start" unique_id=1266240631 instance=ExtResource("20_k5uwk")]
+transform = Transform3D(0.424, 0, 0, 0, 0.424, 0, 0, 0, 0.424, 2.866, 0, 20.715)
+
+[node name="Caramel4" parent="Zone/Rollables/Start" unique_id=73999670 instance=ExtResource("20_k5uwk")]
+transform = Transform3D(0.424, 0, 0, 0, 0.424, 0, 0, 0, 0.424, -3.5350003, 0, 20.11)
+
+[node name="Spawnpoint" parent="Zone" index="2" unique_id=430355448]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.814, 0.5, 19.406)
+
+[editable path="Level Control"]
+[editable path="Player"]
+[editable path="Zone"]

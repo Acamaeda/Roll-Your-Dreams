@@ -1,8 +1,14 @@
 # Changelog
 
+## 0.2.1
+- Renamed "Documentation" to "Guide".
+- Improved the Introduction in the Guide with a tour of the important parts of Godot for RYD.
+- Started on Guide for the Events system.
+- Replaced the Template Level with a better one.
+
 ## 0.2
 - Added Counters and Timers! They're key to many current and future features.
-- Added level timer with modes to count up or down.
+- Added level timer with modes to count up (AFAP) or down (ALAP).
 - Added ScoreCounters which lets you give objects different types of values when you roll them up
 	- ScoreCounter values can be displayed along with size.
 - Added ChangeCounterValue, ChangeTimerSpeed actions, CounterTrigger.

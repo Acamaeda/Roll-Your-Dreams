@@ -1,7 +1,7 @@
 # Roll Your Dreams
 A roll-and-grow level creation system!
 
-No coding is required to create levels, and lot will be possible with a variety of flexible tools!
+No coding is required to create levels, and lot is possible with a variety of flexible tools!
 
 To get started on learning to use RYD, [go here](res://Documentation/Introduction.md)
 

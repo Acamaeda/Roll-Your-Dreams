@@ -1,6 +1,7 @@
 # Levels
 
-Levels are the heart of Roll Your Dreams. 
+Levels are the heart of Roll Your Dreams. To start, make a copy of Template Level.tscn (or an existing level), and
+put it in Levels/[Campaign Name]/[Level Name] You can change the names later, and the campaign can just be "[Yourname]'s levels" or something.
 
 Key elements:
 	- Level Control. Has a lot of settings that are important to the level.
