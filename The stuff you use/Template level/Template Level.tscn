@@ -4,11 +4,11 @@
 [ext_resource type="PackedScene" uid="uid://8qtwqcg30ut6" path="res://Engine/Gameplay/Level/LevelControl.tscn" id="2_altbf"]
 [ext_resource type="PackedScene" uid="uid://d37a1hkqxg1aw" path="res://Engine/Gameplay/Player/PlayerBall.tscn" id="4_jpqle"]
 [ext_resource type="PackedScene" uid="uid://ctcv6q11r7du3" path="res://Engine/Gameplay/Level/Zone.tscn" id="5_t2385"]
-[ext_resource type="PackedScene" uid="uid://b4av1chmw2uy" path="res://The stuff you use/Rollables/Wood Floor.tscn" id="6_at8ah"]
-[ext_resource type="PackedScene" uid="uid://brrbkw04pic7f" path="res://The stuff you use/Rollables/Peppermint.tscn" id="17_lvo3a"]
-[ext_resource type="PackedScene" uid="uid://b0qguj0i0tgvo" path="res://The stuff you use/Rollables/Blue Mint.tscn" id="18_5jbe1"]
-[ext_resource type="PackedScene" uid="uid://dx2xuup8tyvar" path="res://The stuff you use/Rollables/Spearmint.tscn" id="19_gx2lw"]
-[ext_resource type="PackedScene" uid="uid://c4l3folog5st7" path="res://The stuff you use/Rollables/Caramel.tscn" id="20_k5uwk"]
+[ext_resource type="PackedScene" uid="uid://b4av1chmw2uy" path="res://The stuff you use/Rollables/Room Parts/Wood Floor.tscn" id="6_at8ah"]
+[ext_resource type="PackedScene" uid="uid://brrbkw04pic7f" path="res://The stuff you use/Rollables/Food/Candy/Peppermint.tscn" id="17_lvo3a"]
+[ext_resource type="PackedScene" uid="uid://b0qguj0i0tgvo" path="res://The stuff you use/Rollables/Food/Candy/Blue Mint.tscn" id="18_5jbe1"]
+[ext_resource type="PackedScene" uid="uid://dx2xuup8tyvar" path="res://The stuff you use/Rollables/Food/Candy/Spearmint.tscn" id="19_gx2lw"]
+[ext_resource type="PackedScene" uid="uid://c4l3folog5st7" path="res://The stuff you use/Rollables/Food/Candy/Caramel.tscn" id="20_k5uwk"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_2p604"]
 panorama = ExtResource("1_xcc0f")

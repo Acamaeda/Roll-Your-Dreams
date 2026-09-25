@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.2
+- Added "Growth mult" to RollableProperties.
+- Started to organize Rollables.
+
 ## 0.2.1
 - Renamed "Documentation" to "Guide".
 - Improved the Introduction in the Guide with a tour of the important parts of Godot for RYD.

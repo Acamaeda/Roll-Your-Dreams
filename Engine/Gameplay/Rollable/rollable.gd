@@ -6,6 +6,7 @@ var size_mult :float  = 1.0
 var scale = 1.0
 var body : PhysicsBody3D
 var player : Node
+var growth_mult = 1.0
 signal onRollup
 signal onRollupWithName(name)
 

@@ -6,6 +6,7 @@ Rollable Properties is a Solor Feature that lets you change a lot of different p
 ## Properties
 	- Object Name: The name of the object (changing this will make a new entry in the Collection)
 	- Description: The description in the Collection
+	- Growth mult: A multiplier to the amount of size the player gets from this.
 	- Collision: Which type of collision to use (if they are implemented!)
 		- Use Detailed Collision for very large objects that are terrain
 		- Use super simple collision for things that are very small and numerous.

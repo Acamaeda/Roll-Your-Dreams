@@ -3,6 +3,8 @@ extends Node
 @export var object_name: String = ""
 @export var description: String = ""
 
+@export var growth_mult = 1.0
+
 @export_enum("Normal", "Super Detailed", "Super Simple")var collision: int
 @export var solid: bool = true
 @export var rollable: bool = true
@@ -26,5 +28,5 @@ func _ready() -> void:
 	target.solid = solid
 	target.rollable = rollable
 	target.include_in_collection = include_in_collection
-
+	target.growth_mult = growth_mult
 	
