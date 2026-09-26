@@ -52,7 +52,7 @@ metadata/_custom_type_script = "uid://c01npx0xkbd74"
 [sub_resource type="Resource" id="Resource_taq0q"]
 script = ExtResource("8_nb1pa")
 section_name = "Textures"
-list_of_names = Array[String](["Skybox-alien by Kenney", "Hardwood Floor by bart"])
+list_of_names = Array[String](["Skybox-alien by Kenney", "Hardwood Floor by bart", "Wallpaper by dragonboy20144", "Ceiling by XCVG"])
 metadata/_custom_type_script = "uid://c01npx0xkbd74"
 
 [node name="Ui" type="CanvasLayer" unique_id=933330827]

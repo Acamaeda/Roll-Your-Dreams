@@ -9,6 +9,7 @@ size = Vector3(1, 0.015, 0.2)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v8qqq"]
 albedo_texture = ExtResource("2_q5ov8")
+albedo_texture_force_srgb = true
 uv1_scale = Vector3(0.8, 0.8, 0.8)
 uv1_offset = Vector3(0.08, 0, 0.08)
 uv1_triplanar = true

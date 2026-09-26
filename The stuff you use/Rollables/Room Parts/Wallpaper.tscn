@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://by3qa86ttsu5y"]
+
+[ext_resource type="Script" uid="uid://dx6eyklyhmrga" path="res://Engine/Gameplay/Rollable/rollable.gd" id="1_cjvey"]
+[ext_resource type="Texture2D" uid="uid://c8b7ochghwyj5" path="res://Assets/2d/dragonboy20144/Wallpaper.jpg" id="2_cjvey"]
+[ext_resource type="PackedScene" uid="uid://c42nqdb3cx7vk" path="res://Engine/Gameplay/Rollable/RollupSound.tscn" id="3_m0aq6"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_v8qqq"]
+size = Vector3(40, 25, 1.1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e68fg"]
+albedo_color = Color(0.567, 0.64470005, 0.9, 1)
+albedo_texture = ExtResource("2_cjvey")
+uv1_scale = Vector3(0.3, 0.3, 0.3)
+
+[sub_resource type="BoxMesh" id="BoxMesh_utinr"]
+material = SubResource("StandardMaterial3D_e68fg")
+size = Vector3(40, 25, 1.1)
+
+[node name="Wallpaper" type="StaticBody3D" unique_id=1036713240]
+collision_layer = 4
+collision_mask = 15
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=871267849]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12.5, 0)
+shape = SubResource("BoxShape3D_v8qqq")
+
+[node name="Rollable" type="Node" parent="." unique_id=2084382761]
+script = ExtResource("1_cjvey")
+object_name = "Wallpaper"
+description = "Not the kind that goes on your desktop."
+creator = "dragonboy20144"
+link = "https://opengameart.org/content/free-hq-wallpaper"
+base_size = 1.8
+model_scale = 0.1
+max_dimension = 40.0
+center_height = 11.5
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1247970781]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12.5, 0)
+layers = 2
+mesh = SubResource("BoxMesh_utinr")
+
+[node name="RollupSound" parent="." unique_id=637469916 instance=ExtResource("3_m0aq6")]
