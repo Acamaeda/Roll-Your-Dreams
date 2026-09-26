@@ -7,7 +7,6 @@ var full_negative_prefixes = ["", "mili", "micro", "nano", "pico", "femto", "att
 
 var lightyear = 9.605e15
 var au = 1.496e11
-# Called when the node enters the scene tree for the first time.
 
 func formatSize(size:float):
 	if (size == 0):

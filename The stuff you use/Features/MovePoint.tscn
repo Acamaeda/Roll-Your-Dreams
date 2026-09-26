@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://d1k3dycpleqi4"]
+
+[ext_resource type="Script" uid="uid://b5onkjsepk1a5" path="res://Engine/Gameplay/Features/MovePoint.gd" id="1_3vbvh"]
+[ext_resource type="Script" uid="uid://btv8ng58fmx0l" path="res://Engine/Gameplay/Features/Visualizer.gd" id="2_nwi04"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hplab"]
+albedo_color = Color(1, 0.32, 0.32, 0.7254902)
+
+[sub_resource type="SphereMesh" id="SphereMesh_n8a5h"]
+material = SubResource("StandardMaterial3D_hplab")
+
+[node name="MovePoint" type="Node3D" unique_id=2088710499]
+script = ExtResource("1_3vbvh")
+
+[node name="Visualizer" type="MeshInstance3D" parent="." unique_id=279455884]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
+mesh = SubResource("SphereMesh_n8a5h")
+script = ExtResource("2_nwi04")

@@ -1,5 +1,8 @@
 # Changelog
 
+
+- 
+
 ## 0.2.2
 - Added "Growth mult" to RollableProperties.
 - Started to organize Rollables.

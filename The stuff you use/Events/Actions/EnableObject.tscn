@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bbsf14l8jd1ti"]
+
+[ext_resource type="Script" uid="uid://de411an1liqqj" path="res://Engine/Events/Actions/ShowHideObject.gd" id="1_pl1l2"]
+
+[node name="EnableObject" type="Node" unique_id=1622087298]
+script = ExtResource("1_pl1l2")
