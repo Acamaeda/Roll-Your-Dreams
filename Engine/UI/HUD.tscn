@@ -3,19 +3,43 @@
 [ext_resource type="Theme" uid="uid://cpqt1hqsijy37" path="res://addons/PackedUi/default_theme.tres" id="1_4e1th"]
 [ext_resource type="Script" uid="uid://c5adbeipf45uw" path="res://Engine/UI/HUD.gd" id="1_pg2ml"]
 [ext_resource type="Script" uid="uid://drceo5tcl63oe" path="res://Engine/UI/SizeDisplay.gd" id="2_pg2ml"]
+[ext_resource type="Script" path="res://Engine/UI/RollupPopup.gd" id="4_2023k"]
 [ext_resource type="Script" uid="uid://b113v1jfcor1t" path="res://Engine/UI/TimeDisplay.gd" id="4_p3ynq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p3ynq"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.35, 0.35, 0.35, 0.67058825)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.262933, 0.262932, 0.262932, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+shadow_color = Color(0, 0, 0, 0.458824)
+shadow_size = 1
+shadow_offset = Vector2(10, 10)
+
+[sub_resource type="SphereMesh" id="SphereMesh_osnnr"]
+
+[sub_resource type="Environment" id="Environment_2023k"]
 
 [node name="Hud" type="CanvasLayer" unique_id=420480419]
 script = ExtResource("1_pg2ml")
 
-[node name="Right_side" type="Control" parent="." unique_id=341093182]
+[node name="Main" type="Control" parent="." unique_id=341093182]
 custom_minimum_size = Vector2(1280, 720)
 layout_mode = 3
 anchors_preset = 0
 offset_right = 1280.0
 offset_bottom = 720.0
 
-[node name="Time_display" type="PanelContainer" parent="Right_side" unique_id=2065592453]
+[node name="Time_display" type="PanelContainer" parent="Main" unique_id=2065592453]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(340, 120)
 clip_contents = true
@@ -31,24 +55,24 @@ theme = ExtResource("1_4e1th")
 theme_type_variation = &"SmallPopupPanel"
 script = ExtResource("4_p3ynq")
 
-[node name="b1" type="HBoxContainer" parent="Right_side/Time_display" unique_id=1269114871]
+[node name="b1" type="HBoxContainer" parent="Main/Time_display" unique_id=1269114871]
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="spacer" type="Control" parent="Right_side/Time_display/b1" unique_id=304928674]
+[node name="spacer" type="Control" parent="Main/Time_display/b1" unique_id=304928674]
 custom_minimum_size = Vector2(10, 0)
 layout_mode = 2
 
-[node name="b2" type="VBoxContainer" parent="Right_side/Time_display/b1" unique_id=105936912]
+[node name="b2" type="VBoxContainer" parent="Main/Time_display/b1" unique_id=105936912]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 0
 
-[node name="spacer" type="Control" parent="Right_side/Time_display/b1/b2" unique_id=763536760]
+[node name="spacer" type="Control" parent="Main/Time_display/b1/b2" unique_id=763536760]
 custom_minimum_size = Vector2(10, 10)
 layout_mode = 2
 
-[node name="text" type="RichTextLabel" parent="Right_side/Time_display/b1/b2" unique_id=1497227199]
+[node name="text" type="RichTextLabel" parent="Main/Time_display/b1/b2" unique_id=1497227199]
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("1_4e1th")
@@ -59,7 +83,84 @@ fit_content = true
 scroll_active = false
 horizontal_alignment = 1
 
-[node name="spacer2" type="Control" parent="Right_side/Time_display/b1" unique_id=1255912052]
+[node name="spacer2" type="Control" parent="Main/Time_display/b1" unique_id=1255912052]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+
+[node name="Rollup_Popup" type="PanelContainer" parent="Main" unique_id=439491682]
+custom_minimum_size = Vector2(340, 120)
+clip_contents = true
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -223.0
+offset_right = 340.0
+offset_bottom = 11.444458
+grow_vertical = 0
+scale = Vector2(0.9, 0.9)
+theme = ExtResource("1_4e1th")
+theme_type_variation = &"SmallPopupPanel"
+theme_override_styles/panel = SubResource("StyleBoxFlat_p3ynq")
+script = ExtResource("4_2023k")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Main/Rollup_Popup" unique_id=1463885765]
+layout_mode = 2
+
+[node name="SubViewport" type="SubViewport" parent="Main/Rollup_Popup/SubViewportContainer" unique_id=1378892980]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(352, 256)
+render_target_update_mode = 4
+
+[node name="Node3D" type="Node3D" parent="Main/Rollup_Popup/SubViewportContainer/SubViewport" unique_id=1551902291]
+
+[node name="Focus" type="MeshInstance3D" parent="Main/Rollup_Popup/SubViewportContainer/SubViewport/Node3D" unique_id=35823765]
+layers = 524288
+mesh = SubResource("SphereMesh_osnnr")
+
+[node name="Camera3D" type="Camera3D" parent="Main/Rollup_Popup/SubViewportContainer/SubViewport/Node3D" unique_id=1613584195]
+transform = Transform3D(1, 0, 0, 0, 0.98798746, 0.15453416, 0, -0.15453416, 0.98798746, 0, 0.29182076, 1.2628059)
+cull_mask = 524288
+environment = SubResource("Environment_2023k")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Main/Rollup_Popup/SubViewportContainer/SubViewport/Node3D" unique_id=104037153]
+transform = Transform3D(-0.03887348, -0.8239146, -0.56537914, 0.0060000415, -0.56598914, 0.824391, -0.99922633, 0.02865462, 0.026945502, -12.963337, 14.23407, 3.0084782)
+layers = 524288
+light_cull_mask = 4294443008
+shadow_enabled = true
+shadow_caster_mask = 4294967293
+directional_shadow_mode = 1
+
+[node name="b1" type="HBoxContainer" parent="Main/Rollup_Popup" unique_id=984897820]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="spacer" type="Control" parent="Main/Rollup_Popup/b1" unique_id=1679417635]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+
+[node name="b2" type="VBoxContainer" parent="Main/Rollup_Popup/b1" unique_id=1951920193]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="spacer" type="Control" parent="Main/Rollup_Popup/b1/b2" unique_id=1365768430]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+
+[node name="text" type="RichTextLabel" parent="Main/Rollup_Popup/b1/b2" unique_id=509197821]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("1_4e1th")
+theme_type_variation = &"SmallPopupRLabel"
+bbcode_enabled = true
+text = "Text goes here"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="spacer2" type="Control" parent="Main/Rollup_Popup/b1" unique_id=1267411301]
 custom_minimum_size = Vector2(10, 0)
 layout_mode = 2
 
