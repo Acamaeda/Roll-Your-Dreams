@@ -1,5 +1,5 @@
 extends CanvasLayer
-
+class_name OldUI
 signal ToggleUi(id:String, value:bool, previous:String)
 signal ReturnToMainMenu()
 signal WindowResized(_value:Vector2i)

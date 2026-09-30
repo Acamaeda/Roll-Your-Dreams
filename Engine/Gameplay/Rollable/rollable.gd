@@ -58,6 +58,8 @@ var include_in_collection: bool = true
 				visualizer.queue_free()
 		size_to_roll_up_visualizer = val
 
+var my_score = 0.0
+var my_counter : ScoreCounter
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -85,6 +87,10 @@ func set_up_values():
 		if (counter is ScoreCounter):
 			if (counter.object_values.has(name_l)):
 				onRollupWithName.connect(counter.add_from_object)
+				var val = counter.object_values.get(name_l)
+				if (Utils.compare_with_weighted_negative(val, my_score)):
+					my_counter = counter
+					my_score = val
 
 
 func _enter_tree():
