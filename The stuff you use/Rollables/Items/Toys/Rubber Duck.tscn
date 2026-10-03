@@ -30,7 +30,7 @@ transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
 [node name="SimpleCollision" type="Area3D" parent="." unique_id=1961709460]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SimpleCollision" unique_id=1806921856]
-transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, 0, 1.425, 0)
+transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, 0, 1.41, 0)
 shape = SubResource("CylinderShape3D_kcjr0")
 
 [node name="Front" type="CollisionShape3D" parent="." unique_id=871267849]
@@ -53,8 +53,8 @@ creator = "Plat251"
 link = "https://polyhaven.com/a/rubber_duck_toy"
 base_size = 0.08
 model_scale = 0.0275
-max_dimension = 30.0
-center_height = 15.0
+max_dimension = 2.88
+center_height = 1.425
 size_to_roll_up_visualizer = null
 
 [node name="blend_export" parent="." unique_id=1866116617 instance=ExtResource("2_7otxs")]

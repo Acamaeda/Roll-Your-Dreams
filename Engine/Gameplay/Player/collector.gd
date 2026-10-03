@@ -55,7 +55,7 @@ func _on_body_entered(other):
 	absorb(other)	
 	Utils.delete_node(other)
 
-func absorb(other):
+func absorb(other : Node3D):
 	var absorbed : Node3D = load("res://Engine/Gameplay/Rollable/AbsorbedObject.tscn").instantiate()
 	player_body.get_parent().add_child(absorbed)
 	absorbed.global_transform = other.global_transform
@@ -66,12 +66,25 @@ func absorb(other):
 		sound.reparent(absorbed, true)
 		sound.play.call_deferred()
 	rolled_up.emit(other)
-	rescue_meshes(other, absorbed)
+	var model = Node3D.new()
+	absorbed.add_child(model)	
+	rescue_meshes(other, model, true)
+	
+	other.global_position = Vector3(0, 0, 0)
+	other.global_rotation = Vector3.ZERO
+	other.global_transform.basis = other.global_transform.basis.orthonormalized()
+	var model2 = Node3D.new()
+	rescue_meshes(other, model2, false)
+	control.get_node("Hud/Main/Rollup_Popup").update(other, model2)
 	Utils.delete_node.call_deferred(other)
 
-func rescue_meshes(other, absorbed):
+
+
+func rescue_meshes(other, absorbed, copy):
 	for child in other.get_children():
 		if (child is VisualInstance3D):
+			if (copy):
+				other.add_child(child.duplicate())
 			child.reparent(absorbed, true)
 		else:
-			rescue_meshes(child, absorbed)
+			rescue_meshes(child, absorbed, copy)

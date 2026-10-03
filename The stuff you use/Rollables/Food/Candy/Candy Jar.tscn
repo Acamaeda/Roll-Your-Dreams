@@ -75,7 +75,7 @@ center_height = 0.25
 [node name="Candy Jar" parent="." unique_id=621917313 instance=ExtResource("2_hfa7i")]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
 
-[node name="Candy_Jar" parent="Candy Jar/Candy/Atomic_Fireball" parent_id_path=PackedInt32Array(621917313, 1288530242) index="0" unique_id=1936322629]
+[node name="Candy_Jar" parent="Candy Jar/Candy/Atomic_Fireball" parent_id_path=PackedInt32Array(621917313, 261762560) index="0" unique_id=1329891440]
 mesh = SubResource("ArrayMesh_1jbje")
 
 [node name="RollupSound" parent="." unique_id=637469916 instance=ExtResource("4_tfy2a")]
