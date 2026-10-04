@@ -3,7 +3,7 @@ extends PanelContainer
 @onready var nameText : RichTextLabel = get_node("b1/b2/text")
 @onready var scoreText : RichTextLabel = get_node("b1/b3/text2")
 
-var displayTime = 3
+var displayTime = 2.5
 var fadeinTime = 0.2
 var fadeoutTime = 0.5
 var timeLeft = 0.0
