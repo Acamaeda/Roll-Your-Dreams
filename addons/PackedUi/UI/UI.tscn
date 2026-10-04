@@ -35,7 +35,7 @@ metadata/_custom_type_script = "uid://c01npx0xkbd74"
 [sub_resource type="Resource" id="Resource_nb1pa"]
 script = ExtResource("8_nb1pa")
 section_name = "3D Models"
-list_of_names = Array[String](["DKDTheGreat1: Bed", "Harry Charalambous: Mints, Caramel, Candy Jar", "Hennadiy Kyeseliov: Fidget Spinner", "IvanPetrov: Toy Car", "jiang liu: Teddy Bear", "Plat251: Rubber Duck", "Shikko: Paper Airplane"])
+list_of_names = Array[String](["DKDTheGreat1: Bed", "Harry Charalambous: Mints, Caramel, Candy Jar", "Hennadiy Kyeseliov: Fidget Spinner", "IvanPetrov: Toy Car", "jiang liu: Teddy Bear", "Plat251: Rubber Duck", "Shikko: Paper Airplane", "Noby Grand: Ghost"])
 metadata/_custom_type_script = "uid://c01npx0xkbd74"
 
 [sub_resource type="Resource" id="Resource_7otxs"]

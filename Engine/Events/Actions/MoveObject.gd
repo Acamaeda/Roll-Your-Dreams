@@ -4,5 +4,7 @@ extends Action
 
 
 func action():
+	if (!target):
+		return
 	target.start(move_time)
 	await get_tree().create_timer(move_time).timeout

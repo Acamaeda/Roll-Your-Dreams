@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://byeaed1v5rsf6"]
+
+[ext_resource type="Script" uid="uid://dx6eyklyhmrga" path="res://Engine/Gameplay/Rollable/rollable.gd" id="1_tyyi6"]
+[ext_resource type="PackedScene" uid="uid://c42nqdb3cx7vk" path="res://Engine/Gameplay/Rollable/RollupSound.tscn" id="2_jpwq1"]
+[ext_resource type="PackedScene" uid="uid://dre8lx6twakvj" path="res://Assets/3d/Noby Grand/Fancy Ghost/Ghost.glb" id="3_kby4u"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7og04"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_ry0v8"]
+height = 2.5
+radius = 1.0
+
+[node name="Ghost" type="StaticBody3D" unique_id=1036713240]
+collision_layer = 4
+collision_mask = 15
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=871267849]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_7og04")
+
+[node name="Rollable" type="Node" parent="." unique_id=2084382761]
+script = ExtResource("1_tyyi6")
+object_name = "Ghost"
+description = "So spooky that it can't exist 364 days a year."
+creator = "Noby Grand"
+link = "https://sketchfab.com/3d-models/ghost-w-tophat-6b1217e3462440519a2d0e3e75bf16d3"
+base_size = 0.75
+model_scale = 0.3
+max_dimension = 3.33
+center_height = 1.665
+size_to_roll_up_visualizer = true
+
+[node name="DetailedCollision" type="Area3D" parent="." unique_id=208660517]
+
+[node name="SimpleCollision" type="Area3D" parent="." unique_id=1923271128]
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=874211516]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
+shape = SubResource("CylinderShape3D_ry0v8")
+
+[node name="RollupSound" parent="." unique_id=637469916 instance=ExtResource("2_jpwq1")]
+
+[node name="Ghost" parent="." unique_id=695172085 instance=ExtResource("3_kby4u")]

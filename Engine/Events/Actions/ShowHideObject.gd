@@ -5,6 +5,8 @@ extends ToggleAction
 func get_value(): return object.process_mode != object.ProcessMode.PROCESS_MODE_DISABLED
 
 func set_value(_val):
+	if (!object):
+		return
 	if (_val):
 		object.process_mode = object.PROCESS_MODE_INHERIT
 	else:
