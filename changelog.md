@@ -1,13 +1,16 @@
 # Changelog
 
+#0.3
+- Added popup for rolled up items
+- Added EnableObject and MoveObject actions
+- Updated demo level with a SECRET
+- Added a few rollable objects to the library.
 
-- 
-
-## 0.2.2
+### 0.2.2
 - Added "Growth mult" to RollableProperties.
 - Started to organize Rollables.
 
-## 0.2.1
+### 0.2.1
 - Renamed "Documentation" to "Guide".
 - Improved the Introduction in the Guide with a tour of the important parts of Godot for RYD.
 - Started on Guide for the Events system.

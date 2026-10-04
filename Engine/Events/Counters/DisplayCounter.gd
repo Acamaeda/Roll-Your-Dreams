@@ -14,17 +14,19 @@ func _ready():
 	super()
 	
 func format():
+	return format_value(value)
+
+func format_value(val):
 	var text = pre_unit
 	match metric_prefixes:
 		0:
-			text += Utils.format.number(value, decimal_places)
+			text += Utils.format.number(val, decimal_places)
 		1:
-			text += Utils.format.metric(value, false, decimal_places)
+			text += Utils.format.metric(val, false, decimal_places)
 		2:
-			text += Utils.format.metric(value, true, decimal_places)
+			text += Utils.format.metric(val, true, decimal_places)
 	text += unit
 	return text
-	
 	
 func _validate_property(property: Dictionary):
 	super(property)

@@ -27,7 +27,7 @@ mesh = SubResource("BoxMesh_fl164")
 
 [node name="Rollable" type="Node" parent="." unique_id=2084382761]
 script = ExtResource("1_fl164")
-object_name = "Green Cube"
+object_name = "Cube"
 description = "The only way it could be more generic is if the corners were rounded."
 creator = "Acamaeda"
 base_size = 1.2

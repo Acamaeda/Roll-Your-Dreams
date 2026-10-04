@@ -70,7 +70,7 @@ link = "https://sketchfab.com/3d-models/candy-34bbb16e80dd4b768089b9b31d291aea"
 base_size = 0.135
 model_scale = 0.0375
 max_dimension = 5.0
-center_height = 0.25
+center_height = 2.5
 
 [node name="Candy Jar" parent="." unique_id=621917313 instance=ExtResource("2_hfa7i")]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)

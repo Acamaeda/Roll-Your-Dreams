@@ -89,14 +89,14 @@ layout_mode = 2
 
 [node name="Rollup_Popup" type="PanelContainer" parent="Main" unique_id=439491682]
 custom_minimum_size = Vector2(340, 120)
-clip_contents = true
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_top = -223.0
-offset_right = 340.0
-offset_bottom = 11.444458
+offset_left = 22.0
+offset_top = -264.556
+offset_right = 362.0
+offset_bottom = 11.44397
 grow_vertical = 0
 scale = Vector2(0.9, 0.9)
 theme = ExtResource("1_4e1th")
@@ -110,7 +110,7 @@ layout_mode = 2
 [node name="SubViewport" type="SubViewport" parent="Main/Rollup_Popup/SubViewportContainer" unique_id=1378892980]
 transparent_bg = true
 handle_input_locally = false
-size = Vector2i(352, 256)
+size = Vector2i(300, 256)
 render_target_update_mode = 4
 
 [node name="Node3D" type="Node3D" parent="Main/Rollup_Popup/SubViewportContainer/SubViewport" unique_id=1551902291]
@@ -123,10 +123,10 @@ layers = 524288
 mesh = SubResource("BoxMesh_2023k")
 
 [node name="Camera3D" type="Camera3D" parent="Main/Rollup_Popup/SubViewportContainer/SubViewport/Node3D" unique_id=1613584195]
-transform = Transform3D(1, 0, 0, 0, 0.8571673, 0.5150381, 0, -0.5150381, 0.8571673, 0, 1.5, 2.2)
+transform = Transform3D(1, 0, 0, 0, 0.90630776, 0.42261827, 0, -0.42261827, 0.90630776, 0, 1.5, 3.5)
 cull_mask = 524288
 environment = SubResource("Environment_2023k")
-fov = 45.0
+fov = 33.0
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Main/Rollup_Popup/SubViewportContainer/SubViewport/Node3D" unique_id=104037153]
 transform = Transform3D(-0.038873576, -0.82391465, -0.5653794, 0.504722, -0.50451475, 0.70051473, -0.86240625, -0.25812787, 0.43546003, 0, 3.6119385, 0)
@@ -136,16 +136,18 @@ shadow_enabled = true
 shadow_caster_mask = 4294967293
 directional_shadow_mode = 1
 
-[node name="b1" type="HBoxContainer" parent="Main/Rollup_Popup" unique_id=984897820]
-layout_mode = 2
-theme_override_constants/separation = 4
-
-[node name="spacer" type="Control" parent="Main/Rollup_Popup/b1" unique_id=1679417635]
-custom_minimum_size = Vector2(10, 0)
+[node name="b1" type="Control" parent="Main/Rollup_Popup" unique_id=1276667014]
 layout_mode = 2
 
 [node name="b2" type="VBoxContainer" parent="Main/Rollup_Popup/b1" unique_id=1951920193]
-layout_mode = 2
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -162.0
+offset_right = 162.0
+offset_bottom = 256.0
+grow_horizontal = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 0
 
@@ -164,9 +166,45 @@ fit_content = true
 scroll_active = false
 horizontal_alignment = 1
 
+[node name="b3" type="VBoxContainer" parent="Main/Rollup_Popup/b1" unique_id=359016320]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -162.0
+offset_top = -50.938293
+offset_right = 162.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+alignment = 2
+
+[node name="text2" type="RichTextLabel" parent="Main/Rollup_Popup/b1/b3" unique_id=839706939]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("1_4e1th")
+theme_type_variation = &"SmallPopupRLabel"
+bbcode_enabled = true
+text = "Text goes here"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="spacer" type="Control" parent="Main/Rollup_Popup/b1/b3/text2" unique_id=555151301]
+custom_minimum_size = Vector2(10, 10)
+anchors_preset = 0
+offset_top = -10.0
+offset_right = 324.0
+
 [node name="spacer2" type="Control" parent="Main/Rollup_Popup/b1" unique_id=1267411301]
 custom_minimum_size = Vector2(10, 0)
-layout_mode = 2
+anchors_preset = 0
+offset_left = 342.0
+offset_right = 352.0
+offset_bottom = 256.0
 
 [node name="Displays" type="VBoxContainer" parent="." unique_id=452148066]
 offset_right = 400.0

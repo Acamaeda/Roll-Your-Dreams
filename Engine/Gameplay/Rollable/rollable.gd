@@ -88,7 +88,7 @@ func set_up_values():
 			if (counter.object_values.has(name_l)):
 				onRollupWithName.connect(counter.add_from_object)
 				var val = counter.object_values.get(name_l)
-				if (Utils.compare_with_weighted_negative(val, my_score)):
+				if (counter.display && Utils.compare_with_weighted_negative(val, my_score)):
 					my_counter = counter
 					my_score = val
 
