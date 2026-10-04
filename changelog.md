@@ -4,7 +4,7 @@
 - Added popup for rolled up items
 - Added EnableObject and MoveObject actions
 - Updated demo level with a SECRET
-- Added a few rollable objects to the library.
+- Added a few rollable objects to the library
 
 ### 0.2.2
 - Added "Growth mult" to RollableProperties.

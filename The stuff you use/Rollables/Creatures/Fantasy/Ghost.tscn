@@ -28,7 +28,6 @@ base_size = 0.75
 model_scale = 0.3
 max_dimension = 3.33
 center_height = 1.665
-size_to_roll_up_visualizer = true
 
 [node name="DetailedCollision" type="Area3D" parent="." unique_id=208660517]
 
