@@ -62,9 +62,13 @@ skeleton = NodePath("../..")
 collision_layer = 16
 collision_mask = 8
 script = ExtResource("2_ok2uk")
+mode = 1
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Collector" unique_id=430733126]
 transform = Transform3D(1.05, 0, 0, 0, 1.05, 0, 0, 0, 1.05, 0, 0, 0)
 shape = SubResource("SphereShape3D_3s7gs")
+
+[node name="Nonscaling" type="Node3D" parent="." unique_id=381266927]
+top_level = true
 
 [connection signal="body_entered" from="Collector" to="Collector" method="_on_body_entered"]

@@ -1,6 +1,8 @@
 extends RigidBody3D
 
 var nonrolling : Node3D
+var nonscaling : Node3D
+
 var collector : Node3D
 var base_mass = 1.5
 var rolling_force = 60.0
@@ -40,6 +42,8 @@ var stopped = false
 
 func _ready() -> void:
 	nonrolling = get_node("Nonrolling")
+	nonscaling = get_node("Nonscaling")
+
 	collector = get_node("Collector")
 
 	nonrolling.top_level = true
@@ -93,6 +97,9 @@ func _integrate_forces(state: PhysicsDirectBodyState3D):
 	nonrolling.rotation.y = camera_angle
 	nonrolling.position = position/collector.control.level_scale*collector.control.map_scale
 	
+	nonscaling.rotation = global_rotation
+	nonscaling.position = position/collector.control.level_scale*collector.control.map_scale
+		
 
 	last_pos = position
 	last_rot = rotation

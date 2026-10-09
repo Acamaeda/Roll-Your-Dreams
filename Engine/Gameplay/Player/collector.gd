@@ -8,6 +8,8 @@ signal rolled_up(object)
 var size: float = 1.0
 var control: LevelControl
 
+@export_enum("Absorb", "Sticky without collision") var mode = 0
+
 @export var rollup_ratio = 2.15
 @export var exponent = 3.0
 @export var growth_mult = 1.0
@@ -56,7 +58,10 @@ func _on_body_entered(other):
 	Utils.delete_node(other)
 
 func absorb(other : Node3D):
-	var absorbed : Node3D = load("res://Engine/Gameplay/Rollable/AbsorbedObject.tscn").instantiate()
+	var absorbed : Node3D
+	match mode:
+		0: absorbed = load("res://Engine/Gameplay/Rollable/AbsorbedObject.tscn").instantiate()
+		1: absorbed = load("res://Engine/Gameplay/Rollable/StickedObject.tscn").instantiate()
 	player_body.get_parent().add_child(absorbed)
 	absorbed.global_transform = other.global_transform
 	absorbed.player = player_body
