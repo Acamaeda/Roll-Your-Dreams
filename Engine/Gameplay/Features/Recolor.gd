@@ -8,6 +8,7 @@ extends Node
 
 var shader : Shader
 var shadermat : ShaderMaterial
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	shader = load("res://Engine/Gameplay/Features/Recolor.gdshader")
@@ -15,7 +16,6 @@ func _ready() -> void:
 	shadermat.shader = shader
 	find_target(get_parent())
 	update_color()
-
 func update_color():
 	if(!shadermat):
 		return

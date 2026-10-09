@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://mmrlw760lewg"]
+
+[ext_resource type="Script" uid="uid://dx6eyklyhmrga" path="res://Engine/Gameplay/Rollable/rollable.gd" id="1_nfan5"]
+[ext_resource type="PackedScene" uid="uid://c42nqdb3cx7vk" path="res://Engine/Gameplay/Rollable/RollupSound.tscn" id="2_ke3ki"]
+[ext_resource type="PackedScene" uid="uid://c0836wwu0u04j" path="res://Assets/3d/leha_pu/Mushrooms/Regular Mushroom.glb" id="3_1bd0j"]
+[ext_resource type="PackedScene" uid="uid://dm12e03d7nkxa" path="res://The stuff you use/Features/Recolor.tscn" id="4_cpqod"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_7cksq"]
+height = 0.23
+radius = 0.026
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_cmjvh"]
+height = 0.075
+radius = 0.08
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_uhb54"]
+height = 0.075
+radius = 0.065
+
+[node name="Huge Mushroom" type="StaticBody3D" unique_id=1036713240]
+collision_layer = 4
+collision_mask = 271
+
+[node name="Stalk" type="CollisionShape3D" parent="." unique_id=1806921856]
+transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, 0, 3.479725, 0)
+shape = SubResource("CylinderShape3D_7cksq")
+
+[node name="Middle" type="CollisionShape3D" parent="." unique_id=1138961150]
+transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, 0, 4.00528, 0)
+shape = SubResource("CylinderShape3D_cmjvh")
+
+[node name="Top" type="CollisionShape3D" parent="." unique_id=1465395808]
+transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, 0, 5.982805, 0)
+shape = SubResource("CylinderShape3D_uhb54")
+
+[node name="Rollable" type="Node" parent="." unique_id=2084382761]
+script = ExtResource("1_nfan5")
+object_name = "Huge Mushroom"
+description = "He may be a fun guy, but he's too big to go to any parties."
+creator = "leha_pu"
+link = "https://sketchfab.com/3d-models/mushrooms-f9dbd4c34a4f4389bf3901527ecc89a0"
+base_size = 1.6
+model_scale = 0.25
+max_dimension = 6.9
+center_height = 3.48
+
+[node name="RollupSound" parent="." unique_id=637469916 instance=ExtResource("2_ke3ki")]
+
+[node name="Regular Mushroom" parent="." unique_id=339133321 instance=ExtResource("3_1bd0j")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, -0.67613155, 0)
+
+[node name="Recolor" parent="." unique_id=1266132782 instance=ExtResource("4_cpqod")]
+shift_amount = 59.0

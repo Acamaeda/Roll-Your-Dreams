@@ -95,6 +95,7 @@ center_height = 0.23
 
 [node name="Recolor" parent="." unique_id=1266132782 instance=ExtResource("2_byv7p")]
 shift_amount = 130.0
+part_of_subscene = true
 
 [node name="Peppermint" parent="." unique_id=2102636189 instance=ExtResource("2_ao0om")]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0.23, 0)

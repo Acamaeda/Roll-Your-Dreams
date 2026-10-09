@@ -4,3 +4,4 @@
 
 [node name="Recolor" type="Node" unique_id=1266132782]
 script = ExtResource("1_gi284")
+part_of_subscene = null
