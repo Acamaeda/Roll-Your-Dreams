@@ -15,6 +15,9 @@ var control: LevelControl
 @export var growth_mult = 1.0
 var volume = 1.0 
 
+var max_volume_taken = 0.8
+var outer_volume = 0.0
+
 var old_size: float = 0.0
 
 func _ready() -> void:
@@ -32,12 +35,16 @@ func _process(_delta: float) -> void:
 	if (size != old_size):
 		size_changed.emit(size, size / rollup_ratio)
 		old_size = size
-		
+	
+# Returns the size reserved for the outer volume so it can be attached to the sticked object	
 func give_size_with_mults(amount, _extra_mult = 1.0):
 	var mults = 1.0
 	mults *= growth_mult * _extra_mult
+	var new_volume = max(mults, 1.0) * max_volume_taken * pow(amount, exponent)
+	outer_volume += new_volume
 	amount *= pow(mults, 1/exponent)
 	add_size(amount)
+	return new_volume
 	
 func add_size(amount): 
 	volume += pow(amount, exponent)
@@ -52,17 +59,21 @@ func _on_body_entered(other):
 	var rollup = other.get_node("Rollable")
 	if (!rollup):
 		return
-	give_size_with_mults(rollup.size, rollup.growth_mult)
+	var reserved_volume = give_size_with_mults(rollup.size, rollup.growth_mult)
 	rollup.rolled_up()
-	absorb(other)	
+	absorb(other, reserved_volume)
 	Utils.delete_node(other)
 
-func absorb(other : Node3D):
+func absorb(other : Node3D, reserved_volume):
 	var absorbed : Node3D
 	match mode:
-		0: absorbed = load("res://Engine/Gameplay/Rollable/AbsorbedObject.tscn").instantiate()
-		1: absorbed = load("res://Engine/Gameplay/Rollable/StickedObject.tscn").instantiate()
-	player_body.get_parent().add_child(absorbed)
+		0: 
+			absorbed = load("res://Engine/Gameplay/Rollable/AbsorbedObject.tscn").instantiate()
+			player_body.get_parent().add_child(absorbed)
+		1: 
+			absorbed = load("res://Engine/Gameplay/Rollable/StickedObject.tscn").instantiate()
+			player_body.get_node("Nonscaling/Sticked").add_child(absorbed)
+			absorbed.reserved_volume = reserved_volume
 	absorbed.global_transform = other.global_transform
 	absorbed.player = player_body
 	absorbed.size = size

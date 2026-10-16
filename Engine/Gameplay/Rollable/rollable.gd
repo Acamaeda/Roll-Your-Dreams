@@ -158,8 +158,8 @@ func _set_solid(val):
 
 func _on_player_size_change(_player_size, rollup_size):
 	if (rollup_size > size) && rollable:
-		body.set_collision_layer_value(3, false)
 		body.set_collision_layer_value(4, true)
+		body.set_collision_layer_value(3, false)
 		body.set_collision_mask_value(2, false)
 		body.set_collision_mask_value(5, true)
 	else:

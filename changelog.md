@@ -1,5 +1,11 @@
 # Changelog
 
+#0.4
+- Added a basic "sticky ball" mode
+- Added some more rollable objects
+- Increased the player's friction.
+- Bugfixes
+
 #0.3
 - Added popup for rolled up items
 - Added EnableObject and MoveObject actions

@@ -147,6 +147,12 @@ func update_size():
 	mass = base_mass * pow(size, collector.exponent)
 	scale = big
 	nonrolling.scale = big/collector.control.level_scale*collector.control.map_scale
+	if (collector.mode != 0):
+		var inner_volume = collector.volume - collector.outer_volume
+		var inner_size = pow(inner_volume, 1/collector.exponent)
+		var size_ratio = inner_size/collector.size
+		var inner_big = Vector3(size_ratio, size_ratio, size_ratio)
+		get_node("Model").scale = inner_big
 
 
 func inputs_advanced():
