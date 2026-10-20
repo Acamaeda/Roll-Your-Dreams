@@ -6,7 +6,6 @@ var size_mult :float  = 1.0
 var scale = 1.0
 var body : PhysicsBody3D
 var player : Node
-var growth_mult = 1.0
 signal onRollup
 signal onRollupWithName(name)
 
@@ -32,6 +31,8 @@ signal onRollupWithName(name)
 		if (visualizer):
 			var vscale = base_size/model_scale*2.15
 			visualizer.scale = Vector3(vscale, vscale, vscale)
+@export var growth_mult = 1.0
+
 @export var max_dimension = 10.0
 @export var center_height = 0.0
 var collision: int
@@ -60,7 +61,7 @@ var include_in_collection: bool = true
 
 var my_score = 0.0
 var my_counter : ScoreCounter
-
+var despawn_ratio = 100
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	player = get_tree().get_first_node_in_group("Player")
@@ -157,6 +158,9 @@ func _set_solid(val):
 		body.set_collision_mask_value(2, solid)		
 
 func _on_player_size_change(_player_size, rollup_size):
+	if (_player_size > size * despawn_ratio):
+		print("Despawn")
+		get_parent().queue_free()
 	if (rollup_size > size) && rollable:
 		body.set_collision_layer_value(4, true)
 		body.set_collision_layer_value(3, false)

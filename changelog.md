@@ -1,10 +1,12 @@
 # Changelog
 
 #0.4
-- Added a basic "sticky ball" mode
-- ChangePlayerSize action has an option to absorb sticked objects (because it looks weird when the player grows a lot)
-- Added some more rollable objects
+- Added a basic "sticky ball" mode.
+- ChangePlayerSize action has an option to absorb sticked objects (because it looks weird when the player grows a lot).
+- Objects now despawn if you are much, much larger than them and other changes to support large-scale levels.
+- Added some more rollable objects.
 - Increased the player's friction.
+- Growth mult is available in base rollable.
 - Bugfixes
 
 #0.3
