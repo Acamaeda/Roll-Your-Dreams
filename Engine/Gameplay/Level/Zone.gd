@@ -1,16 +1,16 @@
 extends Node3D
 
 @export var unlock_with_size : bool = true
-@export var size_required : float  = 0
-@export var lowest_height : float = 0
+@export var size_required : float  = 0.0
+@export var lowest_height : float = 0.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	if (unlock_with_size):
-		var collector = get_tree().get_first_node_in_group("Player").get_node("Collector")
-		collector.size_changed.connect(_check_to_open)
-	if size_required != 0:
+	if size_required != 0.0:
 		get_node("Rollables").set_process(false)
+		if (unlock_with_size):
+			var collector = get_tree().get_first_node_in_group("Player").get_node("Collector")
+			collector.size_changed.connect(_check_to_open)
 	else:
 		open()
 
@@ -25,3 +25,7 @@ func open():
 	var player = get_tree().get_first_node_in_group("Player")
 	player.min_height = lowest_height
 	player.emergency_pos = get_node("Spawnpoint").position
+	if (size_required != 0.0):
+		get_tree().get_first_node_in_group("Level Control").level_scale = size_required
+		var collector = get_tree().get_first_node_in_group("Player").get_node("Collector")
+		collector.size_changed.disconnect(_check_to_open)
