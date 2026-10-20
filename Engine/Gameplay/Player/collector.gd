@@ -18,6 +18,7 @@ var volume = 1.0
 
 var max_volume_taken = 0.8
 var outer_volume = 0.0
+var max_sticked_objects = 200
 
 var old_size: float = 0.0
 
@@ -76,6 +77,10 @@ func absorb(other : Node3D, reserved_volume):
 			absorbed = load("res://Engine/Gameplay/Rollable/StickedObject.tscn").instantiate()
 			sticked.add_child(absorbed)
 			absorbed.reserved_volume = reserved_volume
+			if sticked.get_child_count() > max_sticked_objects:
+				var child = sticked.get_child(0)
+				outer_volume -= child.reserved_volume
+				child.queue_free()
 	absorbed.global_transform = other.global_transform
 	absorbed.player = player_body
 	absorbed.size = size
@@ -108,4 +113,4 @@ func rescue_meshes(other, absorbed, copy):
 func absorb_sticked_objects():
 	outer_volume = 0.0
 	for child in sticked.get_children():
-		sticked.remove_child(child)
+		child.queue_free()
