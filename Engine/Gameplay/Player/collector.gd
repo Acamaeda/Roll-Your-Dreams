@@ -3,6 +3,7 @@
 extends Area3D
 var player_body:PhysicsBody3D
 var nonrolling:Node3D
+var sticked:Node3D
 signal size_changed(size, rollup_size)
 signal rolled_up(object)
 var size: float = 1.0
@@ -22,6 +23,7 @@ var old_size: float = 0.0
 
 func _ready() -> void:
 	player_body = get_parent()
+	sticked= player_body.get_node("Nonscaling/Sticked")
 	control = get_tree().get_first_node_in_group("Level Control")
 	if (!control):
 		return
@@ -72,7 +74,7 @@ func absorb(other : Node3D, reserved_volume):
 			player_body.get_parent().add_child(absorbed)
 		1: 
 			absorbed = load("res://Engine/Gameplay/Rollable/StickedObject.tscn").instantiate()
-			player_body.get_node("Nonscaling/Sticked").add_child(absorbed)
+			sticked.add_child(absorbed)
 			absorbed.reserved_volume = reserved_volume
 	absorbed.global_transform = other.global_transform
 	absorbed.player = player_body
@@ -94,8 +96,6 @@ func absorb(other : Node3D, reserved_volume):
 	control.get_node("Hud/Main/Rollup_Popup").update(other, model2)
 	Utils.delete_node.call_deferred(other)
 
-
-
 func rescue_meshes(other, absorbed, copy):
 	for child in other.get_children():
 		if (child is VisualInstance3D):
@@ -104,3 +104,8 @@ func rescue_meshes(other, absorbed, copy):
 			child.reparent(absorbed, true)
 		else:
 			rescue_meshes(child, absorbed, copy)
+
+func absorb_sticked_objects():
+	outer_volume = 0.0
+	for child in sticked.get_children():
+		sticked.remove_child(child)

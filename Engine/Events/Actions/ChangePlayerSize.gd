@@ -1,9 +1,13 @@
 extends "res://Engine/Events/Actions/ChangeValue.gd"
 
+@export var absorb_sticked_objects = false
+
 func get_current_value():
 	var collector = get_tree().get_first_node_in_group("Player").get_node("Collector")
 	return collector.size
 
 func apply_change(val):
 	var collector = get_tree().get_first_node_in_group("Player").get_node("Collector")
+	if (absorb_sticked_objects):
+		collector.absorb_sticked_objects()
 	collector.set_size(val)
