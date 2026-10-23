@@ -75,8 +75,12 @@ func _ready() -> void:
 	var collector = player.get_node("Collector")
 	collector.size_changed.connect(_on_player_size_change)
 	body.set_collision_mask_value(1, solid)
-	body.set_collision_mask_value(3, solid)
-	body.set_collision_mask_value(4, solid)
+	body.set_collision_mask_value(2, solid)
+	body.set_collision_mask_value(10, solid)
+	body.set_collision_layer_value(10, solid)
+	body.set_collision_mask_value(3, false)
+	body.set_collision_mask_value(4, false)
+
 	_on_player_size_change(collector.size, collector.size * collector.rollup_ratio)
 	
 	choose_collision.call_deferred()
@@ -150,8 +154,8 @@ func _set_solid(val):
 		return
 	solid = val
 	body.set_collision_mask_value(1, solid)
-	body.set_collision_mask_value(3, solid)
-	body.set_collision_mask_value(4, solid)
+	body.set_collision_mask_value(10, solid)
+	body.set_collision_layer_value(10, solid)
 
 	if !body.get_collision_layer_value(4):
 		body.set_collision_layer_value(3, solid)
@@ -162,10 +166,11 @@ func _on_player_size_change(_player_size, rollup_size):
 		print("Despawn")
 		get_parent().queue_free()
 	if (rollup_size > size) && rollable:
-		body.set_collision_layer_value(4, true)
-		body.set_collision_layer_value(3, false)
-		body.set_collision_mask_value(2, false)
-		body.set_collision_mask_value(5, true)
+		if(!body.get_collision_layer_value(4)):
+			body.set_collision_layer_value(4, true)
+			body.set_collision_layer_value(3, false)
+			body.set_collision_mask_value(2, false)
+			body.set_collision_mask_value(5, true)
 	else:
 		body.set_collision_layer_value(3, solid)
 		body.set_collision_layer_value(4, false)
