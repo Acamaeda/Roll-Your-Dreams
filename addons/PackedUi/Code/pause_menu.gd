@@ -72,6 +72,8 @@ func _restart_btn_pressed():
 func _main_menu_btn_pressed() -> void:
 	UI.ReturnToMainMenu.emit()
 	UI.ToggleUi.emit("main_menu", true, id)
+	#UI.get_node("Popups").close_popups
+	UI.get_node("Popups").visible = false
 	get_tree().change_scene_to_file("res://Engine/UI/Main Menu.tscn")
 
 	

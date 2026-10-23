@@ -179,6 +179,11 @@ func _end_large_popup_timed() -> void:
 	UI.PopupResult.emit(large_popup_id, false)
 	_close_large_popup()
 
+func close_popups():
+	large_popup.hide()
+	small_popup.hide()
+	small_displayed = false
+	hide()
 
 func _close_large_popup() -> void:
 	if large_popup_fade_time > 0.0:
