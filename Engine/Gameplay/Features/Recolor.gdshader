@@ -1,5 +1,5 @@
 shader_type spatial;
-uniform float shift_amount: hint_range(-180., 180., 1.) = 0.;
+instance uniform float shift_amount: hint_range(-180., 180., 1.) = 0.;
 
 uniform sampler2D screen_texture : hint_screen_texture, repeat_disable, filter_nearest;
 // Convert RGB color to HSV color space
