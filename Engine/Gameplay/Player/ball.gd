@@ -27,6 +27,9 @@ var last_vel = Vector3.ZERO
 @onready var last_rot = rotation
 var stored_delta = 0.0167
 var camera_angle = 0.0
+var nonrolling_size = 0.0
+var nonrolling_change_limit = 4.0
+
 var grounded = false
 var turn_vel = 0.0
 
@@ -146,7 +149,19 @@ func update_size():
 	gravity_scale = size
 	mass = base_mass * pow(size, collector.exponent)
 	scale = big
-	nonrolling.scale = big/collector.control.level_scale*collector.control.map_scale
+	
+	
+	if (nonrolling_size == 0):
+		nonrolling_size = size
+	else:
+		var max_change = nonrolling_size * (pow(nonrolling_change_limit, stored_delta) - 1)
+		if (nonrolling_size < size):
+			nonrolling_size = min(size, nonrolling_size + max_change)
+		else:
+			nonrolling_size = max(size, nonrolling_size - max_change)
+	var nrb = Vector3(nonrolling_size, nonrolling_size, nonrolling_size)
+	nonrolling.scale = nrb/collector.control.level_scale*collector.control.map_scale	
+	
 	if (collector.mode != 0):
 		var inner_volume = collector.volume - collector.outer_volume
 		var inner_size = pow(inner_volume, 1/collector.exponent)

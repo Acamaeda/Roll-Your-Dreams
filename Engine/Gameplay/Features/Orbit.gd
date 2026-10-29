@@ -49,6 +49,7 @@ func _process(delta: float) -> void:
 	if !Engine.is_editor_hint():
 		for child in get_children():
 			if (child is Node3D):
+
 				child.position=child.position.rotated(Vector3.UP, 2*PI*delta*speed)
 				update_rotation(child)
 			

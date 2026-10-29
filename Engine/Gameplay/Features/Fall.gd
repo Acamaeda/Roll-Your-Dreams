@@ -13,8 +13,10 @@ func _ready() -> void:
 	
 func ready2():
 	var parent :CharacterBody3D = get_parent()
-	parent.wall_min_slide_angle = 0
+	parent.wall_min_slide_angle = 0.0
 	parent.platform_floor_layers=parent.collision_mask
+	parent.floor_snap_length = 0.0
+	parent.platform_on_leave = parent.PLATFORM_ON_LEAVE_DO_NOTHING
 	#if (parent.get_collision_mask_value(2)):
 	#	parent.platform_floor_layers -= 2
 	
@@ -25,3 +27,5 @@ func _process(delta):
 	if (!parent.is_on_floor()):
 		parent.velocity+= change
 		parent.velocity = parent.velocity.project(change)
+	else:
+		parent.velocity=Vector3.ZERO

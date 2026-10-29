@@ -67,7 +67,7 @@ func _on_body_entered(other):
 	absorb(other, reserved_volume)
 	Utils.delete_node(other)
 
-func absorb(other : Node3D, reserved_volume):
+func absorb(other : PhysicsBody3D, reserved_volume):
 	var absorbed : Node3D
 	match mode:
 		0: 
@@ -93,6 +93,7 @@ func absorb(other : Node3D, reserved_volume):
 	absorbed.add_child(model)	
 	rescue_meshes(other, model, true)
 	
+	other.collision_layer=0
 	other.global_position = Vector3(0, 0, 0)
 	other.global_rotation = Vector3.ZERO
 	other.global_transform.basis = other.global_transform.basis.orthonormalized()

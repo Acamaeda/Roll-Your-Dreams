@@ -1,5 +1,9 @@
 # Changelog
 
+##0.4.1
+- Fixed bug with mysterious moving objects.
+- Smoother camera zooming.
+
 #0.4
 - Added a basic "sticky ball" mode.
 - Added a proper loading screen.
