@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://dtbnbdf5i7tm8"]
+
+[ext_resource type="Texture2D" uid="uid://cw7ked4trx106" path="res://Assets/2d/Kenney/Skyboxes/skybox-night.png" id="1_rtygh"]
+[ext_resource type="PackedScene" uid="uid://8qtwqcg30ut6" path="res://Engine/Gameplay/Level/LevelControl.tscn" id="2_0gpny"]
+[ext_resource type="PackedScene" uid="uid://d37a1hkqxg1aw" path="res://Engine/Gameplay/Player/PlayerBall.tscn" id="3_mu3rc"]
+[ext_resource type="PackedScene" uid="uid://ctcv6q11r7du3" path="res://Engine/Gameplay/Level/Zone.tscn" id="4_yycrg"]
+[ext_resource type="PackedScene" uid="uid://b4av1chmw2uy" path="res://The stuff you use/Rollables/Room Parts/Wood Floor.tscn" id="5_l1qu4"]
+[ext_resource type="PackedScene" uid="uid://1je5mqmbk2wt" path="res://The stuff you use/Rollables/Creatures/Fantasy/Fancy Ghost.tscn" id="5_rtygh"]
+[ext_resource type="PackedScene" uid="uid://dntce6s4kl3vn" path="res://The stuff you use/Features/Resize.tscn" id="6_qvhml"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_2p604"]
+panorama = ExtResource("1_rtygh")
+
+[sub_resource type="Sky" id="Sky_4gmba"]
+sky_material = SubResource("PanoramaSkyMaterial_2p604")
+
+[sub_resource type="Environment" id="Environment_02h4r"]
+background_mode = 2
+sky = SubResource("Sky_4gmba")
+ambient_light_source = 3
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_sky_contribution = 0.33
+ambient_light_energy = 0.11
+
+[node name="Level" type="Node3D" unique_id=1992448230]
+transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 0, 0, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=365538902]
+environment = SubResource("Environment_02h4r")
+
+[node name="Level Control" parent="." unique_id=574180729 instance=ExtResource("2_0gpny")]
+level_scale = 0.02
+map_scale = 0.02
+
+[node name="Objects" parent="Level Control/Counters" parent_id_path=PackedInt32Array(574180729, 398504699) index="2" unique_id=1899904356]
+countdown = false
+object_values = Dictionary[String, float]({})
+
+[node name="AudioStreamPlayer" parent="Level Control/Music" parent_id_path=PackedInt32Array(574180729, 2076520794) index="0" unique_id=203116786]
+bus = &"Music"
+
+[node name="ShowDialogue" parent="Level Control/Ending" parent_id_path=PackedInt32Array(574180729, 1530570587) index="0" unique_id=1622087298]
+dialogue = Array[String](["You did it! And in %time too!", "Join the Discord to learn how to make your own levels!", "There's no proper ending screen yet, so let's go back to the main menu."])
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1231630966]
+transform = Transform3D(0.99997354, 0, -0.0072779586, 0.0060000415, -0.5659891, 0.8243909, -0.004119245, -0.8244127, -0.5659741, -12.963337, 14.23407, 3.0084782)
+shadow_enabled = true
+
+[node name="Player" parent="." unique_id=1155221902 instance=ExtResource("3_mu3rc")]
+transform = Transform3D(-1, 0, 1.509958e-07, 0, 1, 0, -1.509958e-07, 0, -1, 0, 75.7765, 0)
+
+[node name="Collector" parent="Player" index="4" unique_id=1608999626]
+growth_mult = 2.0
+
+[node name="Zone" parent="." unique_id=1418971655 instance=ExtResource("4_yycrg")]
+
+[node name="Fancy Ghost" parent="Zone/Rollables" parent_id_path=PackedInt32Array(1418971655, 1164383247) index="0" unique_id=1036713240 instance=ExtResource("5_rtygh")]
+transform = Transform3D(22.5, 0, 0, 0, 22.5, 0, 0, 0, 22.5, 0, 0, 0)
+
+[node name="Resize" parent="Zone/Rollables/Fancy Ghost" unique_id=1411144577 instance=ExtResource("6_qvhml")]
+scale = 1.5
+
+[node name="Wood Floor" parent="Zone/Rollables" parent_id_path=PackedInt32Array(1418971655, 1164383247) index="1" unique_id=1766288129 instance=ExtResource("5_l1qu4")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+
+[node name="Spawnpoint" parent="Zone" index="2" unique_id=430355448]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.814, 0.5, 19.406)
+
+[editable path="Level Control"]
+[editable path="Player"]
+[editable path="Zone"]
