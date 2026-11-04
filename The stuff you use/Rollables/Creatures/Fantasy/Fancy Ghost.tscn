@@ -4,19 +4,33 @@
 [ext_resource type="PackedScene" uid="uid://c42nqdb3cx7vk" path="res://Engine/Gameplay/Rollable/RollupSound.tscn" id="2_bbga6"]
 [ext_resource type="PackedScene" uid="uid://yeue14pm5275" path="res://Assets/3d/Noby Grand/Fancy Ghost/Fancy Ghost.glb" id="3_2ml31"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_7og04"]
-
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_ry0v8"]
-height = 3.33
-radius = 1.0
+height = 2.014629
+radius = 0.9614258
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_d0a3f"]
+height = 1.2776746
+radius = 0.80908203
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_2ml31"]
+height = 0.09311523
+radius = 1.2016602
 
 [node name="Fancy Ghost" type="StaticBody3D" unique_id=1036713240]
 collision_layer = 4
 collision_mask = 15
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=871267849]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
-shape = SubResource("BoxShape3D_7og04")
+[node name="Body" type="CollisionShape3D" parent="." unique_id=795398365]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0073144, 0)
+shape = SubResource("CylinderShape3D_ry0v8")
+
+[node name="Hat" type="CollisionShape3D" parent="." unique_id=1914578741]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.6677485, 0)
+shape = SubResource("CylinderShape3D_d0a3f")
+
+[node name="Brim" type="CollisionShape3D" parent="." unique_id=2126962271]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.038999, 0)
+shape = SubResource("CylinderShape3D_2ml31")
 
 [node name="Rollable" type="Node" parent="." unique_id=2084382761]
 script = ExtResource("1_t41td")
@@ -32,10 +46,6 @@ center_height = 1.665
 [node name="DetailedCollision" type="Area3D" parent="." unique_id=208660517]
 
 [node name="SimpleCollision" type="Area3D" parent="." unique_id=1923271128]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="SimpleCollision" unique_id=874211516]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.665, 0)
-shape = SubResource("CylinderShape3D_ry0v8")
 
 [node name="RollupSound" parent="." unique_id=637469916 instance=ExtResource("2_bbga6")]
 

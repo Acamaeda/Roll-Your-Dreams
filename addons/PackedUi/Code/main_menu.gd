@@ -90,6 +90,6 @@ func _toggle_control(_id:String, _value:bool, _previous:String = "") -> void:
 func button_pressed(_id:String) -> void:
 	if (_id == "Play"):
 		visible = false
-		GameControl.level_path = "res://Levels/Test Campaign/Demo level/DemoLevel.tscn"
+		GameControl.level_path = "res://Levels/Test Campaign/Sweet Dreams/DemoLevel.tscn"
 		UI.get_node("Loading").start_load()
 	UI.ButtonPressed.emit(_id.to_lower(), id)

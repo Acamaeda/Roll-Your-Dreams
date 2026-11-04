@@ -98,10 +98,10 @@ func _integrate_forces(state: PhysicsDirectBodyState3D):
 	check_stuck(state, inputs)
 	
 	nonrolling.rotation.y = camera_angle
-	nonrolling.position = position/collector.control.level_scale*collector.control.map_scale
+	nonrolling.global_position = global_position
 	
 	nonscaling.rotation = global_rotation
-	nonscaling.position = position/collector.control.level_scale*collector.control.map_scale
+	nonscaling.position = global_position
 		
 
 	last_pos = position
@@ -159,8 +159,7 @@ func update_size():
 			nonrolling_size = min(size, nonrolling_size + max_change)
 		else:
 			nonrolling_size = max(size, nonrolling_size - max_change)
-	var nrb = Vector3(nonrolling_size, nonrolling_size, nonrolling_size)
-	nonrolling.scale = nrb/collector.control.level_scale*collector.control.map_scale	
+	nonrolling.scale = global_basis.get_scale() * nonrolling_size/size
 	
 	if (collector.mode != 0):
 		var inner_volume = collector.volume - collector.outer_volume

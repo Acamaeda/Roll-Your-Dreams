@@ -1,5 +1,8 @@
 # Changelog
 
+#0.5
+- Fixed a bug with the camera scaling wrong.
+
 ##0.4.1
 - Fixed bug with mysterious moving objects.
 - Smoother camera zooming.
