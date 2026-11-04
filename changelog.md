@@ -1,6 +1,8 @@
 # Changelog
 
 #0.5
+- Restructured the player object so custom players will work better. 
+- Prevented accidentally selecting and moving around things insise of the player object.
 - Fixed a bug with the camera scaling wrong.
 
 ##0.4.1

@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://qkbbtslws4fo"]
+
+[ext_resource type="PackedScene" uid="uid://d37a1hkqxg1aw" path="res://Engine/Gameplay/Player/PlayerBall.tscn" id="1_hn5dm"]
+
+[sub_resource type="Curve" id="Curve_wonpf"]
+_data = [Vector2(0.09215017, 0.53153145), 0.0, 0.0, 0, 0, Vector2(0.4300341, 0.36936933), 0.0, 0.0, 0, 0, Vector2(0.9761092, 0.58558553), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_ur2u5"]
+_data = [Vector2(0.010238908, 0.09009004), 0.0, 0.0, 0, 0, Vector2(0.8771331, 0.9909909), 0.0, 0.0, 0, 0, Vector2(1, 0.08108103), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_ofpx2"]
+_data = [Vector2(0.114864886, 0.056179762), 0.0, 0.0, 0, 0, Vector2(0.47440273, 0.96396387), 0.0, 0.0, 0, 0, Vector2(0.81081086, 0.3595506), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_4s7gy"]
+curve_x = SubResource("Curve_wonpf")
+curve_y = SubResource("Curve_ur2u5")
+curve_z = SubResource("Curve_ofpx2")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0jfm5"]
+albedo_color = Color(1, 0.21568628, 1, 1)
+albedo_texture = SubResource("CurveXYZTexture_4s7gy")
+
+[sub_resource type="SphereMesh" id="SphereMesh_1rerk"]
+material = SubResource("StandardMaterial3D_0jfm5")
+
+[node name="DemoPlayer" type="Node3D" unique_id=207618139]
+metadata/_edit_group_ = true
+
+[node name="Player" parent="." unique_id=1155221902 instance=ExtResource("1_hn5dm")]
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Player/Model" parent_id_path=PackedInt32Array(1155221902, 1172275503) index="0" unique_id=1298014381]
+mesh = SubResource("SphereMesh_1rerk")
+skeleton = NodePath("../../../..")
+
+[editable path="Player"]
