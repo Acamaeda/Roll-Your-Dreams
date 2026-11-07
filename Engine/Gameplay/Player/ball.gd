@@ -59,15 +59,14 @@ func _process(delta: float) -> void:
 	stored_delta = delta
 
 func _integrate_forces(state: PhysicsDirectBodyState3D):
-	if (stopped):
-		linear_velocity = Vector3.ZERO
-		angular_velocity = Vector3.ZERO
-		return
 	set_collision_mask_value(6, false)
 	update_size();
 	check_collisions(state)
-	
-	inputs_advanced();
+	if (stopped):
+		vertical = 0.0
+		horizontal = 0.0
+	else:
+		inputs_advanced();
 	var inputs = Vector2(vertical, horizontal * horizontal_mult)
 	if vertical > 0:
 		inputs.x = inputs.x * back_mult
