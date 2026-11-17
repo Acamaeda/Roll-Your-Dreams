@@ -1,17 +1,14 @@
 [gd_scene format=3 uid="uid://d37a1hkqxg1aw"]
 
 [ext_resource type="Script" uid="uid://drq8xkxw2ds7h" path="res://Engine/Gameplay/Player/ball.gd" id="1_gvvae"]
-[ext_resource type="PackedScene" uid="uid://q4mwe7vgl26o" path="res://Engine/Gameplay/Player/misc.tscn" id="2_3s7gs"]
-[ext_resource type="Script" uid="uid://bt6nakmxinsvh" path="res://Engine/Gameplay/Player/collector.gd" id="2_ok2uk"]
-[ext_resource type="PackedScene" uid="uid://osvfcx2hol0p" path="res://Engine/Gameplay/Player/nonrolling.tscn" id="3_r1faj"]
+[ext_resource type="PackedScene" uid="uid://7uga6n2xp1nf" path="res://Engine/Gameplay/Player/collector.tscn" id="2_3s7gs"]
+[ext_resource type="PackedScene" uid="uid://c10dnnxghovo" path="res://Engine/Gameplay/Player/BallInnerWorkings.tscn" id="3_r1faj"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ok2uk"]
 friction = 3.0
 rough = true
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_0jfm5"]
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_3s7gs"]
 
 [node name="Ball" type="RigidBody3D" unique_id=1155221902 groups=["Player"]]
 collision_layer = 2
@@ -23,28 +20,12 @@ script = ExtResource("1_gvvae")
 
 [node name="Model" type="Node3D" parent="." unique_id=1172275503]
 
+[node name="Collector" parent="." unique_id=745562551 instance=ExtResource("2_3s7gs")]
+
+[node name="Pusher Character" type="Node3D" parent="." unique_id=1945638078]
+
+[node name="Inner Workings" parent="." unique_id=2070467693 instance=ExtResource("3_r1faj")]
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1740465458]
 shape = SubResource("SphereShape3D_0jfm5")
 debug_color = Color(3.946722e-06, 0.58577627, 0.7770228, 0.41960785)
-
-[node name="Misc" parent="." unique_id=410399177 instance=ExtResource("2_3s7gs")]
-transform = Transform3D(1, 0, 0, 0, 0.8660254, 0.5, 0, -0.5, 0.8660254, 0, 1.8, 2)
-
-[node name="Nonrolling" parent="." unique_id=127205707 instance=ExtResource("3_r1faj")]
-
-[node name="Collector" type="Area3D" parent="." unique_id=1608999626]
-collision_layer = 16
-collision_mask = 8
-script = ExtResource("2_ok2uk")
-mode = 1
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Collector" unique_id=430733126]
-transform = Transform3D(1.02, 0, 0, 0, 1.02, 0, 0, 0, 1.02, 0, 0, 0)
-shape = SubResource("SphereShape3D_3s7gs")
-
-[node name="Nonscaling" type="Node3D" parent="." unique_id=381266927]
-top_level = true
-
-[node name="Sticked" type="Node3D" parent="Nonscaling" unique_id=414319465]
-
-[connection signal="body_entered" from="Collector" to="Collector" method="_on_body_entered"]

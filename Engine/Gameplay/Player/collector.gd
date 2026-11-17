@@ -24,7 +24,7 @@ var old_size: float = 0.0
 
 func _ready() -> void:
 	player_body = get_parent()
-	sticked= player_body.get_node("Nonscaling/Sticked")
+	sticked= player_body.get_node("Inner Workings/Nonscaling/Sticked")
 	control = get_tree().get_first_node_in_group("Level Control")
 	if (!control):
 		return

@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://7uga6n2xp1nf"]
+
+[ext_resource type="Script" uid="uid://bt6nakmxinsvh" path="res://Engine/Gameplay/Player/collector.gd" id="1_tkhge"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_3s7gs"]
+
+[node name="Collector" type="Area3D" unique_id=745562551]
+collision_layer = 16
+collision_mask = 8
+script = ExtResource("1_tkhge")
+mode = 1
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2128660800]
+transform = Transform3D(1.02, 0, 0, 0, 1.02, 0, 0, 0, 1.02, 0, 0, 0)
+shape = SubResource("SphereShape3D_3s7gs")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

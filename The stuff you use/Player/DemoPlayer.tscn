@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://qkbbtslws4fo"]
 
 [ext_resource type="PackedScene" uid="uid://d37a1hkqxg1aw" path="res://Engine/Gameplay/Player/PlayerBall.tscn" id="1_hn5dm"]
+[ext_resource type="PackedScene" uid="uid://kq8myxtp20lu" path="res://Engine/Gameplay/Player/PusherRobot.tscn" id="2_1jx4n"]
 
 [sub_resource type="Curve" id="Curve_wonpf"]
 _data = [Vector2(0.09215017, 0.53153145), 0.0, 0.0, 0, 0, Vector2(0.4300341, 0.36936933), 0.0, 0.0, 0, 0, Vector2(0.9761092, 0.58558553), 0.0, 0.0, 0, 0]
@@ -35,5 +36,8 @@ metadata/_edit_group_ = true
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Player/Model" parent_id_path=PackedInt32Array(1155221902, 1172275503) index="0" unique_id=1298014381]
 mesh = SubResource("SphereMesh_1rerk")
 skeleton = NodePath("../../../..")
+
+[node name="PusherRobot" parent="Player/Nonrolling" parent_id_path=PackedInt32Array(1155221902, 127205707) index="1" unique_id=490422130 instance=ExtResource("2_1jx4n")]
+transform = Transform3D(-0.4, 0, -6.039832e-08, 0, 0.4, 0, 6.039832e-08, 0, -0.4, 0, -0.49464262, 0.86909235)
 
 [editable path="Player"]

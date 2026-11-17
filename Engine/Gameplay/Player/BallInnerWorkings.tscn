@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://c10dnnxghovo"]
+
+[ext_resource type="PackedScene" uid="uid://osvfcx2hol0p" path="res://Engine/Gameplay/Player/nonrolling.tscn" id="1_ag4of"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_731mw"]
+size = Vector3(1, 0.02, 1)
+
+[node name="Inner Workings" type="Node3D" unique_id=2070467693]
+
+[node name="Nonrolling" parent="." unique_id=127205707 instance=ExtResource("1_ag4of")]
+
+[node name="Nonscaling" type="Node3D" parent="." unique_id=507778798]
+top_level = true
+
+[node name="Sticked" type="Node3D" parent="Nonscaling" unique_id=1350427598]
+
+[node name="Ghost floor" type="StaticBody3D" parent="." unique_id=768919480]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.51, 0)
+collision_layer = 32
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ghost floor" unique_id=377622741]
+shape = SubResource("BoxShape3D_731mw")

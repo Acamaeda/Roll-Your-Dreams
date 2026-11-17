@@ -44,8 +44,8 @@ var emergency_pos
 var stopped = false
 
 func _ready() -> void:
-	nonrolling = get_node("Nonrolling")
-	nonscaling = get_node("Nonscaling")
+	nonrolling = get_node("Inner Workings/Nonrolling")
+	nonscaling = get_node("Inner Workings/Nonscaling")
 
 	collector = get_node("Collector")
 
