@@ -24,3 +24,6 @@ margin = 0.03
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0002592802, 2.3095508)
 current = true
 script = ExtResource("1_fytlw")
+
+[node name="Pusher" type="Node3D" parent="." unique_id=2094427151]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)

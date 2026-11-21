@@ -305,7 +305,7 @@ node_connections = [&"output", 0, &"BlendSpace2D"]
 script = ExtResource("1_86bwb")
 
 [node name="Model" type="Node3D" parent="." unique_id=556842479]
-transform = Transform3D(-0.3, 0, -2.6226834e-08, 0, 0.3, 0, 2.6226834e-08, 0, -0.3, 0, 0, 0)
+transform = Transform3D(-0.25, 0, -2.1855694e-08, 0, 0.25, 0, 2.1855694e-08, 0, -0.25, 0, 0, 0)
 
 [node name="Tilt" type="Node3D" parent="Model" unique_id=1350069963]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.856747, 0)

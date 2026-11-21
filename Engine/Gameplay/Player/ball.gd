@@ -27,8 +27,8 @@ var last_vel = Vector3.ZERO
 @onready var last_rot = rotation
 var stored_delta = 0.0167
 var camera_angle = 0.0
-var nonrolling_size = 0.0
-var nonrolling_change_limit = 4.0
+var camera_scale = 0.0
+var camera_change_limit = 4.0
 
 var grounded = false
 var turn_vel = 0.0
@@ -39,7 +39,7 @@ var stuck_timer2 = 0.0
 var stuck_limit = 0.75
 var initial_stuck_direction = null
 var min_height = 0.0
-var emergency_pos
+var spawnpoint : Node3D
 
 var stopped = false
 
@@ -50,9 +50,11 @@ func _ready() -> void:
 	collector = get_node("Collector")
 
 	nonrolling.top_level = true
-	if !emergency_pos:
-		emergency_pos = position
-	
+	if !spawnpoint:
+		spawnpoint = load("res://Engine/Gameplay/Player/SpawnPoint.tscn").instantiate()
+		get_parent().add_child.call_deferred(spawnpoint)
+		spawnpoint.position = position
+		
 	var pusher = nonrolling.get_node("Pusher")
 	for child in get_node("Pusher Character").get_children():
 		child.reparent(pusher, false)
@@ -76,15 +78,20 @@ func _integrate_forces(state: PhysicsDirectBodyState3D):
 		inputs.x = inputs.x * back_mult
 	inputs = inputs.rotated(-1 * nonrolling.rotation.y)
 	
+	var animation = Vector2(0, 0)
+	
 	if (quickturn_left > 0):
 		var turn_amount = min(quickturn_left, stored_delta/quickturn_speed*PI)
 		quickturn_left -= turn_amount
 		camera_angle += turn_amount
 		angular_velocity = Vector3.ZERO
+		animation = Vector2(1, 0)
 	elif (Input.is_action_just_pressed("QuickTurn") && angular_velocity.length() < too_slow*1.5):
 		quickturn_left = PI
 		turn_vel = 0.0
 		angular_velocity = Vector3.ZERO
+		animation = Vector2(1, 0)
+
 	else:
 		var total_force = rolling_force*speed_mult
 		#Speed up if player is just starting to move
@@ -97,7 +104,8 @@ func _integrate_forces(state: PhysicsDirectBodyState3D):
 		
 		camera_angle += turn_vel*stored_delta;
 		slow_down(stored_delta, state, change, inputs)
-
+		animation = calc_animation()
+		
 	check_stuck(state, inputs)
 	
 	nonrolling.rotation.y = camera_angle
@@ -105,10 +113,20 @@ func _integrate_forces(state: PhysicsDirectBodyState3D):
 	
 	nonscaling.rotation = global_rotation
 	nonscaling.position = global_position
-		
+	for child in nonrolling.get_node("Pusher").get_children():
+		child.animation = animation
 
 	last_pos = position
 	last_rot = rotation
+
+func calc_animation():
+	var adjusted_velocity = linear_velocity.rotated(Vector3.UP, camera_angle*-1)
+	var y = adjusted_velocity.z *-1
+	if (abs(y)) < 0.001: y = 0.0
+	var x = adjusted_velocity.x + turn_vel
+	if (abs(x)) < 0.001: x = 0.0
+
+	return Vector2(x, y)
 
 func check_collisions(state : PhysicsDirectBodyState3D):
 	grounded=false
@@ -152,17 +170,17 @@ func update_size():
 	gravity_scale = size
 	mass = base_mass * pow(size, collector.exponent)
 	scale = big
+	nonrolling.scale = global_basis.get_scale()
 	
-	
-	if (nonrolling_size == 0):
-		nonrolling_size = size
+	if (camera_scale == 0):
+		camera_scale = size
 	else:
-		var max_change = nonrolling_size * (pow(nonrolling_change_limit, stored_delta) - 1)
-		if (nonrolling_size < size):
-			nonrolling_size = min(size, nonrolling_size + max_change)
+		var max_change = camera_scale * (pow(camera_change_limit, stored_delta) - 1)
+		if (camera_scale < size):
+			camera_scale = min(size, camera_scale + max_change)
 		else:
-			nonrolling_size = max(size, nonrolling_size - max_change)
-	nonrolling.scale = global_basis.get_scale() * nonrolling_size/size
+			camera_scale = max(size, camera_scale - max_change)
+	nonrolling.get_node("CameraBase").scale = Vector3.ONE * camera_scale/size
 	
 	if (collector.mode != 0):
 		var inner_volume = collector.volume - collector.outer_volume
@@ -195,7 +213,7 @@ func inputs_advanced():
 	vertical = (leftSide.y + rightSide.y)/2;
 	
 func emergency_warp(state: PhysicsDirectBodyState3D):
-	position = emergency_pos
+	global_position = spawnpoint.global_position
 	position.y+=scale.y
 	state.linear_velocity = Vector3.ZERO
 	state.angular_velocity = Vector3.ZERO

@@ -15,6 +15,7 @@ func _ready() -> void:
 		open()
 
 
+
 func _check_to_open(size, _blah):
 	if (size >= size_required):
 		open()
@@ -24,7 +25,7 @@ func open():
 	get_node("Barrier").set_process(false)
 	var player = get_tree().get_first_node_in_group("Player")
 	player.min_height = lowest_height
-	player.emergency_pos = get_node("Spawnpoint").position
+	player.spawnpoint = get_node("Spawnpoint")
 	if (size_required != 0.0):
 		get_tree().get_first_node_in_group("Level Control").level_scale = size_required
 		var collector = get_tree().get_first_node_in_group("Player").get_node("Collector")
