@@ -30,6 +30,8 @@ The character pushing the ball, running inside of/on top of it. If you want to u
 just add it as a child of "Pusher Character". You can find some in "The stuff you use/Players/Pushers"
 
 To make a new pusher character, duplicate an existing one. Then replace the model with your model.
+Then, adjust the scale and position so it's where you want it to be.
+
 If your model doesn't already have animations, if you rename the model to the same as the old model, it might work or might look bad.
 If it does have animations, make sure they're named "Idle", "Forwards", "Backwards", "Left", and "Right".
 
