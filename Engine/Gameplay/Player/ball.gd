@@ -52,6 +52,10 @@ func _ready() -> void:
 	nonrolling.top_level = true
 	if !emergency_pos:
 		emergency_pos = position
+	
+	var pusher = nonrolling.get_node("Pusher")
+	for child in get_node("Pusher Character").get_children():
+		child.reparent(pusher, false)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -9,6 +9,9 @@ size = Vector3(1, 0.02, 1)
 
 [node name="Nonrolling" parent="." unique_id=127205707 instance=ExtResource("1_ag4of")]
 
+[node name="Pusher" type="Node3D" parent="Nonrolling" unique_id=286608816]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+
 [node name="Nonscaling" type="Node3D" parent="." unique_id=507778798]
 top_level = true
 

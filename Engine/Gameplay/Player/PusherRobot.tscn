@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://kq8myxtp20lu"]
 
+[ext_resource type="Script" uid="uid://dslccfygwlrb6" path="res://Engine/Gameplay/Player/Pusher.gd" id="1_86bwb"]
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_533e6"]
 albedo_color = Color(0.57, 0.57, 0.57, 1)
 
@@ -80,142 +82,338 @@ albedo_color = Color(0.41, 0.41, 0.41, 1)
 material = SubResource("StandardMaterial3D_66bd2")
 size = Vector3(0.09, 0.034, 0.09382519)
 
+[sub_resource type="Animation" id="Animation_va2kb"]
+resource_name = "Backwards"
+loop_mode = 1
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath("Model")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, -0.1, 0, 0.5, 1, 0, -0.1, 0, 1.5, 1, 0, 0.1, 0, 2, 1, 0, 0.1, 0)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Model/Tilt/Arm2")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0.173648, 0, 0, 0.984808, 0.5, 1, -0.173648, 0, 0, 0.984808, 1, 1, 0.173648, 0, 0, 0.984808)
+tracks/2/type = "rotation_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Model/Tilt/Arm")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, -0.173648, 0, 0, 0.984808, 0.5, 1, 0.173648, 0, 0, 0.984808, 1, 1, -0.173648, 0, 0, 0.984808)
+
+[sub_resource type="Animation" id="Animation_66bd2"]
+resource_name = "Forwards"
+loop_mode = 1
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath("Model")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, -0.1, 0, 0.5, 1, 0, -0.1, 0, 1.5, 1, 0, 0.1, 0, 2, 1, 0, 0.1, 0)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Model/Tilt/Arm2")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0.173648, 0, 0, 0.984808, 0.5, 1, -0.173648, 0, 0, 0.984808, 1, 1, 0.173648, 0, 0, 0.984808)
+tracks/2/type = "rotation_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Model/Tilt/Arm")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, -0.173648, 0, 0, 0.984808, 0.5, 1, 0.173648, 0, 0, 0.984808, 1, 1, -0.173648, 0, 0, 0.984808)
+
+[sub_resource type="Animation" id="Animation_lt1cy"]
+resource_name = "Idle"
+length = 3.0333333
+loop_mode = 1
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath("Model")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, -0.1, 0, 0.5, 1, 0, -0.1, 0, 1.5, 1, 0, 0.1, 0, 2, 1, 0, 0.1, 0)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Model/Tilt/Arm2")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0.5, 1, 0, 0, 0, 1)
+tracks/2/type = "rotation_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Model/Tilt/Arm")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0.5, 1, 0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_gtced"]
+resource_name = "Left"
+loop_mode = 1
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath("Model")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, -0.1, 0, 0.5, 1, 0, -0.1, 0, 1.5, 1, 0, 0.1, 0, 2, 1, 0, 0.1, 0)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Model/Tilt/Arm2")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0.173648, 0, 0, 0.984808, 0.5, 1, -0.173648, 0, 0, 0.984808, 1, 1, 0.173648, 0, 0, 0.984808)
+tracks/2/type = "rotation_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Model/Tilt/Arm")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, -0.173648, 0, 0, 0.984808, 0.5, 1, 0.173648, 0, 0, 0.984808, 1, 1, -0.173648, 0, 0, 0.984808)
+tracks/3/type = "rotation_3d"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Model/Tilt")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat32Array(0, 1, 0, 0, -0.061049, 0.998135)
+
 [sub_resource type="Animation" id="Animation_86bwb"]
 length = 0.001
 tracks/0/type = "position_3d"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Base")
+tracks/0/path = NodePath("Model")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Model/Tilt/Arm2")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
+tracks/2/type = "rotation_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Model/Tilt/Arm")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
+tracks/3/type = "rotation_3d"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Model/Tilt")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_glrmh"]
+resource_name = "Right"
+loop_mode = 1
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath("Model")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, -0.1, 0, 0.5, 1, 0, -0.1, 0, 1.5, 1, 0, 0.1, 0, 2, 1, 0, 0.1, 0)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Model/Tilt/Arm2")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0.173648, 0, 0, 0.984808, 0.5, 1, -0.173648, 0, 0, 0.984808, 1, 1, 0.173648, 0, 0, 0.984808)
+tracks/2/type = "rotation_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Model/Tilt/Arm")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, -0.173648, 0, 0, 0.984808, 0.5, 1, 0.173648, 0, 0, 0.984808, 1, 1, -0.173648, 0, 0, 0.984808)
+tracks/3/type = "rotation_3d"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Model/Tilt")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat32Array(0, 1, 0, 0, 0.061049, 0.998135)
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_86bwb"]
 _data = {
-&"RESET": SubResource("Animation_86bwb")
+&"Backwards": SubResource("Animation_va2kb"),
+&"Forwards": SubResource("Animation_66bd2"),
+&"Idle": SubResource("Animation_lt1cy"),
+&"Left": SubResource("Animation_gtced"),
+&"RESET": SubResource("Animation_86bwb"),
+&"Right": SubResource("Animation_glrmh")
 }
 
-[sub_resource type="Animation" id="Animation_lt1cy"]
-length = 2.0333333
-tracks/0/type = "position_3d"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Base")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 0, 0.1, 0, 1, 1, 0, -0.1, 0, 2, 1, 0, 0.1, 0)
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_8f14h"]
+animation = &"Idle"
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_66bd2"]
-_data = {
-&"Idle": SubResource("Animation_lt1cy")
-}
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ej317"]
+animation = &"Forwards"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_x7fn4"]
+animation = &"Right"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_uw28y"]
+animation = &"Backwards"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_1rdex"]
+animation = &"Left"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_lt1cy"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_8f14h")
+blend_point_0/pos = Vector2(0, 0)
+blend_point_0/name = &"Idle"
+blend_point_1/node = SubResource("AnimationNodeAnimation_ej317")
+blend_point_1/pos = Vector2(0, 1)
+blend_point_1/name = &"Forwards"
+blend_point_2/node = SubResource("AnimationNodeAnimation_x7fn4")
+blend_point_2/pos = Vector2(1, 0)
+blend_point_2/name = &"Right"
+blend_point_3/node = SubResource("AnimationNodeAnimation_uw28y")
+blend_point_3/pos = Vector2(0, -1)
+blend_point_3/name = &"Backwards"
+blend_point_4/node = SubResource("AnimationNodeAnimation_1rdex")
+blend_point_4/pos = Vector2(-1, 0)
+blend_point_4/name = &"Left"
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_osnnr"]
+nodes/output/position = Vector2(740, 60)
+nodes/BlendSpace2D/node = SubResource("AnimationNodeBlendSpace2D_lt1cy")
+nodes/BlendSpace2D/position = Vector2(220, 191)
+node_connections = [&"output", 0, &"BlendSpace2D"]
 
 [node name="PusherRobot" type="Node3D" unique_id=490422130]
+script = ExtResource("1_86bwb")
 
-[node name="Base" type="Node3D" parent="." unique_id=1926767507]
+[node name="Model" type="Node3D" parent="." unique_id=556842479]
+transform = Transform3D(-0.3, 0, -2.6226834e-08, 0, 0.3, 0, 2.6226834e-08, 0, -0.3, 0, 0, 0)
 
-[node name="Tilt" type="Node3D" parent="Base" unique_id=1350069963]
+[node name="Tilt" type="Node3D" parent="Model" unique_id=1350069963]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.856747, 0)
 
-[node name="Body" type="MeshInstance3D" parent="Base/Tilt" unique_id=608694495]
+[node name="Body" type="MeshInstance3D" parent="Model/Tilt" unique_id=608694495]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.30368382, -0.008890331)
 mesh = SubResource("BoxMesh_osnnr")
-skeleton = NodePath("../..")
+skeleton = NodePath("")
 
-[node name="HoverCasing" type="MeshInstance3D" parent="Base/Tilt/Body" unique_id=985777351]
+[node name="HoverCasing" type="MeshInstance3D" parent="Model/Tilt/Body" unique_id=985777351]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4902488, 0)
 mesh = SubResource("CylinderMesh_osnnr")
 
-[node name="HoverEmitter" type="MeshInstance3D" parent="Base/Tilt/Body" unique_id=510456032]
+[node name="HoverEmitter" type="MeshInstance3D" parent="Model/Tilt/Body" unique_id=510456032]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.637887, 0)
 mesh = SubResource("CylinderMesh_66bd2")
 
-[node name="Panel" type="MeshInstance3D" parent="Base/Tilt/Body" unique_id=158010416]
+[node name="Panel" type="MeshInstance3D" parent="Model/Tilt/Body" unique_id=158010416]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.21536326, 0.40878153)
 mesh = SubResource("BoxMesh_0jyja")
 
-[node name="Panel2" type="MeshInstance3D" parent="Base/Tilt/Body" unique_id=1771707865]
+[node name="Panel2" type="MeshInstance3D" parent="Model/Tilt/Body" unique_id=1771707865]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1663369, -0.409)
 mesh = SubResource("BoxMesh_gtced")
 
-[node name="HoverConnector" type="MeshInstance3D" parent="Base/Tilt/Body" unique_id=1759600801]
+[node name="HoverConnector" type="MeshInstance3D" parent="Model/Tilt/Body" unique_id=1759600801]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5277356, 0)
 mesh = SubResource("SphereMesh_vlt7e")
 
-[node name="Head" type="MeshInstance3D" parent="Base/Tilt" unique_id=871110069]
+[node name="Head" type="MeshInstance3D" parent="Model/Tilt" unique_id=871110069]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9476816, -0.008890331)
 mesh = SubResource("BoxMesh_glrmh")
-skeleton = NodePath("../..")
+skeleton = NodePath("")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Base/Tilt/Head" unique_id=116736505]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Model/Tilt/Head" unique_id=116736505]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.16164923, 0)
 mesh = SubResource("CylinderMesh_533e6")
 
-[node name="Face" type="MeshInstance3D" parent="Base/Tilt/Head" unique_id=1729631573]
+[node name="Face" type="MeshInstance3D" parent="Model/Tilt/Head" unique_id=1729631573]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.024905562, 0.20695591)
 mesh = SubResource("BoxMesh_8f14h")
 skeleton = NodePath("../../Body")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="Base/Tilt/Head" unique_id=1649520810]
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Model/Tilt/Head" unique_id=1649520810]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35510135, 0)
 mesh = SubResource("SphereMesh_osnnr")
 
-[node name="Arm" type="Node3D" parent="Base/Tilt" unique_id=493922469]
+[node name="Arm" type="Node3D" parent="Model/Tilt" unique_id=493922469]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2859397, 0.5102919, 0.24976599)
 
-[node name="Arm" type="MeshInstance3D" parent="Base/Tilt/Arm" unique_id=1901464360]
+[node name="Arm" type="MeshInstance3D" parent="Model/Tilt/Arm" unique_id=1901464360]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.010693371, -0.00043010712, 0.27144516)
 mesh = SubResource("BoxMesh_lt1cy")
-skeleton = NodePath("../../..")
+skeleton = NodePath("")
 
-[node name="Arm2" type="MeshInstance3D" parent="Base/Tilt/Arm" unique_id=2137758262]
+[node name="Arm2" type="MeshInstance3D" parent="Model/Tilt/Arm" unique_id=2137758262]
 transform = Transform3D(1, 0, 0, 0, 0.362943, 0.9318114, 0, -0.9318114, 0.362943, -0.013009131, 0.032046437, 0.5903537)
 mesh = SubResource("BoxMesh_va2kb")
-skeleton = NodePath("../../..")
+skeleton = NodePath("")
 
-[node name="Arm4" type="MeshInstance3D" parent="Base/Tilt/Arm" unique_id=1452282118]
+[node name="Arm4" type="MeshInstance3D" parent="Model/Tilt/Arm" unique_id=1452282118]
 transform = Transform3D(1, 0, 0, 0, 0.9883488, 0.15220661, 0, -0.15220661, 0.9883488, -0.013009131, 0.07161176, 0.6380475)
 mesh = SubResource("BoxMesh_va2kb")
-skeleton = NodePath("../../..")
+skeleton = NodePath("")
 
-[node name="Arm5" type="MeshInstance3D" parent="Base/Tilt/Arm" unique_id=1911600044]
+[node name="Arm5" type="MeshInstance3D" parent="Model/Tilt/Arm" unique_id=1911600044]
 transform = Transform3D(1, 0, 0, 0, 0.9999497, -0.010033667, 0, 0.010033667, 0.9999497, -0.013009131, -0.07345891, 0.64366674)
 mesh = SubResource("BoxMesh_va2kb")
-skeleton = NodePath("../../..")
+skeleton = NodePath("")
 
-[node name="Arm3" type="MeshInstance3D" parent="Base/Tilt/Arm" unique_id=602635342]
+[node name="Arm3" type="MeshInstance3D" parent="Model/Tilt/Arm" unique_id=602635342]
 transform = Transform3D(1, 0, 0, 0, 0.40977022, -0.9121888, 0, 0.9121888, 0.40977022, -0.013009131, -0.039818406, 0.5938592)
 mesh = SubResource("BoxMesh_va2kb")
-skeleton = NodePath("../../..")
+skeleton = NodePath("")
 
-[node name="Arm2" type="Node3D" parent="Base/Tilt" unique_id=302948810]
+[node name="Arm2" type="Node3D" parent="Model/Tilt" unique_id=302948810]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.286, 0.510253, 0.25)
 
-[node name="Arm" type="MeshInstance3D" parent="Base/Tilt/Arm2" unique_id=1006972060]
+[node name="Arm" type="MeshInstance3D" parent="Model/Tilt/Arm2" unique_id=1006972060]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.010693371, -0.00043010712, 0.27144516)
 mesh = SubResource("BoxMesh_lt1cy")
-skeleton = NodePath("../../..")
+skeleton = NodePath("")
 
-[node name="Arm2" type="MeshInstance3D" parent="Base/Tilt/Arm2" unique_id=710565820]
+[node name="Arm2" type="MeshInstance3D" parent="Model/Tilt/Arm2" unique_id=710565820]
 transform = Transform3D(1, 0, 0, 0, 0.362943, 0.9318114, 0, -0.9318114, 0.362943, -0.013009131, 0.032046437, 0.5903537)
 mesh = SubResource("BoxMesh_va2kb")
-skeleton = NodePath("../../..")
+skeleton = NodePath("")
 
-[node name="Arm4" type="MeshInstance3D" parent="Base/Tilt/Arm2" unique_id=1988732830]
+[node name="Arm4" type="MeshInstance3D" parent="Model/Tilt/Arm2" unique_id=1988732830]
 transform = Transform3D(1, 0, 0, 0, 0.9883488, 0.15220661, 0, -0.15220661, 0.9883488, -0.013009131, 0.07161176, 0.6380475)
 mesh = SubResource("BoxMesh_va2kb")
-skeleton = NodePath("../../..")
+skeleton = NodePath("")
 
-[node name="Arm5" type="MeshInstance3D" parent="Base/Tilt/Arm2" unique_id=866195727]
+[node name="Arm5" type="MeshInstance3D" parent="Model/Tilt/Arm2" unique_id=866195727]
 transform = Transform3D(1, 0, 0, 0, 0.9999497, -0.010033667, 0, 0.010033667, 0.9999497, -0.013009131, -0.07345891, 0.64366674)
 mesh = SubResource("BoxMesh_va2kb")
-skeleton = NodePath("../../..")
+skeleton = NodePath("")
 
-[node name="Arm3" type="MeshInstance3D" parent="Base/Tilt/Arm2" unique_id=2065119785]
+[node name="Arm3" type="MeshInstance3D" parent="Model/Tilt/Arm2" unique_id=2065119785]
 transform = Transform3D(1, 0, 0, 0, 0.40977022, -0.9121888, 0, 0.9121888, 0.40977022, -0.013009131, -0.039818406, 0.5938592)
 mesh = SubResource("BoxMesh_va2kb")
-skeleton = NodePath("../../..")
+skeleton = NodePath("")
 
-[node name="Idle" type="AnimationPlayer" parent="." unique_id=1341284517]
+[node name="Animations" type="AnimationPlayer" parent="." unique_id=86570312]
 libraries/ = SubResource("AnimationLibrary_86bwb")
-libraries/FloatingPusher = SubResource("AnimationLibrary_66bd2")
+autoplay = &"Idle"
+
+[node name="AnimationTree" type="AnimationTree" parent="." unique_id=1078399582]
+tree_root = SubResource("AnimationNodeBlendTree_osnnr")
+anim_player = NodePath("../Animations")
+parameters/BlendSpace2D/blend_position = Vector2(0, 0)

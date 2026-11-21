@@ -37,7 +37,10 @@ metadata/_edit_group_ = true
 mesh = SubResource("SphereMesh_1rerk")
 skeleton = NodePath("../../../..")
 
-[node name="PusherRobot" parent="Player/Nonrolling" parent_id_path=PackedInt32Array(1155221902, 127205707) index="1" unique_id=490422130 instance=ExtResource("2_1jx4n")]
-transform = Transform3D(-0.4, 0, -6.039832e-08, 0, 0.4, 0, 6.039832e-08, 0, -0.4, 0, -0.49464262, 0.86909235)
+[node name="Pusher Character" parent="Player" index="2" unique_id=1945638078]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+
+[node name="PusherRobot" parent="Player/Pusher Character" index="0" unique_id=490422130 instance=ExtResource("2_1jx4n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.7596283)
 
 [editable path="Player"]
