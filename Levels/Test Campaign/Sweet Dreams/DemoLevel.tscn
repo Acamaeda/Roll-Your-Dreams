@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://8qtwqcg30ut6" path="res://Engine/Gameplay/Level/LevelControl.tscn" id="1_3eybd"]
 [ext_resource type="Texture2D" uid="uid://bclbacme8j5a7" path="res://Assets/2d/Kenney/Skyboxes/skybox-alien.png" id="1_rp3c5"]
 [ext_resource type="PackedScene" uid="uid://s10rqj67qxja" path="res://The stuff you use/Events/Counters/ScoreCounter.tscn" id="3_805a2"]
-[ext_resource type="PackedScene" uid="uid://qkbbtslws4fo" path="res://The stuff you use/Player/DemoPlayer.tscn" id="4_lmgjt"]
+[ext_resource type="PackedScene" uid="uid://qkbbtslws4fo" path="res://The stuff you use/Players/DemoPlayer.tscn" id="4_lmgjt"]
 [ext_resource type="PackedScene" uid="uid://ctcv6q11r7du3" path="res://Engine/Gameplay/Level/Zone.tscn" id="5_6ta50"]
 [ext_resource type="PackedScene" uid="uid://bm7mvt3hfv7g2" path="res://The stuff you use/Rollables/Food/Candy/Candy Cane.tscn" id="5_fqft0"]
 [ext_resource type="PackedScene" uid="uid://cyaowuh1ef2nl" path="res://The stuff you use/Events/Conditions/IfSize.tscn" id="5_hs1qc"]

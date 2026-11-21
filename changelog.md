@@ -1,6 +1,7 @@
 # Changelog
 
 #0.5
+- Added Pusher Character support, and a simple demo character.
 - Restructured the player object so custom players will work better. 
 - Prevented accidentally selecting and moving around things insise of the player object.
 - Made the level end feel less abrupt.
